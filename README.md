@@ -13,4 +13,4 @@ IOS-Project
 | **Präsentation**                            |                                                                                                     |               |
 | **Jour Fixes**                              | Teilnahme und Präsentation                                                                          | 5             |
 | **Abschlusspräsentation (iExpo)**           | Präsentation, Motivation                                                                             | 10            |
-
+| **Gesamtpunktzahl**                         |                                                                                                     | **75**        |

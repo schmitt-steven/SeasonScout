@@ -1,7 +1,7 @@
 # IOS-Project
-IOS-Project
 
 [Link zum iOS Moodle-Kurs](https://moodle.hs-mannheim.de/course/view.php?id=4970)
+[Projekt Backlog](https://github.com/users/schmitt-steven/projects/1)
 
 | **Kriterium**                               | **Kommentar**                                                                                       | **Bewertung** |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------|

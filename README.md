@@ -1,8 +1,11 @@
 # IOS-Project
 
 [Link zum iOS Moodle-Kurs](https://moodle.hs-mannheim.de/course/view.php?id=4970)\
-[Projekt Backlog](https://github.com/users/schmitt-steven/projects/1)
+[Projekt Backlog](https://github.com/users/schmitt-steven/projects/1)\
+[Google Drive](https://drive.google.com/drive/folders/1K70k8rNntl8iYn7EPlYh6EJJNus_9eUT?usp=drive_link)
 
+
+*Bewertungsschema*
 | **Kriterium**                               | **Kommentar**                                                                                       | **Bewertung** |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------|
 | **App Design und Umsetzung**                |                                                                                                     |               |

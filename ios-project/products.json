@@ -1,0 +1,5852 @@
+[
+  {
+    "id": 0,
+    "name": "Auberginen",
+    "botanicalName": "Cucurbita pepo",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "name": "Artischocken",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Blumenkohl",
+    "botanicalName": "Brassica oleracea var. botrytis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Bohnen, grüne",
+    "botanicalName": "Phaseolus vulgaris",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Hülsenfrüchte",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Bohnen, dicke",
+    "botanicalName": "Phaseolus vulgaris",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Hülsenfrüchte",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Brokkoli",
+    "botanicalName": "Brassica oleracea var. italica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "name": "Butterrüben",
+    "botanicalName": "Beta vulgaris",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "name": "Champignons",
+    "botanicalName": "Agaricus bisporus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "name": "Chinakohl",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "name": "Erbsen",
+    "botanicalName": "Pisum sativum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Hülsenfrüchte",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "name": "Fenchel",
+    "botanicalName": "Foeniculum vulgare",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "name": "Grünkohl",
+    "botanicalName": "Brassica oleracea var. sabellica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "name": "Gurke / Salatgurke",
+    "botanicalName": "Cucumis sativus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "name": "Kartoffeln",
+    "botanicalName": "Solanum tuberosum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "auf Lager"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "auf Lager"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "name": "Kohlrabi",
+    "botanicalName": "Brassica oleracea var. gongylodes",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "name": "Kürbis",
+    "botanicalName": "Cucurbita pepo",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "name": "Lauch / Porree",
+    "botanicalName": "Allium porrum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "name": "Lauch- / Frühlingszwiebeln",
+    "botanicalName": "Allium fistulosum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "name": "Mais",
+    "botanicalName": "Zea mays",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "name": "Mangold",
+    "botanicalName": "Beta vulgaris var. cicla",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "name": "Mairüben",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "name": "Karotten",
+    "botanicalName": "Daucus carota",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "auf Lager"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "auf Lager"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "name": "Paprika",
+    "botanicalName": "Capsicum annuum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "name": "Pastinaken",
+    "botanicalName": "Pastinaca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "name": "Radieschen",
+    "botanicalName": "Raphanus sativus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "name": "Rosenkohl",
+    "botanicalName": "Brassica oleracea var. gemmifera",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "name": "Rote Bete",
+    "botanicalName": "Beta vulgaris subsp. vulgaris",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "name": "Rotkohl",
+    "botanicalName": "Brassica oleracea var. capitata",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "auf Lager"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "name": "Rettich",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "name": "Schalotten",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "name": "Schwarzwurzeln",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "name": "Spargel",
+    "botanicalName": "Asparagus officinalis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "name": "Spinat",
+    "botanicalName": "Spinacia oleracea",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "name": "Spitzkohl",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "name": "Sellerieknollen",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "name": "Staudensellerie",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "name": "Steckrüben",
+    "botanicalName": "Brassica napus var. napobrassica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "name": "Tomaten",
+    "botanicalName": "Solanum lycopersicum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "name": "Topinambur",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Wurzelgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "name": "Weißkohl",
+    "botanicalName": "Brassica oleracea var. capitata",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "name": "Wirsingkohl",
+    "botanicalName": "Brassica oleracea var. sabauda",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 41,
+    "name": "Zucchini",
+    "botanicalName": "Cucurbita pepo",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Fruchtgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 42,
+    "name": "Zuckerschoten",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Hülsenfrüchte",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 43,
+    "name": "Zwiebeln",
+    "botanicalName": "Allium cepa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Gemüse",
+    "subtype": "Blütengemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "auf Lager"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "auf Lager"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 44,
+    "name": "Apfel",
+    "botanicalName": "Malus domestica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Kernobst",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "auf Lager"
+      ],
+      "April": [
+        "auf Lager"
+      ],
+      "Mai": [
+        "auf Lager"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 45,
+    "name": "Aprikose",
+    "botanicalName": "Prunus armeniaca",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 46,
+    "name": "Birne",
+    "botanicalName": "Pyrus communis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Kernobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "auf Lager"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 47,
+    "name": "Blaubeeren / Heidelbeeren",
+    "botanicalName": "Vaccinium myrtillus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 48,
+    "name": "Brombeeren",
+    "botanicalName": "Rubus fruticosus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "name": "Erdbeeren",
+    "botanicalName": "Fragaria",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 50,
+    "name": "Esskastanien",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Schalenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 51,
+    "name": "Himbeeren",
+    "botanicalName": "Rubus idaeus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 52,
+    "name": "Haselnüsse",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Schalenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 53,
+    "name": "Holunderbeeren / Flieder",
+    "botanicalName": "Sambucus nigra",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 54,
+    "name": "Johannisbeeren",
+    "botanicalName": "Ribes rubrum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 55,
+    "name": "Kirschen",
+    "botanicalName": "Prunus avium",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 56,
+    "name": "Mirabellen",
+    "botanicalName": "Prunus domestica subsp. domestica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 57,
+    "name": "Pflaumen",
+    "botanicalName": "Prunus domestica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 58,
+    "name": "Preiselbeeren",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 59,
+    "name": "Quitten",
+    "botanicalName": "Cydonia oblonga",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Kernobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 60,
+    "name": "Pfirsiche",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 61,
+    "name": "Nektarinen",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 62,
+    "name": "Rhabarber",
+    "botanicalName": "Rheum rhabarbarum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 63,
+    "name": "Stachelbeeren",
+    "botanicalName": "Ribes uva-crispa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 64,
+    "name": "Walnüsse",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Schalenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 65,
+    "name": "Wassermelonen",
+    "botanicalName": "Citrullus lanatus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 66,
+    "name": "Weintrauben",
+    "botanicalName": "Vitis vinifera",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 67,
+    "name": "Tafeltrauben",
+    "botanicalName": "",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Beerenobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 68,
+    "name": "Zwetschgen",
+    "botanicalName": "Prunus domestica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Steinobst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 69,
+    "name": "Ananas",
+    "botanicalName": "Ananas comosus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 70,
+    "name": "Orangen",
+    "botanicalName": "Citrus sinensis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 71,
+    "name": "Avocados",
+    "botanicalName": "Persea americana",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 72,
+    "name": "Bananen",
+    "botanicalName": "Musa spp.",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 73,
+    "name": "Feigen",
+    "botanicalName": "Ficus carica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 74,
+    "name": "Granatäpfel",
+    "botanicalName": "Punica granatum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 75,
+    "name": "Grapefruit",
+    "botanicalName": "Citrus paradisi",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 76,
+    "name": "Kakis",
+    "botanicalName": "Diospyros kaki",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 77,
+    "name": "Kiwis",
+    "botanicalName": "Actinidia deliciosa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 78,
+    "name": "Limetten",
+    "botanicalName": "Citrus aurantiifolia",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 79,
+    "name": "Litschis",
+    "botanicalName": "Litchi chinensis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 80,
+    "name": "Mandarinen",
+    "botanicalName": "Citrus reticulata",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 81,
+    "name": "Mangos",
+    "botanicalName": "Mangifera indica",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "name": "Pampelmusen",
+    "botanicalName": "Citrus maxima",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 83,
+    "name": "Papayas",
+    "botanicalName": "Carica papaya",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 84,
+    "name": "Zitronen",
+    "botanicalName": "Citrus limon",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": true,
+    "isFavorite": false,
+    "type": "Obst",
+    "subtype": "Tropisches Obst",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 85,
+    "name": "Batavia",
+    "botanicalName": "Lactuca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 86,
+    "name": "Chicorée",
+    "botanicalName": "Cichorium intybus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 87,
+    "name": "Eichblattsalat",
+    "botanicalName": "Lactuca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 88,
+    "name": "Eisbergsalat",
+    "botanicalName": "Lactuca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 89,
+    "name": "Endiviensalat",
+    "botanicalName": "Cichorium endivia",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 90,
+    "name": "Feldsalat",
+    "botanicalName": "Valerianella locusta",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 91,
+    "name": "Kopfsalat",
+    "botanicalName": "Lactuca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 92,
+    "name": "Lollo Rosso",
+    "botanicalName": "Lactuca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 93,
+    "name": "Portulak",
+    "botanicalName": "Portulaca oleracea",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 94,
+    "name": "Radicchio",
+    "botanicalName": "Cichorium intybus var. foliosum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "auf Lager"
+      ],
+      "Februar": [
+        "auf Lager"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "auf Lager"
+      ]
+    }
+  },
+  {
+    "id": 95,
+    "name": "Rucola",
+    "botanicalName": "Eruca sativa",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Salat",
+    "subtype": "Blattgemüse",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 96,
+    "name": "Bärlauch",
+    "botanicalName": "Allium ursinum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Monokotyledonen",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 97,
+    "name": "Basilikum",
+    "botanicalName": "Ocimum basilicum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 98,
+    "name": "Beifuß",
+    "botanicalName": "Artemisia vulgaris",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 99,
+    "name": "Bohnenkraut",
+    "botanicalName": "Satureja hortensis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 100,
+    "name": "Borretsch",
+    "botanicalName": "Borago officinalis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 101,
+    "name": "Dill",
+    "botanicalName": "Anethum graveolens",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 102,
+    "name": "Estragon",
+    "botanicalName": "Artemisia dracunculus",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "nicht regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 103,
+    "name": "Kerbel",
+    "botanicalName": "Anthriscus cerefolium",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 104,
+    "name": "Koriander",
+    "botanicalName": "Coriandrum sativum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 105,
+    "name": "Kresse",
+    "botanicalName": "Lepidium sativum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 106,
+    "name": "Liebstöckl",
+    "botanicalName": "Levisticum officinale",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 107,
+    "name": "Lorbeer",
+    "botanicalName": "Laurus nobilis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 108,
+    "name": "Majoran",
+    "botanicalName": "Origanum majorana",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 109,
+    "name": "Minze",
+    "botanicalName": "Mentha piperita",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "nicht regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 110,
+    "name": "Oregano",
+    "botanicalName": "Origanum vulgare",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 111,
+    "name": "Petersilie",
+    "botanicalName": "Petroselinum crispum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Rosopsida",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 112,
+    "name": "Rosmarin",
+    "botanicalName": "Rosmarinus officinalis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 113,
+    "name": "Salbei",
+    "botanicalName": "Salvia officinalis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "nicht regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 114,
+    "name": "Schnittlauch",
+    "botanicalName": "Allium schoenoprasum",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Monokotyledonen",
+    "seasonalData": {
+      "Januar": [
+        "regional verfügbar"
+      ],
+      "Februar": [
+        "regional verfügbar"
+      ],
+      "März": [
+        "regional verfügbar"
+      ],
+      "April": [
+        "regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "regional verfügbar"
+      ],
+      "November": [
+        "regional verfügbar"
+      ],
+      "Dezember": [
+        "regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 115,
+    "name": "Thymian",
+    "botanicalName": "Thymus vulgaris",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "nicht regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  },
+  {
+    "id": 116,
+    "name": "Zitronenmelisse",
+    "botanicalName": "Melissa officinalis",
+    "description": "",
+    "storageInstructions": "",
+    "energyConsumption": "",
+    "isImportedOnly": false,
+    "isFavorite": false,
+    "type": "Kräuter",
+    "subtype": "Magnoliopsida",
+    "seasonalData": {
+      "Januar": [
+        "nicht regional verfügbar"
+      ],
+      "Februar": [
+        "nicht regional verfügbar"
+      ],
+      "März": [
+        "nicht regional verfügbar"
+      ],
+      "April": [
+        "nicht regional verfügbar"
+      ],
+      "Mai": [
+        "regional verfügbar"
+      ],
+      "Juni": [
+        "regional verfügbar"
+      ],
+      "Juli": [
+        "regional verfügbar"
+      ],
+      "August": [
+        "regional verfügbar"
+      ],
+      "September": [
+        "nicht regional verfügbar"
+      ],
+      "Oktober": [
+        "nicht regional verfügbar"
+      ],
+      "November": [
+        "nicht regional verfügbar"
+      ],
+      "Dezember": [
+        "nicht regional verfügbar"
+      ]
+    }
+  }
+]

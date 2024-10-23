@@ -9,7 +9,12 @@ import SwiftUI
 @main
 struct ios_projectApp: App {
     let persistenceController = PersistenceController.shared
-
+    
+    init() {
+        // Load all  products
+        Product.products = JsonParser.parseToProducts(fileName: "products")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

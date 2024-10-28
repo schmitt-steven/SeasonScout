@@ -38,9 +38,35 @@
 		FC6E3C442CC102BD0024F7AB /* ios-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FC68EE562CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				view/RecipesView.swift,
+			);
+			target = FC6E3C392CC102BD0024F7AB /* ios-projectTests */;
+		};
+		FC68EE572CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				view/RecipesView.swift,
+			);
+			target = FC6E3C432CC102BD0024F7AB /* ios-projectUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		FC68EE582CD014340073D7A3 /* DataCrawler */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DataCrawler;
+			sourceTree = "<group>";
+		};
 		FC6E3C262CC102BB0024F7AB /* ios-project */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC68EE562CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectTests" target */,
+				FC68EE572CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectUITests" target */,
+			);
 			path = "ios-project";
 			sourceTree = "<group>";
 		};
@@ -91,6 +117,7 @@
 				FC6E3C3D2CC102BD0024F7AB /* ios-projectTests */,
 				FC6E3C472CC102BD0024F7AB /* ios-projectUITests */,
 				FC6E3C252CC102BB0024F7AB /* Products */,
+				FC68EE582CD014340073D7A3 /* DataCrawler */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +147,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				FC68EE582CD014340073D7A3 /* DataCrawler */,
 				FC6E3C262CC102BB0024F7AB /* ios-project */,
 			);
 			name = "ios-project";

@@ -72,15 +72,15 @@ def parse_recipe_page(url):
             "category": category,
             "effort": effort,
             "price": price,
-            "is_favorite": False,
-            "for_groups": for_groups,
-            "vegetarian": vegetarian,
+            "isFavorite": False,
+            "isforGroups": for_groups,
+            "isVegetarian": vegetarian,
             "source": "regional-saisonal.de",
-            "image_name": os.path.basename(urlsplit(img_url).path),
+            "imageName": os.path.basename(urlsplit(img_url).path),
             "description": description,
             "instructions": instructions,
-            "seasonal_data": seasonal_data,
-            "ingredients_by_persons": ingredients_by_persons,
+            "seasonalData": seasonal_data,
+            "ingredientsByPersons": ingredients_by_persons,
         }
     except Exception as e:
         print(f"ERROR: While parsing recipe page: {e}")

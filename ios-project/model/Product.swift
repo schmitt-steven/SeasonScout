@@ -3,7 +3,7 @@
 //  ios-project
 //
 
-struct Product: Codable {
+struct Product {
     
     static var products: [Product] = []
     
@@ -17,6 +17,5 @@ struct Product: Codable {
     let type: ProductType
     let subtype: ProductSubtype
     let seasonalData: [Month: [Availability]]
-    
     var isFavorite: Bool
     }

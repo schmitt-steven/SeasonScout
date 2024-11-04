@@ -42,6 +42,7 @@
 		FC68EE562CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				view/RecipeInfoView.swift,
 				view/RecipesView.swift,
 			);
 			target = FC6E3C392CC102BD0024F7AB /* ios-projectTests */;
@@ -49,6 +50,7 @@
 		FC68EE572CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				view/RecipeInfoView.swift,
 				view/RecipesView.swift,
 			);
 			target = FC6E3C432CC102BD0024F7AB /* ios-projectUITests */;

@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct RecipeInfoView: View {
+    
+    let recipe: Recipe
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(recipe.title)")
     }
 }
 
 #Preview {
-    RecipeInfoView()
+    var recipe = Recipe.recipes[99]
+    RecipeInfoView(recipe: recipe)
 }

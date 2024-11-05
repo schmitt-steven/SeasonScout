@@ -6,8 +6,10 @@
 
 
 Q: Wie soll Dokumentation umgesetzt werden?
+A: Inhalt der Dokumentation ist das gesamte Projekt und wird am Ende abgegeben.
 
 Q: Wieviele JF und wann?
+A: Jeden Dienstag.
 
 
 *Bewertungsschema*

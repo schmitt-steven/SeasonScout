@@ -10,6 +10,7 @@
 		FC4046332CC10D4E0010DB12 /* app.drawio in Resources */ = {isa = PBXBuildFile; fileRef = FC4046312CC10D4E0010DB12 /* app.drawio */; };
 		FC4046342CC10D4E0010DB12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC4046322CC10D4E0010DB12 /* README.md */; };
 		FC4046362CC10DD60010DB12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC4046352CC10DD60010DB12 /* .gitignore */; };
+		FC7A6E782CE17AC000589404 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = FC7A6E772CE17AC000589404 /* WrappingHStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		FC68EE562CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				view/RecipeInfoView.swift,
 				view/RecipesView.swift,
 			);
 			target = FC6E3C392CC102BD0024F7AB /* ios-projectTests */;
@@ -50,7 +50,6 @@
 		FC68EE572CCFE6D10073D7A3 /* Exceptions for "ios-project" folder in "ios-projectUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				view/RecipeInfoView.swift,
 				view/RecipesView.swift,
 			);
 			target = FC6E3C432CC102BD0024F7AB /* ios-projectUITests */;
@@ -89,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7A6E782CE17AC000589404 /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +154,7 @@
 			);
 			name = "ios-project";
 			packageProductDependencies = (
+				FC7A6E772CE17AC000589404 /* WrappingHStack */,
 			);
 			productName = "ios-project";
 			productReference = FC6E3C242CC102BB0024F7AB /* ios-project.app */;
@@ -237,6 +238,9 @@
 			);
 			mainGroup = FC6E3C1B2CC102BB0024F7AB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FC7A6E762CE17AC000589404 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC6E3C252CC102BB0024F7AB /* Products */;
 			projectDirPath = "";
@@ -628,6 +632,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC7A6E762CE17AC000589404 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC7A6E772CE17AC000589404 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC7A6E762CE17AC000589404 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC6E3C1C2CC102BB0024F7AB /* Project object */;
 }

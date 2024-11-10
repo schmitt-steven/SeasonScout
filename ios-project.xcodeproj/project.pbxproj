@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		345D63692CE11A13000431F0 /* ViewTab.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ViewTab.xcodeproj; sourceTree = "<group>"; };
 		FC4046312CC10D4E0010DB12 /* app.drawio */ = {isa = PBXFileReference; lastKnownFileType = text; path = app.drawio; sourceTree = "<group>"; };
 		FC4046322CC10D4E0010DB12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC4046352CC10DD60010DB12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -81,6 +82,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		345D636B2CE11A13000431F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FC6E3C1B2CC102BB0024F7AB = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +218,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC6E3C252CC102BB0024F7AB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 345D636B2CE11A13000431F0 /* Products */;
+					ProjectRef = 345D63692CE11A13000431F0 /* ViewTab.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FC6E3C232CC102BB0024F7AB /* ios-project */,

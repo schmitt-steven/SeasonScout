@@ -77,6 +77,7 @@ struct ProductView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Regionale Alternativen")
                         .font(.headline)
+                        .padding(.bottom, 10)
                     
                     HStack(spacing: 15) {
                         Image("orange")
@@ -102,7 +103,7 @@ struct ProductView: View {
                     Toggle(isOn: $isNotificationEnabled) {
                         Text("Benachrichtige mich, sobald das Produkt erhältlich ist!")
                     }
-                    .padding(.top, 10)
+                    .padding(.vertical, 30)
                 }
                 .padding()
             }

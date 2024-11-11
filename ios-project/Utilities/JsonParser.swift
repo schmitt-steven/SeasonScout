@@ -42,10 +42,10 @@ struct JsonParser {
                 }
                 
                 // Decode seasonalData from strings to enums
-                var seasonalData: [Month: [Availability]] = [:]
+                var seasonalData: [Month: [AvailabilityType]] = [:]
                 for (monthString, availabilityStrings) in seasonalDataRaw {
                     if let month = Month(rawValue: monthString) {
-                        let availability = availabilityStrings.compactMap { Availability(rawValue: $0) }
+                        let availability = availabilityStrings.compactMap { AvailabilityType(rawValue: $0) }
                         seasonalData[month] = availability
                     } else {
                         print("Warning: Unknown month string '\(monthString)' found in JSON.")

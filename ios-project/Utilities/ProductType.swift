@@ -9,7 +9,3 @@ enum ProductType: String, Codable {
     case salad = "Salat"
     case herb = "Kräuter"
 }
-
-
-
-

@@ -16,7 +16,7 @@ struct Product: Codable {
     let isImportedOnly: Bool
     let type: ProductType
     let subtype: ProductSubtype
-    let seasonalData: [Month: [Availability]]
+    let seasonalData: [Month: [AvailabilityType]]
     
     var isFavorite: Bool
     }

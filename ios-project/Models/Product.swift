@@ -3,6 +3,15 @@
 //  ios-project
 //
 
+import Foundation
+
+
+struct SeasonalData: Identifiable {
+    let id = UUID()
+    let month: Month
+    let availability: Availability
+}
+
 struct Product {
     
     static var products: [Product] = []
@@ -16,6 +25,6 @@ struct Product {
     let isImportedOnly: Bool
     let type: ProductType
     let subtype: ProductSubtype
-    let seasonalData: [Month: [Availability]]
+    let seasonalData: [SeasonalData]
     var isFavorite: Bool
-    }
+}

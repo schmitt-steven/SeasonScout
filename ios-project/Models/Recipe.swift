@@ -3,10 +3,23 @@
 //  ios-project
 //
 
+import Foundation
+
+struct Ingredient: Identifiable {
+    let id = UUID()
+    let name: String
+    let amount: String
+}
+
+struct RecipeSeasonalMonthData: Identifiable{
+    let id = UUID()
+    let month: Month
+    let availability: String
+}
+
 struct Recipe {
     
     static var recipes: [Recipe] = []
-    // TODO: Zuletzt angeschaute Rezepte implementieren?
     
     let id: Int
     let title: String
@@ -23,31 +36,14 @@ struct Recipe {
     let description: String
     let instructions: String
     
-    // TODO: Use Array of Tupels instead, so the months are sorted by default
-    let seasonalData: [Month: String]
-    
-    //Dictionaries are, by default, NOT sorted -> convert to tuple array
-    var sortedSeasonalData: [(Month, String)] {
-        let monthOrder: [Month] = [.jan, .feb, .mar, .apr, .may, .jun, .jul, .aug, .sep, .oct, .nov, .dec]
-        
-        return seasonalData.sorted { first, second in
-            guard let firstIndex = monthOrder.firstIndex(of: first.key),
-                  let secondIndex = monthOrder.firstIndex(of: second.key) else {
-                return false
-            }
-            return firstIndex < secondIndex
-        }
-    }
-    
-    let ingredientsByPersons: [Int: [String: String]] // [NumOfPersons: [Ingredient: Quantity]]
+    let seasonalData: [RecipeSeasonalMonthData]
+    let ingredientsByPersons: [Int: [Ingredient]]
     
     func toString() -> String {
-        let seasonalDataString = seasonalData.map { "\($0.key.rawValue): \($0.value)" }.joined(separator: ", ")
-        let ingredientsString = ingredientsByPersons[1]!.map {"\($0.key): \($0.value)"}.joined(separator: "\n")
-        
         return ("""
             Recipe ID: \(id)
             Title: \(title)
+            First Month Data: \(seasonalData[0].month.rawValue), \(seasonalData[0].availability)
             Category: \(category.rawValue)
             Effort: \(effort.rawValue)
             Price: \(price.rawValue)
@@ -58,8 +54,6 @@ struct Recipe {
             Image Name: \(imageName)\n
             Description: \(description)\n
             Instructions: \(instructions)\n
-            Seasonal Data: [\(seasonalDataString)]\n
-            Ingredients for one person:\n [\(ingredientsString)]
             """)
     }
     

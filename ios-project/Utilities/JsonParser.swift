@@ -16,6 +16,10 @@ struct JsonParser {
             let rawProducts = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
             var products: [Product] = []
             
+            let orderedMonths: [Month] = [
+                .jan, .feb, .mar, .apr, .may, .jun, .jul, .aug, .sep, .oct, .nov, .dec
+            ]
+
             for rawProduct in rawProducts! {
                 let id = rawProduct["id"] as! Int
                 let name = rawProduct["name"] as! String
@@ -37,16 +41,31 @@ struct JsonParser {
                     print("Warning: Unknown product subtype '\(subtypeString)' found in JSON.")
                     continue // Skip this product if subtype is unknown
                 }
-                
-                // Convert seasonalData from using String to using Month and Availability enum
-                var seasonalData: [Month: [Availability]] = [:]
-                for (monthString, availabilityStrings) in seasonalDataRaw {
+
+                // Convert the dictionary into an array of tuples (Month, availability)
+                let seasonalDataTuples = seasonalDataRaw.compactMap { (monthString, availabilityStrings) -> (Month, [String])? in
                     if let month = Month(rawValue: monthString) {
-                        let availability = availabilityStrings.compactMap { Availability(rawValue: $0) }
-                        seasonalData[month] = availability
+                        return (month, availabilityStrings)
                     } else {
                         print("Warning: Unknown month string '\(monthString)' found in JSON.")
+                        return nil
                     }
+                }
+
+                // Sort the tuples based on order of months
+                let sortedSeasonalDataTuples = seasonalDataTuples.sorted {
+                    guard let firstIndex = orderedMonths.firstIndex(of: $0.0),
+                          let secondIndex = orderedMonths.firstIndex(of: $1.0) else {
+                        return false // Fallback if for any reason the month is not found
+                    }
+                    return firstIndex < secondIndex
+                }
+
+                // Use sorted tuples to create the SeasonalData array
+                var seasonalData: [SeasonalData] = []
+                for (month, availabilityStrings) in sortedSeasonalDataTuples {
+                    let availability = availabilityStrings.compactMap { Availability(rawValue: $0) }
+                    seasonalData.append(contentsOf: availability.map { SeasonalData(month: month, availability: $0) })
                 }
 
                 let product = Product(
@@ -62,33 +81,39 @@ struct JsonParser {
                     seasonalData: seasonalData,
                     isFavorite: isFavorite
                 )
-                
+
                 products.append(product)
             }
-            
-            print("Success: loaded \(products.count) products. ")
+
+            print("Success: loaded \(products.count) products.")
             return products
         } catch {
             print("Failed to decode JSON: \(error)")
             return []
         }
     }
+
     
     static func parseToRecipes(fileName: String) -> [Recipe] {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
             print("Error: File \(fileName) not found, returning an empty recipe list.")
             return []
         }
-        
+
         do {
             let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
             guard let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {
                 print("Error: JSON data is not in a valid format.")
                 return []
             }
-            
+
             var recipes = [Recipe]()
-            
+
+            // Define ordered months for sorting
+            let orderedMonths: [Month] = [
+                .jan, .feb, .mar, .apr, .may, .jun, .jul, .aug, .sep, .oct, .nov, .dec
+            ]
+
             for item in jsonArray {
                 // Validate and unpack all fields
                 if let id = item["id"] as? Int,
@@ -114,22 +139,43 @@ struct JsonParser {
                         continue
                     }
 
-                    // Convert seasonalData to use Month enum instead of String
-                    var seasonalData = [Month: String]()
-                    for (key, value) in seasonalDataRaw {
-                        if let month = Month(rawValue: key) {
-                            seasonalData[month] = value
+                    var seasonalData: [RecipeSeasonalMonthData] = []
+
+                    // Sort the seasonalDataRaw by Month order
+                    let sortedSeasonalDataRaw = seasonalDataRaw.keys.sorted { (firstKey, secondKey) in
+                        guard let firstIndex = orderedMonths.firstIndex(of: Month(rawValue: firstKey) ?? .jan),
+                              let secondIndex = orderedMonths.firstIndex(of: Month(rawValue: secondKey) ?? .jan) else {
+                            return false // Fallback if for any reason the month is not found
+                        }
+                        return firstIndex < secondIndex
+                    }
+
+                    // Create SeasonalData array
+                    for monthString in sortedSeasonalDataRaw {
+                        if let month = Month(rawValue: monthString) {
+                            let availability = seasonalDataRaw[monthString] ?? ""
+                            seasonalData.append(RecipeSeasonalMonthData(month: month, availability: availability))
+                        } else {
+                            print("Warning: Invalid month \(monthString) in seasonal data for recipe \(title). Skipping.")
                         }
                     }
-                    
-                    // Convert ingredientsByPersons to use Int instead of String
-                    var ingredientsByPersons = [Int: [String: String]]()
-                    for (key, value) in ingredientsByPersonsRaw {
-                        if let numPersons = Int(key) {
-                            ingredientsByPersons[numPersons] = value
+
+                    // Convert ingredientsByPersons to correct format
+                    var ingredientsByPersons: [Int: [Ingredient]] = [:]
+                    for (key, ingredients) in ingredientsByPersonsRaw {
+                        if let personCount = Int(key) {
+                            var ingredientList: [Ingredient] = []
+                            for (ingredientName, amount) in ingredients {
+                                let ingredient = Ingredient(name: ingredientName, amount: amount)
+                                ingredientList.append(ingredient)
+                            }
+                            ingredientsByPersons[personCount] = ingredientList
+                        } else {
+                            print("Warning: Invalid person count \(key) in ingredients for recipe \(title). Skipping.")
                         }
                     }
-                    
+
+                    // Create Recipe object
                     let recipe = Recipe(
                         id: id,
                         title: title,
@@ -146,21 +192,20 @@ struct JsonParser {
                         seasonalData: seasonalData,
                         ingredientsByPersons: ingredientsByPersons
                     )
-                    
+
                     recipes.append(recipe)
                 } else {
                     print("Error: Missing or invalid data for recipe \(item["title"] ?? "Unknown Title"). Skipping this recipe.")
                 }
             }
-            
+
             print("Success: loaded \(recipes.count) recipes.")
             return recipes
-            
+
         } catch {
             print("Error: While parsing recipe JSON: \(error)")
             return []
         }
     }
-
 
 }

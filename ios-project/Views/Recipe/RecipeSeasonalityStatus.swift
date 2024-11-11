@@ -1,7 +1,8 @@
 import SwiftUI
+import OrderedCollections
 
 struct RecipeSeasonalityStatus: View {
-    let seasonalData: [Month: String]
+    let seasonalData: [RecipeSeasonalMonthData]
     
     // Computes current month formatted in German
     var currentMonth: Month? {
@@ -16,11 +17,9 @@ struct RecipeSeasonalityStatus: View {
     let isNotSeasonalText = "Derzeit nicht mit regionalen Produkten zubereitbar."
 
     var body: some View {
-        
         Group {
             HStack {
-                if let monthStatus = seasonalData[currentMonth!] {
-                    
+                if let monthStatus = seasonalData.first(where: { $0.month == currentMonth }) {
                     statusIcon(for: monthStatus)
                         .foregroundStyle(statusColor(for: monthStatus))
                         .font(.title)
@@ -31,18 +30,18 @@ struct RecipeSeasonalityStatus: View {
                         .padding(.leading, 5)
                     
                     Spacer()
-                    
                 }
-            }.padding(10)
-            
-        }.background(.lighterGray)
-            .clipShape(.rect(cornerRadius: 15))
-            .shadow(color: .gray, radius: 2)
-            .padding(.horizontal, 20)
+            }
+            .padding(10)
+        }
+        .background(.lighterGray)
+        .clipShape(.rect(cornerRadius: 15))
+        .padding([.leading, .trailing], 20)
+        .shadow(color: .gray, radius: 2)
     }
 
-    func statusIcon(for status: String) -> Image {
-        switch status {
+    func statusIcon(for status: RecipeSeasonalMonthData) -> Image {
+        switch status.availability {
         case "ja":
             return Image(systemName: "calendar.badge.checkmark")
         case "(ja)":
@@ -52,8 +51,8 @@ struct RecipeSeasonalityStatus: View {
         }
     }
 
-    func statusColor(for status: String) -> Color {
-        switch status {
+    func statusColor(for status: RecipeSeasonalMonthData) -> Color {
+        switch status.availability {
         case "ja":
             return .green
         case "(ja)":
@@ -63,8 +62,8 @@ struct RecipeSeasonalityStatus: View {
         }
     }
     
-    func statusText(for status: String) -> String {
-        switch status {
+    func statusText(for status: RecipeSeasonalMonthData) -> String {
+        switch status.availability {
         case "ja":
             return isSeasonalText
         case "(ja)":

@@ -42,7 +42,7 @@ struct RecipeInfoView: View {
                 ExpandableTextContainer(title: "Ähnliche Gerichte", content: "horizontale scroll view")
                 
                 ExpandableContainer(title: "Saisonales", contentPadding: CGFloat(0)) {
-                    RecipePieChart(seasonalData: recipe.sortedSeasonalData)
+                    RecipePieChart(seasonalData: recipe.seasonalData)
                 }
                                 
             }

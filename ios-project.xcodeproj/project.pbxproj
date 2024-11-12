@@ -11,6 +11,8 @@
 		FC4046342CC10D4E0010DB12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC4046322CC10D4E0010DB12 /* README.md */; };
 		FC4046362CC10DD60010DB12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC4046352CC10DD60010DB12 /* .gitignore */; };
 		FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = FC4854152CE22FD4009A659C /* WrappingHStack */; };
+		FC63549E2CE3BEF7006BA448 /* recipe_links.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC63549C2CE3BEF7006BA448 /* recipe_links.txt */; };
+		FC63549F2CE3BEF7006BA448 /* crawl_recipes.py in Resources */ = {isa = PBXBuildFile; fileRef = FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		FC4046312CC10D4E0010DB12 /* app.drawio */ = {isa = PBXFileReference; lastKnownFileType = text; path = app.drawio; sourceTree = "<group>"; };
 		FC4046322CC10D4E0010DB12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC4046352CC10DD60010DB12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = crawl_recipes.py; sourceTree = "<group>"; };
+		FC63549C2CE3BEF7006BA448 /* recipe_links.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = recipe_links.txt; sourceTree = "<group>"; };
 		FC6E3C242CC102BB0024F7AB /* ios-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E3C3A2CC102BD0024F7AB /* ios-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E3C442CC102BD0024F7AB /* ios-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,9 +87,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC63549D2CE3BEF7006BA448 /* DataCrawler */ = {
+			isa = PBXGroup;
+			children = (
+				FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */,
+				FC63549C2CE3BEF7006BA448 /* recipe_links.txt */,
+			);
+			path = DataCrawler;
+			sourceTree = "<group>";
+		};
 		FC6E3C1B2CC102BB0024F7AB = {
 			isa = PBXGroup;
 			children = (
+				FC63549D2CE3BEF7006BA448 /* DataCrawler */,
 				FC4046352CC10DD60010DB12 /* .gitignore */,
 				FC4046312CC10D4E0010DB12 /* app.drawio */,
 				FC4046322CC10D4E0010DB12 /* README.md */,
@@ -231,6 +245,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4046362CC10DD60010DB12 /* .gitignore in Resources */,
+				FC63549E2CE3BEF7006BA448 /* recipe_links.txt in Resources */,
+				FC63549F2CE3BEF7006BA448 /* crawl_recipes.py in Resources */,
 				FC4046332CC10D4E0010DB12 /* app.drawio in Resources */,
 				FC4046342CC10D4E0010DB12 /* README.md in Resources */,
 			);

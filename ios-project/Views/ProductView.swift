@@ -45,12 +45,11 @@ struct ProductView: View {
                     .padding()
                 
                 Text("Verfügbarkeit:").padding()
-                ForEach(allProducts[44].seasonalData.keys.map { $0 }, id: \.self) { month in
-                    let availability = allProducts[44].seasonalData[month] ?? []
-                    let availabilityText = availability.map { $0.rawValue }.joined(separator: ", ")
-                    if (availabilityText == "regional verfügbar") {
-                        Text("\(month.rawValue): \(availabilityText)")
-                    }
+                ForEach(allProducts[44].seasonalData, id: \.id) { month in
+                    let availability = month.availability.rawValue
+                    let monthName = month.month.rawValue
+                    Text("\(monthName): \(availability)")
+                    
                 }
                 .padding(.horizontal, 16)
                 

@@ -1,4 +1,5 @@
 import Foundation
+import OrderedCollections
 
 struct JsonParser {
     static func parseToProducts(fileName: String) -> [Product] {
@@ -161,7 +162,7 @@ struct JsonParser {
                     }
 
                     // Convert ingredientsByPersons to correct format
-                    var ingredientsByPersons: [Int: [Ingredient]] = [:]
+                    var ingredientsByPersons: OrderedDictionary<Int, [Ingredient]> = [:]
                     for (key, ingredients) in ingredientsByPersonsRaw {
                         if let personCount = Int(key) {
                             var ingredientList: [Ingredient] = []

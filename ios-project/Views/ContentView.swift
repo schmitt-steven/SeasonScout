@@ -11,7 +11,6 @@ import CoreData
 struct ContentView: View {
         
     var body: some View {
-        let allProducts = Product.products
         Text("hi")
     }
 }

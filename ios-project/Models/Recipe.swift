@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import OrderedCollections
 
 struct Ingredient: Identifiable {
     let id = UUID()
@@ -15,6 +16,12 @@ struct RecipeSeasonalMonthData: Identifiable{
     let id = UUID()
     let month: Month
     let availability: String
+}
+
+struct PersonsIngredients: Identifiable {
+    let id = UUID()
+    let personNumber: Int
+    let ingredients: [Ingredient]
 }
 
 struct Recipe {
@@ -37,7 +44,7 @@ struct Recipe {
     let instructions: String
     
     let seasonalData: [RecipeSeasonalMonthData]
-    let ingredientsByPersons: [Int: [Ingredient]]
+    let ingredientsByPersons: [PersonsIngredients]
     
     func toString() -> String {
         return ("""

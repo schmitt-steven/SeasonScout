@@ -11,6 +11,7 @@
 		FC4046342CC10D4E0010DB12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC4046322CC10D4E0010DB12 /* README.md */; };
 		FC4046362CC10DD60010DB12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC4046352CC10DD60010DB12 /* .gitignore */; };
 		FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = FC4854152CE22FD4009A659C /* WrappingHStack */; };
+		FCAAF50B2CE2A8D10070AA36 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = FCAAF50A2CE2A8D10070AA36 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCAAF50B2CE2A8D10070AA36 /* OrderedCollections in Frameworks */,
 				FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +129,7 @@
 			name = "ios-project";
 			packageProductDependencies = (
 				FC4854152CE22FD4009A659C /* WrappingHStack */,
+				FCAAF50A2CE2A8D10070AA36 /* OrderedCollections */,
 			);
 			productName = "ios-project";
 			productReference = FC6E3C242CC102BB0024F7AB /* ios-project.app */;
@@ -212,6 +215,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				FCAAF5092CE2A8D10070AA36 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC6E3C252CC102BB0024F7AB /* Products */;
@@ -620,6 +624,14 @@
 				minimumVersion = 2.2.11;
 			};
 		};
+		FCAAF5092CE2A8D10070AA36 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -627,6 +639,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
+		};
+		FCAAF50A2CE2A8D10070AA36 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCAAF5092CE2A8D10070AA36 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

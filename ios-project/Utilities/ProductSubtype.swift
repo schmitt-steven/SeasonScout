@@ -4,7 +4,7 @@
 //
 
 
-enum ProductSubtype: String, Codable {
+enum ProductSubtype: String {
     // Vegetable and salad cases
     case fruiting = "Fruchtgemüse"
     case flowering = "Blütengemüse"

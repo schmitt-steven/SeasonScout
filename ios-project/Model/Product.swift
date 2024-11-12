@@ -3,7 +3,16 @@
 //  ios-project
 //
 
-struct Product: Codable {
+import Foundation
+
+
+struct SeasonalData: Identifiable {
+    let id = UUID()
+    let month: Month
+    let availability: Availability
+}
+
+struct Product {
     
     static var products: [Product] = []
     
@@ -16,7 +25,6 @@ struct Product: Codable {
     let isImportedOnly: Bool
     let type: ProductType
     let subtype: ProductSubtype
-    let seasonalData: [Month: [AvailabilityType]]
-    
+    let seasonalData: [SeasonalData]
     var isFavorite: Bool
-    }
+}

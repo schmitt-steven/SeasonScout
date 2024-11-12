@@ -3,7 +3,7 @@
 //  ios-project
 //
 
-enum Month: String, Codable {
+enum Month: String {
     case jan = "Januar"
     case feb = "Februar"
     case mar = "März"

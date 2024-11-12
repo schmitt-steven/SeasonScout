@@ -10,6 +10,7 @@
 		FC4046332CC10D4E0010DB12 /* app.drawio in Resources */ = {isa = PBXBuildFile; fileRef = FC4046312CC10D4E0010DB12 /* app.drawio */; };
 		FC4046342CC10D4E0010DB12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC4046322CC10D4E0010DB12 /* README.md */; };
 		FC4046362CC10DD60010DB12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC4046352CC10DD60010DB12 /* .gitignore */; };
+		FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = FC4854152CE22FD4009A659C /* WrappingHStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +126,7 @@
 			);
 			name = "ios-project";
 			packageProductDependencies = (
+				FC4854152CE22FD4009A659C /* WrappingHStack */,
 			);
 			productName = "ios-project";
 			productReference = FC6E3C242CC102BB0024F7AB /* ios-project.app */;
@@ -207,6 +210,9 @@
 			);
 			mainGroup = FC6E3C1B2CC102BB0024F7AB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC6E3C252CC102BB0024F7AB /* Products */;
 			projectDirPath = "";
@@ -604,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC4854152CE22FD4009A659C /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC6E3C1C2CC102BB0024F7AB /* Project object */;
 }

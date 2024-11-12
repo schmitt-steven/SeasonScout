@@ -40,7 +40,7 @@ struct ExpandableTextContainer: View {
                 Text(content).padding([.bottom, .horizontal], 20)
             }
         }
-        .background(.lighterGray)
+        .background(.gray)
         .clipShape(.rect(cornerRadius: 15))
         .padding([.leading, .trailing], 20)
         .shadow(color: .gray, radius: 2)

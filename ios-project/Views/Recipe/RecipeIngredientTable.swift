@@ -12,21 +12,24 @@ struct RecipeIngredientTable: View {
     let ingredientList: [PersonsIngredients]
     let isRecipeForGroups: Bool = false
     
-    @State var personCounter = 2
+    @State var personCounter = 3
+    var personIndex: Int {
+        personCounter - 1
+    }
         
     var body: some View {
         
         HStack {
             Text("Personen: \(personCounter)")
-            Button("Decrease") {
+            Button("- 1") {
                 personCounter -= personCounter - 1 > 0 ? 1 : 0
             }
-            Button("Increase") {
+            Button("+ 1") {
                 personCounter += personCounter + 1 < 11 ? 1 : 0
             }
         }
         VStack {
-            ForEach( ingredientList[personCounter].ingredients, id: \.id) { ingredient in
+            ForEach(ingredientList[personIndex].ingredients, id: \.id) { ingredient in
                 HStack {
                     Text(ingredient.amount)
                     Text(ingredient.name)
@@ -38,6 +41,6 @@ struct RecipeIngredientTable: View {
 }
 
 #Preview {
-    let rec = Recipe.recipes[199]
+    let rec = Recipe.recipes[1]
     RecipeIngredientTable(ingredientList: rec.ingredientsByPersons)
 }

@@ -69,5 +69,5 @@ struct RecipeInfoView: View {
 
 #Preview {
     let recipe = Recipe.recipes[5]
-    RecipeInfoView(recipe: recipe)
+    RecipeInfoView(recipe: recipe, selectedMonth: .nov)
 }

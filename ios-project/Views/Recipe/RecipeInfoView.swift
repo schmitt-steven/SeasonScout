@@ -8,6 +8,7 @@ import SwiftUI
 struct RecipeInfoView: View {
     
     let recipe: Recipe
+    let selectedMonth: Month
     var tagData: [InfoTag] {
         [
             InfoTag(type: .recipeCategory, value: recipe.category.rawValue),
@@ -48,9 +49,4 @@ struct RecipeInfoView: View {
             }
         }
     }
-}
-
-#Preview {
-    let recipe = Recipe.recipes[23]
-    RecipeInfoView(recipe: recipe)
 }

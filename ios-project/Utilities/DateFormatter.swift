@@ -12,3 +12,11 @@ extension DateFormatter {
         return formatter
     }()
 }
+
+extension Date {
+    var currentMonth: Month? {
+        let monthString = DateFormatter.monthFormatter.string(from: self)
+        return Month.allCases.first { $0.rawValue == monthString }
+    }
+}
+

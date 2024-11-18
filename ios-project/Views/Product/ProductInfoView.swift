@@ -80,6 +80,7 @@ struct ProductInfoView: View {
                         .padding()
 
                     SimilarProductView(shownProduct: product)
+                        .padding(.horizontal)
                                         
                     .frame(maxWidth: .infinity)
                 }

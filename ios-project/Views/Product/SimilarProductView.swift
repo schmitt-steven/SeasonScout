@@ -41,7 +41,7 @@ struct SimilarProductView: View {
                     }
                 }
             }
-            .padding([.horizontal, .bottom], 20)
+            .padding(.bottom, 20)
         }
     }
 }

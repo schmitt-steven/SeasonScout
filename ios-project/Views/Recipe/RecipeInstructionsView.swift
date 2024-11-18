@@ -17,7 +17,7 @@ struct RecipeInstructionsView: View {
         VStack(alignment: .leading) {
             
             Button(action: {
-                withAnimation(.linear(duration: 0.5)) {
+                withAnimation(.easeInOut(duration: 0.5)) {
                     
                     isInStepsMode.toggle()
                     if checkedSteps.isEmpty {
@@ -27,11 +27,14 @@ struct RecipeInstructionsView: View {
             }){
                 Text(isInStepsMode ? "Als Fließtext anzeigen" : "Als Schrittfolge anzeigen")
                     .font(.headline).padding(.bottom, 1)
+                    .foregroundStyle(.green)
             }
+            .padding(.top, 3)
             
             
             if isInStepsMode {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 5) {
+                    Divider()
                     ForEach(instructionsAsSteps.indices, id: \.self) { index in
                         Button(action: {
                             withAnimation(.interpolatingSpring(duration: 0.5)) {
@@ -41,12 +44,15 @@ struct RecipeInstructionsView: View {
                             HStack(alignment: .firstTextBaseline) {
                                 Image(systemName: checkedSteps[index] ? "checkmark.square" : "square")
                                     .transition(.scale)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(checkedSteps[index] ? .green : .black)
                                 
                                 Text(instructionsAsSteps[index])
                                     .multilineTextAlignment(.leading)
+                                    .foregroundStyle(.black)
                             }
-                            .foregroundStyle(checkedSteps[index] ? .green : .black)
                         }
+                        Divider()
                     }
                 }
                 .transition(.blurReplace)

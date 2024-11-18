@@ -3,7 +3,7 @@
 //  ios-project
 //
 
-enum Month: String {
+enum Month: String, CaseIterable {
     case jan = "Januar"
     case feb = "Februar"
     case mar = "März"
@@ -17,5 +17,4 @@ enum Month: String {
     case nov = "November"
     case dec = "Dezember"
 }
-
 

@@ -6,16 +6,14 @@ struct RecipeImageCard: View {
     
     var body: some View {
         ZStack(alignment: .center) {
+ 
             ZStack(alignment: .bottom) {
 
                 Image(uiImage: UIImage(named: recipe.imageName)!)
                     .resizable()
                     .scaledToFit()
-                    .opacity(0.95)
-                    .blur(radius: 0.2)
-                    .background(.clear)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-
+                    .saturation(1.3)
+                    .brightness(0.07)
                 VStack {
 
                     HStack {
@@ -23,10 +21,7 @@ struct RecipeImageCard: View {
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .modifier(TextShadowEffect(color: .black.opacity(0.8), radius: 2, x: 1, y: 1))
-                            .modifier(TextShadowEffect(color: .black.opacity(0.6), radius: 4, x: 2, y: 2))
-                            .modifier(TextShadowEffect(color: .black.opacity(0.4), radius: 8, x: 3, y: 3))
-                            .modifier(TextShadowEffect(color: .white.opacity(0.2), radius: 12, x: 4, y: 4))
+                            .modifier(TextShadowEffect())
                             .modifier(GlowEffect())
                             .modifier(InnerShadowEffect())
                         
@@ -39,10 +34,7 @@ struct RecipeImageCard: View {
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .foregroundColor(recipe.isFavorite ? .red : .white)
-                                .modifier(TextShadowEffect(color: .black.opacity(0.8), radius: 2, x: 1, y: 1))
-                                .modifier(TextShadowEffect(color: .black.opacity(0.6), radius: 4, x: 2, y: 2))
-                                .modifier(TextShadowEffect(color: .black.opacity(0.4), radius: 8, x: 3, y: 3))
-                                .modifier(TextShadowEffect(color: .white.opacity(0.2), radius: 12, x: 4, y: 4))
+                                .modifier(TextShadowEffect())
                                 .modifier(GlowEffect())
                                 .modifier(InnerShadowEffect())
                         }
@@ -51,7 +43,6 @@ struct RecipeImageCard: View {
                     .padding(.bottom, 10)
                 }
             }
-            .background(.black)
             .clipShape(RoundedRectangle(cornerRadius: 15))
             .blur(radius: isFlipped ? 2 : 0)
             
@@ -89,9 +80,13 @@ struct RecipeImageCard: View {
             axis: (x: 0, y: 1, z: 0)
         )
         .onTapGesture {
-            withAnimation(.interpolatingSpring(duration: 0.7)) {
+            withAnimation(.interpolatingSpring(duration: 0.5)) {
                 isFlipped.toggle()
             }
         }
     }
+}
+
+#Preview {
+    RecipeImageCard(recipe: Recipe.recipes[0])
 }

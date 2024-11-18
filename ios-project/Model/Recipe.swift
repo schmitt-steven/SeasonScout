@@ -22,7 +22,7 @@ struct PersonsIngredients: Identifiable {
     let ingredients: [Ingredient]
 }
 
-struct Recipe {
+struct Recipe: Identifiable {
     
     static var recipes: [Recipe] = []
     

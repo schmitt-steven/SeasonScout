@@ -26,7 +26,7 @@ struct RecipePieChart: View {
         )
     }
 
-    // Values of each chart section are added up to calculate the selected month
+    // Values of all chart section are added up to calculate the selected month
     func calculateSelectedMonth(chartSectionValue: Double) {
         var cumulativeTotal = 0.0
         
@@ -53,17 +53,16 @@ struct RecipePieChart: View {
             // Show month abbreviation over each chart section
             .annotation(position: .overlay) {
                 Text(chartData.month.rawValue.prefix(3))
-                    .bold()
                     .font(.caption2)
-                    .opacity(0.5)
+                    .bold()
+                    .opacity(monthData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.7)
             }
             .opacity(chartData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.7)
             .foregroundStyle(chartData.color)
             .cornerRadius(3)
         }
         .frame(height: 350)
-        .shadow(radius: 3)
-        .chartAngleSelection(value: $selectedChartSectionValue)  // stores the section value in the variable once the user clicked on any part of the chart
+        .chartAngleSelection(value: $selectedChartSectionValue)  // stores the section value in the variable once the user holds on any part of the chart
         
         // sets default month to IRL month
         .onAppear {
@@ -88,12 +87,14 @@ struct RecipePieChart: View {
                     Text("\(selectedMonth.month.rawValue)")
                         .multilineTextAlignment(.center)
                         .font(.headline)
-                        .fontWeight(.regular).foregroundStyle(.secondary)
-                        .shadow(radius: 5)
+                        .fontWeight(.medium).foregroundStyle(.secondary)
                         .padding(.bottom, 3)
                     Text(selectedMonth.seasonalityStatusText)
                         .multilineTextAlignment(.center)
                         .font(.subheadline)
+                        .foregroundStyle(.black)
+                        .opacity(0.9)
+                        
                 }
             }
         }
@@ -101,5 +102,5 @@ struct RecipePieChart: View {
 }
 
 #Preview {
-    RecipePieChart(seasonalData: Recipe.recipes[1].seasonalData)
+    RecipePieChart(seasonalData: Recipe.recipes[5].seasonalData)
 }

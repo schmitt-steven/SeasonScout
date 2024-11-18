@@ -1,51 +1,104 @@
-//
-//  ProductInfoView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 15.11.24.
-//
-
 import SwiftUI
+import CoreData
 
 struct ProductInfoView: View {
-    let product: Product
-    let selectedMonth: Month
-
-    var body: some View {
-        ZStack {
-            VStack(spacing: 15) {
-                Spacer()
-
-                // Titel (Produktname)
-                Text(product.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-
-                // Verfügbarkeit im selectedMonth anzeigen
-                if let seasonalData = seasonalDataForSelectedMonth() {
-                    AvailabilityView(availability: seasonalData)
-                        .padding(.top, 10)
-                } else {
-                    Text("Nicht verfügbar im \(selectedMonth.rawValue)")
-                        .font(.body)
-                        .foregroundColor(.gray)
-                        .padding(.top, 10)
-                }
-
-                Text("Produktart: \(product.type.rawValue)")
-                    .font(.title2)
-                    .foregroundColor(.gray)
-
-                Spacer()
+    
+    @State private var isNotificationEnabled = false
+    @State private var isFavorite = false
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
+    
+    var availability: String {
+        var availabilityString = ""
+        for month in product.seasonalData {
+            let monthAvailability = month.availability.rawValue
+            let monthName = month.month.rawValue
+            
+            if monthAvailability != "nicht regional verfügbar" {
+                availabilityString.append("\(monthName): \(monthAvailability)\n")
             }
-            .padding()
         }
-        .navigationTitle(product.name)
-        .navigationBarTitleDisplayMode(.inline)
+        return availabilityString
     }
+    
+    let product: Product
 
-    private func seasonalDataForSelectedMonth() -> SeasonalData? {
-        return product.seasonalData.first(where: { $0.month == selectedMonth })
+    let productEmojis = ProductEmojis()
+    
+    var body: some View {
+        
+        
+        ScrollView(.vertical) {
+            VStack(alignment: .leading, spacing: 20) {
+                // Main Product Information Section
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(product.name)
+                                .font(.headline)
+                                .padding(.bottom, 10)
+                            
+                            Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                .foregroundColor(isFavorite ? .red : .blue)
+                                .font(.system(size: 30))
+                                .onTapGesture {
+                                    isFavorite.toggle()
+                                }
+                                .padding(.bottom, 10)
+                        }
+                        Text("lat. \(product.botanicalName)")
+                        Text("Kategorie: " + product.type.rawValue)
+                        Text("Unterkategorie: " + product.subtype.rawValue)
+                    }
+                    .padding()
+                                    
+                    Spacer()
+                    Text(ProductEmojis.productEmojis[product.name] ?? "﹖")
+                        .font(.system(size: 100))
+                        .padding(10)
+                }
+                .background(Color(UIColor.systemGray6))
+                .clipShape(.rect(cornerRadius: 15))
+                .padding([.leading, .trailing], 20)
+                .shadow(color: .gray, radius: 2)
+                
+                ExpandableAvailabilityView(title: "Verfügbarkeit", content: availability)
+                
+                HStack(spacing: 20) {
+                    Button(action: {}) {
+                        Text("Zur Karte")
+                            .frame(width: 200, height: 50)
+                            .cornerRadius(10)
+                    }
+                }
+                
+                //TODO: Rezeptliste (Produkt in der Zutatenliste enthalten)
+                
+                .frame(maxWidth: .infinity)
+                
+                Divider()
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                    Text("Ähnliche Produkte")
+                        .font(.headline)
+                        .padding(.bottom, 10)
+
+                    //TODO: Produktvorschläage mit dem gleichen Subtypen
+                                        
+                    .frame(maxWidth: .infinity)
+                    
+                    Toggle(isOn: $isNotificationEnabled) {
+                        Text("Benachrichtige mich, sobald das Produkt erhältlich ist!")
+                    }
+                }
+                .padding()
+            }
+
+        }
     }
+}
+
+#Preview {
+    let product = Product.products[44]
+    ProductInfoView(product: product)
 }

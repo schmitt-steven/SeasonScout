@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ExpandableAvailabiltyView: View {
+struct ExpandableAvailabilityView: View {
     let title: String
     let content: String
     

@@ -12,7 +12,7 @@ struct ProductRowView: View {
     let selectedMonth: Month
 
     var body: some View {
-        NavigationLink(destination: ProductInfoView(product: product, selectedMonth: selectedMonth)) {
+        NavigationLink(destination: ProductInfoView(product: product)) {
             GroupBox {
                 VStack {
                     HStack {

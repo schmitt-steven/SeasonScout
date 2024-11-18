@@ -12,7 +12,7 @@ struct SeasonalData: Identifiable {
     let availability: Availability
 }
 
-struct Product {
+struct Product: Identifiable {
     
     static var products: [Product] = []
     

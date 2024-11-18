@@ -43,33 +43,9 @@
 		FC6E3C442CC102BD0024F7AB /* ios-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		340481C02CEBA34600F59F03 /* Exceptions for "ios-project" folder in "ios-project" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Views/Product/ProductView.swift,
-			);
-			target = FC6E3C232CC102BB0024F7AB /* ios-project */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		340481C12CEBA34600F59F03 /* Exceptions for "ios-project" folder in "Copy Bundle Resources" phase from "ios-project" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = FC6E3C222CC102BB0024F7AB /* Resources */;
-			membershipExceptions = (
-				Views/Product/ProductView.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FC6E3C262CC102BB0024F7AB /* ios-project */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				340481C02CEBA34600F59F03 /* Exceptions for "ios-project" folder in "ios-project" target */,
-				340481C12CEBA34600F59F03 /* Exceptions for "ios-project" folder in "Copy Bundle Resources" phase from "ios-project" target */,
-			);
 			path = "ios-project";
 			sourceTree = "<group>";
 		};

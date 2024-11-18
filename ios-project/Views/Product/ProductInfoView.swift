@@ -62,38 +62,40 @@ struct ProductInfoView: View {
                 .shadow(color: .gray, radius: 2)
                 
                 ExpandableAvailabilityView(title: "Verfügbarkeit", content: availability)
-                
+                /*
                 HStack(spacing: 20) {
                     Button(action: {}) {
                         Text("Zur Karte")
                             .frame(width: 200, height: 50)
                             .cornerRadius(10)
                     }
-                }
+                }*/
                 
                 //TODO: Rezeptliste (Produkt in der Zutatenliste enthalten)
-                
-                .frame(maxWidth: .infinity)
-                
-                Divider()
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
                     Text("Ähnliche Produkte")
                         .font(.headline)
-                        .padding(.bottom, 10)
+                        .padding()
 
-                    //TODO: Produktvorschläage mit dem gleichen Subtypen
+                    SimilarProductView(shownProduct: product)
                                         
                     .frame(maxWidth: .infinity)
-                    
+                }
+                .background(Color(UIColor.systemGray6))
+                .clipShape(.rect(cornerRadius: 15))
+                .padding([.leading, .trailing], 20)
+                .shadow(color: .gray, radius: 2)
+                
+                VStack() {
                     Toggle(isOn: $isNotificationEnabled) {
                         Text("Benachrichtige mich, sobald das Produkt erhältlich ist!")
                     }
+                    .padding(.horizontal, 20)
                 }
-                .padding()
             }
-
+            .padding(.bottom, 20)
         }
     }
 }

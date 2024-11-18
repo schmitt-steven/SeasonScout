@@ -16,9 +16,9 @@ struct RecipeTag: View {
             .fontWeight(.semibold)
             .foregroundStyle(.white)
             .padding(5)
-            .background(color.opacity(0.6).blur(radius: 2))
+            .background(color.opacity(0.9).blur(radius: 1))
             .clipShape(.rect(cornerRadius: 10))
-            .shadow(color: .gray, radius: 5)
+            .shadow(color: .gray, radius: 3)
     }
 }
 

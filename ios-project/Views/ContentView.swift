@@ -26,7 +26,7 @@ struct ContentView: View {
                     }.tag(2)
                 }
             }
-            .padding()
+            //.padding()
         }
 }
 

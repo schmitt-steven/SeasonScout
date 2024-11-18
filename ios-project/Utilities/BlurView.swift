@@ -1,3 +1,13 @@
+//
+//  BlurView.swift
+//  ios-project
+//
+//  Created by Poimandres on 16.11.24.
+//
+
+import SwiftUI
+
+
 struct BlurView: UIViewRepresentable {
     var style: UIBlurEffect.Style
 

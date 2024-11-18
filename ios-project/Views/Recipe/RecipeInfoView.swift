@@ -5,6 +5,7 @@
 
 import SwiftUI
 
+
 struct RecipeInfoView: View {
     
     let recipe: Recipe
@@ -18,39 +19,54 @@ struct RecipeInfoView: View {
         ] }
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 15) {
-                RecipeImageCard(recipe: recipe)
-                
-                RecipeTagsSection(tagDataList: tagData)
-                
-                RecipeSeasonalityStatus(seasonalData: recipe.seasonalData)
-                
-                ExpandableTextContainer(title: "Kurzbeschreibung", content: recipe.description)
-                
-                ExpandableContainer(title: "Zubereitung"){
-                    RecipeInstructionsView(instructions: recipe.instructions)
+        
+        ZStack {
+            Image(uiImage: UIImage(named: recipe.imageName)!)
+                .resizable()
+                .scaledToFit()
+                .saturation(1.2)
+                .hueRotation(.degrees(10))
+                .brightness(0.1)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            
+            BlurView(style: .systemChromeMaterial)
+                .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 15) {
+                    RecipeImageCard(recipe: recipe)
+                    
+                    RecipeTagsSection(tagDataList: tagData)
+                    
+                    RecipeSeasonalityStatus(seasonalData: recipe.seasonalData)
+                    
+                    ExpandableTextContainer(title: "Kurzbeschreibung", content: recipe.description)
+                    
+                    ExpandableContainer(title: "Zutatenverfügbarkeit", contentPadding: CGFloat(0)) {
+                        RecipePieChart(seasonalData: recipe.seasonalData)
+                            .padding(.bottom, 5)
+                            .padding(.horizontal, 0)
+                    }
+                    
+                    ExpandableContainer(title: "Zutaten") {
+                        RecipeIngredientTable(ingredientList: recipe.ingredientsByPersons)
+                    }
+                    
+                    ExpandableContainer(title: "Zubereitung"){
+                        RecipeInstructionsView(instructions: recipe.instructions)
+                    }
+                    
+                    ExpandableContainer(title: "Ähnliche Gerichte", contentPadding: CGFloat(0)) {
+                        SimilarRecipesView(shownRecipe: recipe)
+                    }
+                    
                 }
-
-                ExpandableTextContainer(title: "Saisonale Daten", content: "Pie Chart!!!!!")
-                
-                ExpandableTextContainer(title: "Zutaten", content: "tabelle")
-                
-                ExpandableTextContainer(title: "Zubereitung", content: recipe.instructions)
-                
-                
-                ExpandableTextContainer(title: "Ähnliche Gerichte", content: "horizontale scroll view")
-                
-                ExpandableContainer(title: "Saisonales", contentPadding: CGFloat(0)) {
-                    RecipePieChart(seasonalData: recipe.seasonalData)
-                }
-                                
             }
         }
     }
 }
 
 #Preview {
-    let recipe = Recipe.recipes[23]
+    let recipe = Recipe.recipes[5]
     RecipeInfoView(recipe: recipe)
 }

@@ -33,13 +33,12 @@ struct InnerShadowEffect: ViewModifier {
 }
 
 struct TextShadowEffect: ViewModifier {
-    var color: Color
-    var radius: CGFloat
-    var x: CGFloat
-    var y: CGFloat
     
     func body(content: Content) -> some View {
         content
-            .shadow(color: color, radius: radius, x: x, y: y)
+            .shadow(color: .black.opacity(0.8), radius: 2, x: 1, y: 1)
+            .shadow(color: .black.opacity(0.6), radius: 4, x: 2, y: 2)
+            .shadow(color: .black.opacity(0.4), radius: 8, x: 3, y: 3)
+            .shadow(color: .white.opacity(0.2), radius: 12, x: 4, y: 4)
     }
 }

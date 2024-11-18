@@ -16,15 +16,15 @@ struct MonthChartData {
     var color: Color {
         switch seasonality {
         case "ja": Color.green
-        case "(ja)": Color.orange
+        case "(ja)": .lightGreen
         default: Color.gray
         }
     }
     var seasonalityStatusText: String {
         switch seasonality {
-        case "ja": "Die Zutaten sind zum\nGroßteil regional erhältlich!"
+        case "ja": "Die meisten Zutaten\nsind regional erhältlich!"
         case "(ja)": "Die Zutaten sind teilweise\nregional erhältlich."
-        default: "Die Zutaten sind nicht\nregional erhältlich."
+        default: "Die Zutaten sind nur\nimportiert erhältlich."
         }
     }
 }

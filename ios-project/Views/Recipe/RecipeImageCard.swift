@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct RecipeImageCard: View {
-    let recipe: Recipe
+    @ObservedObject var recipe: Recipe
     @State private var isFlipped = false
+    
+    internal init(recipe: Recipe) {
+        self.recipe = recipe
+    }
     
     var body: some View {
         ZStack(alignment: .center) {
@@ -28,12 +32,13 @@ struct RecipeImageCard: View {
                         Spacer()
                         
                         Button(action: {
-                            // TODO: Persistent Favorization
+                            recipe.isFavorite.toggle()
+                            recipe.saveFavoriteState(for: recipe.id, isFavorite: recipe.isFavorite)
                         }) {
                             Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundColor(recipe.isFavorite ? .red : .white)
+                                .foregroundColor(recipe.isFavorite ? .green.opacity(0.7) : .white)
                                 .modifier(TextShadowEffect())
                                 .modifier(GlowEffect())
                                 .modifier(InnerShadowEffect())

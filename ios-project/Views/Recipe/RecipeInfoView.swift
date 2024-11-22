@@ -19,8 +19,13 @@ struct RecipeInfoView: View {
             InfoTag(type: .forGroups, value: recipe.isForGroups)
         ] }
     
-    var body: some View {
-        
+        var recipesOfSameCategory: [Recipe] {
+            Recipe.recipes.compactMap { otherRecipe in
+                return recipe.category.rawValue == otherRecipe.category.rawValue && recipe.id != otherRecipe.id ? otherRecipe : nil
+            }
+        }
+    
+    var body: some View {        
         ZStack {
             Image(uiImage: UIImage(named: recipe.imageName)!)
                 .resizable()
@@ -41,29 +46,31 @@ struct RecipeInfoView: View {
                     
                     RecipeSeasonalityStatus(seasonalData: recipe.seasonalData)
                     
-                    ExpandableTextContainer(title: "Kurzbeschreibung", content: recipe.description)
+                    ContainerView(title: "Kurzbeschreibung"){ Text(recipe.description)
+                    }
                     
-                    ExpandableContainer(title: "Zutatenverfügbarkeit", contentPadding: CGFloat(0)) {
+                    ExpandableContainerView(title: "Zutatenverfügbarkeit", contentPadding: CGFloat(0)) {
                         RecipePieChart(seasonalData: recipe.seasonalData)
                             .padding(.bottom, 5)
                             .padding(.horizontal, 0)
                     }
                     
-                    ExpandableContainer(title: "Zutaten") {
+                    ExpandableContainerView(title: "Zutaten") {
                         RecipeIngredientTable(ingredientList: recipe.ingredientsByPersons)
                     }
                     
-                    ExpandableContainer(title: "Zubereitung"){
+                    ExpandableContainerView(title: "Zubereitung"){
                         RecipeInstructionsView(instructions: recipe.instructions)
                     }
                     
-                    ExpandableContainer(title: "Ähnliche Gerichte", contentPadding: CGFloat(0)) {
-                        SimilarRecipesView(shownRecipe: recipe)
+                    ContainerView(title: "Ähnliche Gerichte", contentPadding: CGFloat(0)) {
+                        RecipeImageScrollView(recipes: recipesOfSameCategory)
                     }
                     
                 }
             }
         }
+        
     }
 }
 

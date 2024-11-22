@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExpandableContainer<Content: View>: View {
+struct ExpandableContainerView<Content: View>: View {
     
     let title: String
     let content: Content
@@ -57,7 +57,7 @@ struct ExpandableContainer<Content: View>: View {
 }
 
 #Preview {
-    ExpandableContainer(title: "Title") {
+    ExpandableContainerView(title: "Title") {
         RecipeInstructionsView(instructions: "sdf. sdlfkjdfklgjhksdfkjlg. fgkjdhfg. sgdfg.")
     }
 }

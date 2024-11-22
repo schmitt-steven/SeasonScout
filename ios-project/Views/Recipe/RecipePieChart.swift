@@ -94,7 +94,6 @@ struct RecipePieChart: View {
                         .font(.subheadline)
                         .foregroundStyle(.black)
                         .opacity(0.9)
-                        
                 }
             }
         }

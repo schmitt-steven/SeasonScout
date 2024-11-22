@@ -2,28 +2,44 @@
 //  Recipe.swift
 //  ios-project
 //
-import Foundation
+import SwiftUI
 
-struct Ingredient: Identifiable {
+class Ingredient: Identifiable {
     let id = UUID()
     let name: String
     let amount: String
+    
+    internal init(name: String, amount: String) {
+        self.name = name
+        self.amount = amount
+    }
 }
 
-struct RecipeSeasonalMonthData: Identifiable{
+class RecipeSeasonalMonthData: Identifiable{
     let id = UUID()
     let month: Month
     let availability: String
+    
+    internal init(month: Month, availability: String) {
+        self.month = month
+        self.availability = availability
+    }
+  
 }
 
-struct PersonsIngredients: Identifiable {
+class PersonsIngredients: Identifiable {
     let id = UUID()
     let personNumber: Int
     let ingredients: [Ingredient]
+    
+    internal init(personNumber: Int, ingredients: [Ingredient]) {
+        self.personNumber = personNumber
+        self.ingredients = ingredients
+    }
 }
 
-struct Recipe: Identifiable {
-    
+class Recipe: Identifiable, ObservableObject {
+
     static var recipes: [Recipe] = []
     
     let id: Int
@@ -32,7 +48,7 @@ struct Recipe: Identifiable {
     let effort: Level
     let price: Level
     
-    let isFavorite: Bool
+    @Published var isFavorite: Bool
     let isForGroups: Bool
     let isVegetarian: Bool
     
@@ -43,6 +59,31 @@ struct Recipe: Identifiable {
     
     let seasonalData: [RecipeSeasonalMonthData]
     let ingredientsByPersons: [PersonsIngredients]
+    
+    internal init(id: Int, title: String, category: RecipeCategory, effort: Level, price: Level, isFavorite: Bool, isForGroups: Bool, isVegetarian: Bool, source: String, imageName: String, description: String, instructions: String, seasonalData: [RecipeSeasonalMonthData], ingredientsByPersons: [PersonsIngredients]){
+        self.id = id
+        self.title = title
+        self.category = category
+        self.effort = effort
+        self.price = price
+        self.isFavorite = isFavorite
+        self.isForGroups = isForGroups
+        self.isVegetarian = isVegetarian
+        self.source = source
+        self.imageName = imageName
+        self.description = description
+        self.instructions = instructions
+        self.seasonalData = seasonalData
+        self.ingredientsByPersons = ingredientsByPersons
+    }
+    
+    func saveFavoriteState(for recipeID: Int, isFavorite: Bool) {
+        UserDefaults.standard.set(isFavorite, forKey: "recipe_\(recipeID)_isFavorite")
+    }
+
+    func loadFavoriteState(for recipeID: Int) -> Bool {
+        return UserDefaults.standard.bool(forKey: "recipe_\(recipeID)_isFavorite")
+    }
     
     func toString() -> String {
         return ("""

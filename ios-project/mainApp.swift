@@ -14,6 +14,10 @@ struct ios_projectApp: App {
         // Load all products and recipes
         Product.products = JsonParser.parseToProducts(fileName: "products")
         Recipe.recipes = JsonParser.parseToRecipes(fileName: "recipes")
+        // Load favorite states for all recipes, default is false
+        Recipe.recipes.forEach { recipe in
+            recipe.isFavorite = recipe.loadFavoriteState(for: recipe.id)
+        }
     }
     
     var body: some Scene {

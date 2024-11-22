@@ -62,16 +62,8 @@ struct ProductInfoView: View {
                 .shadow(color: .gray, radius: 2)
                 
                 ExpandableAvailabilityView(title: "Verfügbarkeit", content: availability)
-                /*
-                HStack(spacing: 20) {
-                    Button(action: {}) {
-                        Text("Zur Karte")
-                            .frame(width: 200, height: 50)
-                            .cornerRadius(10)
-                    }
-                }*/
                 
-                //TODO: Rezeptliste (Produkt in der Zutatenliste enthalten)
+                ExpandableRecipeList(title: "Rezepte", product: product)
                 
                 VStack(alignment: .leading, spacing: 10) {
                     

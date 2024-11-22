@@ -26,8 +26,9 @@ struct RecipeInstructionsView: View {
                 }
             }){
                 Text(isInStepsMode ? "Als Fließtext anzeigen" : "Als Schrittfolge anzeigen")
-                    .font(.headline).padding(.bottom, 1)
-                    .foregroundStyle(.green)
+                    .font(.headline)
+                    .padding(.bottom, 1)
+                    .foregroundStyle(.orange)
             }
             .padding(.top, 3)
             
@@ -40,16 +41,16 @@ struct RecipeInstructionsView: View {
                             withAnimation(.interpolatingSpring(duration: 0.5)) {
                                 checkedSteps[index].toggle()
                             }
-                        }) {
+                        }){
                             HStack(alignment: .firstTextBaseline) {
                                 Image(systemName: checkedSteps[index] ? "checkmark.square" : "square")
                                     .transition(.scale)
                                     .fontWeight(.semibold)
-                                    .foregroundStyle(checkedSteps[index] ? .green : .black)
+                                    .foregroundStyle(checkedSteps[index] ? .orange : .primary)
                                 
                                 Text(instructionsAsSteps[index])
                                     .multilineTextAlignment(.leading)
-                                    .foregroundStyle(.black)
+                                    .foregroundStyle(.foreground)
                             }
                         }
                         Divider()

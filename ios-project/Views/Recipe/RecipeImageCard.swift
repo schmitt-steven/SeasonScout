@@ -38,7 +38,7 @@ struct RecipeImageCard: View {
                             Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundColor(recipe.isFavorite ? .green.opacity(0.7) : .white)
+                                .foregroundColor(recipe.isFavorite ? .accentColor.opacity(1) : .white)
                                 .modifier(TextShadowEffect())
                                 .modifier(GlowEffect())
                                 .modifier(InnerShadowEffect())

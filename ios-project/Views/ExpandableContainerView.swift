@@ -32,7 +32,7 @@ struct ExpandableContainerView<Content: View>: View {
                 HStack {
                     Text(title)
                         .font(.headline)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                     Spacer()
                     Image(systemName: "chevron.down")
                         .imageScale(.medium)

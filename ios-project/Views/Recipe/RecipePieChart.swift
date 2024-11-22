@@ -55,7 +55,7 @@ struct RecipePieChart: View {
                 Text(chartData.month.rawValue.prefix(3))
                     .font(.caption2)
                     .bold()
-                    .opacity(monthData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.7)
+                    .opacity(monthData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.9)
             }
             .opacity(chartData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.7)
             .foregroundStyle(chartData.color)
@@ -92,7 +92,7 @@ struct RecipePieChart: View {
                     Text(selectedMonth.seasonalityStatusText)
                         .multilineTextAlignment(.center)
                         .font(.subheadline)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.primary)
                         .opacity(0.9)
                 }
             }

@@ -19,7 +19,9 @@ struct RecipeImageScrollView: View {
                             .toolbar {
                                 ToolbarItem(placement: .principal) {
                                     HStack {
-                                        Text(recipe.title).font(.headline)
+                                        Text(recipe.title)
+                                            .font(.title3)
+                                            .foregroundStyle(.secondary)
                                     }
                                 }
                             }

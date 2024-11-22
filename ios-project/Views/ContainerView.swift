@@ -25,14 +25,16 @@ struct ContainerView<Content: View>: View {
                 HStack {
                     Text(title)
                         .font(.headline)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                     Spacer()
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 15)
                 .padding(.bottom, CGFloat(2))
             
-                content.padding([.bottom, .horizontal], contentPaddingValue)
+                content
+                .padding(.horizontal, contentPaddingValue)
+                .padding(.bottom, max(0, contentPaddingValue - 5))
         }
         .background(Color(.lightestGray))
         .clipShape(.rect(cornerRadius: 15))

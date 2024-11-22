@@ -35,7 +35,7 @@ struct RecipeInfoView: View {
                 .brightness(0.1)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             
-            BlurView(style: .systemChromeMaterial)
+            BlurBackgroundView(style: .systemChromeMaterial)
                 .ignoresSafeArea()
             
             ScrollView {

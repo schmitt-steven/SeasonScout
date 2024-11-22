@@ -4,11 +4,17 @@ struct RecipeIngredientTable: View {
     
     let ingredientList: [PersonsIngredients]
     let minAmountColumnWidth = CGFloat(60)
-    @State private var personCounter = 3
+    @State private var personCounter: Int
     
     private var personIndex: Int {
         personCounter - 1
     }
+    
+    internal init(ingredientList: [PersonsIngredients]) {
+        self.ingredientList = ingredientList
+        self.personCounter = 4
+    }
+    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +23,8 @@ struct RecipeIngredientTable: View {
             VStack(alignment: .leading, spacing: 5) {
                 Divider()
                 ForEach(displayIngredientsWithAmount(), id: \.offset) { index, name in
-                    IngredientRow(name: name, amount: ingredientList[personIndex].ingredients[index].amount)
+                    let matchingIngredientsForCounter = ingredientList.first(where: { $0.personNumber == personCounter })
+                    IngredientRow(name: name, amount: matchingIngredientsForCounter!.ingredients[index].amount)
                    
                 }
                 
@@ -60,26 +67,30 @@ struct PersonCounterSwitcher: View {
                         .bold()
                         .foregroundStyle(personCounter == minPerson ? .gray : .red)
                 }
-                
+                .padding(.vertical, 6)
+                .padding(.horizontal, 8)
+
                 Text("\(personCounter)")
                     .fontWeight(.medium)
-                
+                    .fixedSize(horizontal: true, vertical: false)
+
                 Button(action: incrementPerson) {
                     Image(systemName: "plus")
                         .bold()
                         .foregroundStyle(personCounter == maxPerson ? .gray : .green)
                 }
+                .padding(.vertical, 6)
+                .padding(.horizontal, 8)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 2)
             .background(Color(.systemGray6))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .shadow(radius: 1)
             
-            Text("Personen")
+            Text(personCounter == 1 ? "Person" : "Personen")
         }
         .padding(.vertical, 5)
     }
+
     
     private func incrementPerson() {
         personCounter = min(personCounter + 1, maxPerson)

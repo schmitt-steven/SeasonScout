@@ -12,11 +12,23 @@ struct RecipeCalendarView: View {
     @State private var selectedMonth = Month.allCases[Calendar.current.component(.month, from: Date()) - 1]
     @State private var excludeNotRegionallyRecipes = true
     @State private var showFilters = false
+    @State private var selectedRecipeCategory: RecipeCategory? = nil
+    @State private var selectedRecipeEffort: Level? = nil
+    @State private var selectedRecipePrice: Level? = nil
+    @State private var selectedRecipeIsFavorite = false
+    @State private var selectedRecipeIsForGroups = false
+    @State private var selectedRecipeIsVegetarian = false
 
     var filteredRecipes: [Recipe] {
         RecipeFilter.filter(
             items: Recipe.recipes,
             searchText: searchText,
+            selectedRecipeCategory: selectedRecipeCategory,
+            selectedRecipeEffort: selectedRecipeEffort,
+            selectedRecipePrice: selectedRecipePrice,
+            selectedRecipeIsFavorite: selectedRecipeIsFavorite,
+            selectedRecipeIsForGroups: selectedRecipeIsForGroups,
+            selectedRecipeIsVegetarian: selectedRecipeIsVegetarian,
             excludeNotRegionallyRecipes: excludeNotRegionallyRecipes,
             selectedMonth: selectedMonth
         )
@@ -25,50 +37,34 @@ struct RecipeCalendarView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Button(action: {
-                    withAnimation {
-                        showFilters.toggle()
-                    }
-                }) {
-                    HStack {
-                        Text(showFilters ? "Filter ausblenden" : "Filter anzeigen")
-                            .font(.headline)
-                        Image(systemName: showFilters ? "chevron.up" : "chevron.down")
-                            .font(.headline)
-                    }
-                    .foregroundColor(.orange)
-                }
-                .padding()
+                MonthSelectionView(selectedMonth: $selectedMonth)
                 
-                if showFilters {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 15) {
-                            ForEach(Month.allCases, id: \.self) { month in
-                                Text(String(month.rawValue.prefix(1)))
-                                    .font(.headline)
-                                    .frame(width: 30, height: 30)
-                                    .background(
-                                        Circle()
-                                            .fill(month == selectedMonth ? .orange : .gray.opacity(0.1))
-                                    )
-                                    .foregroundColor(.black)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            selectedMonth = month
-                                        }
-                                    }
-                            }
-                        }
-                        .padding(.horizontal)
+                NavigationLink(destination: RecipeFilterView(
+                    selectedRecipeCategory: $selectedRecipeCategory,
+                    selectedRecipeEffort: $selectedRecipeEffort,
+                    selectedRecipePrice: $selectedRecipePrice,
+                    selectedRecipeIsFavorite: $selectedRecipeIsFavorite,
+                    selectedRecipeIsForGroups: $selectedRecipeIsForGroups,
+                    selectedRecipeIsVegetarian: $selectedRecipeIsVegetarian
+                )) {
+                    HStack {
+                        Text("Filter anzeigen")
+                            .font(.headline)
+                            .foregroundStyle(Color.black) // Text in Schwarz
+
+                        Image(systemName: "chevron.right")
+                            .font(.headline)
+                            .foregroundStyle(Color.orange) // Nur das Image in Orange
                     }
-                    .frame(maxWidth: .infinity)
+
                 }
+                .padding(.top)
                 
                 Spacer()
                 RecipeListView(recipes: filteredRecipes, selectedMonth: selectedMonth)
                 Spacer()
             }
-            .searchable(text: $searchText, prompt: "Suche nach Rezepten")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suche nach Rezepten")
             .navigationTitle("")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -78,21 +74,17 @@ struct RecipeCalendarView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundColor(.orange)
-                    }
-                    .contextMenu {
+                    Menu {
                         Button {
                             excludeNotRegionallyRecipes.toggle()
                         } label: {
                             Label(
-                                excludeNotRegionallyRecipes ? "Überregionale Rezepte anzeigen" : "Regionale Rezepte anzeigen",
+                                excludeNotRegionallyRecipes ? "Alle Rezepte anzeigen" : "Regionale Rezepte anzeigen",
                                 systemImage: excludeNotRegionallyRecipes ? "globe" : "map"
                             )
                         }
+                    } label: {
+                        Label("", systemImage: "ellipsis.circle")
                     }
                 }
             }

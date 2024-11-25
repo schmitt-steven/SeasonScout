@@ -10,32 +10,6 @@ import SwiftUI
 struct AvailabilityView: View {
     let availability: SeasonalData
     
-    func textColorForAvailabilityType(_ type: Availability) -> Color {
-        switch type {
-        case .regionally:
-            return .green
-        case .inStock:
-            return .yellow
-        case .notRegionally:
-            return .red
-        }
-    }
-    
-    func backgroundColorForAvailabilityType(_ type: Availability) -> Color {
-        textColorForAvailabilityType(type).opacity(0.2)
-    }
-    
-    func symbolForAvailabilityType(_ type: Availability) -> String {
-        switch type {
-        case .regionally:
-            return "leaf.fill"
-        case .inStock:
-            return "shippingbox.fill"
-        case .notRegionally:
-            return "ferry.fill"
-        }
-    }
-    
     var body: some View {
         HStack {
             HStack {
@@ -46,7 +20,10 @@ struct AvailabilityView: View {
                     .font(.subheadline)
                     .foregroundColor(textColorForAvailabilityType(availability.availability))
             }
-            .padding(6)
+            .padding(.top, 6)
+            .padding(.bottom, 6)
+            .padding(.leading, 18)
+            .padding(.trailing, 18)
             .background(
             RoundedRectangle(cornerRadius: 8)
                 .fill(backgroundColorForAvailabilityType(availability.availability))

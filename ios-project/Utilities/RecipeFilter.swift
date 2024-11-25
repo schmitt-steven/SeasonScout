@@ -11,6 +11,12 @@ class RecipeFilter {
     static func filter(
         items: [Recipe],
         searchText: String,
+        selectedRecipeCategory: RecipeCategory?,
+        selectedRecipeEffort: Level?,
+        selectedRecipePrice: Level?,
+        selectedRecipeIsFavorite: Bool,
+        selectedRecipeIsForGroups: Bool,
+        selectedRecipeIsVegetarian: Bool,
         excludeNotRegionallyRecipes: Bool,
         selectedMonth: Month
     ) -> [Recipe] {
@@ -21,6 +27,48 @@ class RecipeFilter {
         if !searchText.isEmpty {
             filteredItems = filteredItems.filter { recipe in
                 recipe.title.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+        
+        // Filter nach Kategorie
+        if let selectedCategory = selectedRecipeCategory {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.category == selectedCategory
+            }
+        }
+                
+        // Filter nach Aufwand
+        if let selectedEffort = selectedRecipeEffort {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.effort == selectedEffort
+            }
+        }
+        
+        // Filter nach Kosten
+        if let selectedPrice = selectedRecipePrice {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.price == selectedPrice
+            }
+        }
+        
+        // Filter nach Favoriten
+        if selectedRecipeIsFavorite {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.isFavorite == selectedRecipeIsFavorite
+            }
+        }
+        
+        // Filter nach Für Gruppen
+        if selectedRecipeIsForGroups {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.isForGroups == selectedRecipeIsForGroups
+            }
+        }
+        
+        // Filter nach Vegetarisch
+        if selectedRecipeIsVegetarian {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.isVegetarian == selectedRecipeIsVegetarian
             }
         }
         

@@ -12,6 +12,7 @@ class ProductFilter {
         items: [Product],
         searchText: String,
         selectedProductType: SelectedProductType,
+        selectedProductIsFavorite: Bool,
         excludeNotRegionally: Bool,
         selectedMonth: Month
     ) -> [Product] {
@@ -50,6 +51,13 @@ class ProductFilter {
         else if selectedProductType == .herb {
             filteredItems = filteredItems.filter { product in
                 product.type == .herb
+            }
+        }
+        
+        // Filter nach Favoriten
+        if selectedProductIsFavorite {
+            filteredItems = filteredItems.filter { product in
+                product.isFavorite == selectedProductIsFavorite
             }
         }
         

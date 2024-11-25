@@ -27,7 +27,7 @@ struct RecipeRowView: View {
                             } else {
                                 Text("Nicht verfügbar im \(selectedMonth.rawValue)")
                                     .font(.subheadline)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color(UIColor.systemGroupedBackground))
                             }
                         }
                         Spacer()

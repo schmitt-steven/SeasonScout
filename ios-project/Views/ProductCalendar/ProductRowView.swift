@@ -12,7 +12,7 @@ struct ProductRowView: View {
     let selectedMonth: Month
 
     var body: some View {
-        NavigationLink(destination: ProductInfoView(product: product)) {
+        NavigationLink(destination: ProductInfoView2(product: product, selectedMonth: selectedMonth)) {
             GroupBox {
                 VStack {
                     HStack {
@@ -34,7 +34,7 @@ struct ProductRowView: View {
                             } else {
                                 Text("Nicht verfügbar im \(selectedMonth.rawValue)")
                                     .font(.subheadline)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color(UIColor.systemGroupedBackground))
                             }
                         }
                         Spacer()

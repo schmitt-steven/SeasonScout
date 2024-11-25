@@ -4,7 +4,7 @@
 //
 
 
-enum RecipeCategory: String {
+enum RecipeCategory: String, CaseIterable {
     case appetizers = "Vorspeisen"
     case salads = "Salate"
     case soupsAndStews = "Suppen und Eintöpfe"

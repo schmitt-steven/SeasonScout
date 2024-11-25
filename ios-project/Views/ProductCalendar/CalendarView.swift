@@ -17,6 +17,7 @@ struct CalendarView: View {
     @State private var searchText = ""
     @State private var selectedMonth = Month.allCases[Calendar.current.component(.month, from: Date()) - 1]
     @State private var selectedProductType: SelectedProductType = .all
+    @State private var selectedProductIsFavorite = false
     @State private var excludeNotRegionally = true
     @State private var showFilters = false
 
@@ -25,6 +26,7 @@ struct CalendarView: View {
             items: Product.products,
             searchText: searchText,
             selectedProductType: selectedProductType,
+            selectedProductIsFavorite : selectedProductIsFavorite,
             excludeNotRegionally: excludeNotRegionally,
             selectedMonth: selectedMonth
         )
@@ -33,6 +35,8 @@ struct CalendarView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                MonthSelectionView(selectedMonth: $selectedMonth)
+                
                 Button(action: {
                     withAnimation {
                         showFilters.toggle()
@@ -41,36 +45,15 @@ struct CalendarView: View {
                     HStack {
                         Text(showFilters ? "Filter ausblenden" : "Filter anzeigen")
                             .font(.headline)
+                            .foregroundStyle(Color.black)
                         Image(systemName: showFilters ? "chevron.up" : "chevron.down")
                             .font(.headline)
+                            .foregroundStyle(Color.orange)
                     }
-                    .foregroundColor(.orange)
                 }
-                .padding()
+                .padding(.top)
                 
                 if showFilters {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 15) {
-                            ForEach(Month.allCases, id: \.self) { month in
-                                Text(String(month.rawValue.prefix(1)))
-                                    .font(.headline)
-                                    .frame(width: 30, height: 30)
-                                    .background(
-                                        Circle()
-                                            .fill(month == selectedMonth ? .orange : .gray.opacity(0.1))
-                                    )
-                                    .foregroundColor(.black)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            selectedMonth = month
-                                        }
-                                    }
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                    .frame(maxWidth: .infinity)
-                    
                     Picker("Wähle ein Produkttyp aus", selection: $selectedProductType){
                         ForEach(SelectedProductType.allCases, id: \.self) {
                             Text($0.rawValue)
@@ -84,7 +67,7 @@ struct CalendarView: View {
                 ProductListView(products: filteredProducts, selectedMonth: selectedMonth)
                 Spacer()
             }
-            .searchable(text: $searchText, prompt: "Suche nach Produkten")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suche nach Produkten")
             .navigationTitle("Kalender")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -94,21 +77,25 @@ struct CalendarView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundColor(.orange)
-                    }
-                    .contextMenu {
+                    Menu {
                         Button {
                             excludeNotRegionally.toggle()
                         } label: {
                             Label(
-                                excludeNotRegionally ? "Überregionale Produkte anzeigen" : "Regionale Produkte anzeigen",
-                                systemImage: excludeNotRegionally ? "globe" : "map"
+                                excludeNotRegionally ? "Überregionale Produkte anzeigen" : "Überregionale Produkte ausblenden",
+                                systemImage: excludeNotRegionally ? "ferry" : "leaf"
                             )
                         }
+                        Button {
+                            selectedProductIsFavorite.toggle()
+                        } label: {
+                            Label(
+                                selectedProductIsFavorite ? "Favoriten ausblenden" : "Favoriten anzeigen",
+                                systemImage: selectedProductIsFavorite ? "heart.slash" : "heart"
+                            )
+                        }
+                    } label: {
+                        Label("", systemImage: "ellipsis.circle")
                     }
                 }
             }

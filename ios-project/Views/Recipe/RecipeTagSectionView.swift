@@ -60,6 +60,5 @@ struct RecipeTagsSection: View {
             }
         }
         .padding(.leading, 20)
-        .padding(.trailing, 0)
     }
 }

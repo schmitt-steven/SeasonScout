@@ -17,26 +17,36 @@ struct RecipeIngredientTable: View {
     
     
     var body: some View {
+        let withAmount = ingredientsWithAmount()
+        let withoutAmount = ingredientsWithoutAmount()
+        
         VStack(alignment: .leading) {
             PersonCounterSwitcher(personCounter: $personCounter)
             
-            VStack(alignment: .leading, spacing: 5) {
-                Divider()
-                ForEach(displayIngredientsWithAmount(), id: \.offset) { index, name in
+            VStack(alignment: .leading, spacing: 7) {
+                ForEach(withAmount, id: \.offset) { index, name in
                     let matchingIngredientsForCounter = ingredientList.first(where: { $0.personNumber == personCounter })
                     IngredientRow(name: name, amount: matchingIngredientsForCounter!.ingredients[index].amount)
-                   
+                    
+                    
+                    if index < withAmount.count - 1 || !withoutAmount.isEmpty {
+                        Divider()
+                    }
                 }
                 
-                ForEach(displayIngredientsWithoutAmount(), id: \.offset) { index, name in
+                ForEach(withoutAmount, id: \.offset) { index, name in
                     IngredientRow(name: name, amount: "")
+                    
+                    if index < withoutAmount.count - 1 {
+                                        Divider()
+                                    }
                 }
             }
         }
     }
     
     
-    private func displayIngredientsWithAmount() -> [(offset: Int, element: String)] {
+    private func ingredientsWithAmount() -> [(offset: Int, element: String)] {
         ingredientList[0].ingredients.enumerated()
             .filter { index, _ in
                 !ingredientList[personIndex].ingredients[index].amount.isEmpty
@@ -44,7 +54,7 @@ struct RecipeIngredientTable: View {
             .map { (offset: $0.offset, element: $0.element.name) }
     }
     
-    private func displayIngredientsWithoutAmount() -> [(offset: Int, element: String)] {
+    private func ingredientsWithoutAmount() -> [(offset: Int, element: String)] {
         ingredientList[0].ingredients.enumerated()
             .filter { index, _ in
                 ingredientList[personIndex].ingredients[index].amount.isEmpty
@@ -61,6 +71,7 @@ struct PersonCounterSwitcher: View {
     var body: some View {
         HStack {
             Text("Für")
+                .padding(.trailing, 5)
             HStack {
                 Button(action: decrementPerson) {
                     Image(systemName: "minus")
@@ -68,7 +79,7 @@ struct PersonCounterSwitcher: View {
                         .foregroundStyle(personCounter == minPerson ? .gray : .red)
                 }
                 .padding(.vertical, 6)
-                .padding(.horizontal, 8)
+                .padding(.horizontal, 12)
 
                 Text("\(personCounter)")
                     .fontWeight(.medium)
@@ -80,15 +91,17 @@ struct PersonCounterSwitcher: View {
                         .foregroundStyle(personCounter == maxPerson ? .gray : .green)
                 }
                 .padding(.vertical, 6)
-                .padding(.horizontal, 8)
+                .padding(.horizontal, 12)
             }
             .background(Color(.systemGray6))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .shadow(radius: 1)
             
-            Text(personCounter == 1 ? "Person" : "Personen")
+            Text(personCounter == 1 ? " Person" : "Personen")
+                .padding(.leading, 5)
         }
-        .padding(.vertical, 5)
+        .padding(.vertical, 15)
+        .padding(.horizontal, 5)
     }
 
     
@@ -117,7 +130,6 @@ struct IngredientRow: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.leading)
         }
-        Divider()
     }
 }
 

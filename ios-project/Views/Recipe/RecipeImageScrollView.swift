@@ -16,15 +16,6 @@ struct RecipeImageScrollView: View {
                 LazyHStack(spacing: 10) {
                     ForEach(recipes, id: \.id) { recipe in
                         NavigationLink(destination: RecipeInfoView(recipe: recipe, selectedMonth: .jan)
-                            .toolbar {
-                                ToolbarItem(placement: .principal) {
-                                    HStack {
-                                        Text(recipe.title)
-                                            .font(.title3)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                }
-                            }
                         ) {
                             ZStack(alignment: .bottom) {
                                 Image(uiImage: UIImage(named: recipe.imageName)!)

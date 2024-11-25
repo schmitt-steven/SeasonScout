@@ -30,12 +30,11 @@ struct RecipeInstructionsView: View {
                     .padding(.bottom, 1)
                     .foregroundStyle(.orange)
             }
-            .padding(.top, 3)
+            .padding(.vertical, 5)
             
             
             if isInStepsMode {
-                VStack(alignment: .leading, spacing: 5) {
-                    Divider()
+                VStack(alignment: .leading, spacing: 10) {
                     ForEach(instructionsAsSteps.indices, id: \.self) { index in
                         Button(action: {
                             withAnimation(.interpolatingSpring(duration: 0.5)) {
@@ -53,7 +52,9 @@ struct RecipeInstructionsView: View {
                                     .foregroundStyle(.foreground)
                             }
                         }
-                        Divider()
+                        if index != instructionsAsSteps.count - 1 {
+                            Divider()
+                        }
                     }
                 }
                 .transition(.blurReplace)

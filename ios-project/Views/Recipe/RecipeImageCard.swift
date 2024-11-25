@@ -2,10 +2,13 @@ import SwiftUI
 
 struct RecipeImageCard: View {
     @ObservedObject var recipe: Recipe
-    @State private var isFlipped = false
+    @State var isFlipped = false
+    @State var isFavoriteButtonTapped = false
+    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     internal init(recipe: Recipe) {
         self.recipe = recipe
+        hapticFeedback.prepare()
     }
     
     var body: some View {
@@ -17,7 +20,8 @@ struct RecipeImageCard: View {
                     .resizable()
                     .scaledToFit()
                     .saturation(1.3)
-                    .brightness(0.07)
+                    .brightness(0.07) // ;)
+                    
                 VStack {
 
                     HStack {
@@ -32,23 +36,34 @@ struct RecipeImageCard: View {
                         Spacer()
                         
                         Button(action: {
-                            recipe.isFavorite.toggle()
+                            hapticFeedback.impactOccurred()
+
+                            withAnimation(.bouncy(duration: 0.5)){
+                                recipe.isFavorite.toggle()
+                            }
                             recipe.saveFavoriteState(for: recipe.id, isFavorite: recipe.isFavorite)
+                            hapticFeedback.prepare()
                         }) {
                             Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                                .symbolEffect(
+                                    .bounce.up,
+                                    options: .speed(0.8),
+                                    value: recipe.isFavorite
+                                )
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .foregroundColor(recipe.isFavorite ? .accentColor.opacity(1) : .white)
-                                .modifier(TextShadowEffect())
+                                .opacity(0.8)
                                 .modifier(GlowEffect())
                                 .modifier(InnerShadowEffect())
+                                .modifier(TextShadowEffect())
                         }
                     }
                     .padding([.leading, .trailing], 20)
                     .padding(.bottom, 10)
                 }
             }
-            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .clipShape(RoundedRectangle(cornerRadius: 40, style: .circular))
             .blur(radius: isFlipped ? 2 : 0)
             
             if isFlipped {
@@ -63,21 +78,23 @@ struct RecipeImageCard: View {
 
             }
         }
-        .padding([.horizontal], 20)
-        .padding(.bottom, 5)
-        .shadow(color: .black.opacity(0.7), radius: 12)
-        
-        // Makes the view (dis)appear gradually when scrolling
+        .shadow(color: .gray.opacity(0.5), radius: 8)
+        .ignoresSafeArea()
+
+        // Makes the view move behind the scroll view and fade in/out based on the current offset
         .visualEffect { content, proxy in
             let offset = proxy.frame(in: .global).minY
-            let scaleFactor = min(1 + (offset / 800), 1)
-            let opacity = min(1, 1 - (-offset / 400))
-            let blurRadius = -offset / 200
+            let height = proxy.size.height
+            let yOffset = max(-offset, -height)
+            let opacity = min(1, 1 - (-offset / 200))
+            let blurRadius = -offset / 100
+
             return content
-                .scaleEffect(scaleFactor)
+                .offset(y: yOffset)
                 .opacity(opacity)
                 .blur(radius: blurRadius)
         }
+
         
         // Flips the entire view horizontally (when tapped)
         .rotation3DEffect(
@@ -85,7 +102,7 @@ struct RecipeImageCard: View {
             axis: (x: 0, y: 1, z: 0)
         )
         .onTapGesture {
-            withAnimation(.interpolatingSpring(duration: 0.5)) {
+            withAnimation(.easeInOut(duration: 0.75)) {
                 isFlipped.toggle()
             }
         }
@@ -93,5 +110,6 @@ struct RecipeImageCard: View {
 }
 
 #Preview {
-    RecipeImageCard(recipe: Recipe.recipes[0])
+    Spacer()
+    RecipeImageCard(recipe: Recipe.recipes[2])
 }

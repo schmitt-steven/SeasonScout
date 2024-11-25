@@ -69,7 +69,7 @@ struct RecipeCalendarView: View {
                 Spacer()
             }
             .searchable(text: $searchText, prompt: "Suche nach Rezepten")
-            .navigationTitle("Saisonale Rezepte")
+            .navigationTitle("")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     NavigationLink(destination: SettingsView()) {

@@ -13,6 +13,7 @@
 		FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = FC4854152CE22FD4009A659C /* WrappingHStack */; };
 		FC63549E2CE3BEF7006BA448 /* recipe_links.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC63549C2CE3BEF7006BA448 /* recipe_links.txt */; };
 		FC63549F2CE3BEF7006BA448 /* crawl_recipes.py in Resources */ = {isa = PBXBuildFile; fileRef = FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */; };
+		FCFCA8512CF13BEF00F3DDAD /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = FCFCA8502CF13BEF00F3DDAD /* SwiftUIIntrospect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,19 @@
 			remoteInfo = "ios-project";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FCFCA84E2CF1399F00F3DDAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FC4046312CC10D4E0010DB12 /* app.drawio */ = {isa = PBXFileReference; lastKnownFileType = text; path = app.drawio; sourceTree = "<group>"; };
@@ -67,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */,
+				FCFCA8512CF13BEF00F3DDAD /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +121,7 @@
 				FC6E3C262CC102BB0024F7AB /* ios-project */,
 				FC6E3C3D2CC102BD0024F7AB /* ios-projectTests */,
 				FC6E3C472CC102BD0024F7AB /* ios-projectUITests */,
+				FCFCA8462CF1399100F3DDAD /* Frameworks */,
 				FC6E3C252CC102BB0024F7AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +136,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FCFCA8462CF1399100F3DDAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,6 +153,7 @@
 				FC6E3C202CC102BB0024F7AB /* Sources */,
 				FC6E3C212CC102BB0024F7AB /* Frameworks */,
 				FC6E3C222CC102BB0024F7AB /* Resources */,
+				FCFCA84E2CF1399F00F3DDAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +165,7 @@
 			name = "ios-project";
 			packageProductDependencies = (
 				FC4854152CE22FD4009A659C /* WrappingHStack */,
+				FCFCA8502CF13BEF00F3DDAD /* SwiftUIIntrospect */,
 			);
 			productName = "ios-project";
 			productReference = FC6E3C242CC102BB0024F7AB /* ios-project.app */;
@@ -226,6 +251,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				FCFCA84F2CF13BEF00F3DDAD /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FC6E3C252CC102BB0024F7AB /* Products */;
@@ -432,6 +458,7 @@
 				DEVELOPMENT_TEAM = SL49WL27J6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Aktiviere GPS-Dienste, um Märkte und Geschäfte mit regionalen Produkten in deiner Nähe anzuzeigen.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -471,6 +498,7 @@
 				DEVELOPMENT_TEAM = SL49WL27J6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Aktiviere GPS-Dienste, um Märkte und Geschäfte mit regionalen Produkten in deiner Nähe anzuzeigen.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -638,6 +666,14 @@
 				minimumVersion = 2.2.11;
 			};
 		};
+		FCFCA84F2CF13BEF00F3DDAD /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -645,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC4854142CE22FD4009A659C /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
+		};
+		FCFCA8502CF13BEF00F3DDAD /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCFCA84F2CF13BEF00F3DDAD /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

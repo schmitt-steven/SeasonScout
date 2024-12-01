@@ -14,6 +14,8 @@ struct CalendarView: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
     }
     
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
+    
     @State private var searchText = ""
     @State private var selectedMonth = Month.allCases[Calendar.current.component(.month, from: Date()) - 1]
     @State private var selectedProductType: SelectedProductType = .all
@@ -45,10 +47,9 @@ struct CalendarView: View {
                     HStack {
                         Text(showFilters ? "Filter ausblenden" : "Filter anzeigen")
                             .font(.headline)
-                            .foregroundStyle(Color.black)
+                            .foregroundColor(isDarkModeEnabled ? .white : .black)
                         Image(systemName: showFilters ? "chevron.up" : "chevron.down")
                             .font(.headline)
-                            .foregroundStyle(Color.orange)
                     }
                 }
                 .padding(.top)

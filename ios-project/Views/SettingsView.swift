@@ -7,26 +7,46 @@ struct SettingsView: View {
     @State private var isNotificationEnabled = false
 
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(alignment: .leading) {
-                // Dark mode toggle
-                Toggle(isOn: $isDarkModeEnabled) {
-                    Text("Dark-Mode aktivieren")
-                    if isDarkModeEnabled {
-                        Text("Dark-Mode aktiviert").preferredColorScheme(.dark)
+        NavigationView {
+                    List {
+                        // Dark Mode Section
+                        Section(header: Text("Darstellung").font(.headline)) {
+                            // Dark mode toggle
+                            Toggle(isOn: $isDarkModeEnabled) {
+                                Text("Dark Mode aktivieren")
+                            }
+                            .onChange(of: isDarkModeEnabled) { oldValue, newValue in
+                                // Automatically updates due to @AppStorage binding
+                                updateAppearance()
+                            }
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        }
+                        
+                        // Notification Section
+                        Section(header: Text("Benachrichtigungen").font(.headline)) {
+                            // Push notification toggle
+                            Toggle(isOn: $isNotificationEnabled) {
+                                Text("Push-Benachrichtigung aktivieren")
+                            }
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        }
+                        
+                        // You can add more sections as needed
                     }
-                }
-                .padding(.horizontal)
-                .onChange(of: isDarkModeEnabled) { value in
-                    // The dark mode is automatically applied by the @AppStorage binding
-                }
+                    .listStyle(InsetGroupedListStyle()) // iOS Settings-style list
+                    .navigationBarTitle("Einstellungen", displayMode: .large) // Large navigation title
                 
-                // Push notification toggle (unchanged)
-                Toggle(isOn: $isNotificationEnabled) {
-                    Text("Push-Benachrichtigung aktivieren")
-                }
-                .padding(.horizontal)
-            }
         }
     }
+    
+    // Update the application's appearance based on dark mode
+    private func updateAppearance() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.keyWindow?.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
+    }
+}
+
+// Preview
+#Preview {
+    SettingsView()
 }

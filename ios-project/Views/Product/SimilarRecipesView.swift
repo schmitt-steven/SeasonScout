@@ -36,7 +36,6 @@ struct SimilarRecipesView: View {
                 .padding(.trailing, 10)
             }
         }
-        .background(Color.white)
         .navigationTitle("Ähnliche Rezepte")
     }
 }

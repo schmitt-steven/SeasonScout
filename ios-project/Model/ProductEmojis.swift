@@ -130,6 +130,7 @@ struct ProductEmojis {
         "Kiwis": "🥝", // Kiwis
         "Limetten": "🍋", // Limes
         "Litschis": "🍇" // Lychees
+        
     ]
 
     // A computed property to return the emoji for a product

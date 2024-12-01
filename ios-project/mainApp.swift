@@ -10,6 +10,8 @@ import SwiftUI
 struct ios_projectApp: App {
     let persistenceController = PersistenceController.shared
     
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
+
     init() {
         // Load all products and recipes
         Product.products = JsonParser.parseToProducts(fileName: "products")
@@ -18,7 +20,9 @@ struct ios_projectApp: App {
         Recipe.recipes.forEach { recipe in
             recipe.isFavorite = recipe.loadFavoriteState(for: recipe.id)
         }
+        updateAppearance()
     }
+    
     
     var body: some Scene {
         WindowGroup {
@@ -26,4 +30,9 @@ struct ios_projectApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+    
+    private func updateAppearance() {
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            windowScene?.keyWindow?.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
+        }
 }

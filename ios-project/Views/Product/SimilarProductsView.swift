@@ -41,7 +41,6 @@ struct SimilarProductsView: View {
                 .padding(.trailing, 10)
             }
         }
-        .background(Color.white)
         .navigationTitle("Ähnliche Produkte")
     }
 }

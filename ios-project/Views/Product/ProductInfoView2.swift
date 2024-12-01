@@ -10,6 +10,9 @@ import SwiftUI
 struct ProductInfoView2: View {
     @ObservedObject var product: Product
     let selectedMonth: Month
+    let productDescriptions = ProductDescriptions()
+    
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
     
     internal init(product: Product, selectedMonth: Month) {
         self.product = product
@@ -40,9 +43,7 @@ struct ProductInfoView2: View {
                         .padding(.top, 25)
                     GroupBox {
                         VStack(alignment: .leading) {
-                            Text(
-                                "Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                            )
+                            Text(ProductDescriptions.productDescriptions[product.name] ?? "Keine Kurzbeschreibung vorhanden")
                         }
                         .padding()
                     }
@@ -64,7 +65,8 @@ struct ProductInfoView2: View {
                                 HStack {
                                     Text("Passende Rezepte")
                                         .font(.headline.bold())
-                                        .foregroundColor(.black)
+                                        .foregroundColor(isDarkModeEnabled ? .white : .black)
+
                                     Spacer()
                                     Image(
                                         systemName: "arrow.up.right.square.fill"
@@ -83,7 +85,8 @@ struct ProductInfoView2: View {
                                 HStack {
                                     Text("Ähnliche Produkte")
                                         .font(.headline.bold())
-                                        .foregroundColor(.black)
+                                        .foregroundColor(isDarkModeEnabled ? .white : .black)
+
                                     Spacer()
                                     Image(
                                         systemName: "arrow.up.right.square.fill"

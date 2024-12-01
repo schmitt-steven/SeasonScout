@@ -38,7 +38,6 @@ struct AvailabilityMonthView: View {
                                 }
                             VStack {
                                 Text(month.rawValue)
-                                    .foregroundColor(.black)
                                     .font(.title.bold())
                                     .padding(.bottom, 5)
                                 HStack {
@@ -55,7 +54,6 @@ struct AvailabilityMonthView: View {
                                     )
                                     
                                     Text(availability?.rawValue ?? "Nicht identifizierbar")
-                                        .foregroundStyle(.black)
                                         .fontWeight(.bold)
                                 }
                             }

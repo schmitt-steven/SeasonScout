@@ -24,22 +24,24 @@ struct ContainerView<Content: View>: View {
         VStack(alignment: .leading) {
                 HStack {
                     Text(title)
-                        .font(.headline)
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .foregroundColor(.primary)
                     Spacer()
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 15)
-                .padding(.bottom, CGFloat(2))
+                .padding(.top, 10)
+                .padding(.bottom, 5)
             
                 content
-                .padding(.horizontal, contentPaddingValue)
-                .padding(.bottom, max(0, contentPaddingValue - 5))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(contentPaddingValue)
+                .background(Color(.lightestGray))
+                .clipShape(.rect(cornerRadius: 15))
+                .padding([.leading, .trailing], 20)
+                .shadow(color: Color(.systemGray3), radius: 4)
         }
-        .background(Color(.lightestGray))
-        .clipShape(.rect(cornerRadius: 15))
-        .padding([.leading, .trailing], 20)
-        .shadow(color: .gray, radius: 2)
+        
     }
 }
 

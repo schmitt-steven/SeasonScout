@@ -53,8 +53,9 @@ struct RecipeImageScrollView: View {
             }
             .scrollClipDisabled()
             .contentMargins([.horizontal, .bottom], 20, for: .scrollContent)
-            .contentMargins(.top, 5, for: .scrollContent)
-            .contentMargins([.horizontal], 20, for: .scrollIndicators)
+            .contentMargins(.top, 20, for: .scrollContent)
+            .contentMargins(.horizontal, 20, for: .scrollIndicators)
+            .contentMargins(.bottom, 5, for: .scrollIndicators)
             .scrollTargetBehavior(.paging)
         }
 }

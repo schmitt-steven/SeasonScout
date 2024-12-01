@@ -36,7 +36,7 @@ struct RecipeSeasonalityStatus: View {
         .background(Color(.lightestGray))
         .clipShape(.rect(cornerRadius: 15))
         .padding([.leading, .trailing], 20)
-        .shadow(color: .gray, radius: 2)
+        .shadow(color: Color(.systemGray3), radius: 4)
     }
 
     func statusIcon(for status: RecipeSeasonalMonthData) -> Image {

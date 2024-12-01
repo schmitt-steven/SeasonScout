@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-
 struct RecipeInfoView: View {
     
     let recipe: Recipe
@@ -27,10 +26,9 @@ struct RecipeInfoView: View {
     }
     
     @State var scrollViewOffset: CGFloat = 0
-    let startNavbarAnimationOffset: CGFloat = 100
-    let endNavBarAnimationOffset: CGFloat = 190
-    let animationOffsetRange: CGFloat = 90
-    
+    let startNavbarAnimationOffset: CGFloat = 220
+    let endNavBarAnimationOffset: CGFloat = 280
+    let animationOffsetRange: CGFloat = 60
     
     // calcuates the opacity of the nav bar text (between 0 and 1)
     var titleOpacity: Double {
@@ -61,31 +59,41 @@ struct RecipeInfoView: View {
             
                 ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
+                        
                         RecipeImageCard(recipe: recipe)
+                            .ignoresSafeArea()
+
+                        Text(recipe.title)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 20)
+                            .multilineTextAlignment(.leading)
+                            
                         
                         RecipeTagsSection(tagDataList: tagData)
                         
                         RecipeSeasonalityStatus(seasonalData: recipe.seasonalData)
                         
-                        ContainerView(title: "Kurzbeschreibung"){ Text(recipe.description)
+                        ContainerView(title: "Beschreibung"){ Text(recipe.description)
                         }
                         
-                        ExpandableContainerView(title: "Zutatenverfügbarkeit", contentPadding: CGFloat(0)) {
+                        ContainerView(title: "Verfügbarkeit", contentPadding: CGFloat(0)) {
                             RecipePieChart(seasonalData: recipe.seasonalData)
-                                .padding(.bottom, 5)
-                                .padding(.horizontal, 0)
+                                .padding(.vertical, 5)
                         }
                         
-                        ExpandableContainerView(title: "Zutaten") {
+                        ContainerView(title: "Zutaten") {
                             RecipeIngredientTable(ingredientList: recipe.ingredientsByPersons)
                         }
                         
-                        ExpandableContainerView(title: "Zubereitung"){
+                        ContainerView(title: "Zubereitung"){
                             RecipeInstructionsView(instructions: recipe.instructions)
                         }
                         
                         ContainerView(title: "Ähnliche Gerichte", contentPadding: CGFloat(0)) {
                             RecipeImageScrollView(recipes: recipesOfSameCategory)
+                                .scrollIndicators(.visible)
+
                         }
                         Spacer()
                             .frame(height: 10)
@@ -97,10 +105,12 @@ struct RecipeInfoView: View {
                 .scrollIndicators(.hidden)
             
                 .onAppear {
-                    scrollViewOffset += 0.1  // Simulate scroll (without actually scrolling), to ensure the update logic of the fadeable nav bar is executed when navigating to AND back from a page.
+                    scrollViewOffset += 1  // Simulate scroll (without actually scrolling), to ensure the update logic of the fadeable nav bar is executed when navigating to AND back from a page.
                 }
-                .scrollViewOffset($scrollViewOffset)
+               
                 .navBarOffset($scrollViewOffset, start: startNavbarAnimationOffset, end: endNavBarAnimationOffset)
+                .scrollViewOffset($scrollViewOffset)
+
                 .toolbar {
                         ToolbarItem(placement: .principal) {
                             HStack {
@@ -132,6 +142,6 @@ struct RecipeInfoView: View {
 }
 
 #Preview {
-    let recipe = Recipe.recipes[5]
+    let recipe = Recipe.recipes[55]
     RecipeInfoView(recipe: recipe, selectedMonth: .nov)
 }

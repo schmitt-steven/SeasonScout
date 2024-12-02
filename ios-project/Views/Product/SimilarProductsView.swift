@@ -84,5 +84,6 @@ struct SimilarProductsView: View {
     // Funktion zur Prüfung der Verfügbarkeit des Produkts im aktuellen Monat
     private func seasonalDataForSelectedMonth() -> SeasonalData? {
         return product.seasonalData.first(where: { $0.month == selectedMonth })
+
     }
 }

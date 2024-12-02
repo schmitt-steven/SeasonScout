@@ -13,7 +13,6 @@ struct RecipeImageCard: View {
     
     var body: some View {
         ZStack(alignment: .center) {
- 
             ZStack(alignment: .bottom) {
 
                 Image(uiImage: UIImage(named: recipe.imageName)!)
@@ -22,50 +21,63 @@ struct RecipeImageCard: View {
                     .saturation(1.3)
                     .brightness(0.07)
                     
-                VStack {
-
-                    HStack {
-                        Text(recipe.title)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .modifier(TextShadowEffect())
-                            .modifier(GlowEffect())
-                            .modifier(InnerShadowEffect())
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            hapticFeedback.impactOccurred()
-
-                            withAnimation(.bouncy(duration: 0.5)){
-                                recipe.isFavorite.toggle()
-                            }
-                            recipe.saveFavoriteState(for: recipe.id, isFavorite: recipe.isFavorite)
-                            hapticFeedback.prepare()
-                        }) {
-                            Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
-                                .symbolEffect(
-                                    .bounce.up,
-                                    options: .speed(0.8),
-                                    value: recipe.isFavorite
+                    Image(uiImage: UIImage(named: recipe.imageName)!)
+                        .resizable()
+                        .scaledToFit()
+                        .saturation(1.3)
+                        .brightness(0.07)
+                        .background(.clear)
+                        .overlay(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [.clear, .black.opacity(0.3)]),
+                                    startPoint: .center,
+                                    endPoint: .topLeading
                                 )
-                                .font(.title)
+                            )
+                       .clipShape(.rect(cornerRadius: 16))
+                    
+                    VStack {
+                        
+                        HStack {
+                            Text("")
+                                .font(.title2)
                                 .fontWeight(.bold)
-                                .foregroundColor(recipe.isFavorite ? .accentColor.opacity(1) : .white)
-                                .opacity(0.8)
-                                .modifier(GlowEffect())
-                                .modifier(InnerShadowEffect())
-                                .modifier(TextShadowEffect())
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                hapticFeedback.impactOccurred()
+                                
+                                withAnimation(.bouncy(duration: 0.5)){
+                                    recipe.isFavorite.toggle()
+                                }
+                                recipe.saveFavoriteState(for: recipe.id, isFavorite: recipe.isFavorite)
+                                hapticFeedback.prepare()
+                            }) {
+                                Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                                    .symbolEffect(
+                                        .bounce.up,
+                                        options: .speed(0.8),
+                                        value: recipe.isFavorite
+                                    )
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(recipe.isFavorite ? .accentColor.opacity(1) : Color(.white))
+                                    .background(
+                                        Circle()
+                                            .padding(-10)
+                                            .foregroundStyle(Color(.systemGray2))
+                                            .opacity(0.9)
+                                    )
+                                    
+                            }
                         }
+                        .padding([.leading, .trailing], 25)
+                        .padding(.bottom, 10)
+                        .offset(y: 18)
                     }
-                    .padding([.leading, .trailing], 20)
-                    .padding(.bottom, 10)
                 }
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 40, style: .circular))
-            .blur(radius: isFlipped ? 2 : 0)
-            
             if isFlipped {
                 Text("Rezept & Bild stammen von\n\(recipe.source)")
                     .font(.headline)
@@ -78,8 +90,8 @@ struct RecipeImageCard: View {
 
             }
         }
-        .shadow(color: .gray.opacity(0.5), radius: 8)
-        .ignoresSafeArea()
+        .shadow(color: .black, radius: 12)
+        .padding(.bottom, 8)
 
         // Makes the view move behind the scroll view and fade in/out based on the current offset
         .visualEffect { content, proxy in
@@ -94,7 +106,6 @@ struct RecipeImageCard: View {
                 .opacity(opacity)
                 .blur(radius: blurRadius)
         }
-
         
         // Flips the entire view horizontally (when tapped)
         .rotation3DEffect(
@@ -106,10 +117,12 @@ struct RecipeImageCard: View {
                 isFlipped.toggle()
             }
         }
+        
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
     Spacer()
-    RecipeImageCard(recipe: Recipe.recipes[2])
+    RecipeImageCard(recipe: Recipe.recipes[23])
 }

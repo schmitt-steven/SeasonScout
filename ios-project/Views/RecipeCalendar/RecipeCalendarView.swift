@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecipeCalendarView: View {
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
     @State private var searchText = ""
     @State private var selectedMonth = Month.allCases[Calendar.current.component(.month, from: Date()) - 1]
     @State private var excludeNotRegionallyRecipes = true
@@ -48,7 +49,7 @@ struct RecipeCalendarView: View {
                     HStack {
                         Text("Filter anzeigen")
                             .font(.headline)
-                            .foregroundStyle(Color.black) // Text in Schwarz
+                            .foregroundColor(isDarkModeEnabled ? .white : .black)
 
                         Image(systemName: "chevron.right")
                             .font(.headline)

@@ -23,7 +23,6 @@ struct AvailabilityMonthView: View {
                         GroupBox {
                             VStack {
                                 Text(month.rawValue)
-                                    .foregroundColor(.black)
                                     .font(.title.bold())
                                     .padding(.bottom, 5)
                                 HStack {
@@ -46,7 +45,6 @@ struct AvailabilityMonthView: View {
                                                 backgroundColorForAvailabilityType(
                                                     availability!))
                                     )
-
                                     Text(
                                         availability?.rawValue
                                             ?? "Nicht identifizierbar"

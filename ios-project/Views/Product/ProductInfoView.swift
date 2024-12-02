@@ -42,7 +42,7 @@ struct ProductInfoView: View {
                         .padding(.top, 25)
                     GroupBox {
                         VStack(alignment: .leading) {
-                            Text(product.description)
+                            Text(ProductDescriptions.productDescriptions[product.name] ?? "Keine Kurzbeschreibung vorhanden")
                         }
                         .padding()
                         .frame(maxWidth: .infinity)

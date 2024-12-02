@@ -139,12 +139,9 @@ struct TestRecipeInfoView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     hapticFeedback.impactOccurred()
-                    recipe.isFavorite.toggle()
-                    recipe.saveFavoriteState(
-                        for: recipe.id, isFavorite: recipe.isFavorite)
                     hapticFeedback.prepare()
                 }) {
-                    HeartView(isFavorite: recipe.isFavorite)
+                    RecipeHeartView(recipe: recipe)
                 }
             }
         }

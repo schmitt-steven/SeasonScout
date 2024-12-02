@@ -83,11 +83,9 @@ struct ProductInfoView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         hapticFeedback.impactOccurred()
-                        product.isFavorite.toggle()
-                        product.setProductFavorite(for: product.id, isFavorite: product.isFavorite)
                         hapticFeedback.prepare()
                     }) {
-                        HeartView(isFavorite: product.isFavorite)
+                        ProductHeartView(product: product)
                     }
                 }
             }

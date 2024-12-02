@@ -1,5 +1,5 @@
 //
-//  HeartView.swift
+//  RecipeHeartView.swift
 //  ios-project
 //
 //  Created by Henry Harder on 28.11.24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HeartView: View {
-    @State var isFavorite: Bool
+struct RecipeHeartView: View {
+    @State var recipe: Recipe
     @State private var showSplash = false
     @State private var removeSplash = false
     @State private var removeInnerStroke = true
@@ -51,7 +51,7 @@ struct HeartView: View {
 
                 Image(systemName: "heart.fill")
                     .foregroundStyle(Color(.systemPink))
-                    .scaleEffect(isFavorite ? 1 : 0)
+                    .scaleEffect(recipe.isFavorite ? 1 : 0)
 
                 HeartSplashView()
                     .scaleEffect(showSplash ? (closeAnimation ? 0 : 0.7) : 0)
@@ -62,7 +62,9 @@ struct HeartView: View {
                 withAnimation(
                     .interpolatingSpring(stiffness: 170, damping: 10).delay(0.1)
                 ) {
-                    isFavorite.toggle()
+                    recipe.isFavorite.toggle()
+                    recipe.saveFavoriteState(
+                        for: recipe.id, isFavorite: recipe.isFavorite)
                 }
 
                 withAnimation(.easeOut) {
@@ -102,6 +104,7 @@ struct HeartView: View {
 }
 
 #Preview {
-    HeartView(isFavorite: false)
+    let recipe = Recipe.recipes[5]
+    RecipeHeartView(recipe: recipe)
         .preferredColorScheme(.dark)
 }

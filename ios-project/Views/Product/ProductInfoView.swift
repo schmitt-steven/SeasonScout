@@ -1,99 +1,108 @@
+//
+//  ProductInfoView.swift
+//  ios-project
+//
+//  Created by Henry Harder on 23.11.24.
+//
+
 import SwiftUI
-import CoreData
 
 struct ProductInfoView: View {
+    @ObservedObject var product: Product
+    let selectedMonth: Month
+    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
-    @State private var isNotificationEnabled = false
-    @State private var isFavorite = false
-    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
-    
-    var availability: String {
-        var availabilityString = ""
-        for month in product.seasonalData {
-            let monthAvailability = month.availability.rawValue
-            let monthName = month.month.rawValue
-            
-            if monthAvailability != "nicht regional verfügbar" {
-                availabilityString.append("\(monthName): \(monthAvailability)\n")
-            }
-        }
-        return availabilityString
+    internal init(product: Product, selectedMonth: Month) {
+        self.product = product
+        self.selectedMonth = selectedMonth
+        hapticFeedback.prepare()
     }
-    
-    let product: Product
 
-    let productEmojis = ProductEmojis()
-    
     var body: some View {
-        
-        
-        ScrollView(.vertical) {
-            VStack(alignment: .leading, spacing: 20) {
-                // Main Product Information Section
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(product.name)
-                                .font(.headline)
-                                .padding(.bottom, 10)
-                            
-                            Image(systemName: isFavorite ? "heart.fill" : "heart")
-                                .foregroundColor(isFavorite ? .red : .blue)
-                                .font(.system(size: 30))
-                                .onTapGesture {
-                                    isFavorite.toggle()
-                                }
-                                .padding(.bottom, 10)
-                        }
-                        Text("lat. \(product.botanicalName)")
-                        Text("Kategorie: " + product.type.rawValue)
-                        Text("Unterkategorie: " + product.subtype.rawValue)
-                    }
-                    .padding()
-                                    
-                    Spacer()
-                    Text(ProductEmojis.productEmojis[product.name] ?? "﹖")
-                        .font(.system(size: 100))
-                        .padding(10)
-                }
-                .background(Color(UIColor.systemGray6))
-                .clipShape(.rect(cornerRadius: 15))
-                .padding([.leading, .trailing], 20)
-                .shadow(color: .gray, radius: 2)
-                
-                ExpandableAvailabilityView(title: "Verfügbarkeit", content: availability)
-                
-                ExpandableRecipeList(title: "Rezepte", product: product)
-                
-                VStack(alignment: .leading, spacing: 10) {
+        ScrollView {
+            ZStack {
+                VStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.gray)
+                        .frame(width: 150, height: 150)
                     
-                    Text("Ähnliche Produkte")
-                        .font(.headline)
-                        .padding()
+                    Text(product.name)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
 
-                    SimilarProductView(shownProduct: product)
-                        .padding(.horizontal)
-                                        
+                    Text(product.botanicalName)
+                        .font(.title2)
+                        .foregroundColor(.gray)
+
+                    Text("Kurzbeschreibung")
+                        .font(.title2.bold())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 5)
+                        .padding(.top, 25)
+                    GroupBox {
+                        VStack(alignment: .leading) {
+                            Text(product.description)
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity)
+
+                    Text("Verfügbarkeit")
+                        .font(.title2.bold())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 5)
+                        .padding(.top, 25)
+                    AvailabilityMonthView(product: product, selectedMonth: selectedMonth)
+
+                    Text("Ähnliche Produkte")
+                        .font(.title2.bold())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 5)
+                        .padding(.top, 25)
+                    SimilarProductsView(
+                        product: product, selectedMonth: selectedMonth)
+                    .frame(maxWidth: .infinity)
+                    
+                    Text("Passende Rezepte")
+                        .font(.title2.bold())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 5)
+                        .padding(.top, 25)
+                    MatchingRecipesView(
+                        product: product, selectedMonth: selectedMonth
+                    )
                     .frame(maxWidth: .infinity)
                 }
-                .background(Color(UIColor.systemGray6))
-                .clipShape(.rect(cornerRadius: 15))
-                .padding([.leading, .trailing], 20)
-                .shadow(color: .gray, radius: 2)
-                
-                VStack() {
-                    Toggle(isOn: $isNotificationEnabled) {
-                        Text("Benachrichtige mich, sobald das Produkt erhältlich ist!")
+                .padding()
+            }
+            .navigationTitle(product.name)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        hapticFeedback.impactOccurred()
+                        product.isFavorite.toggle()
+                        product.setProductFavorite(for: product.id, isFavorite: product.isFavorite)
+                        hapticFeedback.prepare()
+                    }) {
+                        HeartView(isFavorite: product.isFavorite)
                     }
-                    .padding(.horizontal, 20)
                 }
             }
-            .padding(.bottom, 20)
         }
+    }
+
+    private func seasonalDataForSelectedMonth() -> SeasonalData? {
+        return product.seasonalData.first(where: { $0.month == selectedMonth })
+    }
+
+    private func seasonalDataForMonth(_ month: Month) -> SeasonalData? {
+        return product.seasonalData.first(where: { $0.month == month })
     }
 }
 
 #Preview {
-    let product = Product.products[44]
-    ProductInfoView(product: product)
+    ProductInfoView(product: Product.products[2], selectedMonth: .apr)
 }

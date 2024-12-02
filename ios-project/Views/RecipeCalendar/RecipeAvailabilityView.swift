@@ -63,7 +63,10 @@ struct RecipeAvailabilityView: View {
                     .font(.subheadline)
                     .foregroundColor(textColorForAvailabilityType(availability.availability))
             }
-            .padding(6)
+            .padding(.top, 6)
+            .padding(.bottom, 6)
+            .padding(.leading, 18)
+            .padding(.trailing, 18)
             .background(
                 RoundedRectangle(cornerRadius: 8)
                     .fill(backgroundColorForAvailabilityType(availability.availability))

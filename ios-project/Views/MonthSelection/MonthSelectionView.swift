@@ -18,23 +18,22 @@ struct MonthSelectionView: View {
                 HStack {
                     ForEach(Month.allCases, id: \.self) { month in
                         ZStack {
-                            RoundedRectangle(cornerRadius: 8)
+                            Text(month.rawValue.prefix(3))
+                                .font(.headline)
+                                .padding(.horizontal, 18)
+                                .padding(.vertical, 6)
+                                .background(RoundedRectangle(cornerRadius: 8)
+                                    .foregroundStyle(month == selectedMonth ? .orange : .white))
                                 .containerRelativeFrame(
                                     .horizontal,
-                                    count: verticalSizeClass == .regular ? 3 : 6,
+                                    count: verticalSizeClass == .regular ? 4 : 8,
                                     spacing: 16
                                 )
-                                .foregroundStyle(month == selectedMonth ? .orange : .white)
                                 .onTapGesture {
                                     withAnimation {
                                         selectedMonth = month
                                     }
                                 }
-                            VStack {
-                                Text(month.rawValue)
-                                    .foregroundColor(.black)
-                                    .font(.headline)
-                            }
                         }
                         .frame(height: 30)
                         .id(month)

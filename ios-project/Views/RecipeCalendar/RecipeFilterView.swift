@@ -11,7 +11,6 @@ struct RecipeFilterView: View {
     @Binding var selectedRecipeCategory: RecipeCategory?
     @Binding var selectedRecipeEffort: Level?
     @Binding var selectedRecipePrice: Level?
-    @Binding var selectedRecipeIsFavorite: Bool
     @Binding var selectedRecipeIsForGroups: Bool
     @Binding var selectedRecipeIsVegetarian: Bool
 
@@ -40,21 +39,6 @@ struct RecipeFilterView: View {
                 }.pickerStyle(.navigationLink)
             }
             Section {
-                NavigationLink(
-                    destination: ToggleView(
-                        isOn: $selectedRecipeIsFavorite, title: "Nur Favoriten",
-                        footer:
-                            "Beachte, dass nur die Favoriten des ausgewählten Monats angezeigt werden."
-                    )
-                ) {
-                    HStack {
-                        Text("Nur Favoriten")
-                        Spacer()
-                        Text(selectedRecipeIsFavorite ? "Ja" : "Nein")
-                            .foregroundStyle(Color.gray)
-                    }
-                }
-
                 NavigationLink(
                     destination: ToggleView(
                         isOn: $selectedRecipeIsForGroups,

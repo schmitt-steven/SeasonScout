@@ -38,12 +38,10 @@ struct RecipeCalendarView: View {
         NavigationStack {
             VStack {
                 MonthSelectionView(selectedMonth: $selectedMonth)
-                
                 NavigationLink(destination: RecipeFilterView(
                     selectedRecipeCategory: $selectedRecipeCategory,
                     selectedRecipeEffort: $selectedRecipeEffort,
                     selectedRecipePrice: $selectedRecipePrice,
-                    selectedRecipeIsFavorite: $selectedRecipeIsFavorite,
                     selectedRecipeIsForGroups: $selectedRecipeIsForGroups,
                     selectedRecipeIsVegetarian: $selectedRecipeIsVegetarian
                 )) {
@@ -65,7 +63,7 @@ struct RecipeCalendarView: View {
                 Spacer()
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suche nach Rezepten")
-            .navigationTitle("")
+            .navigationTitle("Rezepte")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     NavigationLink(destination: SettingsView()) {
@@ -79,8 +77,16 @@ struct RecipeCalendarView: View {
                             excludeNotRegionallyRecipes.toggle()
                         } label: {
                             Label(
-                                excludeNotRegionallyRecipes ? "Alle Rezepte anzeigen" : "Regionale Rezepte anzeigen",
-                                systemImage: excludeNotRegionallyRecipes ? "globe" : "map"
+                                excludeNotRegionallyRecipes ? "Überregionale Rezepte anzeigen" : "Überregionale Rezepte ausblenden",
+                                systemImage: excludeNotRegionallyRecipes ? "ferry" : "leaf"
+                            )
+                        }
+                        Button {
+                            selectedRecipeIsFavorite.toggle()
+                        } label: {
+                            Label(
+                                selectedRecipeIsFavorite ? "Favoriten ausblenden" : "Favoriten anzeigen",
+                                systemImage: selectedRecipeIsFavorite ? "heart.slash" : "heart"
                             )
                         }
                     } label: {

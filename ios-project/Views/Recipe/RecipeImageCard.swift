@@ -20,7 +20,7 @@ struct RecipeImageCard: View {
                     .resizable()
                     .scaledToFit()
                     .saturation(1.3)
-                    .brightness(0.07) // ;)
+                    .brightness(0.07)
                     
                 VStack {
 

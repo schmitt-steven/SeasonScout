@@ -15,9 +15,9 @@ struct MonthChartData {
     
     var color: Color {
         switch seasonality {
-        case "ja": Color.green
-        case "(ja)": .lightGreen
-        default: Color.gray
+        case "ja": .green
+        case "(ja)": .yellow
+        default: .red
         }
     }
     var seasonalityStatusText: String {

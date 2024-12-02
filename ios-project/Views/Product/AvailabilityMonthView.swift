@@ -18,24 +18,9 @@ struct AvailabilityMonthView: View {
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(Month.allCases, id: \.self) { month in
-                        let availability = seasonalDataForMonth(month)?.availability
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .containerRelativeFrame(
-                                    .horizontal,
-                                    count: verticalSizeClass == .regular ? 1 : 4,
-                                    spacing: 16
-                                )
-                                .foregroundStyle(Color(UIColor.systemGroupedBackground))
-                                .scrollTransition { content, phase in
-                                    content
-                                        .opacity(phase.isIdentity ? 1.0 : 0.0)
-                                        .scaleEffect(
-                                            x: phase.isIdentity ? 1.0 : 0.9,
-                                            y: phase.isIdentity ? 1.0 : 0.9
-                                        )
-                                        .offset(y: phase.isIdentity ? 0 : 50)
-                                }
+                        let availability = seasonalDataForMonth(month)?
+                            .availability
+                        GroupBox {
                             VStack {
                                 Text(month.rawValue)
                                     .foregroundColor(.black)
@@ -43,24 +28,50 @@ struct AvailabilityMonthView: View {
                                     .padding(.bottom, 5)
                                 HStack {
                                     HStack {
-                                        Image(systemName: symbolForAvailabilityType(availability!))
-                                            .foregroundStyle(availability != nil
-                                                             ? textColorForAvailabilityType(availability!)
-                                                             : Color.black)
+                                        Image(
+                                            systemName:
+                                                symbolForAvailabilityType(
+                                                    availability!)
+                                        )
+                                        .foregroundStyle(
+                                            availability != nil
+                                                ? textColorForAvailabilityType(
+                                                    availability!)
+                                                : Color.black)
                                     }
                                     .padding(10)
                                     .background(
-                                    Circle()
-                                        .fill(backgroundColorForAvailabilityType(availability!))
+                                        Circle()
+                                            .fill(
+                                                backgroundColorForAvailabilityType(
+                                                    availability!))
                                     )
-                                    
-                                    Text(availability?.rawValue ?? "Nicht identifizierbar")
-                                        .foregroundStyle(.black)
-                                        .fontWeight(.bold)
+
+                                    Text(
+                                        availability?.rawValue
+                                            ?? "Nicht identifizierbar"
+                                    )
+                                    .foregroundStyle(.black)
+                                    .fontWeight(.bold)
                                 }
+                                .frame(maxWidth: .infinity)
                             }
                         }
-                        .frame(height: 125)
+                        .containerRelativeFrame(
+                            .horizontal,
+                            count: verticalSizeClass == .regular ? 1 : 4,
+                            spacing: 16
+                        )
+                        .foregroundStyle(Color(UIColor.systemGroupedBackground))
+                        .scrollTransition { content, phase in
+                            content
+                                .opacity(phase.isIdentity ? 1.0 : 0.0)
+                                .scaleEffect(
+                                    x: phase.isIdentity ? 1.0 : 0.9,
+                                    y: phase.isIdentity ? 1.0 : 0.9
+                                )
+                                .offset(y: phase.isIdentity ? 0 : 50)
+                        }
                         .id(month)
                     }
                 }

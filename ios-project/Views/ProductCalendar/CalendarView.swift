@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     
     init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = .orange
+        UISegmentedControl.appearance().selectedSegmentTintColor = .systemOrange
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
     }
     

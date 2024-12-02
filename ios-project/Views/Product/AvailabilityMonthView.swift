@@ -23,6 +23,7 @@ struct AvailabilityMonthView: View {
                         GroupBox {
                             VStack {
                                 Text(month.rawValue)
+                                    .foregroundStyle(.black)
                                     .font(.title.bold())
                                     .padding(.bottom, 5)
                                 HStack {

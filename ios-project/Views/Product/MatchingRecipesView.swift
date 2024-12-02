@@ -32,52 +32,55 @@ struct MatchingRecipesView: View {
                     }
                 } else {
                     ForEach(filteredRecipes) { recipe in
-                        GroupBox {
-                            VStack {
-                                HStack {
-                                    Image(
-                                        uiImage: UIImage(
-                                            named: recipe.imageName)!
-                                    )
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 80, height: 80)
-                                    .clipped()
-                                    .cornerRadius(8)
-                                    .foregroundStyle(.secondary)
-
-                                    VStack(alignment: .leading, spacing: 2) {
-
-                                        Text(recipe.title)
-                                            .font(.headline.bold())
-                                            .padding(.bottom, 5)
-                                            .lineLimit(2)
-                                            .truncationMode(.tail)
-
-                                        if let seasonalData =
-                                            seasonalDataForSelectedMonth(
-                                                recipe: recipe)
-                                        {
-                                            RecipeAvailabilityView(
-                                                availability: seasonalData)
-                                        } else {
-                                            Text(
-                                                "Nicht verfügbar im \(selectedMonth.rawValue)"
-                                            )
-                                            .font(.subheadline)
-                                            .foregroundColor(.gray)
+                        NavigationLink(destination: RecipeInfoView(recipe: recipe, selectedMonth: selectedMonth)) {
+                            GroupBox {
+                                VStack {
+                                    HStack {
+                                        Image(
+                                            uiImage: UIImage(
+                                                named: recipe.imageName)!
+                                        )
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 80, height: 80)
+                                        .clipped()
+                                        .cornerRadius(8)
+                                        .foregroundStyle(.secondary)
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            
+                                            Text(recipe.title)
+                                                .font(.headline.bold())
+                                                .padding(.bottom, 5)
+                                                .lineLimit(2)
+                                                .truncationMode(.tail)
+                                            
+                                            if let seasonalData =
+                                                seasonalDataForSelectedMonth(
+                                                    recipe: recipe)
+                                            {
+                                                RecipeAvailabilityView(
+                                                    availability: seasonalData)
+                                            } else {
+                                                Text(
+                                                    "Nicht verfügbar im \(selectedMonth.rawValue)"
+                                                )
+                                                .font(.subheadline)
+                                                .foregroundColor(.gray)
+                                            }
                                         }
+                                        Spacer()
                                     }
-                                    Spacer()
                                 }
                             }
-                        }
-                        .containerRelativeFrame(
-                            .horizontal,
-                            count: verticalSizeClass == .regular
+                            .containerRelativeFrame(
+                                .horizontal,
+                                count: verticalSizeClass == .regular
                                 ? 1 : 4,
-                            spacing: 16
-                        )
+                                spacing: 16
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }

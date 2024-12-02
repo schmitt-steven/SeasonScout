@@ -37,40 +37,43 @@ struct SimilarProductsView: View {
                     }
                 } else {
                     ForEach(productsOfSameSubtype) { product in
-                        GroupBox {
-                            VStack {
-                                HStack {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .frame(width: 80, height: 80)
-                                        .foregroundStyle(.secondary)
-
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(product.name)
-                                            .font(.headline.bold())
-                                        
-                                        Text(product.botanicalName)
-                                            .font(.footnote)
+                        NavigationLink(destination: ProductInfoView(product: product, selectedMonth: selectedMonth)) {
+                            GroupBox {
+                                VStack {
+                                    HStack {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .frame(width: 80, height: 80)
                                             .foregroundStyle(.secondary)
-                                            .padding(.bottom, 5)
-
-                                        if let seasonalData = seasonalDataForSelectedMonth() {
-                                            AvailabilityView(availability: seasonalData)
-                                        } else {
-                                            Text("Nicht verfügbar im \(selectedMonth.rawValue)")
-                                                .font(.subheadline)
-                                                .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(product.name)
+                                                .font(.headline.bold())
+                                            
+                                            Text(product.botanicalName)
+                                                .font(.footnote)
+                                                .foregroundStyle(.secondary)
+                                                .padding(.bottom, 5)
+                                            
+                                            if let seasonalData = seasonalDataForSelectedMonth() {
+                                                AvailabilityView(availability: seasonalData)
+                                            } else {
+                                                Text("Nicht verfügbar im \(selectedMonth.rawValue)")
+                                                    .font(.subheadline)
+                                                    .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            }
                                         }
+                                        Spacer()
                                     }
-                                    Spacer()
                                 }
                             }
-                        }
-                        .containerRelativeFrame(
-                            .horizontal,
-                            count: verticalSizeClass == .regular
+                            .containerRelativeFrame(
+                                .horizontal,
+                                count: verticalSizeClass == .regular
                                 ? 1 : 4,
-                            spacing: 16
-                        )
+                                spacing: 16
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }

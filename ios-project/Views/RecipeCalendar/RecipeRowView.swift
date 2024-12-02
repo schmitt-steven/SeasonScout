@@ -5,7 +5,7 @@ struct RecipeRowView: View {
     let selectedMonth: Month
 
     var body: some View {
-        NavigationLink(destination: TestRecipeInfoView(recipe: recipe, selectedMonth: selectedMonth)) {
+        NavigationLink(destination: RecipeInfoView(recipe: recipe, selectedMonth: selectedMonth)) {
             GroupBox {
                 VStack {
                     HStack {

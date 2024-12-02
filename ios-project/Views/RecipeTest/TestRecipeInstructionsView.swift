@@ -52,7 +52,7 @@ struct TestRecipeInstructionsView: View {
                                 // Schritt-Text mit Durchstreichung bei Abhaken
                                 Text(instructionsAsSteps[index])
                                     .multilineTextAlignment(.leading)
-                                    .foregroundStyle(checkedSteps[index] ? .black.opacity(0.2) : .black)
+                                    .foregroundStyle(checkedSteps[index] ? Color.text.opacity(0.2) : Color.text)
                             }
                         }
                         if index != instructionsAsSteps.count - 1 {

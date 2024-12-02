@@ -43,9 +43,11 @@ struct HeartView: View {
                     .scaleEffect(showSplash2 ? (closeAnimation2 ? 0 : 1) : 0)
                     .opacity(removeSplash2 ? 0 : 1)
                     .hueRotation(.degrees(removeInnerStroke2 ? 270 : 0))
+                Image(systemName: "heart.fill")
+                    .foregroundColor(Color(.systemPink).opacity(0.2))
                 
                 Image(systemName: "heart")
-                    .foregroundColor(Color(.systemGray))
+                    .foregroundColor(Color(.systemPink))
 
                 Image(systemName: "heart.fill")
                     .foregroundStyle(Color(.systemPink))

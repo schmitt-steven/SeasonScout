@@ -30,6 +30,5 @@ struct RecipeListView: View {
                 .padding(.trailing, 10)
             }
         }
-        .background(Color.white)
     }
 }

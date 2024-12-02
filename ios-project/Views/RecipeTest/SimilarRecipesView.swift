@@ -29,60 +29,65 @@ struct SimilarRecipesView: View {
             HStack {
                 if recipesOfSameCategory.isEmpty {
                     // Anzeige einer Nachricht bei leerer Rezeptliste
-                    GroupBox {
-                        Text("Keine Gerichte verfügbar.")
-                            .font(.headline)
-                            .foregroundColor(.gray)
-                            .padding()
-                    }
+                    Text("Keine Gerichte verfügbar.")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        .padding()
+
                 } else {
                     ForEach(recipesOfSameCategory) { otherRecipe in
-                        GroupBox {
-                            VStack {
-                                HStack {
-                                    Image(
-                                        uiImage: UIImage(
-                                            named: otherRecipe.imageName)!
-                                    )
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 80, height: 80)
-                                    .clipped()
-                                    .cornerRadius(8)
-                                    .foregroundStyle(.secondary)
-
-                                    VStack(alignment: .leading, spacing: 2) {
-
-                                        Text(otherRecipe.title)
-                                            .font(.headline.bold())
-                                            .padding(.bottom, 5)
-                                            .lineLimit(2)
-                                            .truncationMode(.tail)
-
-                                        if let seasonalData =
-                                            seasonalDataForSelectedMonth(
-                                                recipe: otherRecipe)
-                                        {
-                                            RecipeAvailabilityView(
-                                                availability: seasonalData)
-                                        } else {
-                                            Text(
-                                                "Nicht verfügbar im \(selectedMonth.rawValue)"
-                                            )
-                                            .font(.subheadline)
-                                            .foregroundColor(.gray)
+                        NavigationLink(
+                            destination: RecipeInfoView(
+                                recipe: recipe, selectedMonth: selectedMonth)
+                        ) {
+                            GroupBox {
+                                VStack {
+                                    HStack {
+                                        Image(
+                                            uiImage: UIImage(
+                                                named: otherRecipe.imageName)!
+                                        )
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 80, height: 80)
+                                        .clipped()
+                                        .cornerRadius(8)
+                                        .foregroundStyle(.secondary)
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            
+                                            Text(otherRecipe.title)
+                                                .font(.headline.bold())
+                                                .padding(.bottom, 5)
+                                                .lineLimit(2)
+                                                .truncationMode(.tail)
+                                            
+                                            if let seasonalData =
+                                                seasonalDataForSelectedMonth(
+                                                    recipe: otherRecipe)
+                                            {
+                                                RecipeAvailabilityView(
+                                                    availability: seasonalData)
+                                            } else {
+                                                Text(
+                                                    "Nicht verfügbar im \(selectedMonth.rawValue)"
+                                                )
+                                                .font(.subheadline)
+                                                .foregroundColor(.gray)
+                                            }
                                         }
+                                        Spacer()
                                     }
-                                    Spacer()
                                 }
                             }
-                        }
-                        .containerRelativeFrame(
-                            .horizontal,
-                            count: verticalSizeClass == .regular
+                            .containerRelativeFrame(
+                                .horizontal,
+                                count: verticalSizeClass == .regular
                                 ? 1 : 4,
-                            spacing: 16
-                        )
+                                spacing: 16
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }

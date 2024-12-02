@@ -23,7 +23,6 @@ struct AvailabilityMonthView: View {
                         GroupBox {
                             VStack {
                                 Text(month.rawValue)
-                                    .foregroundStyle(.black)
                                     .font(.title.bold())
                                     .padding(.bottom, 5)
                                 HStack {
@@ -50,7 +49,6 @@ struct AvailabilityMonthView: View {
                                         availability?.rawValue
                                             ?? "Nicht identifizierbar"
                                     )
-                                    .foregroundStyle(.black)
                                     .fontWeight(.bold)
                                 }
                                 .frame(maxWidth: .infinity)
@@ -61,7 +59,6 @@ struct AvailabilityMonthView: View {
                             count: verticalSizeClass == .regular ? 1 : 4,
                             spacing: 16
                         )
-                        .foregroundStyle(Color(UIColor.systemGroupedBackground))
                         .scrollTransition { content, phase in
                             content
                                 .opacity(phase.isIdentity ? 1.0 : 0.0)

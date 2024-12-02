@@ -16,23 +16,24 @@ struct MatchingRecipesView: View {
                 .contains { $0.name.contains(product.name) }
         }
     }
-    
+
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    
+
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 if filteredRecipes.isEmpty {
                     // Anzeige einer Nachricht bei leerer Rezeptliste
-                    GroupBox {
-                        Text("Keine Gerichte verfügbar.")
-                            .font(.headline)
-                            .foregroundColor(.gray)
-                            .padding()
-                    }
+                    Text("Keine Gerichte verfügbar.")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        .padding()
                 } else {
                     ForEach(filteredRecipes) { recipe in
-                        NavigationLink(destination: RecipeInfoView(recipe: recipe, selectedMonth: selectedMonth)) {
+                        NavigationLink(
+                            destination: RecipeInfoView(
+                                recipe: recipe, selectedMonth: selectedMonth)
+                        ) {
                             GroupBox {
                                 VStack {
                                     HStack {
@@ -46,15 +47,16 @@ struct MatchingRecipesView: View {
                                         .clipped()
                                         .cornerRadius(8)
                                         .foregroundStyle(.secondary)
-                                        
-                                        VStack(alignment: .leading, spacing: 2) {
-                                            
+
+                                        VStack(alignment: .leading, spacing: 2)
+                                        {
+
                                             Text(recipe.title)
                                                 .font(.headline.bold())
                                                 .padding(.bottom, 5)
                                                 .lineLimit(2)
                                                 .truncationMode(.tail)
-                                            
+
                                             if let seasonalData =
                                                 seasonalDataForSelectedMonth(
                                                     recipe: recipe)
@@ -76,7 +78,7 @@ struct MatchingRecipesView: View {
                             .containerRelativeFrame(
                                 .horizontal,
                                 count: verticalSizeClass == .regular
-                                ? 1 : 4,
+                                    ? 1 : 4,
                                 spacing: 16
                             )
                         }
@@ -90,7 +92,7 @@ struct MatchingRecipesView: View {
         .contentMargins(16, for: .scrollContent)
         .scrollTargetBehavior(.viewAligned)
     }
-    
+
     // Funktion zur Prüfung der Verfügbarkeit des Produkts im aktuellen Monat
     private func seasonalDataForSelectedMonth(recipe: Recipe)
         -> RecipeSeasonalMonthData?

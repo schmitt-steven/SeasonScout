@@ -23,7 +23,7 @@ struct MonthSelectionView: View {
                                 .padding(.horizontal, 18)
                                 .padding(.vertical, 6)
                                 .background(RoundedRectangle(cornerRadius: 8)
-                                    .foregroundStyle(month == selectedMonth ? .orange : .white))
+                                    .foregroundStyle(month == selectedMonth ? .orange : Color.color))
                                 .containerRelativeFrame(
                                     .horizontal,
                                     count: verticalSizeClass == .regular ? 4 : 8,

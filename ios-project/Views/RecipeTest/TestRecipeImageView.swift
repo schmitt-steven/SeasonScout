@@ -10,13 +10,19 @@ struct TestRecipeImageView: View {
     @State private var isFlipped = false
 
     var body: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .frame(width: 385, height: 290)
-            .shadow(color: .black, radius: 5)
+        Image(
+            uiImage: UIImage(named: recipe.imageName)!
+        )
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: .infinity)
+            .shadow(color: .black, radius: 2)
             .overlay(
                 Group {
                     if isFlipped {
                         // Rückseite
+                        Rectangle()
+                            .fill(.black)
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Informationen zur Seite")
                                 .font(.title3.bold())
@@ -30,14 +36,6 @@ struct TestRecipeImageView: View {
                         .rotation3DEffect(
                             .degrees(isFlipped ? 180 : 0), axis: (x: 0, y: 1, z: 0)
                         )
-                    } else {
-                        // Vorderseite
-                        Image(
-                            uiImage: UIImage(named: recipe.imageName)!
-                        )
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
                     }
                 }
             )

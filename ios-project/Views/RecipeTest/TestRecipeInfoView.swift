@@ -32,13 +32,29 @@ struct TestRecipeInfoView: View {
                 && recipe.id != otherRecipe.id ? otherRecipe : nil
         }
     }
+    
+    @State var scrollViewOffset: CGFloat = 0
+    let startNavbarAnimationOffset: CGFloat = 220
+    let endNavBarAnimationOffset: CGFloat = 280
+    let animationOffsetRange: CGFloat = 60
+    
+    var titleOpacity: Double {
+        switch scrollViewOffset {
+        case ..<startNavbarAnimationOffset:
+            return 0
+        case endNavBarAnimationOffset...:
+            return 1
+        default:
+            return Double((scrollViewOffset - startNavbarAnimationOffset) / animationOffsetRange)
+        }
+    }
 
     var body: some View {
         ScrollView {
+            TestRecipeImageView(recipe: recipe)
+                .ignoresSafeArea()
             ZStack {
                 VStack {
-                    TestRecipeImageView(recipe: recipe)
-                    
                     Text(recipe.title)
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -104,19 +120,31 @@ struct TestRecipeInfoView: View {
                 }
                 .padding()
             }
-            .navigationTitle(recipe.title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        hapticFeedback.impactOccurred()
-                        recipe.isFavorite.toggle()
-                        recipe.saveFavoriteState(
-                            for: recipe.id, isFavorite: recipe.isFavorite)
-                        hapticFeedback.prepare()
-                    }) {
-                        HeartView(isFavorite: recipe.isFavorite)
-                    }
+        }
+        .ignoresSafeArea(edges: .top)
+        .scrollIndicators(.hidden)
+        .onAppear {
+            scrollViewOffset += 1
+        }
+        .navBarOffset($scrollViewOffset, start: startNavbarAnimationOffset, end: endNavBarAnimationOffset)
+        .scrollViewOffset($scrollViewOffset)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                    Text(recipe.title)
+                        .font(.headline)
+                        .opacity(titleOpacity)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    hapticFeedback.impactOccurred()
+                    recipe.isFavorite.toggle()
+                    recipe.saveFavoriteState(
+                        for: recipe.id, isFavorite: recipe.isFavorite)
+                    hapticFeedback.prepare()
+                }) {
+                    HeartView(isFavorite: recipe.isFavorite)
                 }
             }
         }

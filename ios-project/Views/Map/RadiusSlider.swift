@@ -69,6 +69,7 @@ struct RadiusSlider: View {
                         }
                     }
                     .onChange(of: mapViewController.searchRadiusInMeters) {
+                        mapViewController.isMapMarkerVisible = false
                         mapViewController.updateCameraPosition(to: mapViewController.locationManager.location?.coordinate)
                     }
                     .padding(.trailing, 10)

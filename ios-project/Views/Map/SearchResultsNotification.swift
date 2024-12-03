@@ -10,13 +10,16 @@ import SwiftUI
 struct SearchResultsNotification: View {
     
     let viewController: MapViewController
+    var isMarketListEmpty: Bool {
+        viewController.marketsFoundInUserRegion.count == 0
+    }
     
     var body: some View {
         VStack{
             HStack{
-                Image(systemName: "checkmark.circle")
-                    .foregroundStyle(.orange)
-                Text("\(viewController.marketsFoundInUserRegion.count) Ergebnisse")
+                Image(systemName: isMarketListEmpty ? "exclamationmark.circle" : "checkmark.circle")
+                        .foregroundStyle(.orange)
+                    Text(isMarketListEmpty ? "Keine Ergebnisse" : "^[\(viewController.marketsFoundInUserRegion.count) Ergebnisse](inflect: true)")
             }
             .padding()
             .background(

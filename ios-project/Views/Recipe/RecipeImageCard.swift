@@ -14,12 +14,6 @@ struct RecipeImageCard: View {
     var body: some View {
         ZStack(alignment: .center) {
             ZStack(alignment: .bottom) {
-
-                Image(uiImage: UIImage(named: recipe.imageName)!)
-                    .resizable()
-                    .scaledToFit()
-                    .saturation(1.3)
-                    .brightness(0.07)
                     
                     Image(uiImage: UIImage(named: recipe.imageName)!)
                         .resizable()
@@ -92,6 +86,8 @@ struct RecipeImageCard: View {
         }
         .shadow(color: .black, radius: 12)
         .padding(.bottom, 8)
+        
+        .ignoresSafeArea(.all)
 
         // Makes the view move behind the scroll view and fade in/out based on the current offset
         .visualEffect { content, proxy in
@@ -106,19 +102,6 @@ struct RecipeImageCard: View {
                 .opacity(opacity)
                 .blur(radius: blurRadius)
         }
-        
-        // Flips the entire view horizontally (when tapped)
-        .rotation3DEffect(
-            .degrees(isFlipped ? 180 : 0),
-            axis: (x: 0, y: 1, z: 0)
-        )
-        .onTapGesture {
-            withAnimation(.easeInOut(duration: 0.75)) {
-                isFlipped.toggle()
-            }
-        }
-        
-        .ignoresSafeArea()
     }
 }
 

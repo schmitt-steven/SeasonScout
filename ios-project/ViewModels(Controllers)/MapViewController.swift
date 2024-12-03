@@ -46,6 +46,7 @@ class MapViewController: ObservableObject {
     @Published var isSearchRadiusBeingEdited: Bool = false
     @Published var isRadiusSliderVisible: Bool = false
     @Published var isSearchResultsNotificationVisible: Bool = false
+    @Published var isMapMarkerVisible: Bool = false
    
     init() {
         self.locationManager = CLLocationManager()
@@ -164,6 +165,7 @@ class MapViewController: ObservableObject {
             
             withAnimation(.easeInOut){
                 self.showSearchResultsNotification()
+                self.isMapMarkerVisible = true
             }
             
         } catch let error as NSError{

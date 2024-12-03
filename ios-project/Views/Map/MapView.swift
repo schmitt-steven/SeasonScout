@@ -17,7 +17,7 @@ struct MapView: View {
                         .stroke(.orange, lineWidth: 2)
                 }
                 
-                //if !viewController.isSearchRadiusBeingEdited{
+                if viewController.isMapMarkerVisible {
                     ForEach(viewController.marketsFoundInUserRegion, id: \.identifier) { market in
                         Marker(coordinate: market.placemark.coordinate) {
                             Label(market.placemark.name ?? "Unknown Market", systemImage: "storefront")
@@ -26,7 +26,7 @@ struct MapView: View {
                         }
                         .tint(.orange)
                     }
-                //}
+                }
             }
             .onAppear {
                 viewController.requestAuthorization()

@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct RecipeInfoView: View {
-    
+
     let recipe: Recipe
     let selectedMonth: Month
     var tagData: [InfoTag] {
@@ -18,6 +18,7 @@ struct RecipeInfoView: View {
             InfoTag(type: .forGroups, value: recipe.isForGroups)
         ]
     }
+    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     var recipesOfSameCategory: [Recipe] {
         Recipe.recipes.compactMap { otherRecipe in
@@ -26,8 +27,8 @@ struct RecipeInfoView: View {
     }
     
     @State var scrollViewOffset: CGFloat = 0
-    let startNavbarAnimationOffset: CGFloat = 220
-    let endNavBarAnimationOffset: CGFloat = 280
+    let startNavbarAnimationOffset: CGFloat = 200
+    let endNavBarAnimationOffset: CGFloat = 260
     let animationOffsetRange: CGFloat = 60
     
     // calcuates the opacity of the nav bar text (between 0 and 1)
@@ -40,6 +41,14 @@ struct RecipeInfoView: View {
         default:
             return Double((scrollViewOffset - startNavbarAnimationOffset) / animationOffsetRange)
         }
+    }
+    
+    internal init(recipe: Recipe, selectedMonth: Month, scrollViewOffset: CGFloat = 0) {
+        self.recipe = recipe
+        self.selectedMonth = selectedMonth
+        self.scrollViewOffset = scrollViewOffset
+        
+        self.hapticFeedback.prepare()
     }
     
     var body: some View {
@@ -61,7 +70,6 @@ struct RecipeInfoView: View {
                     VStack(alignment: .leading, spacing: 15) {
                         
                         RecipeImageCard(recipe: recipe)
-                            .ignoresSafeArea()
 
                         Text(recipe.title)
                             .font(.title)
@@ -96,11 +104,31 @@ struct RecipeInfoView: View {
 
                         }
                         Spacer()
-                            .frame(height: 10)
+                            .frame(height: UINavigationController().navigationBar.frame.height + 50)
                     }
                 }
+                .toolbar {
+                    if self.scrollViewOffset > self.startNavbarAnimationOffset {
+                        ToolbarItem(placement: .principal) {
+                            Text(recipe.title)
+                                .font(.headline)
+                                .opacity(titleOpacity)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                hapticFeedback.impactOccurred()
+                                hapticFeedback.prepare()
+                            }) {
+                                RecipeHeartView(recipe: recipe)
+                            }
+                        }
+                    }
+                }
+
             
-                .ignoresSafeArea(edges: .top)
+                .ignoresSafeArea(edges: .all)
             
                 .scrollIndicators(.hidden)
             
@@ -110,34 +138,9 @@ struct RecipeInfoView: View {
                
                 .navBarOffset($scrollViewOffset, start: startNavbarAnimationOffset, end: endNavBarAnimationOffset)
                 .scrollViewOffset($scrollViewOffset)
-
-                .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            HStack {
-                                Text(recipe.title)
-                                    .font(.title3)
-                                Button(action: {
-                                    withAnimation{
-                                        recipe.isFavorite.toggle()
-                                        scrollViewOffset += 0.1  // Trigger updating the custom nav bar view
-                                    }
-                                    recipe.saveFavoriteState(for: recipe.id, isFavorite: recipe.isFavorite)
-                                       }) {
-                                           Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
-                                               .font(.headline)
-                                               .symbolEffect(
-                                                   .bounce,
-                                                   value: recipe.isFavorite
-                                               )
-                                               .foregroundColor(recipe.isFavorite ? .accentColor.opacity(1) : .primary)
-                                       }
-                            }
-                            .opacity(titleOpacity)
-                        }
-                }
-            
             
         }
+
     }
 }
 

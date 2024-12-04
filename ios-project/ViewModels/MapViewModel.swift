@@ -30,11 +30,11 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     }
 }
 
-class MapViewController: ObservableObject {
+class MapViewModel: ObservableObject {
     
     let locationManager: CLLocationManager
     private let locationDelegate: LocationManagerDelegate
-    private var previousSearchResults: [MKMapItem] = []
+    private var searchResults: [MKMapItem] = []
     
     @Published var marketsFoundInUserRegion: [MKMapItem] = []
     @Published var currentAuthorizationStatus: CLAuthorizationStatus
@@ -47,6 +47,8 @@ class MapViewController: ObservableObject {
     @Published var isRadiusSliderVisible: Bool = false
     @Published var isSearchResultsNotificationVisible: Bool = false
     @Published var isMapMarkerVisible: Bool = false
+    @Published var currentMapStyle: MapStyle = .standard
+    @Published var selectedMarker: MKMapItem?
    
     init() {
         self.locationManager = CLLocationManager()

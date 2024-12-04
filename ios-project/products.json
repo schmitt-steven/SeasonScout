@@ -10,7 +10,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -60,7 +60,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -110,7 +110,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -160,7 +160,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -210,7 +210,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -260,7 +260,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -310,7 +310,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -360,7 +360,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -410,7 +410,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -460,7 +460,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -510,7 +510,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -560,7 +560,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -610,7 +610,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -660,7 +660,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -710,7 +710,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -760,7 +760,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -810,7 +810,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -860,7 +860,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -910,7 +910,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -960,7 +960,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1010,7 +1010,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1060,7 +1060,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1110,7 +1110,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1160,7 +1160,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1210,7 +1210,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1260,7 +1260,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1310,7 +1310,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1360,7 +1360,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1410,7 +1410,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1460,7 +1460,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1510,7 +1510,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1560,7 +1560,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1610,7 +1610,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1660,7 +1660,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1710,7 +1710,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1760,7 +1760,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1810,7 +1810,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1860,7 +1860,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1910,7 +1910,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1960,7 +1960,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2010,7 +2010,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2060,7 +2060,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2110,7 +2110,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2160,7 +2160,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2210,7 +2210,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2260,7 +2260,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2310,7 +2310,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2360,7 +2360,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2410,7 +2410,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2460,7 +2460,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2510,7 +2510,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2560,7 +2560,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2610,7 +2610,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2660,7 +2660,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2710,7 +2710,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2760,7 +2760,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2810,7 +2810,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2860,7 +2860,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2910,7 +2910,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2960,7 +2960,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3010,7 +3010,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3060,7 +3060,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3110,7 +3110,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3160,7 +3160,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3210,7 +3210,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3260,7 +3260,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3310,7 +3310,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3360,7 +3360,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3410,7 +3410,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3460,7 +3460,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3510,7 +3510,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3560,7 +3560,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3610,7 +3610,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3660,7 +3660,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3710,7 +3710,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3760,7 +3760,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3810,7 +3810,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3860,7 +3860,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3910,7 +3910,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3960,7 +3960,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4010,7 +4010,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4060,7 +4060,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4110,7 +4110,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4160,7 +4160,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4210,7 +4210,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4260,7 +4260,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4310,7 +4310,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4360,7 +4360,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4410,7 +4410,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4460,7 +4460,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4510,7 +4510,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4560,7 +4560,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4610,7 +4610,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4660,7 +4660,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4710,7 +4710,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -4760,7 +4760,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4810,7 +4810,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Monokotyledonen",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4860,7 +4860,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4910,7 +4910,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4960,7 +4960,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5010,7 +5010,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5060,7 +5060,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5110,7 +5110,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5160,7 +5160,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5210,7 +5210,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5260,7 +5260,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5310,7 +5310,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5360,7 +5360,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5410,7 +5410,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5460,7 +5460,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5510,7 +5510,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5560,7 +5560,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5610,7 +5610,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5660,7 +5660,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5710,7 +5710,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Monokotyledonen",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5760,7 +5760,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5810,7 +5810,7 @@
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "seasonalData": {
+    "imageName": "", "imageSource": "", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],

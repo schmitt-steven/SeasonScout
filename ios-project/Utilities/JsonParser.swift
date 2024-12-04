@@ -32,6 +32,9 @@ struct JsonParser {
                 let typeString = rawProduct["type"] as! String
                 let subtypeString = rawProduct["subtype"] as! String
                 let seasonalDataRaw = rawProduct["seasonalData"] as! [String: [String]]
+                let imageName = rawProduct["imageName"] as! String
+                let imageSource = rawProduct["imageSource"] as! String
+
 
                 guard let type = ProductType(rawValue: typeString) else {
                     print("Warning: Unknown product type '\(typeString)' found in JSON.")
@@ -79,7 +82,9 @@ struct JsonParser {
                     type: type,
                     subtype: subtype,
                     seasonalData: seasonalData,
-                    isFavorite: isFavorite
+                    isFavorite: isFavorite,
+                    imageName: imageName,
+                    imageSource: imageSource
                 )
 
                 products.append(product)

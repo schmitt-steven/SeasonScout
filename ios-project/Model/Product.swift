@@ -26,9 +26,11 @@ class Product: Identifiable, ObservableObject {
     let type: ProductType
     let subtype: ProductSubtype
     let seasonalData: [SeasonalData]
+    let imageName: String
+    let imageSource: String
     @Published var isFavorite: Bool
     
-    internal init(id: Int, name: String, botanicalName: String, description: String, storageInstructions: String, energyConsumption: String, isImportedOnly: Bool, type: ProductType, subtype: ProductSubtype, seasonalData: [SeasonalData], isFavorite: Bool) {
+    internal init(id: Int, name: String, botanicalName: String, description: String, storageInstructions: String, energyConsumption: String, isImportedOnly: Bool, type: ProductType, subtype: ProductSubtype, seasonalData: [SeasonalData], isFavorite: Bool, imageName: String, imageSource: String) {
         self.id = id
         self.name = name
         self.botanicalName = botanicalName
@@ -40,6 +42,8 @@ class Product: Identifiable, ObservableObject {
         self.subtype = subtype
         self.seasonalData = seasonalData
         self.isFavorite = isFavorite
+        self.imageName = imageName
+        self.imageSource = imageSource
     }
     
     func setProductFavorite(for id: Int, isFavorite: Bool) {

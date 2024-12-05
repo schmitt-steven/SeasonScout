@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchResultsNotification: View {
     
-    let viewController: MapViewController
+    let viewController: MapViewModel
     var isMarketListEmpty: Bool {
         viewController.marketsFoundInUserRegion.count == 0
     }

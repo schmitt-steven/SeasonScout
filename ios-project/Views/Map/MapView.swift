@@ -4,7 +4,7 @@ import MapKit
 
 struct MapView: View {
     
-    @StateObject private var viewController = MapViewController()
+    @StateObject private var viewController = MapViewModel()
     
     var body: some View {
         ZStack {

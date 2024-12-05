@@ -9,7 +9,7 @@ import MapKit
 
 struct RadiusSlider: View {
     
-    @ObservedObject var mapViewController: MapViewController
+    @ObservedObject var mapViewController: MapViewModel
     let searchRadiusRange = 5_000.0...50_000.0  // in meters
     
     var body: some View {

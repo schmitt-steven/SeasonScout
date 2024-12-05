@@ -1,23 +1,20 @@
+//
+//  RecipePieChart.swift
+//  ios-project
+//
+
 import SwiftUI
 import Charts
 
 struct RecipePieChart: View {
     
     let seasonalData: [RecipeSeasonalMonthData]
+    var selectedMonth: Month
     @State var selectedChartSectionValue: Int?
-    @State var selectedMonth: MonthChartData?
+    @State var selectedMonthPieChart: MonthChartData?
 
-    let chartAngle: Double = 30.0 // Defines the size/angle range of each chart section
+    let chartAngle: Double = 30.0
 
-    // Computes real world month formatted in German
-    var currentIRLMonth: Month? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "de_DE")
-        dateFormatter.dateFormat = "LLLL"
-        return Month(rawValue: dateFormatter.string(from: Date()))
-    }
-
-    // Convert RecipeSeasonalMonthData to MonthChartData
     func monthChartData(for monthData: RecipeSeasonalMonthData) -> MonthChartData {
         return MonthChartData(
             month: monthData.month,
@@ -26,14 +23,13 @@ struct RecipePieChart: View {
         )
     }
 
-    // Values of all chart section are added up to calculate the selected month
     func calculateSelectedMonth(chartSectionValue: Double) {
         var cumulativeTotal = 0.0
         
         _ = seasonalData.first { monthData in
             cumulativeTotal += chartAngle
             if cumulativeTotal >= chartSectionValue {
-                selectedMonth = monthChartData(for: monthData)
+                selectedMonthPieChart = monthChartData(for: monthData)
                 return true
             }
             return false
@@ -47,31 +43,23 @@ struct RecipePieChart: View {
             SectorMark(
                 angle: .value("Saisonale Daten", chartData.value),
                 innerRadius: .ratio(0.7),
-                outerRadius: monthData.month.rawValue == selectedMonth?.month.rawValue ? .ratio(1) : .ratio(0.9),
+                outerRadius: monthData.month.rawValue == selectedMonthPieChart?.month.rawValue ? .ratio(1) : .ratio(0.9),
                 angularInset: 2
             )
-            // Show month abbreviation over each chart section
             .annotation(position: .overlay) {
                 Text(chartData.month.rawValue.prefix(3))
                     .font(.caption2)
                     .bold()
-                    .opacity(monthData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.9)
             }
-            .opacity(chartData.month.rawValue == selectedMonth?.month.rawValue ? 1 : 0.7)
+            .opacity(chartData.month.rawValue == selectedMonthPieChart?.month.rawValue ? 1 : 0.2)
             .foregroundStyle(chartData.color)
             .cornerRadius(3)
         }
         .frame(height: 350)
-        .chartAngleSelection(value: $selectedChartSectionValue)  // stores the section value in the variable once the user holds on any part of the chart
-        
-        // sets default month to IRL month
+        .chartAngleSelection(value: $selectedChartSectionValue)
         .onAppear {
-            if let currentIRLMonth = currentIRLMonth {
-                selectedMonth = monthChartData(for: seasonalData.first { $0.month == currentIRLMonth } ?? RecipeSeasonalMonthData(month: currentIRLMonth, availability: "nein"))
-            }
+            selectedMonthPieChart = monthChartData(for: seasonalData.first { $0.month == selectedMonth } ?? RecipeSeasonalMonthData(month: selectedMonth, availability: "nein"))
         }
-        
-        // change selected month based on selected chart section
         .onChange(of: selectedChartSectionValue) { oldValue, newValue in
             withAnimation {
                 if let newValue {
@@ -79,17 +67,15 @@ struct RecipePieChart: View {
                 }
             }
         }
-        
-        // show month and related seasonality inside the pie chart
         .chartBackground { _ in
             VStack {
-                if let selectedMonth {
-                    Text("\(selectedMonth.month.rawValue)")
+                if let selectedMonthPieChart {
+                    Text("\(selectedMonthPieChart.month.rawValue)")
                         .multilineTextAlignment(.center)
                         .font(.headline)
                         .fontWeight(.medium).foregroundStyle(.secondary)
                         .padding(.bottom, 3)
-                    Text(selectedMonth.seasonalityStatusText)
+                    Text(selectedMonthPieChart.seasonalityStatusText)
                         .multilineTextAlignment(.center)
                         .font(.subheadline)
                         .foregroundStyle(.primary)
@@ -98,8 +84,4 @@ struct RecipePieChart: View {
             }
         }
     }
-}
-
-#Preview {
-    RecipePieChart(seasonalData: Recipe.recipes[5].seasonalData)
 }

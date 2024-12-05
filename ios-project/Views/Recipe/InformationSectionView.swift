@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InformationSectionView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) { // Abstand optimiert
+        VStack(alignment: .leading, spacing: 10) {
             Divider()
             
             Text("Informationen zur Seite")

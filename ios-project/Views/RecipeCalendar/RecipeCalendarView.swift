@@ -53,11 +53,12 @@ struct RecipeCalendarView: View {
 
                         Image(systemName: "chevron.right")
                             .font(.headline)
-                            .foregroundStyle(Color.orange) // Nur das Image in Orange
+                            .foregroundStyle(Color.orange)
                     }
 
                 }
                 .padding(.top)
+                .padding(.bottom, 2)
                 
                 Spacer()
                 RecipeListView(recipes: filteredRecipes, selectedMonth: selectedMonth)
@@ -65,7 +66,6 @@ struct RecipeCalendarView: View {
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suche nach Rezepten")
             .navigationTitle("Rezepte")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     NavigationLink(destination: SettingsView()) {

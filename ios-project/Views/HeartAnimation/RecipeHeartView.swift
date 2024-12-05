@@ -19,13 +19,16 @@ struct RecipeHeartView: View {
     @State private var removeInnerStroke2 = true
     @State private var closeAnimation2 = false
 
+    // Skalierungsfaktor
+    var scale: CGFloat = 1.0
+
     var body: some View {
         HStack {
             ZStack {
                 Circle()
-                    .strokeBorder(lineWidth: removeInnerStroke ? 0 : 1)
+                    .strokeBorder(lineWidth: (removeInnerStroke ? 0 : 1) * scale)
                     .frame(
-                        width: 40, height: 40,
+                        width: 40 * scale, height: 40 * scale,
                         alignment: .center
                     )
                     .foregroundColor(Color(.systemPink))
@@ -34,27 +37,26 @@ struct RecipeHeartView: View {
                     .hueRotation(.degrees(removeInnerStroke ? 270 : 0))
                 
                 Circle()
-                    .strokeBorder(lineWidth: removeInnerStroke2 ? 0 : 1)
+                    .strokeBorder(lineWidth: (removeInnerStroke2 ? 0 : 1) * scale)
                     .frame(
-                        width: 40, height: 40,
+                        width: 40 * scale, height: 40 * scale,
                         alignment: .center
                     )
                     .foregroundColor(Color(.systemPink))
                     .scaleEffect(showSplash2 ? (closeAnimation2 ? 0 : 1) : 0)
                     .opacity(removeSplash2 ? 0 : 1)
                     .hueRotation(.degrees(removeInnerStroke2 ? 270 : 0))
-                Image(systemName: "heart.fill")
-                    .foregroundColor(Color(.systemPink).opacity(0.2))
                 
                 Image(systemName: "heart")
                     .foregroundColor(Color(.systemPink))
+                    .scaleEffect(scale)
 
                 Image(systemName: "heart.fill")
                     .foregroundStyle(Color(.systemPink))
-                    .scaleEffect(recipe.isFavorite ? 1 : 0)
+                    .scaleEffect(recipe.isFavorite ? scale : 0)
 
                 HeartSplashView()
-                    .scaleEffect(showSplash ? (closeAnimation ? 0 : 0.7) : 0)
+                    .scaleEffect(showSplash ? (closeAnimation ? 0 : 0.7) * scale : 0)
                     .opacity(removeSplash ? 0 : 1)
 
             }
@@ -105,6 +107,5 @@ struct RecipeHeartView: View {
 
 #Preview {
     let recipe = Recipe.recipes[5]
-    RecipeHeartView(recipe: recipe)
-        .preferredColorScheme(.dark)
+    RecipeHeartView(recipe: recipe, scale: 2.0)
 }

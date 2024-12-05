@@ -71,38 +71,71 @@ struct RecipeInfoView: View {
                         
                         RecipeImageCard(recipe: recipe)
 
-                        Text(recipe.title)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding(.horizontal, 20)
-                            .multilineTextAlignment(.leading)
-                            
-                        
-                        RecipeTagsSection(tagDataList: tagData)
-                        
-                        RecipeSeasonalityStatus(seasonalData: recipe.seasonalData)
-                        
-                        ContainerView(title: "Beschreibung"){ Text(recipe.description)
-                        }
-                        
-                        ContainerView(title: "Verfügbarkeit", contentPadding: CGFloat(0)) {
-                            RecipePieChart(seasonalData: recipe.seasonalData)
-                                .padding(.vertical, 5)
-                        }
-                        
-                        ContainerView(title: "Zutaten") {
-                            RecipeIngredientTable(ingredientList: recipe.ingredientsByPersons)
-                        }
-                        
-                        ContainerView(title: "Zubereitung"){
-                            RecipeInstructionsView(instructions: recipe.instructions)
-                        }
-                        
-                        ContainerView(title: "Ähnliche Gerichte", contentPadding: CGFloat(0)) {
-                            RecipeImageScrollView(recipes: recipesOfSameCategory)
-                                .scrollIndicators(.visible)
+                        VStack{
+                            Text(recipe.title)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
 
+                            RecipeTagsSection(tagDataList: tagData)
+
+                            Text("Kurzbeschreibung")
+                                .font(.title2.bold())
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 5)
+                                .padding(.top, 25)
+                            GroupBox {
+                                VStack(alignment: .leading) {
+                                    Text(recipe.description)
+                                }
+                                .padding()
+                            }
+                            .frame(maxWidth: .infinity)
+
+                            Text("Verfügbarkeit")
+                                .font(.title2.bold())
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 5)
+                                .padding(.top, 25)
+                            GroupBox {
+                                RecipeSeasonalityStatusView(
+                                    seasonalData: recipe.seasonalData,
+                                    selectedMonth: selectedMonth
+                                )
+                                .frame(maxWidth: .infinity)
+                            }
+
+                            ExpandableGroupBox(title: "Zutatenverfügbarkeit") {
+                                RecipePieChart(
+                                    seasonalData: recipe.seasonalData,
+                                    selectedMonth: selectedMonth
+                                )
+                            }
+
+                            ExpandableGroupBox(title: "Zutaten") {
+                                RecipeIngredientTable(
+                                    ingredientList: recipe.ingredientsByPersons)
+                            }
+
+                            ExpandableGroupBox(title: "Zubereitung") {
+                                RecipeInstructionsView(
+                                    instructions: recipe.instructions)
+                                    .frame(maxWidth: .infinity)
+                            }
+
+                            Text("Ähnliche Gerichte")
+                                .font(.title2.bold())
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 5)
+                                .padding(.top, 25)
+                            SimilarRecipesView(
+                                recipe: recipe, selectedMonth: selectedMonth
+                            )
+                            .frame(maxWidth: .infinity)
+
+                            InformationSectionView()
                         }
+                        .padding()
                         Spacer()
                             .frame(height: UINavigationController().navigationBar.frame.height + 50)
                     }
@@ -116,13 +149,13 @@ struct RecipeInfoView: View {
                                 .lineLimit(1)
                                 .truncationMode(.tail)
                         }
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button(action: {
-                                hapticFeedback.impactOccurred()
-                                hapticFeedback.prepare()
-                            }) {
-                                RecipeHeartView(recipe: recipe)
-                            }
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            hapticFeedback.impactOccurred()
+                            hapticFeedback.prepare()
+                        }) {
+                            RecipeHeartView(recipe: recipe, scale: 1.0)
                         }
                     }
                 }

@@ -53,6 +53,7 @@ struct CalendarView: View {
                     }
                 }
                 .padding(.top)
+                .padding(.bottom, 2)
                 
                 if showFilters {
                     Picker("Wähle ein Produkttyp aus", selection: $selectedProductType){

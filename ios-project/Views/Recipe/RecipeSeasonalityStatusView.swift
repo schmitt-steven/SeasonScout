@@ -1,42 +1,35 @@
+//
+//  RecipeSeasonalityStatusView.swift
+//  ios-project
+//
+
 import SwiftUI
 
-struct RecipeSeasonalityStatus: View {
+struct RecipeSeasonalityStatusView: View {
     let seasonalData: [RecipeSeasonalMonthData]
-    
-    // Computes current month formatted in German
-    var currentMonth: Month? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "de_DE")
-        dateFormatter.dateFormat = "LLLL"
-        return Month(rawValue: dateFormatter.string(from: Date()))
-    }
+    let selectedMonth: Month
     
     let isSeasonalText = "Derzeit zum Großteil mit regionalen Produkten zubereitbar!"
     let isPartiallySeasonalText = "Derzeit teilweise mit regionalen Produkten zubereitbar."
     let isNotSeasonalText = "Derzeit nicht mit regionalen Produkten zubereitbar."
 
     var body: some View {
-        Group {
-            HStack {
-                if let monthStatus = seasonalData.first(where: { $0.month == currentMonth }) {
-                    statusIcon(for: monthStatus)
-                        .foregroundStyle(statusColor(for: monthStatus))
-                        .font(.title)
-                        .padding(.top, 3)
-                    
-                    Text(statusText(for: monthStatus))
-                        .font(.subheadline)
-                        .padding(.leading, 5)
-                    
-                    Spacer()
-                }
+        if let monthStatus = seasonalData.first(where: { $0.month == selectedMonth }) {
+            HStack(alignment: .top) {
+                statusIcon(for: monthStatus)
+                    .foregroundStyle(statusColor(for: monthStatus))
+                    .padding(10)
+                    .background(
+                        Circle()
+                            .fill(statusColor(for: monthStatus).opacity(0.2))
+                    )
+                
+                Text(statusText(for: monthStatus))
+                    .multilineTextAlignment(.leading)
             }
-            .padding(10)
+            .frame(maxWidth: .infinity, alignment: .leading)
+
         }
-        .background(Color(.lightestGray))
-        .clipShape(.rect(cornerRadius: 15))
-        .padding([.leading, .trailing], 20)
-        .shadow(color: Color(.systemGray3), radius: 4)
     }
 
     func statusIcon(for status: RecipeSeasonalMonthData) -> Image {
@@ -55,7 +48,7 @@ struct RecipeSeasonalityStatus: View {
         case "ja":
             return .green
         case "(ja)":
-            return .orange
+            return .yellow
         default:
             return .red
         }

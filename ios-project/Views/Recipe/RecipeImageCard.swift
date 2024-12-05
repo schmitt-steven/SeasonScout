@@ -42,14 +42,9 @@ struct RecipeImageCard: View {
                             
                             Button(action: {
                                 hapticFeedback.impactOccurred()
-                                
-                                withAnimation(.bouncy(duration: 0.5)){
-                                    recipe.isFavorite.toggle()
-                                }
-                                recipe.saveFavoriteState(for: recipe.id, isFavorite: recipe.isFavorite)
                                 hapticFeedback.prepare()
                             }) {
-                                Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                                /*Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
                                     .symbolEffect(
                                         .bounce.up,
                                         options: .speed(0.8),
@@ -63,7 +58,7 @@ struct RecipeImageCard: View {
                                             .padding(-10)
                                             .foregroundStyle(Color(.systemGray2))
                                             .opacity(0.9)
-                                    )
+                                    )*/
                                     
                             }
                         }
@@ -84,7 +79,7 @@ struct RecipeImageCard: View {
 
             }
         }
-        .shadow(color: .black, radius: 12)
+        .shadow(color: .black, radius: 5)
         .padding(.bottom, 8)
         
         .ignoresSafeArea(.all)

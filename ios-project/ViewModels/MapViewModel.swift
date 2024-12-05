@@ -9,8 +9,7 @@ import CoreLocation
 import MapKit
 
 
-// A CLLocationManagerDelegate instance is used by the CLLocationManager to report
-// changes in the location authorization status
+// A CLLocationManagerDelegate instance is used by the CLLocationManager to report changes in the location authorization status
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     
     var onAuthorizationChange: ((CLAuthorizationStatus) -> Void)?
@@ -35,6 +34,9 @@ class MapViewModel: ObservableObject {
     let locationManager: CLLocationManager
     private let locationDelegate: LocationManagerDelegate
     private var searchResults: [MKMapItem] = []
+    var isMarketDetailSheetVisible: Bool {
+        self.selectedMarker != nil
+    }
     
     @Published var marketsFoundInUserRegion: [MKMapItem] = []
     @Published var currentAuthorizationStatus: CLAuthorizationStatus
@@ -111,6 +113,7 @@ class MapViewModel: ObservableObject {
             }
         }
     }
+    
     func calculateCoordinateSpan(for radiusInMeters: Double) -> MKCoordinateSpan {
         let metersPerDegree = 30_000.0
         // Converts radius in meters to degrees
@@ -118,9 +121,8 @@ class MapViewModel: ObservableObject {
         
         return MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
     }
-
     
-    private func buildSearchRequest(using location: CLLocation) -> MKLocalSearch.Request {
+    private func buildMarketSearchRequest(using location: CLLocation) -> MKLocalSearch.Request {
         
         let request = MKLocalSearch.Request()
         
@@ -152,7 +154,7 @@ class MapViewModel: ObservableObject {
             return
         }
         
-        let request = buildSearchRequest(using: location)
+        let request = buildMarketSearchRequest(using: location)
         
         do {
             // Reset search errors for new try
@@ -206,15 +208,31 @@ class MapViewModel: ObservableObject {
         return filteredMapItems
     }
     
-#warning("build dat shit")
+#warning("limit searches, update on position change, check pagination for results")
     private func buildMarketsFoundInUserRegionList(){
         
     }
     
     private func showSearchResultsNotification() {
         isSearchResultsNotificationVisible = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.isSearchResultsNotificationVisible = false
             }
         }
+    
+    private func getTravelTimeAndDistance(transportType: MKDirectionsTransportType) async -> (TimeInterval?, CLLocationDistance?) {
+        
+        var routeRequest = MKDirections.Request()
+        routeRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: self.locationManager.location!.coordinate))
+        routeRequest.destination = self.selectedMarker!
+        routeRequest.transportType = transportType
+        
+        do {
+            let etaResponse = try await MKDirections(request: routeRequest).calculateETA()
+            return (etaResponse.expectedTravelTime / 60, etaResponse.distance)
+        } catch let error {
+            return (nil, nil)
+        }
+    }
+    
 }

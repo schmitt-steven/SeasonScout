@@ -14,7 +14,7 @@ enum MapErrorType{
 
 struct MapViewErrorMessage: View {
     
-    @ObservedObject var mapViewController: MapViewController
+    @ObservedObject var mapViewController: MapViewModel
     let errorType: MapErrorType
     
     var errorMessage: String {

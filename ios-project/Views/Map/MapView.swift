@@ -4,30 +4,33 @@ import MapKit
 
 struct MapView: View {
     
-    @StateObject private var viewController = MapViewController()
+    @StateObject private var viewController = MapViewModel()
     
     var body: some View {
         ZStack {
-            Map(position: $viewController.mapCameraPosition) {
+            Map(
+                position: $viewController.mapCameraPosition,
+                selection: $viewController.selectedMarker
+            ) {
                 UserAnnotation()
                 
                 if let userLocation = viewController.locationManager.location?.coordinate {
                     MapCircle(center: userLocation, radius: CLLocationDistance(viewController.searchRadiusInMeters))
-                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? .orange.opacity(0.2) : .secondary.opacity(0.1))
-                        .stroke(.orange, lineWidth: 2)
+                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.2) : .secondary.opacity(0.2))
+                        .stroke(Color(.systemOrange).opacity(0.7), lineWidth: 2)
                 }
                 
                 if viewController.isMapMarkerVisible {
                     ForEach(viewController.marketsFoundInUserRegion, id: \.identifier) { market in
-                        Marker(coordinate: market.placemark.coordinate) {
-                            Label(market.placemark.name ?? "Unknown Market", systemImage: "storefront")
-                                .font(.largeTitle.bold()
-                                )
-                        }
-                        .tint(.orange)
+                        Marker(item: market)
+                            .tint(Color(.systemOrange))
+                            .tag(market)                        
                     }
                 }
             }
+            .accentColor(Color(.systemOrange))
+            .mapStyle(viewController.currentMapStyle)
+            
             .onAppear {
                 viewController.requestAuthorization()
                 if (viewController.currentAuthorizationStatus == .denied) {
@@ -46,6 +49,14 @@ struct MapView: View {
                         },
                         secondaryButton: .cancel(Text("Schließen"))
                     )
+            }
+            // Shows additional information when a market was slected on the map
+            .sheet(isPresented: Binding<Bool>(
+                get: { viewController.selectedMarker != nil },
+                set: { _ in }
+            )) {
+                    MarketDetailSheet(mapViewModel: viewController)
+                        .presentationDetents([.fraction(0.35) ,.medium])
             }
             
             // Only show radius controls if searching for markets works

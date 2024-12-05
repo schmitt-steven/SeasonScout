@@ -9,7 +9,7 @@ import MapKit
 
 struct RadiusSlider: View {
     
-    @ObservedObject var mapViewController: MapViewController
+    @ObservedObject var mapViewController: MapViewModel
     let searchRadiusRange = 5_000.0...50_000.0  // in meters
     
     var body: some View {
@@ -25,7 +25,7 @@ struct RadiusSlider: View {
                             }
                         }) {
                             HStack{
-                                Image(systemName: "arrow.left.and.right").foregroundStyle(.orange)
+                                Image(systemName: "mappin.and.ellipse").foregroundStyle(.orange)
                                 Text("\(Int(mapViewController.searchRadiusInMeters)/1000)km")
                                     .foregroundColor(mapViewController.isSearchRadiusBeingEdited ? .accentColor : .primary)
                             }
@@ -80,7 +80,7 @@ struct RadiusSlider: View {
                         }
                     }){
                         HStack{
-                            Image(systemName: "arrow.left.and.right").foregroundStyle(.orange)
+                            Image(systemName: "mappin.and.ellipse").foregroundStyle(.orange)
                             Text("\(Int(mapViewController.searchRadiusInMeters)/1000)km")
                                 .foregroundColor(mapViewController.isSearchRadiusBeingEdited ? .accentColor : .primary)
                         }

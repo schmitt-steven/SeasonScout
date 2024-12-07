@@ -1910,7 +1910,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "jerusalem-artichoke.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1960,7 +1960,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "white-cabbage.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2010,7 +2010,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "savoy-cabbage.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2060,7 +2060,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "zucchini.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2110,7 +2110,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "sugar-snap-peas.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2160,7 +2160,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "onion-bulbs.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2210,7 +2210,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "apple.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2260,7 +2260,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "apricots.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2310,7 +2310,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "pear.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2360,7 +2360,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "blueberry.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2410,7 +2410,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "blackberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2460,7 +2460,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "strawberry.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2510,7 +2510,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "chestnut.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2560,7 +2560,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "raspberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2610,7 +2610,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "hazelnuts.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2660,7 +2660,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "elderberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2710,7 +2710,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "currants.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2760,7 +2760,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "cherries.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2810,7 +2810,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "yellow-plums.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2860,7 +2860,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "plums.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2910,7 +2910,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "crowberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2960,7 +2960,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "quince.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3010,7 +3010,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "peach.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3060,7 +3060,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "peaches.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3110,7 +3110,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "rhubarb.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3160,7 +3160,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "gooseberry.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3210,7 +3210,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "walnuts.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3260,7 +3260,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "melons.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3310,7 +3310,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "grapes.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3360,7 +3360,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "grapes(2).jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3410,7 +3410,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "plum.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3460,7 +3460,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "pineapple.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3510,7 +3510,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "oranges.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3560,7 +3560,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "hass-avocado.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3610,7 +3610,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "banana.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3660,7 +3660,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "figs.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3710,7 +3710,7 @@
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "pomegranate.jpg", "imageSource": "pixabay.com", "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],

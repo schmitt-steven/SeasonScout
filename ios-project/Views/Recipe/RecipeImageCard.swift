@@ -68,7 +68,7 @@ struct RecipeImageCard: View {
                     }
                 }
             if isFlipped {
-                Text("Rezept & Bild stammen von\n\(recipe.source)")
+                Text("Informationen stammen von\n\(recipe.source)")
                     .font(.headline)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)

@@ -132,8 +132,17 @@ struct RecipeInfoView: View {
                                 recipe: recipe, selectedMonth: selectedMonth
                             )
                             .frame(maxWidth: .infinity)
-
-                            InformationSectionView()
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                Divider()
+                                
+                                Text("Informationen zur Seite")
+                                    .font(.title3.bold())
+                                    .foregroundColor(.gray)
+                                Text("Informationen/Bilder stammen von der Webseite \(recipe.source)")
+                                    .foregroundColor(.gray)
+                            }
+                            .padding()
                         }
                         .padding()
                         Spacer()

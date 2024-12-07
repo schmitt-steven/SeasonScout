@@ -16,8 +16,8 @@ struct MapView: View {
                 
                 if let userLocation = viewController.locationManager.location?.coordinate {
                     MapCircle(center: userLocation, radius: CLLocationDistance(viewController.searchRadiusInMeters))
-                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.2) : .secondary.opacity(0.2))
-                        .stroke(Color(.systemOrange).opacity(0.7), lineWidth: 2)
+                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.2) : Color(.systemGray5).opacity(0.2))
+                        .stroke(Color(.systemGray2).opacity(0.5), lineWidth: 3)
                 }
                 
                 if viewController.isMapMarkerVisible {
@@ -40,6 +40,9 @@ struct MapView: View {
             .onChange(of: viewController.currentAuthorizationStatus){
                 viewController.requestAuthorization()
             }
+            .onChange(of: viewController.selectedMarker){
+                viewController.isMarketDetailSheetVisible = true
+            }
             .alert(isPresented: $viewController.isLocationSettingsAlertVisible) {
                     Alert(
                         title: Text("GPS-Dienste sind deaktiviert."),
@@ -53,10 +56,22 @@ struct MapView: View {
             // Shows additional information when a market was slected on the map
             .sheet(isPresented: Binding<Bool>(
                 get: { viewController.selectedMarker != nil },
-                set: { _ in }
+                set: { _ in withAnimation(.easeOut){ viewController.selectedMarker = nil }}
             )) {
-                    MarketDetailSheet(mapViewModel: viewController)
-                        .presentationDetents([.fraction(0.35) ,.medium])
+                if let mapItem: MKMapItem = viewController.selectedMarker,
+                   let userCoordinate: CLLocationCoordinate2D = viewController.locationManager.location?.coordinate {
+                    ScrollView{
+                        MarketDetailSheet(mapItem: mapItem, userCoordinate: userCoordinate)
+                    }
+                    .presentationBackground(.background.opacity(0.4))
+                    .scrollIndicators(.hidden)
+                    .scrollDisabled(true)
+                    .presentationDetents([.fraction(0.27),.fraction(0.52)])
+                    .presentationCornerRadius(16)
+                    .presentationBackgroundInteraction(.enabled)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    .ignoresSafeArea(.all)
+                }
             }
             
             // Only show radius controls if searching for markets works

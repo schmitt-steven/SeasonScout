@@ -34,9 +34,6 @@ class MapViewModel: ObservableObject {
     let locationManager: CLLocationManager
     private let locationDelegate: LocationManagerDelegate
     private var searchResults: [MKMapItem] = []
-    var isMarketDetailSheetVisible: Bool {
-        self.selectedMarker != nil
-    }
     
     @Published var marketsFoundInUserRegion: [MKMapItem] = []
     @Published var currentAuthorizationStatus: CLAuthorizationStatus
@@ -51,6 +48,7 @@ class MapViewModel: ObservableObject {
     @Published var isMapMarkerVisible: Bool = false
     @Published var currentMapStyle: MapStyle = .standard
     @Published var selectedMarker: MKMapItem?
+    @Published var isMarketDetailSheetVisible: Bool = false
    
     init() {
         self.locationManager = CLLocationManager()
@@ -219,20 +217,4 @@ class MapViewModel: ObservableObject {
                 self.isSearchResultsNotificationVisible = false
             }
         }
-    
-    private func getTravelTimeAndDistance(transportType: MKDirectionsTransportType) async -> (TimeInterval?, CLLocationDistance?) {
-        
-        var routeRequest = MKDirections.Request()
-        routeRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: self.locationManager.location!.coordinate))
-        routeRequest.destination = self.selectedMarker!
-        routeRequest.transportType = transportType
-        
-        do {
-            let etaResponse = try await MKDirections(request: routeRequest).calculateETA()
-            return (etaResponse.expectedTravelTime / 60, etaResponse.distance)
-        } catch let error {
-            return (nil, nil)
-        }
-    }
-    
 }

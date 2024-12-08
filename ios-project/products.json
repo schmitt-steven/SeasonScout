@@ -3,14 +3,16 @@
     "id": 0,
     "name": "Auberginen",
     "botanicalName": "Cucurbita pepo",
-    "description": "",
+    "description": "Ein glänzendes, violettes Gemüse mit mildem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -53,14 +55,16 @@
     "id": 1,
     "name": "Artischocken",
     "botanicalName": "",
-    "description": "",
+    "description": "Große, essbare Blütenknospen mit zartem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -103,14 +107,16 @@
     "id": 2,
     "name": "Blumenkohl",
     "botanicalName": "Brassica oleracea var. botrytis",
-    "description": "",
+    "description": "Ein weißer Kohlkopf mit mildem, leicht nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -153,14 +159,16 @@
     "id": 3,
     "name": "Bohnen, grüne",
     "botanicalName": "Phaseolus vulgaris",
-    "description": "",
+    "description": "Knackige grüne Hülsenfrüchte mit mildem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -203,14 +211,16 @@
     "id": 4,
     "name": "Bohnen, dicke",
     "botanicalName": "Phaseolus vulgaris",
-    "description": "",
+    "description": "Fleischige Hülsenfrüchte mit süßlichem Aroma.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -253,14 +263,16 @@
     "id": 5,
     "name": "Brokkoli",
     "botanicalName": "Brassica oleracea var. italica",
-    "description": "",
+    "description": "Grüne Röschen mit mildem Geschmack und vielen Nährstoffen.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -303,14 +315,16 @@
     "id": 6,
     "name": "Butterrüben",
     "botanicalName": "Beta vulgaris",
-    "description": "",
+    "description": "Ein Wurzelgemüse mit süßem, mildem Aroma.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -353,14 +367,16 @@
     "id": 7,
     "name": "Champignons",
     "botanicalName": "Agaricus bisporus",
-    "description": "",
+    "description": "Pilze mit mildem, erdigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -403,14 +419,16 @@
     "id": 8,
     "name": "Chinakohl",
     "botanicalName": "",
-    "description": "",
+    "description": "Ein knackiger, milder Kohl.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -453,14 +471,16 @@
     "id": 9,
     "name": "Erbsen",
     "botanicalName": "Pisum sativum",
-    "description": "",
+    "description": "Kleine, grüne Hülsenfrüchte mit süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -503,14 +523,16 @@
     "id": 10,
     "name": "Fenchel",
     "botanicalName": "Foeniculum vulgare",
-    "description": "",
+    "description": "Eine knollenartige Pflanze mit mildem, leicht süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -553,14 +575,16 @@
     "id": 11,
     "name": "Grünkohl",
     "botanicalName": "Brassica oleracea var. sabellica",
-    "description": "",
+    "description": "Ein dunkelgrünes Blattgemüse, das reich an Vitaminen und Antioxidantien ist.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -603,14 +627,16 @@
     "id": 12,
     "name": "Gurke / Salatgurke",
     "botanicalName": "Cucumis sativus",
-    "description": "",
+    "description": "Ein erfrischendes Gemüse mit hohem Wassergehalt, ideal für Salate.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -653,14 +679,16 @@
     "id": 13,
     "name": "Kartoffeln",
     "botanicalName": "Solanum tuberosum",
-    "description": "",
+    "description": "Ein vielseitiges Wurzelgemüse, das gekocht, gebraten oder gebacken werden kann.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -703,14 +731,16 @@
     "id": 14,
     "name": "Kohlrabi",
     "botanicalName": "Brassica oleracea var. gongylodes",
-    "description": "",
+    "description": "Eine knollenartige Pflanze mit mildem, nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -753,14 +783,16 @@
     "id": 15,
     "name": "Kürbis",
     "botanicalName": "Cucurbita pepo",
-    "description": "",
+    "description": "Ein großes, orangefarbenes Gemüse, das oft für Suppen und Desserts verwendet wird.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -803,14 +835,16 @@
     "id": 16,
     "name": "Lauch / Porree",
     "botanicalName": "Allium porrum",
-    "description": "",
+    "description": "Ein mild schmeckendes Gemüse aus der Zwiebel-Familie.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -853,14 +887,16 @@
     "id": 17,
     "name": "Lauch- / Frühlingszwiebeln",
     "botanicalName": "Allium fistulosum",
-    "description": "",
+    "description": "Zarte, milde Zwiebelart, die oft roh in Salaten verwendet wird.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -903,14 +939,16 @@
     "id": 18,
     "name": "Mais",
     "botanicalName": "Zea mays",
-    "description": "",
+    "description": "Goldgelbe Körner, die süß und saftig schmecken.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -953,14 +991,16 @@
     "id": 19,
     "name": "Mangold",
     "botanicalName": "Beta vulgaris var. cicla",
-    "description": "",
+    "description": "Ein Blattgemüse mit kräftigen, bunten Stielen.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1003,14 +1043,16 @@
     "id": 20,
     "name": "Mairüben",
     "botanicalName": "",
-    "description": "",
+    "description": "Kleine, weiße Wurzeln mit leicht süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1053,14 +1095,16 @@
     "id": 21,
     "name": "Karotten",
     "botanicalName": "Daucus carota",
-    "description": "",
+    "description": "Orangene Wurzeln, die reich an Beta-Carotin sind.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1103,14 +1147,16 @@
     "id": 22,
     "name": "Paprika",
     "botanicalName": "Capsicum annuum",
-    "description": "",
+    "description": "Knackige, süße oder scharfe Früchte in verschiedenen Farben.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1153,14 +1199,16 @@
     "id": 23,
     "name": "Pastinaken",
     "botanicalName": "Pastinaca sativa",
-    "description": "",
+    "description": "Wurzelgemüse mit süßlichem, nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1203,14 +1251,16 @@
     "id": 24,
     "name": "Radieschen",
     "botanicalName": "Raphanus sativus",
-    "description": "",
+    "description": "Kleine, runde Knollen mit scharfem, pfeffrigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1253,14 +1303,16 @@
     "id": 25,
     "name": "Rosenkohl",
     "botanicalName": "Brassica oleracea var. gemmifera",
-    "description": "",
+    "description": "Kleine grüne Knospen mit leicht bitterem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1303,14 +1355,16 @@
     "id": 26,
     "name": "Rote Bete",
     "botanicalName": "Beta vulgaris subsp. vulgaris",
-    "description": "",
+    "description": "Knollengemüse mit intensivem, erdigen Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1353,14 +1407,16 @@
     "id": 27,
     "name": "Rotkohl",
     "botanicalName": "Brassica oleracea var. capitata",
-    "description": "",
+    "description": "Ein purpurrotes Kraut mit mildem, leicht süßem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1403,14 +1459,16 @@
     "id": 28,
     "name": "Rettich",
     "botanicalName": "",
-    "description": "",
+    "description": "Ein längliches, scharfes Wurzelgemüse.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1453,14 +1511,16 @@
     "id": 29,
     "name": "Schalotten",
     "botanicalName": "",
-    "description": "",
+    "description": "Kleine Zwiebelart mit mildem, süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1503,14 +1563,16 @@
     "id": 30,
     "name": "Schwarzwurzeln",
     "botanicalName": "",
-    "description": "",
+    "description": "Lange, dunkle Wurzeln mit nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1553,14 +1615,16 @@
     "id": 31,
     "name": "Spargel",
     "botanicalName": "Asparagus officinalis",
-    "description": "",
+    "description": "Stangenförmiges Gemüse, das weiß oder grün geerntet wird.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1603,14 +1667,16 @@
     "id": 32,
     "name": "Spinat",
     "botanicalName": "Spinacia oleracea",
-    "description": "",
+    "description": "Grüne Blätter, die roh oder gekocht gegessen werden können.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1653,14 +1719,16 @@
     "id": 33,
     "name": "Spitzkohl",
     "botanicalName": "",
-    "description": "",
+    "description": "Ein zarter, leicht süßlicher Kohl.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1703,14 +1771,16 @@
     "id": 34,
     "name": "Sellerieknollen",
     "botanicalName": "",
-    "description": "",
+    "description": "Knollengemüse mit intensivem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1753,14 +1823,16 @@
     "id": 35,
     "name": "Staudensellerie",
     "botanicalName": "",
-    "description": "",
+    "description": "Knackige, grüne Stangen mit frischem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1803,14 +1875,16 @@
     "id": 36,
     "name": "Steckrüben",
     "botanicalName": "Brassica napus var. napobrassica",
-    "description": "",
+    "description": "Gelbliche Wurzeln mit leicht süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -1853,14 +1927,16 @@
     "id": 37,
     "name": "Tomaten",
     "botanicalName": "Solanum lycopersicum",
-    "description": "",
+    "description": "Saftige, rote Früchte mit vielseitiger Verwendung.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -1903,14 +1979,16 @@
     "id": 38,
     "name": "Topinambur",
     "botanicalName": "",
-    "description": "",
+    "description": "Kleine Knollen mit nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "jerusalem-artichoke.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "jerusalem-artichoke.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -1953,14 +2031,16 @@
     "id": 39,
     "name": "Weißkohl",
     "botanicalName": "Brassica oleracea var. capitata",
-    "description": "",
+    "description": "Ein weißer, knackiger Kohl, der für Krautsalat bekannt ist.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "white-cabbage.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "white-cabbage.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2003,14 +2083,16 @@
     "id": 40,
     "name": "Wirsingkohl",
     "botanicalName": "Brassica oleracea var. sabauda",
-    "description": "",
+    "description": "Ein krauser Kohl mit mildem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "savoy-cabbage.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "savoy-cabbage.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2053,14 +2135,16 @@
     "id": 41,
     "name": "Zucchini",
     "botanicalName": "Cucurbita pepo",
-    "description": "",
+    "description": "Eine grüne Frucht, die oft wie Gemüse verwendet wird.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "zucchini.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "zucchini.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2103,14 +2187,16 @@
     "id": 42,
     "name": "Zuckerschoten",
     "botanicalName": "",
-    "description": "",
+    "description": "Knackige, süße Hülsen mit zarten Erbsen im Inneren.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "sugar-snap-peas.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "sugar-snap-peas.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2153,14 +2239,16 @@
     "id": 43,
     "name": "Zwiebeln",
     "botanicalName": "Allium cepa",
-    "description": "",
+    "description": "Würziges, vielseitiges Gemüse für viele Gerichte.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "onion-bulbs.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "onion-bulbs.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2203,14 +2291,16 @@
     "id": 44,
     "name": "Apfel",
     "botanicalName": "Malus domestica",
-    "description": "",
+    "description": "Knackige, süße oder saure Frucht mit vielen Sorten.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "imageName": "apple.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "apple.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -2253,14 +2343,16 @@
     "id": 45,
     "name": "Aprikose",
     "botanicalName": "Prunus armeniaca",
-    "description": "",
+    "description": "Kleine, saftige Steinfrucht mit samtiger Haut und süß-säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "apricots.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "apricots.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2303,14 +2395,16 @@
     "id": 46,
     "name": "Birne",
     "botanicalName": "Pyrus communis",
-    "description": "",
+    "description": "Süße, saftige Frucht mit weicher Textur, die roh oder gekocht genossen wird.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "imageName": "pear.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "pear.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2353,14 +2447,16 @@
     "id": 47,
     "name": "Blaubeeren / Heidelbeeren",
     "botanicalName": "Vaccinium myrtillus",
-    "description": "",
+    "description": "Kleine, runde Beeren mit süßem Geschmack und hohem Gehalt an Antioxidantien.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "blueberry.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "blueberry.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2403,14 +2499,16 @@
     "id": 48,
     "name": "Brombeeren",
     "botanicalName": "Rubus fruticosus",
-    "description": "",
+    "description": "Schwarze, süß-saure Beeren, ideal für Desserts und Marmeladen.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "blackberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "blackberries.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2453,14 +2551,16 @@
     "id": 49,
     "name": "Erdbeeren",
     "botanicalName": "Fragaria",
-    "description": "",
+    "description": "Leuchtend rote Beeren mit süßem, fruchtigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "strawberry.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "strawberry.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2503,14 +2603,16 @@
     "id": 50,
     "name": "Esskastanien",
     "botanicalName": "",
-    "description": "",
+    "description": "Nuss mit süßlichem, leicht mehligen Inneren, ideal zum Rösten.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "imageName": "chestnut.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "chestnut.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2553,14 +2655,16 @@
     "id": 51,
     "name": "Himbeeren",
     "botanicalName": "Rubus idaeus",
-    "description": "",
+    "description": "Rote Beeren mit intensivem, süßem Aroma und weicher Textur.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "raspberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "raspberries.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2603,14 +2707,16 @@
     "id": 52,
     "name": "Haselnüsse",
     "botanicalName": "",
-    "description": "",
+    "description": "Kleine, runde Nüsse mit nussigem, süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "imageName": "hazelnuts.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "hazelnuts.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2653,14 +2759,16 @@
     "id": 53,
     "name": "Holunderbeeren / Flieder",
     "botanicalName": "Sambucus nigra",
-    "description": "",
+    "description": "Kleine, schwarze Beeren mit leicht säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "elderberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "elderberries.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2703,14 +2811,16 @@
     "id": 54,
     "name": "Johannisbeeren",
     "botanicalName": "Ribes rubrum",
-    "description": "",
+    "description": "Kleine, saure oder süße Beeren, die rot, schwarz oder weiß sein können.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "currants.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "currants.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2753,14 +2863,16 @@
     "id": 55,
     "name": "Kirschen",
     "botanicalName": "Prunus avium",
-    "description": "",
+    "description": "Runde Steinfrüchte, die süß oder sauer sein können.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "cherries.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "cherries.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2803,14 +2915,16 @@
     "id": 56,
     "name": "Mirabellen",
     "botanicalName": "Prunus domestica subsp. domestica",
-    "description": "",
+    "description": "Kleine, gelbe Pflaumenart mit süßem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "yellow-plums.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "yellow-plums.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2853,14 +2967,16 @@
     "id": 57,
     "name": "Pflaumen",
     "botanicalName": "Prunus domestica",
-    "description": "",
+    "description": "Steinfrüchte mit saftigem, süßem bis leicht säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "plums.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "plums.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2903,14 +3019,16 @@
     "id": 58,
     "name": "Preiselbeeren",
     "botanicalName": "",
-    "description": "",
+    "description": "Kleine, rote Beeren mit herber, säuerlicher Note.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "crowberries.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "crowberries.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -2953,14 +3071,16 @@
     "id": 59,
     "name": "Quitten",
     "botanicalName": "Cydonia oblonga",
-    "description": "",
+    "description": "Gelbe Früchte mit festem, aromatischem Fruchtfleisch, oft für Gelees verwendet.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Kernobst",
-    "imageName": "quince.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "quince.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3003,14 +3123,16 @@
     "id": 60,
     "name": "Pfirsiche",
     "botanicalName": "",
-    "description": "",
+    "description": "Saftige Steinfrüchte mit weicher, samtiger Haut und süßem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "peach.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "peach.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3053,14 +3175,16 @@
     "id": 61,
     "name": "Nektarinen",
     "botanicalName": "",
-    "description": "",
+    "description": "Glattschalige Variante des Pfirsichs mit saftigem, süßem Fruchtfleisch.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "peaches.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "peaches.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3103,14 +3227,16 @@
     "id": 62,
     "name": "Rhabarber",
     "botanicalName": "Rheum rhabarbarum",
-    "description": "",
+    "description": "Stängelpflanze mit saurem Geschmack, oft in Desserts verwendet.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "rhubarb.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "rhubarb.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3153,14 +3279,16 @@
     "id": 63,
     "name": "Stachelbeeren",
     "botanicalName": "Ribes uva-crispa",
-    "description": "",
+    "description": "Grüne, gelbe oder rote Beeren mit leicht säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "gooseberry.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "gooseberry.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3203,14 +3331,16 @@
     "id": 64,
     "name": "Walnüsse",
     "botanicalName": "",
-    "description": "",
+    "description": "Harte Schale mit mild-nussigem, cremigem Kern.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Schalenobst",
-    "imageName": "walnuts.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "walnuts.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3253,14 +3383,16 @@
     "id": 65,
     "name": "Wassermelonen",
     "botanicalName": "Citrullus lanatus",
-    "description": "",
+    "description": "Große Früchte mit süßem, saftigem, rotem Fruchtfleisch.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "melons.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "melons.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3303,14 +3435,16 @@
     "id": 66,
     "name": "Weintrauben",
     "botanicalName": "Vitis vinifera",
-    "description": "",
+    "description": "Saftige Früchte, die süß oder säuerlich schmecken, ideal zum Naschen.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "grapes.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "grapes.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3353,14 +3487,16 @@
     "id": 67,
     "name": "Tafeltrauben",
     "botanicalName": "",
-    "description": "",
+    "description": "Speziell für den Frischverzehr gezüchtete süße Trauben.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Beerenobst",
-    "imageName": "grapes(2).jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "grapes(2).jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3403,14 +3539,16 @@
     "id": 68,
     "name": "Zwetschgen",
     "botanicalName": "Prunus domestica",
-    "description": "",
+    "description": "Kleine, ovale Pflaumenart mit festem Fruchtfleisch und süßem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Steinobst",
-    "imageName": "plum.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "plum.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3453,14 +3591,16 @@
     "id": 69,
     "name": "Ananas",
     "botanicalName": "Ananas comosus",
-    "description": "",
+    "description": "Tropische Frucht mit süß-säuerlichem, saftigem Fruchtfleisch.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "pineapple.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "pineapple.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3503,14 +3643,16 @@
     "id": 70,
     "name": "Orangen",
     "botanicalName": "Citrus sinensis",
-    "description": "",
+    "description": "Klassische Zitrusfrüchte mit süß-säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "oranges.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "oranges.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3553,14 +3695,16 @@
     "id": 71,
     "name": "Avocados",
     "botanicalName": "Persea americana",
-    "description": "",
+    "description": "Cremige, grüne Frucht mit mildem, buttrigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "hass-avocado.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "hass-avocado.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3603,14 +3747,16 @@
     "id": 72,
     "name": "Bananen",
     "botanicalName": "Musa spp.",
-    "description": "",
+    "description": "Lange, süße Früchte mit weichem Fruchtfleisch, ideal als Snack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "banana.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "banana.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3653,14 +3799,16 @@
     "id": 73,
     "name": "Feigen",
     "botanicalName": "Ficus carica",
-    "description": "",
+    "description": "Süße, weiche Früchte mit vielen kleinen Samen.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "figs.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "figs.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3703,14 +3851,16 @@
     "id": 74,
     "name": "Granatäpfel",
     "botanicalName": "Punica granatum",
-    "description": "",
+    "description": "Rote Frucht mit saftigen, süß-säuerlichen Kernen.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "pomegranate.jpg", "imageSource": "pixabay.com", "seasonalData": {
+    "imageName": "pomegranate.jpg",
+    "imageSource": "pixabay.com",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3753,14 +3903,16 @@
     "id": 75,
     "name": "Grapefruit",
     "botanicalName": "Citrus paradisi",
-    "description": "",
+    "description": "Große Zitrusfrucht mit bitter-säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3803,14 +3955,16 @@
     "id": 76,
     "name": "Kakis",
     "botanicalName": "Diospyros kaki",
-    "description": "",
+    "description": "Süße, orangefarbene Früchte mit weicher, glatter Haut.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3853,14 +4007,16 @@
     "id": 77,
     "name": "Kiwis",
     "botanicalName": "Actinidia deliciosa",
-    "description": "",
+    "description": "Braune, pelzige Frucht mit grünem, saftigem Inneren und süßem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3903,14 +4059,16 @@
     "id": 78,
     "name": "Limetten",
     "botanicalName": "Citrus aurantiifolia",
-    "description": "",
+    "description": "Kleine grüne Zitrusfrüchte mit intensiv saurem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -3953,14 +4111,16 @@
     "id": 79,
     "name": "Litschis",
     "botanicalName": "Litchi chinensis",
-    "description": "",
+    "description": "Tropische Frucht mit süßem, saftigem Inneren und harter Schale.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4003,14 +4163,16 @@
     "id": 80,
     "name": "Mandarinen",
     "botanicalName": "Citrus reticulata",
-    "description": "",
+    "description": "Kleine, süße Zitrusfrüchte mit leicht schälbarer Schale.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4053,14 +4215,16 @@
     "id": 81,
     "name": "Mangos",
     "botanicalName": "Mangifera indica",
-    "description": "",
+    "description": "Süße, tropische Früchte mit saftigem Fruchtfleisch.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4103,14 +4267,16 @@
     "id": 82,
     "name": "Pampelmusen",
     "botanicalName": "Citrus maxima",
-    "description": "",
+    "description": "Große Zitrusfrucht mit leicht bitterem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4153,14 +4319,16 @@
     "id": 83,
     "name": "Papayas",
     "botanicalName": "Carica papaya",
-    "description": "",
+    "description": "Tropische Frucht mit süßem, orangefarbenem Fruchtfleisch.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4203,14 +4371,16 @@
     "id": 84,
     "name": "Zitronen",
     "botanicalName": "Citrus limon",
-    "description": "",
+    "description": "Gelbe Zitrusfrucht mit saurem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": true,
     "isFavorite": false,
     "type": "Obst",
     "subtype": "Tropisches Obst",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4253,14 +4423,16 @@
     "id": 85,
     "name": "Batavia",
     "botanicalName": "Lactuca sativa",
-    "description": "",
+    "description": "Ein knackiger, leicht süßer Blattsalat.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4303,14 +4475,16 @@
     "id": 86,
     "name": "Chicorée",
     "botanicalName": "Cichorium intybus",
-    "description": "",
+    "description": "Bitteres Blattgemüse, ideal für Salate.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4353,14 +4527,16 @@
     "id": 87,
     "name": "Eichblattsalat",
     "botanicalName": "Lactuca sativa",
-    "description": "",
+    "description": "Weicher Salat mit nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4403,14 +4579,16 @@
     "id": 88,
     "name": "Eisbergsalat",
     "botanicalName": "Lactuca sativa",
-    "description": "",
+    "description": "Knackiger Salat mit mildem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4453,14 +4631,16 @@
     "id": 89,
     "name": "Endiviensalat",
     "botanicalName": "Cichorium endivia",
-    "description": "",
+    "description": "Blattgemüse mit leicht bitterem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4503,14 +4683,16 @@
     "id": 90,
     "name": "Feldsalat",
     "botanicalName": "Valerianella locusta",
-    "description": "",
+    "description": "Zarter Salat mit mild-nussigem Aroma.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4553,14 +4735,16 @@
     "id": 91,
     "name": "Kopfsalat",
     "botanicalName": "Lactuca sativa",
-    "description": "",
+    "description": "Klassischer Salat mit mildem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4603,14 +4787,16 @@
     "id": 92,
     "name": "Lollo Rosso",
     "botanicalName": "Lactuca sativa",
-    "description": "",
+    "description": "Krauser Salat mit leicht bitterem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4653,14 +4839,16 @@
     "id": 93,
     "name": "Portulak",
     "botanicalName": "Portulaca oleracea",
-    "description": "",
+    "description": "Zartes Kraut mit leicht säuerlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4703,14 +4891,16 @@
     "id": 94,
     "name": "Radicchio",
     "botanicalName": "Cichorium intybus var. foliosum",
-    "description": "",
+    "description": "Roter Salat mit bitterem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "auf Lager"
       ],
@@ -4753,14 +4943,16 @@
     "id": 95,
     "name": "Rucola",
     "botanicalName": "Eruca sativa",
-    "description": "",
+    "description": "Pikantes Kraut mit scharfem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4803,14 +4995,16 @@
     "id": 96,
     "name": "Bärlauch",
     "botanicalName": "Allium ursinum",
-    "description": "",
+    "description": "Wild wachsendes Kraut mit Knoblaucharoma.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Monokotyledonen",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4853,14 +5047,16 @@
     "id": 97,
     "name": "Basilikum",
     "botanicalName": "Ocimum basilicum",
-    "description": "",
+    "description": "Aromatisches Kraut, häufig in der mediterranen Küche.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -4903,14 +5099,16 @@
     "id": 98,
     "name": "Beifuß",
     "botanicalName": "Artemisia vulgaris",
-    "description": "",
+    "description": "Aromatisches Kraut, oft in der Küche verwendet.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -4953,14 +5151,16 @@
     "id": 99,
     "name": "Bohnenkraut",
     "botanicalName": "Satureja hortensis",
-    "description": "",
+    "description": "Ein pfeffriges Kraut, das zu Bohnen passt.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5003,14 +5203,16 @@
     "id": 100,
     "name": "Borretsch",
     "botanicalName": "Borago officinalis",
-    "description": "",
+    "description": "Ein Kraut mit mildem Gurkengeschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5053,14 +5255,16 @@
     "id": 101,
     "name": "Dill",
     "botanicalName": "Anethum graveolens",
-    "description": "",
+    "description": "Kraut mit frischem, leicht süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5103,14 +5307,16 @@
     "id": 102,
     "name": "Estragon",
     "botanicalName": "Artemisia dracunculus",
-    "description": "",
+    "description": "Ein aromatisches Kraut mit leicht anisartigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5153,14 +5359,16 @@
     "id": 103,
     "name": "Kerbel",
     "botanicalName": "Anthriscus cerefolium",
-    "description": "",
+    "description": "Ein Kraut mit mildem, anisähnlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5203,14 +5411,16 @@
     "id": 104,
     "name": "Koriander",
     "botanicalName": "Coriandrum sativum",
-    "description": "",
+    "description": "Ein Kraut mit intensivem, frischem Aroma.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5253,14 +5463,16 @@
     "id": 105,
     "name": "Kresse",
     "botanicalName": "Lepidium sativum",
-    "description": "",
+    "description": "Ein schnell wachsendes Kraut mit scharfem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5303,14 +5515,16 @@
     "id": 106,
     "name": "Liebstöckl",
     "botanicalName": "Levisticum officinale",
-    "description": "",
+    "description": "Ein Kraut mit intensiver Würze.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5353,14 +5567,16 @@
     "id": 107,
     "name": "Lorbeer",
     "botanicalName": "Laurus nobilis",
-    "description": "",
+    "description": "Aromatische Blätter, die für Suppen und Eintöpfe verwendet werden.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5403,14 +5619,16 @@
     "id": 108,
     "name": "Majoran",
     "botanicalName": "Origanum majorana",
-    "description": "",
+    "description": "Ein Kraut mit würzigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5453,14 +5671,16 @@
     "id": 109,
     "name": "Minze",
     "botanicalName": "Mentha piperita",
-    "description": "",
+    "description": "Erfrischendes Kraut mit intensiver Note.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5503,14 +5723,16 @@
     "id": 110,
     "name": "Oregano",
     "botanicalName": "Origanum vulgare",
-    "description": "",
+    "description": "Würziges Kraut, ideal für mediterrane Gerichte.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5553,14 +5775,16 @@
     "id": 111,
     "name": "Petersilie",
     "botanicalName": "Petroselinum crispum",
-    "description": "",
+    "description": "Ein vielseitiges Kraut mit frischem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Rosopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5603,14 +5827,16 @@
     "id": 112,
     "name": "Rosmarin",
     "botanicalName": "Rosmarinus officinalis",
-    "description": "",
+    "description": "Aromatisches Kraut mit harzigem Duft.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5653,14 +5879,16 @@
     "id": 113,
     "name": "Salbei",
     "botanicalName": "Salvia officinalis",
-    "description": "",
+    "description": "Ein Kraut mit intensivem, erdigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5703,14 +5931,16 @@
     "id": 114,
     "name": "Schnittlauch",
     "botanicalName": "Allium schoenoprasum",
-    "description": "",
+    "description": "Ein mildes Kraut mit Zwiebelgeschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Monokotyledonen",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "regional verfügbar"
       ],
@@ -5753,14 +5983,16 @@
     "id": 115,
     "name": "Thymian",
     "botanicalName": "Thymus vulgaris",
-    "description": "",
+    "description": "Ein intensives Kraut mit leicht zitroniger Note.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],
@@ -5803,14 +6035,16 @@
     "id": 116,
     "name": "Zitronenmelisse",
     "botanicalName": "Melissa officinalis",
-    "description": "",
+    "description": "Ein zitroniges Kraut mit mildem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Kräuter",
     "subtype": "Magnoliopsida",
-    "imageName": "", "imageSource": "", "seasonalData": {
+    "imageName": "",
+    "imageSource": "",
+    "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
       ],

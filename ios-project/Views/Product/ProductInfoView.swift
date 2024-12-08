@@ -70,7 +70,7 @@ struct ProductInfoView: View {
                                 .padding(.top, 25)
                             GroupBox {
                                 VStack(alignment: .leading) {
-                                    Text(ProductDescriptions.productDescriptions[product.name] ?? "Keine Kurzbeschreibung vorhanden")
+                                    Text(product.description)
                                 }
                                 .padding()
                                 .frame(maxWidth: .infinity)
@@ -152,6 +152,6 @@ struct ProductInfoView: View {
 }
 
 #Preview {
-    let product = Product.products[65]
+    let product = Product.products[40]
     ProductInfoView(product: product, selectedMonth: .nov)
 }

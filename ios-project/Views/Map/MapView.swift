@@ -16,8 +16,8 @@ struct MapView: View {
                 
                 if let userLocation = viewController.locationManager.location?.coordinate {
                     MapCircle(center: userLocation, radius: CLLocationDistance(viewController.searchRadiusInMeters))
-                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.2) : Color(.systemGray5).opacity(0.2))
-                        .stroke(Color(.systemGray2).opacity(0.5), lineWidth: 3)
+                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.5) : .secondary.opacity(0.2))
+                        .stroke(Color(.systemOrange).opacity(0.5), lineWidth: 2)
                 }
                 
                 if viewController.isMapMarkerVisible {
@@ -63,14 +63,14 @@ struct MapView: View {
                     ScrollView{
                         MarketDetailSheet(mapItem: mapItem, userCoordinate: userCoordinate)
                     }
-                    .presentationBackground(.background.opacity(0.4))
+                    .presentationBackground(.clear)
                     .scrollIndicators(.hidden)
                     .scrollDisabled(true)
-                    .presentationDetents([.fraction(0.27),.fraction(0.52)])
+                    .presentationDetents([.fraction(0.27),.fraction(0.57)])
                     .presentationCornerRadius(16)
                     .presentationBackgroundInteraction(.enabled)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .ignoresSafeArea(.all)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 }
             }
             

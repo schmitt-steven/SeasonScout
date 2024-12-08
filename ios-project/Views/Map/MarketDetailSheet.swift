@@ -1,17 +1,15 @@
 //
-//  MarketDetailSheet.swift
+//  TravelMode.swift
 //  ios-project
 //
-//  Created by Poimandres on 04.12.24.
+//  Created by Poimandres on 08.12.24.
 //
-
-// Shows more information about a selected market on the map
 
 import SwiftUI
 import MapKit
 
 struct MarketDetailSheet: View {
-    
+
     private let mapItem: MKMapItem
     private var userCoordinate: CLLocationCoordinate2D
     private let defaultTransportType: MKDirectionsTransportType = .automobile
@@ -29,24 +27,17 @@ struct MarketDetailSheet: View {
     var body: some View {
         ZStack{
             
-            BlurBackgroundView(style: .regular)
+            BlurBackgroundView(style: .systemMaterial)
                 .ignoresSafeArea(.all)
             
             VStack(spacing: 12) {
-                headerView
-                
+                headerSection
                 travelTimeSection
-                
                 Divider()
-                
                 infoSection
-                
                 Divider()
-                
                 lookAroundSection
-                
-                buttonSection
-                
+                appleMapsButtonSection
                 Spacer()
                     .frame(height: 100)
             }
@@ -57,22 +48,14 @@ struct MarketDetailSheet: View {
                 self.lookAroundScene = await MapService.getLookAroundScene(mapItem: self.mapItem)
         }
         .task {
-            if let route = await MapService.getTravelTimeAndDistance(
-                userCoordinate: self.userCoordinate,
-                mapItem: self.mapItem,
-                transportType: self.defaultTransportType
-            ) {
-                withAnimation {
-                    selectedRoute = route
-                    routes.append(route)
-                }
-            }
+            await initializeRoutes()
         }
-
         .onChange(of: mapItem) {
             Task {
+                await initializeRoutes()
+            }
+            Task {
                 let scene = await MapService.getLookAroundScene(mapItem: self.mapItem)
-                
                 withAnimation(.smooth) {
                     self.lookAroundScene = scene
                 }
@@ -81,47 +64,133 @@ struct MarketDetailSheet: View {
     }
 }
 
-private extension MarketDetailSheet {
+extension MarketDetailSheet {
+    
+    private func initializeRoutes() async {
+        routes = []
+
+        if let route = await MapService.getTravelTimeAndDistance(
+            userCoordinate: self.userCoordinate,
+            mapItem: self.mapItem,
+            transportType: self.defaultTransportType
+        ) {
+            withAnimation {
+                selectedRoute = route
+                routes.append(route)
+            }
+        }
+    }
+    
+    private func updateTravelTimeSection(mode: TravelMode) {
+        if let route = routes.first(where: { $0.transportType == mode.transportType }) {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                isHighlighted = true
+                selectedRoute = route
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    withAnimation(.easeInOut(duration: 0.5)){
+                        isHighlighted = false
+                    }
+                }
+            }
+        } else {
+            isFetchingRoute = true
+
+            Task {
+                if let newRoute = await MapService.getTravelTimeAndDistance(
+                    userCoordinate: userCoordinate,
+                    mapItem: mapItem,
+                    transportType: mode.transportType
+                ) {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        routes.append(newRoute)
+                        
+                        isFetchingRoute = false
+                        isHighlighted = true
+                        selectedRoute = newRoute
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            withAnimation(.easeInOut(duration: 0.5)){
+                                isHighlighted = false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func formatDistance(_ distance: Double) -> String {
+        if distance >= 1000 {
+            let kilometers = distance / 1000
+            return String(format: "%.1fkm", kilometers)
+        } else {
+            return String(format: "%.0fm", distance)
+        }
+    }
+
+    
+    private func composeAddress() -> String {
+        var components: [String] = []
+        
+        if var street = mapItem.placemark.thoroughfare {
+            if let streetNumber = mapItem.placemark.subThoroughfare {
+                street += " \(streetNumber)"
+            }
+            components.append(street)
+        }
+        
+        if let postalCode = mapItem.placemark.postalCode,
+           let city = mapItem.placemark.locality {
+            components.append("\(postalCode) \(city)")
+        } else if let city = mapItem.placemark.locality {
+            components.append(city)
+        }
+        
+        return components.joined(separator: ", ")
+    }
+    
+    private func formatTime(minutes: Double?) -> String {
+        guard let minutes = minutes else { return "" }
+        if minutes < 60 {
+            return String(format: "%.0f Minuten", minutes)
+        } else {
+            let hours = Int(minutes) / 60
+            let remainingMinutes = Int(minutes) % 60
+            if remainingMinutes > 0 {
+                return "\(hours)h \(remainingMinutes)min"
+            } else {
+                return "\(hours) Stunde\(hours > 1 ? "n" : "")"
+            }
+        }
+    }
+    
+    var websiteLink: String {
+            return getURLDomainName(from:  mapItem.url!)
+    }
+    
+    func getURLDomainName(from url: URL) -> String {
+        let urlString = url.absoluteString
+        let regex = try! NSRegularExpression(pattern: "https?://(?:www\\.)?([^/]+)(/.*)?")
+        let range = NSRange(urlString.startIndex..<urlString.endIndex, in: urlString)
+        
+        return regex.firstMatch(in: urlString, options: [], range: range)
+            .flatMap { Range($0.range(at: 1), in: urlString).map { String(urlString[$0]) } }
+        ?? "zur Webseite"
+    }
+    
+    private func openInAppleMaps() {
+        mapItem.openInMaps(launchOptions: nil)
+    }
+    
+}
+
+
+
+extension MarketDetailSheet {
     
     var travelTimeSection: some View {
         HStack(spacing: 16) {
             ForEach(travelModes, id: \.icon) { mode in
-                Button(action: {
-                    if let route = routes.first(where: { $0.transportType == mode.transportType }) {
-                        withAnimation(.easeInOut(duration: 0.5)) {
-                            isHighlighted = true
-                            selectedRoute = route
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                withAnimation(.easeInOut(duration: 0.5)){
-                                    isHighlighted = false
-                                }
-                            }
-                        }
-                    } else {
-                        isFetchingRoute = true
-
-                        Task {
-                            if let newRoute = await MapService.getTravelTimeAndDistance(
-                                userCoordinate: userCoordinate,
-                                mapItem: mapItem,
-                                transportType: mode.transportType
-                            ) {
-                                routes.append(newRoute)
-                                
-                                withAnimation(.easeInOut(duration: 0.5)) {
-                                    isFetchingRoute = false
-                                    isHighlighted = true
-                                    selectedRoute = newRoute
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        withAnimation(.easeInOut(duration: 0.5)){
-                                            isHighlighted = false
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }) {
+                Button(action: {updateTravelTimeSection(mode: mode)}) {
                     VStack {
                         Image(systemName: "\(mode.icon)")
                             .resizable()
@@ -141,13 +210,17 @@ private extension MarketDetailSheet {
                     .frame(maxWidth: .infinity)
                     .background(
                         (selectedRoute?.transportType == mode.route?.transportType) && mode.route != nil
-                        ? Color(.systemOrange).opacity(0.3) : Color(UIColor.systemBackground).opacity(0.8)
+                        ? Color(.systemOrange).opacity(0.6) : Color(UIColor.systemBackground).opacity(0.8)
                         
                     )
                     .transition(.opacity)
                     .clipShape(.rect(cornerRadius: 8))
-                    .shadow(color: .secondary.opacity(0.5), radius: 4)
-
+                    .shadow(
+                        color: (selectedRoute?.transportType == mode.route?.transportType && mode.route != nil)
+                        ? Color(.systemOrange)
+                            : Color(.systemGray4),
+                        radius: 3
+                    )
                 }
                 .disabled(isFetchingRoute)
             }
@@ -156,7 +229,7 @@ private extension MarketDetailSheet {
 
     
     // Shows market name, location and distance to it
-    var headerView: some View {
+    var headerSection: some View {
         VStack(alignment: .leading, spacing: 1) {
             
             Text(mapItem.name ?? "Unbekannter Markt")
@@ -178,37 +251,10 @@ private extension MarketDetailSheet {
                        
                 }
                 .font(.subheadline)
-                .foregroundStyle(isHighlighted ? Color(.systemOrange).opacity(0.3) : .gray)
+                .foregroundStyle(isHighlighted ? Color(.systemOrange) : .gray)
                 .transition(.opacity)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-    
-    private func formatDistance(_ distance: Double) -> String {
-        if distance >= 1000 {
-            let kilometers = distance / 1000
-            return String(format: "%.1fkm", kilometers)
-        } else {
-            return String(format: "%.0fm", distance)
-        }
-    }
-
-    
-    private func composeAddress() -> String {
-        var components: [String] = []
-        
-        if let street = mapItem.placemark.thoroughfare {
-            components.append(street)
-        }
-        
-        if let postalCode = mapItem.placemark.postalCode,
-           let city = mapItem.placemark.locality {
-            components.append("\(postalCode) \(city)")
-        } else if let city = mapItem.placemark.locality {
-            components.append(city)
-        }
-        
-        return components.joined(separator: ", ")
     }
     
     var infoSection: some View {
@@ -253,7 +299,7 @@ private extension MarketDetailSheet {
         }
     }
 
-    var buttonSection: some View {
+    var appleMapsButtonSection: some View {
         HStack(alignment: .center, spacing: 0) {
             
             Button(action: openInAppleMaps) {
@@ -273,8 +319,8 @@ private extension MarketDetailSheet {
             .foregroundStyle(Color(.systemOrange))
             .background(.background.opacity(0.8))
             .clipShape(.rect(cornerRadius: 8))
-            .shadow(color: .secondary.opacity(0.5) ,radius: 4)
-            
+            .shadow(color:  Color(.systemGray4) ,radius: 3)
+
             Spacer()
             
             // Placeholder Button
@@ -293,14 +339,10 @@ private extension MarketDetailSheet {
             .foregroundStyle(Color(.systemOrange))
             .background(.background.opacity(0.8))
             .clipShape(.rect(cornerRadius: 8))
-            .shadow(color: Color(.gray).opacity(0.5) ,radius: 4)
+            .shadow(color:  Color(.systemGray4) ,radius: 3)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         
-    }
-    
-    private func openInAppleMaps() {
-        mapItem.openInMaps(launchOptions: nil)
     }
     
     var lookAroundSection: some View {
@@ -316,13 +358,22 @@ private extension MarketDetailSheet {
             if lookAroundScene == nil {
                 Text("Umschauen ist für diesen Ort nicht verfügbar.")
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.primary)
                     .padding()
-                    .background(Color.white.opacity(0.8))
+                    .background(Color(.systemGray3).opacity(0.8))
                     .clipShape(.rect(cornerRadius: 8))
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
+        .shadow(color: Color(.systemGray2) ,radius: 4)
+    }
+    
+    struct TravelMode {
+        let icon: String
+        let time: String
+        let transportType: MKDirectionsTransportType
+        let route: RouteData?
+        let isSelected: Bool = false
     }
     
     var travelModes: [TravelMode] {
@@ -347,44 +398,4 @@ private extension MarketDetailSheet {
             ),
         ]
     }
-    
-    private func formatTime(minutes: Double?) -> String {
-        guard let minutes = minutes else { return "" }
-        if minutes < 60 {
-            return String(format: "%.0f Minuten", minutes)
-        } else {
-            let hours = Int(minutes) / 60
-            let remainingMinutes = Int(minutes) % 60
-            if remainingMinutes > 0 {
-                return "\(hours)h \(remainingMinutes)min"
-            } else {
-                return "\(hours) Stunde\(hours > 1 ? "n" : "")"
-            }
-        }
-    }
-    
-    var websiteLink: String {
-            return getURLDomainName(from:  mapItem.url!)
-    }
-    
-    func getURLDomainName(from url: URL) -> String {
-        let urlString = url.absoluteString
-        let regex = try! NSRegularExpression(pattern: "https?://(?:www\\.)?([^/]+)(/.*)?")
-        let range = NSRange(urlString.startIndex..<urlString.endIndex, in: urlString)
-        
-        return regex.firstMatch(in: urlString, options: [], range: range)
-            .flatMap { Range($0.range(at: 1), in: urlString).map { String(urlString[$0]) } }
-        ?? "zur Webseite"
-    }
-    
-    
-    
-    struct TravelMode {
-        let icon: String
-        let time: String
-        let transportType: MKDirectionsTransportType
-        let route: RouteData?
-    }
 }
-
-

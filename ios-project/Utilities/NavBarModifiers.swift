@@ -121,52 +121,6 @@ extension View {
     }
 }
 
-// Example view
-struct FadeableNavBarTestView: View {
-    
-    @State
-    private var scrollViewOffset: CGFloat = 0
-  
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-
-                    Color.clear
-                        .frame(height: 500)
-
-                    VStack {
-                        ForEach(0..<100) { _ in
-                            Text("Hello There")
-                        }
-
-                        // Prove restoration of native NavigationBar
-                        // on new views
-                        NavigationLink("Navigate") {
-                            ScrollView {
-                                VStack {
-                                    ForEach(0..<50) { _ in
-                                        Text("Hello There")
-                                    }
-                                }
-                                .frame(maxWidth: .infinity)
-                            }
-                            .navigationTitle("Another Test")
-                        }
-                    }
-                    .background(Color.white)
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .navigationTitle("Test")
-            .navigationBarTitleDisplayMode(.inline)
-            .ignoresSafeArea()
-            .scrollViewOffset($scrollViewOffset)
-            .navBarOffset($scrollViewOffset, start: 300, end: 350)
-        }
-    }
-}
-
 struct ScrollViewOffsetModifier: ViewModifier {
     
     @Binding
@@ -200,8 +154,4 @@ extension View {
     func scrollViewOffset(_ scrollViewOffset: Binding<CGFloat>) -> some View {
         self.modifier(ScrollViewOffsetModifier(scrollViewOffset: scrollViewOffset))
     }
-}
-
-#Preview {
-    FadeableNavBarTestView()
 }

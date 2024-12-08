@@ -10,9 +10,7 @@ import SwiftUI
 @main
 struct ios_projectApp: App {
     let persistenceController = PersistenceController.shared
-
-    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
-
+    
     init() {
         // Load all products and recipes
         Product.products = JsonParser.parseToProducts(fileName: "products")
@@ -25,8 +23,6 @@ struct ios_projectApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .preferredColorScheme(isDarkModeEnabled ? .dark : .light) // Bind SwiftUI environment to dark mode
-        }
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)        }
     }
 }

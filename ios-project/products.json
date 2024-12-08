@@ -10,8 +10,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "eggplant.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -62,8 +62,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "artichokes.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -114,8 +114,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "cauliflower.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -166,8 +166,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "green-beans.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -218,8 +218,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "broad-beans.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -270,8 +270,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "broccoli.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -322,8 +322,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "butterruebe.jpg",
+    "imageSource": "frag-mutti.de",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -374,8 +374,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "mushroom.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -426,8 +426,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "chinese-cabbage.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -478,8 +478,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Hülsenfrüchte",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "pea.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -530,8 +530,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "fennel.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -582,8 +582,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "cabbage.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -634,8 +634,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "cucumber.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -686,8 +686,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "potato.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -738,8 +738,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "kohlrabi.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -790,8 +790,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "pumpkin.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -836,14 +836,14 @@
     "name": "Lauch / Porree",
     "botanicalName": "Allium porrum",
     "description": "Ein mild schmeckendes Gemüse aus der Zwiebel-Familie.",
-    "storageInstructions": "",
+    "storageInstructions": "leek.jpg",
     "energyConsumption": "",
     "isImportedOnly": false,
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
     "imageName": "",
-    "imageSource": "",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -894,8 +894,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "spring-onions.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -946,8 +946,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "corn.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -998,8 +998,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "chard.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1050,8 +1050,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "may-beets.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1102,8 +1102,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "carrot.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -1154,8 +1154,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "paprika.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1206,8 +1206,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "parsnips.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -1258,8 +1258,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "red-radish.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1310,8 +1310,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "brussels-sprouts.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -1362,8 +1362,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "red-beetroot.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -1414,8 +1414,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "red-cabbage.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -1466,8 +1466,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "white-radish.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -1519,7 +1519,7 @@
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
     "imageName": "",
-    "imageSource": "",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -1570,8 +1570,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "black-salsify.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "regional verfügbar"
@@ -1622,8 +1622,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "asparagus.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1674,8 +1674,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blattgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "spinach.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1726,8 +1726,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "pointed-cabbage.jpg",
+    "imageSource": "bento-daisuki.de",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1778,8 +1778,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "celery.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -1830,8 +1830,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "celery-branch.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1882,8 +1882,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "lump-beets.jpg",
+    "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
         "auf Lager"
@@ -1934,8 +1934,8 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Fruchtgemüse",
-    "imageName": "",
-    "imageSource": "",
+    "imageName": "tomato.jpg",
+    "imageSource": "stock.adobe.com",
     "seasonalData": {
       "Januar": [
         "nicht regional verfügbar"
@@ -1974,7 +1974,8 @@
         "nicht regional verfügbar"
       ]
     }
-  },
+  }
+,
   {
     "id": 38,
     "name": "Topinambur",

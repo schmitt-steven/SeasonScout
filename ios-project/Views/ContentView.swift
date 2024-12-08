@@ -7,6 +7,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
+    
     @State private var selectedTab = 1
         var body: some View {
             TabView(selection: $selectedTab) {
@@ -26,6 +28,7 @@ struct ContentView: View {
                 }.tag(2)
             }
             .accentColor(.orange)
+            .preferredColorScheme(isDarkModeEnabled ? .dark : .light)
         }
 }
 

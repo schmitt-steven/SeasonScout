@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC4046332CC10D4E0010DB12 /* app.drawio in Resources */ = {isa = PBXBuildFile; fileRef = FC4046312CC10D4E0010DB12 /* app.drawio */; };
 		FC4046342CC10D4E0010DB12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC4046322CC10D4E0010DB12 /* README.md */; };
 		FC4046362CC10DD60010DB12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC4046352CC10DD60010DB12 /* .gitignore */; };
 		FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = FC4854152CE22FD4009A659C /* WrappingHStack */; };
@@ -15,23 +14,6 @@
 		FC63549F2CE3BEF7006BA448 /* crawl_recipes.py in Resources */ = {isa = PBXBuildFile; fileRef = FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */; };
 		FCFCA8512CF13BEF00F3DDAD /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = FCFCA8502CF13BEF00F3DDAD /* SwiftUIIntrospect */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FC6E3C3B2CC102BD0024F7AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC6E3C1C2CC102BB0024F7AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC6E3C232CC102BB0024F7AB;
-			remoteInfo = "ios-project";
-		};
-		FC6E3C452CC102BD0024F7AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC6E3C1C2CC102BB0024F7AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC6E3C232CC102BB0024F7AB;
-			remoteInfo = "ios-project";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FCFCA84E2CF1399F00F3DDAD /* Embed Frameworks */ = {
@@ -47,30 +29,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FC4046312CC10D4E0010DB12 /* app.drawio */ = {isa = PBXFileReference; lastKnownFileType = text; path = app.drawio; sourceTree = "<group>"; };
 		FC4046322CC10D4E0010DB12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC4046352CC10DD60010DB12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = crawl_recipes.py; sourceTree = "<group>"; };
 		FC63549C2CE3BEF7006BA448 /* recipe_links.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = recipe_links.txt; sourceTree = "<group>"; };
-		FC6E3C242CC102BB0024F7AB /* ios-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC6E3C3A2CC102BD0024F7AB /* ios-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC6E3C442CC102BD0024F7AB /* ios-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6E3C242CC102BB0024F7AB /* SeasonScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeasonScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FC6E3C262CC102BB0024F7AB /* ios-project */ = {
+		FC6E3C262CC102BB0024F7AB /* seasonScout */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ios-project";
-			sourceTree = "<group>";
-		};
-		FC6E3C3D2CC102BD0024F7AB /* ios-projectTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ios-projectTests";
-			sourceTree = "<group>";
-		};
-		FC6E3C472CC102BD0024F7AB /* ios-projectUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ios-projectUITests";
+			path = seasonScout;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -82,20 +51,6 @@
 			files = (
 				FC4854162CE22FD4009A659C /* WrappingHStack in Frameworks */,
 				FCFCA8512CF13BEF00F3DDAD /* SwiftUIIntrospect in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6E3C372CC102BD0024F7AB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6E3C412CC102BD0024F7AB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,12 +71,8 @@
 			children = (
 				FC63549D2CE3BEF7006BA448 /* DataCrawler */,
 				FC4046352CC10DD60010DB12 /* .gitignore */,
-				FC4046312CC10D4E0010DB12 /* app.drawio */,
 				FC4046322CC10D4E0010DB12 /* README.md */,
-				FC6E3C262CC102BB0024F7AB /* ios-project */,
-				FC6E3C3D2CC102BD0024F7AB /* ios-projectTests */,
-				FC6E3C472CC102BD0024F7AB /* ios-projectUITests */,
-				FCFCA8462CF1399100F3DDAD /* Frameworks */,
+				FC6E3C262CC102BB0024F7AB /* seasonScout */,
 				FC6E3C252CC102BB0024F7AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,26 +80,17 @@
 		FC6E3C252CC102BB0024F7AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC6E3C242CC102BB0024F7AB /* ios-project.app */,
-				FC6E3C3A2CC102BD0024F7AB /* ios-projectTests.xctest */,
-				FC6E3C442CC102BD0024F7AB /* ios-projectUITests.xctest */,
+				FC6E3C242CC102BB0024F7AB /* SeasonScout.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FCFCA8462CF1399100F3DDAD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC6E3C232CC102BB0024F7AB /* ios-project */ = {
+		FC6E3C232CC102BB0024F7AB /* SeasonScout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC6E3C4E2CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "ios-project" */;
+			buildConfigurationList = FC6E3C4E2CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "SeasonScout" */;
 			buildPhases = (
 				FC6E3C202CC102BB0024F7AB /* Sources */,
 				FC6E3C212CC102BB0024F7AB /* Frameworks */,
@@ -160,62 +102,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FC6E3C262CC102BB0024F7AB /* ios-project */,
+				FC6E3C262CC102BB0024F7AB /* seasonScout */,
 			);
-			name = "ios-project";
+			name = SeasonScout;
 			packageProductDependencies = (
 				FC4854152CE22FD4009A659C /* WrappingHStack */,
 				FCFCA8502CF13BEF00F3DDAD /* SwiftUIIntrospect */,
 			);
 			productName = "ios-project";
-			productReference = FC6E3C242CC102BB0024F7AB /* ios-project.app */;
+			productReference = FC6E3C242CC102BB0024F7AB /* SeasonScout.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FC6E3C392CC102BD0024F7AB /* ios-projectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC6E3C512CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "ios-projectTests" */;
-			buildPhases = (
-				FC6E3C362CC102BD0024F7AB /* Sources */,
-				FC6E3C372CC102BD0024F7AB /* Frameworks */,
-				FC6E3C382CC102BD0024F7AB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC6E3C3C2CC102BD0024F7AB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				FC6E3C3D2CC102BD0024F7AB /* ios-projectTests */,
-			);
-			name = "ios-projectTests";
-			packageProductDependencies = (
-			);
-			productName = "ios-projectTests";
-			productReference = FC6E3C3A2CC102BD0024F7AB /* ios-projectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FC6E3C432CC102BD0024F7AB /* ios-projectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC6E3C542CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "ios-projectUITests" */;
-			buildPhases = (
-				FC6E3C402CC102BD0024F7AB /* Sources */,
-				FC6E3C412CC102BD0024F7AB /* Frameworks */,
-				FC6E3C422CC102BD0024F7AB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC6E3C462CC102BD0024F7AB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				FC6E3C472CC102BD0024F7AB /* ios-projectUITests */,
-			);
-			name = "ios-projectUITests";
-			packageProductDependencies = (
-			);
-			productName = "ios-projectUITests";
-			productReference = FC6E3C442CC102BD0024F7AB /* ios-projectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -225,22 +121,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					FC6E3C232CC102BB0024F7AB = {
 						CreatedOnToolsVersion = 16.0;
 					};
-					FC6E3C392CC102BD0024F7AB = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = FC6E3C232CC102BB0024F7AB;
-					};
-					FC6E3C432CC102BD0024F7AB = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = FC6E3C232CC102BB0024F7AB;
-					};
 				};
 			};
-			buildConfigurationList = FC6E3C1F2CC102BB0024F7AB /* Build configuration list for PBXProject "ios-project" */;
+			buildConfigurationList = FC6E3C1F2CC102BB0024F7AB /* Build configuration list for PBXProject "SeasonScout" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -258,9 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC6E3C232CC102BB0024F7AB /* ios-project */,
-				FC6E3C392CC102BD0024F7AB /* ios-projectTests */,
-				FC6E3C432CC102BD0024F7AB /* ios-projectUITests */,
+				FC6E3C232CC102BB0024F7AB /* SeasonScout */,
 			);
 		};
 /* End PBXProject section */
@@ -273,22 +159,7 @@
 				FC4046362CC10DD60010DB12 /* .gitignore in Resources */,
 				FC63549E2CE3BEF7006BA448 /* recipe_links.txt in Resources */,
 				FC63549F2CE3BEF7006BA448 /* crawl_recipes.py in Resources */,
-				FC4046332CC10D4E0010DB12 /* app.drawio in Resources */,
 				FC4046342CC10D4E0010DB12 /* README.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6E3C382CC102BD0024F7AB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6E3C422CC102BD0024F7AB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,34 +173,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC6E3C362CC102BD0024F7AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6E3C402CC102BD0024F7AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FC6E3C3C2CC102BD0024F7AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC6E3C232CC102BB0024F7AB /* ios-project */;
-			targetProxy = FC6E3C3B2CC102BD0024F7AB /* PBXContainerItemProxy */;
-		};
-		FC6E3C462CC102BD0024F7AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC6E3C232CC102BB0024F7AB /* ios-project */;
-			targetProxy = FC6E3C452CC102BD0024F7AB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FC6E3C4C2CC102BD0024F7AB /* Debug */ = {
@@ -366,6 +210,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -427,6 +272,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -451,10 +297,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ios-project/ios_project.entitlements";
+				CODE_SIGN_ENTITLEMENTS = seasonScout/seasonScout.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ios-project/Preview Content\"";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"seasonScout/Preview Content\"";
 				DEVELOPMENT_TEAM = SL49WL27J6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,15 +315,16 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.ios-project";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.SeasonScout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -491,10 +340,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ios-project/ios_project.entitlements";
+				CODE_SIGN_ENTITLEMENTS = seasonScout/seasonScout.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ios-project/Preview Content\"";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"seasonScout/Preview Content\"";
 				DEVELOPMENT_TEAM = SL49WL27J6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -507,15 +358,16 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.ios-project";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.SeasonScout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -526,100 +378,10 @@
 			};
 			name = Release;
 		};
-		FC6E3C522CC102BD0024F7AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.ios-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-project.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ios-project";
-				XROS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		FC6E3C532CC102BD0024F7AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.ios-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-project.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ios-project";
-				XROS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		FC6E3C552CC102BD0024F7AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.ios-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "ios-project";
-				XROS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		FC6E3C562CC102BD0024F7AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hs-mannheim.ios-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "ios-project";
-				XROS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC6E3C1F2CC102BB0024F7AB /* Build configuration list for PBXProject "ios-project" */ = {
+		FC6E3C1F2CC102BB0024F7AB /* Build configuration list for PBXProject "SeasonScout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC6E3C4C2CC102BD0024F7AB /* Debug */,
@@ -628,29 +390,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC6E3C4E2CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "ios-project" */ = {
+		FC6E3C4E2CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "SeasonScout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC6E3C4F2CC102BD0024F7AB /* Debug */,
 				FC6E3C502CC102BD0024F7AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC6E3C512CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "ios-projectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC6E3C522CC102BD0024F7AB /* Debug */,
-				FC6E3C532CC102BD0024F7AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC6E3C542CC102BD0024F7AB /* Build configuration list for PBXNativeTarget "ios-projectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC6E3C552CC102BD0024F7AB /* Debug */,
-				FC6E3C562CC102BD0024F7AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct ios_projectApp: App {
-    let persistenceController = PersistenceController.shared
     
     init() {
         // Load all products and recipes
@@ -23,6 +22,6 @@ struct ios_projectApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)        }
+               }
     }
 }

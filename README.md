@@ -1,4 +1,4 @@
-# IOS-Project
+# SeasonScout
 
 [Figmahaha](https://www.figma.com/design/am9YAAggMv24vGT9Wwwc6E/iOS-Saisonkalender-App?node-id=0-1&node-type=canvas&t=qKTQm06YBO6xY2tB-0)\
 [Projekt Backlog](https://github.com/users/schmitt-steven/projects/1)\

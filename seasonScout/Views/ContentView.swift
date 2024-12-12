@@ -6,6 +6,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = AppViewModel() // Bind to ViewModel
+
+    var body: some View {
+        ZStack {
+            if viewModel.isLoading {
+                LoadingView()
+            } else {
+                MainView()
+            }
+        }
+        .animation(.easeInOut, value: viewModel.isLoading)
+    }
+}
+
+struct LoadingView: View {
+    var body: some View {
+        ZStack {
+            Color.white.ignoresSafeArea()
+            VStack {
+                Image("splashscreen")
+                    .resizable()
+                    .scaledToFit()
+            }
+        }
+        .contentShape(Rectangle())
+    }
+}
+
+struct MainView: View {
     
     @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
     

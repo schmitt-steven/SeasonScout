@@ -1,3 +1,11 @@
+//
+//  AppViewModel.swift
+//  SeasonScout
+//
+//  Created by Nicklas Hoang on 12.12.24.
+//
+
+
 import Foundation
 import Combine
 

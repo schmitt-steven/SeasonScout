@@ -33,23 +33,32 @@ class MapViewModel: ObservableObject {
     
     let locationManager: CLLocationManager
     private let locationDelegate: LocationManagerDelegate
-    private var searchResults: [MKMapItem] = []
+    private var allSearchResults: [Double: [MKMapItem]] = [:]
+    private let minRadius: Double = 5_000.0 // in meters
+    private let maxRadius: Double = 50_000.0
+    private let stepSize: Double = 5_000.0
+    private var searchNotificationTask: Task<Void, Never>? = nil
+    let mapStyleAndIcon: [(MapStyle, Image)] = [
+        (MapStyle.standard(elevation: .realistic),Image(systemName: "globe")),
+        (MapStyle.hybrid(elevation: .realistic), Image(systemName: "globe.europe.africa")),
+        (MapStyle.imagery(elevation: .realistic), Image(systemName: "globe.europe.africa.fill"))
+    ]
     
-    @Published var marketsFoundInUserRegion: [MKMapItem] = []
+    @Published var shownMapItems: [MKMapItem] = []
     @Published var currentAuthorizationStatus: CLAuthorizationStatus
     @Published var mapCameraPosition: MapCameraPosition = .automatic
     @Published var isLocationSettingsAlertVisible: Bool = false
     @Published var isInternetConnectionBad: Bool = false
     @Published var isUnexpectedError: Bool = false
-    @Published var searchRadiusInMeters: Double = 10_000.0
+    @Published var currentSearchRadiusInMeters: Double = 10_000.0
     @Published var isSearchRadiusBeingEdited: Bool = false
     @Published var isRadiusSliderVisible: Bool = false
     @Published var isSearchResultsNotificationVisible: Bool = false
     @Published var isMapMarkerVisible: Bool = false
-    @Published var currentMapStyle: MapStyle = .standard
-    @Published var selectedMarker: MKMapItem?
+    @Published var currentMapStyle: (MapStyle, Image)
+    @Published var selectedMapItem: MKMapItem?
     @Published var isMarketDetailSheetVisible: Bool = false
-   
+    
     init() {
         self.locationManager = CLLocationManager()
         self.locationDelegate = LocationManagerDelegate()
@@ -57,6 +66,8 @@ class MapViewModel: ObservableObject {
         self.locationManager.delegate = self.locationDelegate
         self.locationManager.distanceFilter = 100.0
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        self.currentMapStyle = mapStyleAndIcon.first!
         
         self.locationDelegate.onAuthorizationChange = { [weak self] status in
             DispatchQueue.main.async {
@@ -76,6 +87,14 @@ class MapViewModel: ObservableObject {
     func openSettings() {
         if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.open(settingsUrl)
+        }
+    }
+    
+    func changeMapStyle() {
+        let currentIndex = mapStyleAndIcon.firstIndex(where: {$0.1 == currentMapStyle.1})
+        
+        withAnimation(.easeInOut){
+            currentMapStyle = mapStyleAndIcon[(currentIndex! + 1) % mapStyleAndIcon.count]
         }
     }
     
@@ -104,7 +123,7 @@ class MapViewModel: ObservableObject {
     
     func updateCameraPosition(to coordinate: CLLocationCoordinate2D?) {
         if let coordinate = coordinate {
-            let span = calculateCoordinateSpan(for: self.searchRadiusInMeters)
+            let span = calculateCoordinateSpan(for: self.currentSearchRadiusInMeters)
             let region = MKCoordinateRegion(center: coordinate, span: span)
             withAnimation(.smooth) {
                 self.mapCameraPosition = .region(region)
@@ -136,8 +155,8 @@ class MapViewModel: ObservableObject {
         // A MKCoordinateRegion is always rectangular, NOT circular
         request.region = MKCoordinateRegion(
             center: location.coordinate,
-            latitudinalMeters: CLLocationDistance(self.searchRadiusInMeters * 2),
-            longitudinalMeters: CLLocationDistance(self.searchRadiusInMeters * 2)
+            latitudinalMeters: CLLocationDistance(self.currentSearchRadiusInMeters * 2),
+            longitudinalMeters: CLLocationDistance(self.currentSearchRadiusInMeters * 2)
         )
         return request
     }
@@ -145,6 +164,7 @@ class MapViewModel: ObservableObject {
     // Uses MainActor, since UI bound properties (marketsFoundInUserRegion, isInternetConnectionBad) must be updated from the main thread. Secondly, it solves data race related issues
     @MainActor
     func searchForMarkets(using location: CLLocation? = nil) async {
+        print("entered search method")
         
         // Return early if no valid location is provided
         guard let location = location else {
@@ -152,18 +172,28 @@ class MapViewModel: ObservableObject {
             return
         }
         
+        // Reset search errors for new try
+        self.isInternetConnectionBad = false
+        self.isUnexpectedError = false
+        
+        // If results for radius already exist, only update shown map items
+        guard self.allSearchResults[currentSearchRadiusInMeters] == nil else {
+            self.updateShownMapItems()
+            self.showSearchResultsNotification()
+            self.isMapMarkerVisible = true
+            return
+        }
+        
         let request = buildMarketSearchRequest(using: location)
         
         do {
-            // Reset search errors for new try
-            self.isInternetConnectionBad = false
-            self.isUnexpectedError = false
-            
             // The search is performed asynchronously and can crash
             let searchResponse: MKLocalSearch.Response = try await MKLocalSearch(request: request).start()
-
+            
             let filteredMarkets = filterMapItemsBasedOnRadius(userLocation: location, mapItems: searchResponse.mapItems)
-            self.marketsFoundInUserRegion = filteredMarkets
+            
+            self.allSearchResults[currentSearchRadiusInMeters] = filteredMarkets
+            self.updateShownMapItems()
             
             withAnimation(.easeInOut){
                 self.showSearchResultsNotification()
@@ -180,9 +210,8 @@ class MapViewModel: ObservableObject {
                     self.isInternetConnectionBad = true
                 }
                 
-            // Handles any non network related errors
+                // Handles any non network related errors
             } else {
-                //TODO: Set new bool and show option to retry search on the Map (based on the bool value)
                 print("MapView: Market search failed with error: \(error.localizedDescription)")
                 withAnimation(.easeInOut){
                     self.isUnexpectedError = true
@@ -200,21 +229,60 @@ class MapViewModel: ObservableObject {
                 return false
             }
             // Checks if the map items distance to the users location is smaller than the radius (and returns a bool)
-            return centerLocation.distance(from: itemLocation) < Double(self.searchRadiusInMeters)
+            return centerLocation.distance(from: itemLocation) < Double(self.currentSearchRadiusInMeters)
         }
         
         return filteredMapItems
     }
     
-#warning("limit searches, update on position change, check pagination for results")
-    private func buildMarketsFoundInUserRegionList(){
+    func updateShownMapItems() {
+        var cumulativeResults: [MKMapItem] = []
         
-    }
-    
-    private func showSearchResultsNotification() {
-        isSearchResultsNotificationVisible = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.isSearchResultsNotificationVisible = false
+        if let currentResults = self.allSearchResults[currentSearchRadiusInMeters] {
+            cumulativeResults = currentResults
+        }
+        
+        // Look for smaller radii results if necessary
+        for radius in stride(from: currentSearchRadiusInMeters - stepSize, through: minRadius, by: -stepSize) {
+            if let smallerRadiusResults = self.allSearchResults[radius] {
+                for item in smallerRadiusResults {
+                    // Filter out duplicates
+                    if !cumulativeResults.contains(where: {$0.placemark.coordinate.latitude == item.placemark.coordinate.latitude && $0.placemark.coordinate.longitude == item.placemark.coordinate.longitude}) {
+                        cumulativeResults.append(item)
+                    }
+                }
+                break
             }
         }
+        
+        // Update the shown map items with the final cumulative results
+        self.allSearchResults[currentSearchRadiusInMeters] = cumulativeResults
+        self.shownMapItems = cumulativeResults
+    }
+    
+    
+    private func showSearchResultsNotification() {
+        searchNotificationTask?.cancel()
+
+        searchNotificationTask = Task {
+                await updateNotificationVisibility(false)
+
+                // Wait for 100 milliseconds to let the UI update
+                try? await Task.sleep(nanoseconds: 100_000_000)
+                guard !Task.isCancelled else { return }
+
+                await updateNotificationVisibility(true)
+
+                try? await Task.sleep(nanoseconds: 2_500_000_000)
+                guard !Task.isCancelled else { return }
+
+                await updateNotificationVisibility(false)
+        }
+    }
+
+    @MainActor
+    private func updateNotificationVisibility(_ isVisible: Bool) {
+        isSearchResultsNotificationVisible = isVisible
+    }
+
 }

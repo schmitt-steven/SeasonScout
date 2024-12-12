@@ -27,7 +27,7 @@ struct MarketDetailSheet: View {
     var body: some View {
         ZStack{
             
-            BlurBackgroundView(style: .systemMaterial)
+            BlurBackgroundView(style: .prominent)
                 .ignoresSafeArea(.all)
             
             VStack(spacing: 12) {
@@ -177,9 +177,20 @@ extension MarketDetailSheet {
         ?? "zur Webseite"
     }
     
-    private func openInAppleMaps() {
+    private func openInMaps() {
         mapItem.openInMaps(launchOptions: nil)
     }
+    
+        
+    private func openInMapsWithDirections() {
+       
+        let launchOptions: [String: Any] = [
+            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDefault
+        ]
+      
+        MKMapItem.openMaps(with: [mapItem], launchOptions: launchOptions)
+    }
+    
     
 }
 
@@ -302,7 +313,7 @@ extension MarketDetailSheet {
     var appleMapsButtonSection: some View {
         HStack(alignment: .center, spacing: 0) {
             
-            Button(action: openInAppleMaps) {
+            Button(action: openInMaps) {
                 HStack {
                     Image(systemName: "map")
                         .resizable()
@@ -323,14 +334,13 @@ extension MarketDetailSheet {
 
             Spacer()
             
-            // Placeholder Button
-            Button(action: openInAppleMaps) {
+            Button(action: {openInMapsWithDirections()}) {
                 HStack {
                     Image(systemName: "signpost.right.and.left")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 16)
-                    Text("Wegbeschreibung")
+                    Text("Route anzeigen")
                         .font(.callout)
                 }
             }

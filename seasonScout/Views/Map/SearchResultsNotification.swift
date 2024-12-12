@@ -11,7 +11,7 @@ struct SearchResultsNotification: View {
     
     let viewController: MapViewModel
     var isMarketListEmpty: Bool {
-        viewController.marketsFoundInUserRegion.count == 0
+        viewController.shownMapItems.count == 0
     }
     
     var body: some View {
@@ -19,7 +19,7 @@ struct SearchResultsNotification: View {
             HStack{
                 Image(systemName: isMarketListEmpty ? "exclamationmark.circle" : "checkmark.circle")
                         .foregroundStyle(.orange)
-                    Text(isMarketListEmpty ? "Keine Ergebnisse" : "^[\(viewController.marketsFoundInUserRegion.count) Ergebnisse](inflect: true)")
+                    Text(isMarketListEmpty ? "Keine Ergebnisse" : "^[\(viewController.shownMapItems.count) Ergebnisse](inflect: true)")
             }
             .padding()
             .background(

@@ -10,18 +10,18 @@ struct MapView: View {
         ZStack {
             Map(
                 position: $viewController.mapCameraPosition,
-                selection: $viewController.selectedMarker
+                selection: $viewController.selectedMapItem
             ) {
                 UserAnnotation()
                 
                 if let userLocation = viewController.locationManager.location?.coordinate {
-                    MapCircle(center: userLocation, radius: CLLocationDistance(viewController.searchRadiusInMeters))
-                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.5) : .secondary.opacity(0.2))
-                        .stroke(Color(.systemOrange).opacity(0.5), lineWidth: 2)
+                    MapCircle(center: userLocation, radius: CLLocationDistance(viewController.currentSearchRadiusInMeters))
+                        .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.5) : .secondary.opacity(0.1))
+                        .stroke(Color(.systemOrange).opacity(0.8), lineWidth: 1.5)
                 }
                 
                 if viewController.isMapMarkerVisible {
-                    ForEach(viewController.marketsFoundInUserRegion, id: \.identifier) { market in
+                    ForEach(viewController.shownMapItems, id: \.identifier) { market in
                         Marker(item: market)
                             .tint(Color(.systemOrange))
                             .tag(market)                        
@@ -29,7 +29,7 @@ struct MapView: View {
                 }
             }
             .accentColor(Color(.systemOrange))
-            .mapStyle(viewController.currentMapStyle)
+            .mapStyle(viewController.currentMapStyle.0)
             
             .onAppear {
                 viewController.requestAuthorization()
@@ -40,7 +40,7 @@ struct MapView: View {
             .onChange(of: viewController.currentAuthorizationStatus){
                 viewController.requestAuthorization()
             }
-            .onChange(of: viewController.selectedMarker){
+            .onChange(of: viewController.selectedMapItem){
                 viewController.isMarketDetailSheetVisible = true
             }
             .alert(isPresented: $viewController.isLocationSettingsAlertVisible) {
@@ -55,10 +55,10 @@ struct MapView: View {
             }
             // Shows additional information when a market was slected on the map
             .sheet(isPresented: Binding<Bool>(
-                get: { viewController.selectedMarker != nil },
-                set: { _ in withAnimation(.easeOut){ viewController.selectedMarker = nil }}
+                get: { viewController.selectedMapItem != nil },
+                set: { _ in withAnimation(.easeOut){ viewController.selectedMapItem = nil }}
             )) {
-                if let mapItem: MKMapItem = viewController.selectedMarker,
+                if let mapItem: MKMapItem = viewController.selectedMapItem,
                    let userCoordinate: CLLocationCoordinate2D = viewController.locationManager.location?.coordinate {
                     ScrollView{
                         MarketDetailSheet(mapItem: mapItem, userCoordinate: userCoordinate)
@@ -80,9 +80,9 @@ struct MapView: View {
                 CLAuthorizationStatus.authorizedWhenInUse].contains(
                     viewController.currentAuthorizationStatus)
             ){
-                RadiusSlider(
-                    mapViewController: viewController
-                )}
+                MapStyleButton(viewModel: viewController)
+                RadiusSlider(mapViewController: viewController)
+            }
 
             // Shows a message informing the user about network problems including a retry button
             if (viewController.isInternetConnectionBad) {

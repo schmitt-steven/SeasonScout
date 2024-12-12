@@ -26,7 +26,7 @@ struct RadiusSlider: View {
                         }) {
                             HStack{
                                 Image(systemName: "mappin.and.ellipse").foregroundStyle(.orange)
-                                Text("\(Int(mapViewController.searchRadiusInMeters)/1000)km")
+                                Text("\(Int(mapViewController.currentSearchRadiusInMeters)/1000)km")
                                     .foregroundColor(mapViewController.isSearchRadiusBeingEdited ? .accentColor : .primary)
                             }
                             .padding(12)
@@ -50,7 +50,7 @@ struct RadiusSlider: View {
                 Spacer()
                 HStack{
                     Slider(
-                        value: $mapViewController.searchRadiusInMeters,
+                        value: $mapViewController.currentSearchRadiusInMeters,
                         in: searchRadiusRange,
                         step: 5_000
                     ){
@@ -68,7 +68,7 @@ struct RadiusSlider: View {
                             }
                         }
                     }
-                    .onChange(of: mapViewController.searchRadiusInMeters) {
+                    .onChange(of: mapViewController.currentSearchRadiusInMeters) {
                         mapViewController.isMapMarkerVisible = false
                         mapViewController.updateCameraPosition(to: mapViewController.locationManager.location?.coordinate)
                     }
@@ -81,7 +81,7 @@ struct RadiusSlider: View {
                     }){
                         HStack{
                             Image(systemName: "mappin.and.ellipse").foregroundStyle(.orange)
-                            Text("\(Int(mapViewController.searchRadiusInMeters)/1000)km")
+                            Text("\(Int(mapViewController.currentSearchRadiusInMeters)/1000)km")
                                 .foregroundColor(mapViewController.isSearchRadiusBeingEdited ? .accentColor : .primary)
                         }
                         .padding(10)

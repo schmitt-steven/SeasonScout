@@ -38,7 +38,10 @@ struct RecipeCalendarView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                MonthSelectionView(selectedMonth: $selectedMonth)
+                if !selectedRecipeIsFavorite {
+                    MonthSelectionView(selectedMonth: $selectedMonth)
+                }
+                
                 NavigationLink(destination: RecipeFilterView(
                     selectedRecipeCategory: $selectedRecipeCategory,
                     selectedRecipeEffort: $selectedRecipeEffort,
@@ -68,34 +71,63 @@ struct RecipeCalendarView: View {
             .navigationTitle("Rezepte")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gear")
-                            .imageScale(.large)
+                    Button {
+                        isDarkModeEnabled.toggle()
+                    } label: {
+                        Image(
+                            systemName: isDarkModeEnabled
+                                ? "moon.stars.fill" : "sun.max.fill"
+                        )
+                        .contentTransition(.symbolEffect(.replace.offUp))
+                        .foregroundColor(
+                            isDarkModeEnabled ? .white : Color(.systemYellow))
+                    }
+                    .onChange(of: isDarkModeEnabled) { _, _ in
+                        // Trigger the appearance update
+                        updateAppearance()
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
+                    if selectedRecipeIsFavorite {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: excludeNotRegionallyRecipes ? "leaf.fill" : "ferry.fill"
+                            )
+                            .foregroundColor(Color(.systemGray))
+                        }
+                    } else {
                         Button {
                             excludeNotRegionallyRecipes.toggle()
                         } label: {
-                            Label(
-                                excludeNotRegionallyRecipes ? "Überregionale Rezepte anzeigen" : "Überregionale Rezepte ausblenden",
-                                systemImage: excludeNotRegionallyRecipes ? "ferry" : "leaf"
+                            Image(systemName: excludeNotRegionallyRecipes ? "leaf.fill" : "ferry.fill"
                             )
+                            .contentTransition(.symbolEffect(.replace.offUp))
+                            .foregroundColor(excludeNotRegionallyRecipes ? Color(.systemGreen) : Color(.systemRed))
                         }
-                        Button {
-                            selectedRecipeIsFavorite.toggle()
-                        } label: {
-                            Label(
-                                selectedRecipeIsFavorite ? "Favoriten ausblenden" : "Favoriten anzeigen",
-                                systemImage: selectedRecipeIsFavorite ? "heart.slash" : "heart"
-                            )
-                        }
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        selectedRecipeIsFavorite.toggle()
                     } label: {
-                        Label("", systemImage: "ellipsis.circle")
+                        Image(systemName: selectedRecipeIsFavorite
+                                ? "heart.fill" : "heart.slash.fill"
+                        )
+                        .contentTransition(.symbolEffect(.replace.offUp))
+                        .foregroundColor(selectedRecipeIsFavorite ? Color(.systemPink) : Color(.systemPink))
                     }
                 }
             }
         }
+    }
+    
+    // Update the application's appearance
+    private func updateAppearance() {
+        // Update UIKit interface style for compatibility
+        let windowScene =
+            UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.overrideUserInterfaceStyle =
+            isDarkModeEnabled ? .dark : .light
     }
 }

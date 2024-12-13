@@ -842,7 +842,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Blütengemüse",
-    "imageName": "",
+    "imageName": "leen.jpg",
     "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
@@ -1518,7 +1518,7 @@
     "isFavorite": false,
     "type": "Gemüse",
     "subtype": "Wurzelgemüse",
-    "imageName": "",
+    "imageName": "onion.jpg",
     "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [
@@ -4846,7 +4846,7 @@
     "isFavorite": false,
     "type": "Salat",
     "subtype": "Blattgemüse",
-    "imageName": "",
+    "imageName": "portulaca-oleracea.jpg",
     "imageSource": "pixabay.com",
     "seasonalData": {
       "Januar": [

@@ -59,10 +59,18 @@ class ProductFilter {
             filteredItems = filteredItems.filter { product in
                 product.isFavorite == selectedProductIsFavorite
             }
+        } else {
+            // Filter nach Monat
+            filteredItems = filteredItems.filter { product in
+                // Nur Produkte anzeigen, die im ausgewählten Monat verfügbar sind
+                return product.seasonalData.contains { seasonalData in
+                    seasonalData.month == selectedMonth
+                }
+            }
         }
         
         // Filter nach Verfügbarkeit (regionale Produkte und Produkte, die auf Lager sind)
-        if excludeNotRegionally {
+        if excludeNotRegionally && !selectedProductIsFavorite {
             filteredItems = filteredItems.filter { product in
                 // Überprüfe, ob für das Produkt saisonale Daten für den ausgewählten Monat existieren
                 let seasonalDataForMonth = product.seasonalData.first { seasonal in
@@ -84,14 +92,6 @@ class ProductFilter {
                     seasonal.month == selectedMonth
                 }
                 return seasonalDataForMonth != nil
-            }
-        }
-        
-        // Filter nach Monat
-        filteredItems = filteredItems.filter { product in
-            // Nur Produkte anzeigen, die im ausgewählten Monat verfügbar sind
-            return product.seasonalData.contains { seasonalData in
-                seasonalData.month == selectedMonth
             }
         }
         

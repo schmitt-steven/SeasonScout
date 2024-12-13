@@ -43,7 +43,7 @@ struct RecipeTagsSection: View {
                 RecipeTagView(symbol: isForGroups ? "person.badge.plus" : "person", title: isForGroups ? "Für Gruppen" : "Ungeeignet für Gruppen", backgroundColor: .black)
             case .isVegetarian:
                 let isVegetarian = tagData.value as! Bool
-                RecipeTagView(symbol: "leaf.fill", title: isVegetarian ? "Vegetarisch" : "Nicht vegetarisch", backgroundColor: isVegetarian ? .green : .red)
+                RecipeTagView(symbol: "fork.knife.circle.fill", title: isVegetarian ? "Vegetarisch" : "Nicht vegetarisch", backgroundColor: isVegetarian ? .green : .red)
             case .priceLevel:
                 let priceLevel = tagData.value as! Level
                 switch priceLevel {

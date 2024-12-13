@@ -50,7 +50,7 @@ struct MapViewErrorMessage: View {
                         .foregroundColor(.primary)
                 }
                 .padding()
-                .background(.background.opacity(0.9))
+                .background(.regularMaterial.shadow(.drop(radius: 4)))
                 .cornerRadius(12)
                 .frame(maxWidth: .infinity)
                 
@@ -68,13 +68,14 @@ struct MapViewErrorMessage: View {
                         Text("Erneut versuchen")
                     }
                 }
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(.background.opacity(0.9))
-                .clipShape(.rect(cornerRadius: 8.0))
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(.regularMaterial.shadow(.drop(radius: 10)))
+                .clipShape(.rect(cornerRadius: 8))
+
             }
             .padding()
-            .background(Color(.systemGray6).opacity(0.8))
+            .background(.thinMaterial)
             .cornerRadius(16)
             .shadow(radius: 6)
             Spacer()

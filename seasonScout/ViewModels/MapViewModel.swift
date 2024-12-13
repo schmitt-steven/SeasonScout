@@ -39,7 +39,7 @@ class MapViewModel: ObservableObject {
     private let stepSize: Double = 5_000.0
     private var searchNotificationTask: Task<Void, Never>? = nil
     let mapStyleAndIcon: [(MapStyle, Image)] = [
-        (MapStyle.standard(elevation: .realistic),Image(systemName: "globe")),
+        (MapStyle.standard(elevation: .realistic),Image(systemName: "map")),
         (MapStyle.hybrid(elevation: .realistic), Image(systemName: "globe.europe.africa")),
         (MapStyle.imagery(elevation: .realistic), Image(systemName: "globe.europe.africa.fill"))
     ]
@@ -58,6 +58,7 @@ class MapViewModel: ObservableObject {
     @Published var currentMapStyle: (MapStyle, Image)
     @Published var selectedMapItem: MKMapItem?
     @Published var isMarketDetailSheetVisible: Bool = false
+    @Published var routePolyline: MKPolyline? 
     
     init() {
         self.locationManager = CLLocationManager()
@@ -93,7 +94,7 @@ class MapViewModel: ObservableObject {
     func changeMapStyle() {
         let currentIndex = mapStyleAndIcon.firstIndex(where: {$0.1 == currentMapStyle.1})
         
-        withAnimation(.easeInOut){
+        withAnimation(){
             currentMapStyle = mapStyleAndIcon[(currentIndex! + 1) % mapStyleAndIcon.count]
         }
     }
@@ -164,7 +165,6 @@ class MapViewModel: ObservableObject {
     // Uses MainActor, since UI bound properties (marketsFoundInUserRegion, isInternetConnectionBad) must be updated from the main thread. Secondly, it solves data race related issues
     @MainActor
     func searchForMarkets(using location: CLLocation? = nil) async {
-        print("entered search method")
         
         // Return early if no valid location is provided
         guard let location = location else {

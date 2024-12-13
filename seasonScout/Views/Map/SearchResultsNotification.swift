@@ -24,7 +24,7 @@ struct SearchResultsNotification: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.systemGray6).opacity(0.9))
+                    .fill(.thickMaterial)
                     .shadow(radius: 6)
             )
             Spacer()

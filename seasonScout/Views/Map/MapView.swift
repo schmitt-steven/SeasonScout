@@ -27,6 +27,21 @@ struct MapView: View {
                             .tag(market)                        
                     }
                 }
+                
+                if let polyline = viewController.routePolyline {
+                    MapPolyline(polyline)
+                        .stroke(.orange, lineWidth: 2)
+                        //.strokeStyle(style: Stro)
+                        
+                }
+            }
+            .mapControlVisibility(.visible)
+            
+            .contentMargins(.top, 45)
+
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
             }
             .accentColor(Color(.systemOrange))
             .mapStyle(viewController.currentMapStyle.0)
@@ -61,7 +76,7 @@ struct MapView: View {
                 if let mapItem: MKMapItem = viewController.selectedMapItem,
                    let userCoordinate: CLLocationCoordinate2D = viewController.locationManager.location?.coordinate {
                     ScrollView{
-                        MarketDetailSheet(mapItem: mapItem, userCoordinate: userCoordinate)
+                        MarketDetailSheet(mapViewModel: self.viewController,mapItem: mapItem, userCoordinate: userCoordinate)
                     }
                     .presentationBackground(.clear)
                     .scrollIndicators(.hidden)

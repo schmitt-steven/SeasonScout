@@ -13,13 +13,15 @@ struct MarketDetailSheet: View {
     private let mapItem: MKMapItem
     private var userCoordinate: CLLocationCoordinate2D
     private let defaultTransportType: MKDirectionsTransportType = .automobile
+    @ObservedObject var mapViewModel: MapViewModel
     @State private var selectedRoute: RouteData? = nil
     @State private var lookAroundScene: MKLookAroundScene?
     @State private var routes: [RouteData] = []
     @State private var isFetchingRoute = false
     @State private var isHighlighted = false
     
-    internal init(mapItem: MKMapItem, userCoordinate: CLLocationCoordinate2D) {
+    internal init(mapViewModel: MapViewModel,mapItem: MKMapItem, userCoordinate: CLLocationCoordinate2D) {
+        self.mapViewModel = mapViewModel
         self.mapItem = mapItem
         self.userCoordinate = userCoordinate
     }
@@ -69,19 +71,29 @@ extension MarketDetailSheet {
     private func initializeRoutes() async {
         routes = []
 
-        if let route = await MapService.getTravelTimeAndDistance(
+        let routeAndPolyline = await MapService.getRouteAndETA(
             userCoordinate: self.userCoordinate,
             mapItem: self.mapItem,
             transportType: self.defaultTransportType
-        ) {
+        )
+        if let route = routeAndPolyline.route {
             withAnimation {
                 selectedRoute = route
                 routes.append(route)
             }
         }
+        if let polyline = routeAndPolyline.polyline {
+            withAnimation {
+                mapViewModel.routePolyline = polyline
+            }
+        }
     }
     
-    private func updateTravelTimeSection(mode: TravelMode) {
+    private func useMKRoute() {
+        // TODO: it
+    }
+    
+    private func updateRouteInformation(mode: TravelMode) {
         if let route = routes.first(where: { $0.transportType == mode.transportType }) {
             withAnimation(.easeInOut(duration: 0.5)) {
                 isHighlighted = true
@@ -96,27 +108,51 @@ extension MarketDetailSheet {
             isFetchingRoute = true
 
             Task {
-                if let newRoute = await MapService.getTravelTimeAndDistance(
+                print("in task")
+                let routeAndPolyline = await MapService.getRouteAndETA(
                     userCoordinate: userCoordinate,
                     mapItem: mapItem,
                     transportType: mode.transportType
-                ) {
+                )
+                print("in task, now got route and poly")
+                if let polyline = routeAndPolyline.polyline {
                     withAnimation(.easeInOut(duration: 0.5)) {
-                        routes.append(newRoute)
+                        mapViewModel.routePolyline = polyline
+                    }
+                } else {
+                    print("no poly sadge")
+                }
+                if let route = routeAndPolyline.route {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        routes.append(route)
                         
                         isFetchingRoute = false
                         isHighlighted = true
-                        selectedRoute = newRoute
+                        selectedRoute = route
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             withAnimation(.easeInOut(duration: 0.5)){
                                 isHighlighted = false
                             }
                         }
                     }
+                } else {
+                    print("no route for this")
                 }
             }
         }
     }
+    
+    private func highlightRoute() {
+        withAnimation(.easeInOut(duration: 0.5)) {
+            isHighlighted = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                isHighlighted = false
+            }
+        }
+    }
+
     
     private func formatDistance(_ distance: Double) -> String {
         if distance >= 1000 {
@@ -201,7 +237,7 @@ extension MarketDetailSheet {
     var travelTimeSection: some View {
         HStack(spacing: 16) {
             ForEach(travelModes, id: \.icon) { mode in
-                Button(action: {updateTravelTimeSection(mode: mode)}) {
+                Button(action: {updateRouteInformation(mode: mode)}) {
                     VStack {
                         Image(systemName: "\(mode.icon)")
                             .resizable()

@@ -22,7 +22,7 @@ struct MapService {
         return nil
     }
     
-    static func getTravelTimeAndDistance(userCoordinate: CLLocationCoordinate2D,mapItem: MKMapItem,transportType: MKDirectionsTransportType) async -> RouteData? {
+    static func getRouteAndETA(userCoordinate: CLLocationCoordinate2D,mapItem: MKMapItem,transportType: MKDirectionsTransportType) async -> (route: RouteData?, polyline: MKPolyline?) {
         
         let routeRequest = MKDirections.Request()
         routeRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: userCoordinate))
@@ -31,11 +31,18 @@ struct MapService {
         routeRequest.departureDate = .now
         
         do {
-            let etaResponse = try await MKDirections(request: routeRequest).calculateETA()
-            return RouteData(transportType: transportType, distance: etaResponse.distance, eta: etaResponse.expectedTravelTime / 60)
+            let response = try await MKDirections(request: routeRequest).calculate()
+            
+            if let route = response.routes.first {
+                return (
+                    route:RouteData(transportType: transportType, distance: route.distance, eta: route.expectedTravelTime / 60),
+                    polyline: route.polyline
+                )
+            }
+            else{ return (nil, nil)}
         } catch {
-            return nil
+            return (nil, nil)
         }
     }
-    
+        
 }

@@ -31,8 +31,8 @@ struct RadiusSlider: View {
                             }
                             .padding(12)
                             .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(.background.opacity(0.9))
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(.thickMaterial)
                             )
                         }
                         .padding(.bottom, 10)
@@ -72,7 +72,7 @@ struct RadiusSlider: View {
                         mapViewController.isMapMarkerVisible = false
                         mapViewController.updateCameraPosition(to: mapViewController.locationManager.location?.coordinate)
                     }
-                    .padding(.trailing, 10)
+                    .padding(.trailing, 12)
                     
                     Button(action: {
                         withAnimation(.smooth){
@@ -86,15 +86,16 @@ struct RadiusSlider: View {
                         }
                         .padding(10)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(.background.opacity(0.9))
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(.bar)
+                                .shadow(radius: 4)
                         )
                     }
                 }
                 .padding()
                 .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(.systemGray6).opacity(0.8))
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(.bar)
                         .shadow(radius: 6)
                 )
                 

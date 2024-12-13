@@ -88,7 +88,7 @@ struct RecipeFilterView: View {
                 }
 
                 HStack {
-                    Image(systemName: "leaf.fill")
+                    Image(systemName: "fork.knife.circle.fill")
                         .foregroundStyle(.white)
                         .frame(width: 30, height: 30)
                         .background(RoundedRectangle(cornerRadius: 8)

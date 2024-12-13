@@ -51,13 +51,6 @@ class RecipeFilter {
             }
         }
         
-        // Filter nach Favoriten
-        if selectedRecipeIsFavorite {
-            filteredItems = filteredItems.filter { recipe in
-                recipe.isFavorite == selectedRecipeIsFavorite
-            }
-        }
-        
         // Filter nach Für Gruppen
         if selectedRecipeIsForGroups {
             filteredItems = filteredItems.filter { recipe in
@@ -72,8 +65,23 @@ class RecipeFilter {
             }
         }
         
+        // Filter nach Favoriten
+        if selectedRecipeIsFavorite {
+            filteredItems = filteredItems.filter { recipe in
+                recipe.isFavorite == selectedRecipeIsFavorite
+            }
+        } else {
+            // Filter nach Monat
+            filteredItems = filteredItems.filter { recipe in
+                // Nur Rezepte anzeigen, die im ausgewählten Monat verfügbar sind
+                return recipe.seasonalData.contains { seasonalData in
+                    seasonalData.month == selectedMonth
+                }
+            }
+        }
+        
         // Filter nach Verfügbarkeit
-        if excludeNotRegionallyRecipes {
+        if excludeNotRegionallyRecipes && !selectedRecipeIsFavorite {
             filteredItems = filteredItems.filter { recipe in
                 // Überprüfe, ob für das Rezept saisonale Daten für den ausgewählten Monat existieren
                 let seasonalDataForMonth = recipe.seasonalData.first { seasonal in
@@ -94,14 +102,6 @@ class RecipeFilter {
                     seasonal.month == selectedMonth
                 }
                 return seasonalDataForMonth != nil
-            }
-        }
-        
-        // Filter nach Monat
-        filteredItems = filteredItems.filter { recipe in
-            // Nur Produkte anzeigen, die im ausgewählten Monat verfügbar sind
-            return recipe.seasonalData.contains { seasonalData in
-                seasonalData.month == selectedMonth
             }
         }
         

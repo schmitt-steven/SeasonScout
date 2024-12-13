@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct CalendarView: View {
-    
+
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = .systemOrange
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes(
+            [.foregroundColor: UIColor.black], for: .selected)
     }
-    
+
     @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
-    
+
     @State private var searchText = ""
-    @State private var selectedMonth = Month.allCases[Calendar.current.component(.month, from: Date()) - 1]
+    @State private var selectedMonth = Month.allCases[
+        Calendar.current.component(.month, from: Date()) - 1]
     @State private var selectedProductType: SelectedProductType = .all
     @State private var selectedProductIsFavorite = false
     @State private var excludeNotRegionally = true
@@ -28,7 +30,7 @@ struct CalendarView: View {
             items: Product.products,
             searchText: searchText,
             selectedProductType: selectedProductType,
-            selectedProductIsFavorite : selectedProductIsFavorite,
+            selectedProductIsFavorite: selectedProductIsFavorite,
             excludeNotRegionally: excludeNotRegionally,
             selectedMonth: selectedMonth
         )
@@ -37,26 +39,37 @@ struct CalendarView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                MonthSelectionView(selectedMonth: $selectedMonth)
-                
+                if !selectedProductIsFavorite {
+                    MonthSelectionView(selectedMonth: $selectedMonth)
+                }
+
                 Button(action: {
                     withAnimation {
                         showFilters.toggle()
                     }
                 }) {
                     HStack {
-                        Text(showFilters ? "Filter ausblenden" : "Filter anzeigen")
-                            .font(.headline)
-                            .foregroundColor(isDarkModeEnabled ? .white : .black)
-                        Image(systemName: showFilters ? "chevron.up" : "chevron.down")
-                            .font(.headline)
+                        Text(
+                            showFilters
+                                ? "Filter ausblenden" : "Filter anzeigen"
+                        )
+                        .font(.headline)
+                        .foregroundColor(isDarkModeEnabled ? .white : .black)
+                        Image(
+                            systemName: showFilters
+                                ? "chevron.up" : "chevron.down"
+                        )
+                        .font(.headline)
                     }
                 }
                 .padding(.top)
                 .padding(.bottom, 2)
-                
+
                 if showFilters {
-                    Picker("Wähle ein Produkttyp aus", selection: $selectedProductType){
+                    Picker(
+                        "Wähle ein Produkttyp aus",
+                        selection: $selectedProductType
+                    ) {
                         ForEach(SelectedProductType.allCases, id: \.self) {
                             Text($0.rawValue)
                         }
@@ -64,43 +77,88 @@ struct CalendarView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                 }
-                
-                Spacer()
-                ProductListView(products: filteredProducts, selectedMonth: selectedMonth)
-                Spacer()
+
+                ProductListView(
+                    products: filteredProducts, selectedMonth: selectedMonth)
             }
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suche nach Produkten")
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Suche nach Produkten"
+            )
             .navigationTitle("Kalender")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gear")
-                            .imageScale(.large)
+                    Button {
+                        isDarkModeEnabled.toggle()
+                    } label: {
+                        Image(
+                            systemName: isDarkModeEnabled
+                                ? "moon.stars.fill" : "sun.max.fill"
+                        )
+                        .contentTransition(.symbolEffect(.replace.offUp))
+                        .foregroundColor(
+                            isDarkModeEnabled ? .white : Color(.systemYellow))
+                    }
+                    .onChange(of: isDarkModeEnabled) { _, _ in
+                        // Trigger the appearance update
+                        updateAppearance()
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
+                    if selectedProductIsFavorite {
+                        Button {
+
+                        } label: {
+                            Image(
+                                systemName: excludeNotRegionally
+                                    ? "leaf.fill" : "ferry.fill"
+                            )
+                            .foregroundColor(Color(.systemGray))
+                        }
+                    } else {
                         Button {
                             excludeNotRegionally.toggle()
                         } label: {
-                            Label(
-                                excludeNotRegionally ? "Überregionale Produkte anzeigen" : "Überregionale Produkte ausblenden",
-                                systemImage: excludeNotRegionally ? "ferry" : "leaf"
+                            Image(
+                                systemName: excludeNotRegionally
+                                    ? "leaf.fill" : "ferry.fill"
                             )
+                            .contentTransition(.symbolEffect(.replace.offUp))
+                            .foregroundColor(
+                                excludeNotRegionally
+                                    ? Color(.systemGreen) : Color(.systemRed))
                         }
-                        Button {
-                            selectedProductIsFavorite.toggle()
-                        } label: {
-                            Label(
-                                selectedProductIsFavorite ? "Favoriten ausblenden" : "Favoriten anzeigen",
-                                systemImage: selectedProductIsFavorite ? "heart.slash" : "heart"
-                            )
-                        }
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        selectedProductIsFavorite.toggle()
                     } label: {
-                        Label("", systemImage: "ellipsis.circle")
+                        Image(
+                            systemName: selectedProductIsFavorite
+                                ? "heart.fill" : "heart.slash.fill"
+                        )
+                        .contentTransition(.symbolEffect(.replace.offUp))
+                        .foregroundColor(
+                            selectedProductIsFavorite
+                                ? Color(.systemPink) : Color(.systemPink))
                     }
                 }
             }
         }
     }
+
+    // Update the application's appearance
+    private func updateAppearance() {
+        // Update UIKit interface style for compatibility
+        let windowScene =
+            UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.overrideUserInterfaceStyle =
+            isDarkModeEnabled ? .dark : .light
+    }
+}
+
+#Preview {
+    CalendarView()
 }

@@ -36,12 +36,7 @@ struct ProductInfoView: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: UIImage(named: product.imageName)!)
-                .resizable()
-                .scaledToFit()
-                .saturation(1.2)
-                .hueRotation(.degrees(10))
-                .brightness(0.1)
+            ProductImageCard(product: product)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .ignoresSafeArea()
             

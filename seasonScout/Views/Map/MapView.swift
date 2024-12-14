@@ -24,17 +24,30 @@ struct MapView: View {
                     ForEach(viewController.shownMapItems, id: \.identifier) { market in
                         Marker(item: market)
                             .tint(Color(.systemOrange))
-                            .tag(market)                        
+                            .tag(market)
                     }
                 }
                 
                 if let polyline = viewController.routePolyline {
                     MapPolyline(polyline)
-                        .stroke(.orange, lineWidth: 2)
-                        //.strokeStyle(style: Stro)
-                        
+                            .stroke(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [.orange, .mint , .yellow]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .trailing
+                                                ),
+                                //Color(.orange).mix(with: .mint, by: 0.2).blendMode(.colorBurn),
+                                style: StrokeStyle(
+                                    lineWidth: 4,
+                                    lineCap: .round,
+                                    lineJoin: .round
+                                )
+                            )
+                            .foregroundStyle(.black)
                 }
+
             }
+
             .mapControlVisibility(.visible)
             
             .contentMargins(.top, 45)

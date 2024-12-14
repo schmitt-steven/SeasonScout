@@ -10,6 +10,7 @@ struct RouteData {
     let transportType: MKDirectionsTransportType
     let distance: CLLocationDistance
     let eta: TimeInterval
+    let polyline: MKPolyline?
 }
 
 struct MapService {
@@ -22,26 +23,40 @@ struct MapService {
         return nil
     }
     
-    static func getRouteAndETA(userCoordinate: CLLocationCoordinate2D,mapItem: MKMapItem,transportType: MKDirectionsTransportType) async -> (route: RouteData?, polyline: MKPolyline?) {
+    static func getRouteAndETA(userCoordinate: CLLocationCoordinate2D, mapItem: MKMapItem, transportType: MKDirectionsTransportType) async -> RouteData? {
         
         let routeRequest = MKDirections.Request()
         routeRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: userCoordinate))
         routeRequest.destination = mapItem
         routeRequest.transportType = transportType
         routeRequest.departureDate = .now
-        
+
         do {
-            let response = try await MKDirections(request: routeRequest).calculate()
-            
-            if let route = response.routes.first {
-                return (
-                    route:RouteData(transportType: transportType, distance: route.distance, eta: route.expectedTravelTime / 60),
-                    polyline: route.polyline
+            // Mapkit doesnt support polyline for transit :((( Hence the ETA func is used
+            if transportType == .transit {
+                let etaResponse = try await MKDirections(request: routeRequest).calculateETA()
+
+                return RouteData(
+                    transportType: transportType,
+                    distance: etaResponse.distance,
+                    eta: etaResponse.expectedTravelTime / 60,
+                    polyline: nil
                 )
+            } else {
+                let response = try await MKDirections(request: routeRequest).calculate()
+
+                if let route = response.routes.first {
+                    return RouteData(
+                        transportType: transportType,
+                        distance: route.distance,
+                        eta: route.expectedTravelTime / 60,
+                        polyline: route.polyline
+                    )
+                }
             }
-            else{ return (nil, nil)}
+            return nil
         } catch {
-            return (nil, nil)
+            return nil
         }
     }
         

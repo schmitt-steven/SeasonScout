@@ -10,15 +10,15 @@ import MapKit
 
 struct MarketDetailSheet: View {
 
-    private let mapItem: MKMapItem
-    private var userCoordinate: CLLocationCoordinate2D
-    private let defaultTransportType: MKDirectionsTransportType = .automobile
+    let mapItem: MKMapItem
+    var userCoordinate: CLLocationCoordinate2D
+    let defaultTransportType: MKDirectionsTransportType = .automobile
     @ObservedObject var mapViewModel: MapViewModel
-    @State private var selectedRoute: RouteData? = nil
-    @State private var lookAroundScene: MKLookAroundScene?
-    @State private var routes: [RouteData] = []
-    @State private var isFetchingRoute = false
-    @State private var isHighlighted = false
+    @State var selectedRoute: RouteData? = nil
+    @State var lookAroundScene: MKLookAroundScene?
+    @State var routes: [RouteData] = []
+    @State var isFetchingRoute = false
+    @State var isHighlighted = false
     
     internal init(mapViewModel: MapViewModel,mapItem: MKMapItem, userCoordinate: CLLocationCoordinate2D) {
         self.mapViewModel = mapViewModel
@@ -47,7 +47,7 @@ struct MarketDetailSheet: View {
             .padding()
         }
         .task {
-                self.lookAroundScene = await MapService.getLookAroundScene(mapItem: self.mapItem)
+            self.lookAroundScene = await MapService.getLookAroundScene(mapItem: self.mapItem)
         }
         .task {
             await initializeRoutes()
@@ -63,173 +63,13 @@ struct MarketDetailSheet: View {
                 }
             }
         }
+        .onDisappear {
+            withAnimation(.easeOut) {
+                mapViewModel.routePolyline = nil
+            }
+        }
     }
 }
-
-extension MarketDetailSheet {
-    
-    private func initializeRoutes() async {
-        routes = []
-
-        let routeAndPolyline = await MapService.getRouteAndETA(
-            userCoordinate: self.userCoordinate,
-            mapItem: self.mapItem,
-            transportType: self.defaultTransportType
-        )
-        if let route = routeAndPolyline.route {
-            withAnimation {
-                selectedRoute = route
-                routes.append(route)
-            }
-        }
-        if let polyline = routeAndPolyline.polyline {
-            withAnimation {
-                mapViewModel.routePolyline = polyline
-            }
-        }
-    }
-    
-    private func useMKRoute() {
-        // TODO: it
-    }
-    
-    private func updateRouteInformation(mode: TravelMode) {
-        if let route = routes.first(where: { $0.transportType == mode.transportType }) {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                isHighlighted = true
-                selectedRoute = route
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    withAnimation(.easeInOut(duration: 0.5)){
-                        isHighlighted = false
-                    }
-                }
-            }
-        } else {
-            isFetchingRoute = true
-
-            Task {
-                print("in task")
-                let routeAndPolyline = await MapService.getRouteAndETA(
-                    userCoordinate: userCoordinate,
-                    mapItem: mapItem,
-                    transportType: mode.transportType
-                )
-                print("in task, now got route and poly")
-                if let polyline = routeAndPolyline.polyline {
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        mapViewModel.routePolyline = polyline
-                    }
-                } else {
-                    print("no poly sadge")
-                }
-                if let route = routeAndPolyline.route {
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        routes.append(route)
-                        
-                        isFetchingRoute = false
-                        isHighlighted = true
-                        selectedRoute = route
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            withAnimation(.easeInOut(duration: 0.5)){
-                                isHighlighted = false
-                            }
-                        }
-                    }
-                } else {
-                    print("no route for this")
-                }
-            }
-        }
-    }
-    
-    private func highlightRoute() {
-        withAnimation(.easeInOut(duration: 0.5)) {
-            isHighlighted = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                isHighlighted = false
-            }
-        }
-    }
-
-    
-    private func formatDistance(_ distance: Double) -> String {
-        if distance >= 1000 {
-            let kilometers = distance / 1000
-            return String(format: "%.1fkm", kilometers)
-        } else {
-            return String(format: "%.0fm", distance)
-        }
-    }
-
-    
-    private func composeAddress() -> String {
-        var components: [String] = []
-        
-        if var street = mapItem.placemark.thoroughfare {
-            if let streetNumber = mapItem.placemark.subThoroughfare {
-                street += " \(streetNumber)"
-            }
-            components.append(street)
-        }
-        
-        if let postalCode = mapItem.placemark.postalCode,
-           let city = mapItem.placemark.locality {
-            components.append("\(postalCode) \(city)")
-        } else if let city = mapItem.placemark.locality {
-            components.append(city)
-        }
-        
-        return components.joined(separator: ", ")
-    }
-    
-    private func formatTime(minutes: Double?) -> String {
-        guard let minutes = minutes else { return "" }
-        if minutes < 60 {
-            return String(format: "%.0f Minuten", minutes)
-        } else {
-            let hours = Int(minutes) / 60
-            let remainingMinutes = Int(minutes) % 60
-            if remainingMinutes > 0 {
-                return "\(hours)h \(remainingMinutes)min"
-            } else {
-                return "\(hours) Stunde\(hours > 1 ? "n" : "")"
-            }
-        }
-    }
-    
-    var websiteLink: String {
-            return getURLDomainName(from:  mapItem.url!)
-    }
-    
-    func getURLDomainName(from url: URL) -> String {
-        let urlString = url.absoluteString
-        let regex = try! NSRegularExpression(pattern: "https?://(?:www\\.)?([^/]+)(/.*)?")
-        let range = NSRange(urlString.startIndex..<urlString.endIndex, in: urlString)
-        
-        return regex.firstMatch(in: urlString, options: [], range: range)
-            .flatMap { Range($0.range(at: 1), in: urlString).map { String(urlString[$0]) } }
-        ?? "zur Webseite"
-    }
-    
-    private func openInMaps() {
-        mapItem.openInMaps(launchOptions: nil)
-    }
-    
-        
-    private func openInMapsWithDirections() {
-       
-        let launchOptions: [String: Any] = [
-            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDefault
-        ]
-      
-        MKMapItem.openMaps(with: [mapItem], launchOptions: launchOptions)
-    }
-    
-    
-}
-
 
 
 extension MarketDetailSheet {
@@ -419,7 +259,6 @@ extension MarketDetailSheet {
         let time: String
         let transportType: MKDirectionsTransportType
         let route: RouteData?
-        let isSelected: Bool = false
     }
     
     var travelModes: [TravelMode] {

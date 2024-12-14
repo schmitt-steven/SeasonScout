@@ -95,7 +95,7 @@ struct RadiusSlider: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 12)
-                        .fill(.bar)
+                        .fill(.thickMaterial)
                         .shadow(radius: 6)
                 )
                 

@@ -85,7 +85,7 @@ extension MarketDetailSheet {
                             .frame(height: 20)
                             .padding(.top, 2)
                         
-                        if routes.contains(where: { $0.transportType == mode.transportType }) {
+                        if (selectedRoute?.transportType == mode.transportType && mode.route != nil) {
                             Text(mode.time)
                                 .transition(.move(edge: .bottom))
                                 .font(.caption)
@@ -93,7 +93,7 @@ extension MarketDetailSheet {
                     }
                     .foregroundStyle(.foreground)
                     .opacity(isFetchingRoute ? 0.3 : 1.0)
-                    .padding(routes.contains(where: { $0.transportType == mode.transportType }) ? 6 : 15)
+                    .padding(mode.transportType == selectedRoute?.transportType ? 6 : 15)
                     .frame(maxWidth: .infinity)
                     .background(
                         (selectedRoute?.transportType == mode.route?.transportType) && mode.route != nil

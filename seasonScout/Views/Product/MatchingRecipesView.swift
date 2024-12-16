@@ -81,6 +81,10 @@ struct MatchingRecipesView: View {
                                     ? 1 : 4,
                                 spacing: 16
                             )
+                            .scrollTransition { content, phase in
+                                return content
+                                    .opacity(phase.value == 0 ? 1 : 0.5)
+                            }
                         }
                         .buttonStyle(PlainButtonStyle())
                     }

@@ -11,12 +11,12 @@ struct AvailabilityMonthView: View {
     let product: Product
     let selectedMonth: Month
 
-    @Environment(\.verticalSizeClass) var verticalSizeClass
+//    @Environment(\.verticalSizeClass) var verticalSizeClass
 
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.horizontal) {
-                HStack {
+                HStack(spacing: 32) {
                     ForEach(Month.allCases, id: \.self) { month in
                         let availability = seasonalDataForMonth(month)?
                             .availability
@@ -55,25 +55,20 @@ struct AvailabilityMonthView: View {
                             }
                         }
                         .containerRelativeFrame(
-                            .horizontal,
-                            count: verticalSizeClass == .regular ? 1 : 4,
-                            spacing: 16
+                            .horizontal
                         )
                         .scrollTransition { content, phase in
-                            content
-                                .opacity(phase.isIdentity ? 1.0 : 0.0)
-                                .scaleEffect(
-                                    x: phase.isIdentity ? 1.0 : 0.9,
-                                    y: phase.isIdentity ? 1.0 : 0.9
-                                )
-                                .offset(y: phase.isIdentity ? 0 : 50)
+                            return content
+                                .opacity(phase.value == 0 ? 1 : 0.5)
+                                .offset(x: phase.value * -20)
                         }
                         .id(month)
                     }
                 }
                 .scrollTargetLayout()
             }
-            .contentMargins(1, for: .scrollContent)
+            .scrollClipDisabled()
+            .contentMargins(.horizontal, 16, for: .scrollContent)
             .scrollTargetBehavior(.viewAligned)
             .onAppear {
                 // Automatisches Scrollen zum ausgewählten Monat

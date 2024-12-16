@@ -9,40 +9,31 @@ import SwiftUI
 
 struct MonthSelectionView: View {
     @Binding var selectedMonth: Month
-    
-    @Environment(\.verticalSizeClass) var verticalSizeClass
-    
+        
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.horizontal) {
-                HStack {
+                HStack(spacing: 8) {
                     ForEach(Month.allCases, id: \.self) { month in
-                        ZStack {
                             Text(month.rawValue.prefix(3))
                                 .font(.headline)
                                 .padding(.horizontal, 18)
                                 .padding(.vertical, 6)
                                 .background(RoundedRectangle(cornerRadius: 8)
-                                    .foregroundStyle(month == selectedMonth ? .orange : Color.color))
-                                .containerRelativeFrame(
-                                    .horizontal,
-                                    count: verticalSizeClass == .regular ? 4 : 8,
-                                    spacing: 16
-                                )
+                                    .foregroundStyle(month == selectedMonth ? .orange : .clear))
                                 .onTapGesture {
-                                    withAnimation {
+                                    withAnimation(.smooth) {
                                         selectedMonth = month
                                     }
                                 }
-                        }
-                        .frame(height: 30)
                         .id(month)
                     }
                 }
                 .scrollTargetLayout()
             }
-            .contentMargins(16, for: .scrollContent)
+            .padding(.horizontal, 16)
             .scrollTargetBehavior(.viewAligned)
+            .scrollIndicators(.hidden)
             .onAppear {
                 // Automatisches Scrollen zum ausgewählten Monat
                 scrollProxy.scrollTo(selectedMonth, anchor: .center)

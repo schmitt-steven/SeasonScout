@@ -10,6 +10,7 @@ struct MapView: View {
         ZStack {
             Map(
                 position: $viewController.mapCameraPosition,
+                interactionModes: .all,
                 selection: $viewController.selectedMapItem
             ) {
                 UserAnnotation()
@@ -30,35 +31,34 @@ struct MapView: View {
                 
                 if let polyline = viewController.routePolyline {
                     MapPolyline(polyline)
-                            .stroke(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [.orange, .mint , .yellow]),
-                                                    startPoint: .topLeading,
-                                                    endPoint: .trailing
-                                                ),
-                                //Color(.orange).mix(with: .mint, by: 0.2).blendMode(.colorBurn),
-                                style: StrokeStyle(
-                                    lineWidth: 4,
-                                    lineCap: .round,
-                                    lineJoin: .round
-                                )
+                        .stroke(
+                            LinearGradient(
+                                gradient: Gradient(colors: [.orange, .mint , .yellow]),
+                                startPoint: .topLeading,
+                                endPoint: .trailing
+                            ),
+                            style: StrokeStyle(
+                                lineWidth: 4,
+                                lineCap: .round,
+                                lineJoin: .round
                             )
-                            .foregroundStyle(.black)
+                        )
+                        .foregroundStyle(.black)
                 }
 
             }
-
-            .mapControlVisibility(.visible)
             
-            .contentMargins(.top, 45)
-
+            .contentMargins(.top, 48)
+            
             .mapControls {
                 MapUserLocationButton()
                 MapCompass()
             }
-            .accentColor(Color(.systemOrange))
+            
             .mapStyle(viewController.currentMapStyle.0)
             
+            .accentColor(Color(.systemOrange))
+                        
             .onAppear {
                 viewController.requestAuthorization()
                 if (viewController.currentAuthorizationStatus == .denied) {
@@ -81,7 +81,7 @@ struct MapView: View {
                         secondaryButton: .cancel(Text("Schließen"))
                     )
             }
-            // Shows additional information when a market was slected on the map
+            // Shows additional information when a market was selected on the map
             .sheet(isPresented: Binding<Bool>(
                 get: { viewController.selectedMapItem != nil },
                 set: { _ in withAnimation(.easeOut){ viewController.selectedMapItem = nil }}
@@ -102,7 +102,7 @@ struct MapView: View {
                 }
             }
             
-            // Only show radius controls if searching for markets works
+            // Only show controls if searching for markets works
             if(!viewController.isInternetConnectionBad &&
                [CLAuthorizationStatus.authorizedAlways,
                 CLAuthorizationStatus.authorizedWhenInUse].contains(
@@ -127,6 +127,7 @@ struct MapView: View {
             }
             
         }
+
     }
         
 }

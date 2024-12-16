@@ -38,7 +38,7 @@ struct SimilarRecipesView: View {
                     ForEach(recipesOfSameCategory) { otherRecipe in
                         NavigationLink(
                             destination: RecipeInfoView(
-                                recipe: recipe, selectedMonth: selectedMonth)
+                                recipe: otherRecipe, selectedMonth: selectedMonth)
                         ) {
                             GroupBox {
                                 VStack {

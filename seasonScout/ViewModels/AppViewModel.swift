@@ -18,7 +18,7 @@ class AppViewModel: ObservableObject {
 
     private func simulateAppInitialization() {
         // Simulate some initialization (e.g., data fetching)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.isLoading = false // Loading complete
         }
     }

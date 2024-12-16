@@ -80,6 +80,7 @@ struct CalendarView: View {
 
                 ProductListView(
                     products: filteredProducts, selectedMonth: selectedMonth)
+                Spacer()
             }
             .searchable(
                 text: $searchText,

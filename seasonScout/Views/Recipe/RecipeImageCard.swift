@@ -2,13 +2,9 @@ import SwiftUI
 
 struct RecipeImageCard: View {
     @ObservedObject var recipe: Recipe
-    @State var isFlipped = false
-    @State var isFavoriteButtonTapped = false
-    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     internal init(recipe: Recipe) {
         self.recipe = recipe
-        hapticFeedback.prepare()
     }
     
     var body: some View {
@@ -29,59 +25,9 @@ struct RecipeImageCard: View {
                                 )
                             )
                        .clipShape(.rect(cornerRadius: 16))
-                    
-                    VStack {
-                        
-                        HStack {
-                            Text("")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                hapticFeedback.impactOccurred()
-                                hapticFeedback.prepare()
-                            }) {
-                                /*Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
-                                    .symbolEffect(
-                                        .bounce.up,
-                                        options: .speed(0.8),
-                                        value: recipe.isFavorite
-                                    )
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(recipe.isFavorite ? .accentColor.opacity(1) : Color(.white))
-                                    .background(
-                                        Circle()
-                                            .padding(-10)
-                                            .foregroundStyle(Color(.systemGray2))
-                                            .opacity(0.9)
-                                    )*/
-                                    
-                            }
-                        }
-                        .padding([.leading, .trailing], 25)
-                        .padding(.bottom, 10)
-                        .offset(y: 18)
-                    }
                 }
-            if isFlipped {
-                Text("Informationen stammen von\n\(recipe.source)")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                    .background(Color.gray.opacity(0.5))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))  // Flips the text horizontally
-
-            }
         }
         .shadow(color: .black, radius: 5)
-        .padding(.bottom, 8)
-        
         .ignoresSafeArea(.all)
 
         // Makes the view move behind the scroll view and fade in/out based on the current offset
@@ -97,6 +43,8 @@ struct RecipeImageCard: View {
                 .opacity(opacity)
                 .blur(radius: blurRadius)
         }
+        .padding(.top, -10)
+
     }
 }
 

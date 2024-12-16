@@ -75,7 +75,7 @@ struct RecipeInfoView: View {
                             Text(recipe.title)
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
+                                .multilineTextAlignment(.leading)
 
                             RecipeTagsSection(tagDataList: tagData)
 

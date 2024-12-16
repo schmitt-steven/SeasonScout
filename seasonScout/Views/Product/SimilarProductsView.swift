@@ -41,9 +41,19 @@ struct SimilarProductsView: View {
                             GroupBox {
                                 VStack {
                                     HStack {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .frame(width: 80, height: 80)
-                                            .foregroundStyle(.secondary)
+                                        if product.imageName.isEmpty {
+                                            RoundedRectangle(cornerRadius: 8)
+                                                .frame(width: 80, height: 80)
+                                                .foregroundStyle(.secondary)
+                                        } else {
+                                            Image(uiImage: UIImage(named: product.imageName)!)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 80, height: 80)
+                                                .clipped()
+                                                .cornerRadius(8)
+                                                .foregroundStyle(.secondary)
+                                        }
                                         
                                         VStack(alignment: .leading, spacing: 2) {
                                             Text(product.name)

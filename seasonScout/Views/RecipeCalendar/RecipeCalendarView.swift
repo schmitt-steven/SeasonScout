@@ -63,7 +63,6 @@ struct RecipeCalendarView: View {
                 .padding(.top)
                 .padding(.bottom, 2)
                 
-                Spacer()
                 RecipeListView(recipes: filteredRecipes, selectedMonth: selectedMonth)
                 Spacer()
             }

@@ -28,9 +28,9 @@ struct ProductImageCard: View {
                         .background(.clear)
                         .overlay(
                                 LinearGradient(
-                                    gradient: Gradient(colors: [.clear, .black.opacity(0.3)]),
-                                    startPoint: .center,
-                                    endPoint: .topLeading
+                                    gradient: Gradient(colors: [.clear, .black.opacity(0.7)]),
+                                    startPoint: .bottom,
+                                    endPoint: .top
                                 )
                             )
                        .clipShape(.rect(cornerRadius: 16))

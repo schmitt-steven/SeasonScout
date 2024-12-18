@@ -53,10 +53,12 @@ struct ProductInfoView: View {
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
+                                .padding(.top, -10)
 
                             Text(product.botanicalName)
                                 .font(.title2)
                                 .foregroundColor(.gray)
+                                .padding(.bottom, -10)
 
                             Text("Kurzbeschreibung")
                                 .font(.title2.bold())

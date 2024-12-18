@@ -15,51 +15,34 @@ struct RecipeIngredientTable: View {
         self.personCounter = 4
     }
     
-    
     var body: some View {
-        let withAmount = ingredientsWithAmount()
-        let withoutAmount = ingredientsWithoutAmount()
-        
         VStack(alignment: .leading) {
             PersonCounterSwitcher(personCounter: $personCounter)
             
             VStack(alignment: .leading, spacing: 7) {
-                ForEach(withAmount, id: \.offset) { index, name in
-                    let matchingIngredientsForCounter = ingredientList.first(where: { $0.personNumber == personCounter })
-                    IngredientRow(name: name, amount: matchingIngredientsForCounter!.ingredients[index].amount)
+                let allIngredients = ingredientsGroupedByAmount()
+                
+                ForEach(allIngredients.indices, id: \.self) { index in
+                    let ingredient = allIngredients[index]
+                    IngredientRow(name: ingredient.name, amount: ingredient.amount)
                     
-                    
-                    if index < withAmount.count - 1 || !withoutAmount.isEmpty {
+                    if index < allIngredients.count - 1 {
                         Divider()
                     }
-                }
-                
-                ForEach(withoutAmount, id: \.offset) { index, name in
-                    IngredientRow(name: name, amount: "")
-                    
-                    if index < withoutAmount.count - 1 {
-                                        Divider()
-                                    }
                 }
             }
         }
     }
     
-    
-    private func ingredientsWithAmount() -> [(offset: Int, element: String)] {
-        ingredientList[0].ingredients.enumerated()
-            .filter { index, _ in
-                !ingredientList[personIndex].ingredients[index].amount.isEmpty
-            }
-            .map { (offset: $0.offset, element: $0.element.name) }
-    }
-    
-    private func ingredientsWithoutAmount() -> [(offset: Int, element: String)] {
-        ingredientList[0].ingredients.enumerated()
-            .filter { index, _ in
-                ingredientList[personIndex].ingredients[index].amount.isEmpty
-            }
-            .map { (offset: $0.offset, element: $0.element.name) }
+    private func ingredientsGroupedByAmount() -> [(name: String, amount: String)] {
+        let allIngredients = ingredientList[0].ingredients.enumerated().map { index, ingredient in
+            (name: ingredient.name, amount: ingredientList[personIndex].ingredients[index].amount)
+        }
+        
+        let withAmount = allIngredients.filter { !$0.amount.isEmpty }
+        let withoutAmount = allIngredients.filter { $0.amount.isEmpty }
+        
+        return withAmount + withoutAmount
     }
 }
 
@@ -72,26 +55,29 @@ struct PersonCounterSwitcher: View {
         HStack {
             Text("Für")
                 .padding(.trailing, 5)
-            HStack {
+            HStack(spacing: 0) {
                 Button(action: decrementPerson) {
                     Image(systemName: "minus")
                         .bold()
                         .foregroundStyle(personCounter == minPerson ? .gray : .red)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
                 }
-                .padding(.vertical, 6)
-                .padding(.horizontal, 12)
+                
 
                 Text("\(personCounter)")
                     .fontWeight(.medium)
                     .fixedSize(horizontal: true, vertical: false)
+                    .transition(.blurReplace)
 
                 Button(action: incrementPerson) {
                     Image(systemName: "plus")
                         .bold()
                         .foregroundStyle(personCounter == maxPerson ? .gray : .green)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
                 }
-                .padding(.vertical, 6)
-                .padding(.horizontal, 12)
+                
             }
             .background(Color(.systemGray6))
             .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -106,11 +92,15 @@ struct PersonCounterSwitcher: View {
 
     
     private func incrementPerson() {
-        personCounter = min(personCounter + 1, maxPerson)
+        withAnimation(){
+            personCounter = min(personCounter + 1, maxPerson)
+        }
     }
     
     private func decrementPerson() {
-        personCounter = max(personCounter - 1, minPerson)
+        withAnimation(){
+            personCounter = max(personCounter - 1, minPerson)
+        }
     }
 }
 

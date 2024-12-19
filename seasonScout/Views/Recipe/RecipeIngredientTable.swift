@@ -4,19 +4,15 @@ struct RecipeIngredientTable: View {
     
     let ingredientList: [PersonsIngredients]
     let minAmountColumnWidth = CGFloat(60)
-    @State private var personCounter: Int
+    @State private var personCounter: Int = 4
     
     private var personIndex: Int {
         personCounter - 1
     }
     
-    internal init(ingredientList: [PersonsIngredients]) {
-        self.ingredientList = ingredientList
-        self.personCounter = 4
-    }
-    
     var body: some View {
         VStack(alignment: .leading) {
+
             PersonCounterSwitcher(personCounter: $personCounter)
             
             VStack(alignment: .leading, spacing: 7) {
@@ -31,18 +27,16 @@ struct RecipeIngredientTable: View {
                     }
                 }
             }
+            
         }
     }
     
     private func ingredientsGroupedByAmount() -> [(name: String, amount: String)] {
-        let allIngredients = ingredientList[0].ingredients.enumerated().map { index, ingredient in
-            (name: ingredient.name, amount: ingredientList[personIndex].ingredients[index].amount)
+        let allIngredients = ingredientList.first!.ingredients.enumerated().map { index, ingredient in
+            (name: ingredient.name, amount: ingredientList.first(where: {$0.personNumber == personCounter})!.ingredients[index].amount)
         }
         
-        let withAmount = allIngredients.filter { !$0.amount.isEmpty }
-        let withoutAmount = allIngredients.filter { $0.amount.isEmpty }
-        
-        return withAmount + withoutAmount
+        return allIngredients.sorted { !$0.amount.isEmpty && $1.amount.isEmpty }
     }
 }
 
@@ -68,7 +62,6 @@ struct PersonCounterSwitcher: View {
                 Text("\(personCounter)")
                     .fontWeight(.medium)
                     .fixedSize(horizontal: true, vertical: false)
-                    .transition(.blurReplace)
 
                 Button(action: incrementPerson) {
                     Image(systemName: "plus")

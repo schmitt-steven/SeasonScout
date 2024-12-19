@@ -27,7 +27,7 @@ struct ExpandableGroupBox<Content: View>: View {
                         .font(.title2.bold())
                         .foregroundColor(.primary)
                     
-                    Image(systemName: "chevron.up")
+                    Image(systemName: "chevron.down")
                         .fontWeight(.bold)
                         .rotationEffect(isExpanded ? .degrees(180) : .degrees(0))
                 }

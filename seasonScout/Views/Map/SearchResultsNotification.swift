@@ -19,7 +19,11 @@ struct SearchResultsNotification: View {
             HStack{
                 Image(systemName: isMarketListEmpty ? "exclamationmark.circle" : "checkmark.circle")
                         .foregroundStyle(.orange)
-                    Text(isMarketListEmpty ? "Keine Ergebnisse" : "^[\(viewController.shownMapItems.count) Ergebnisse](inflect: true)")
+                Text(isMarketListEmpty
+                    ? "Keine Ergebnisse"
+                    : "\(viewController.shownMapItems.count) \(viewController.shownMapItems.count == 1 ? "Ergebnis" : "Ergebnisse")"
+                )
+
             }
             .padding()
             .background(

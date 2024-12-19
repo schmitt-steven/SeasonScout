@@ -13,12 +13,19 @@ struct MapView: View {
                 interactionModes: .all,
                 selection: $viewController.selectedMapItem
             ) {
-                UserAnnotation()
+                UserAnnotation() {
+                    Image(systemName: "person.circle")
+                        .symbolEffect(.breathe.plain)
+                        .font(.title2)
+                        .foregroundStyle(Color(.systemOrange))
+                        .background(Circle().fill(.regularMaterial))
+                }
+                    .mapOverlayLevel(level: .aboveLabels)
                 
                 if let userLocation = viewController.locationManager.location?.coordinate {
                     MapCircle(center: userLocation, radius: CLLocationDistance(viewController.currentSearchRadiusInMeters))
                         .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.5) : .secondary.opacity(0.1))
-                        .stroke(Color(.systemOrange).opacity(0.8), lineWidth: 1.5)
+                        .stroke(Color(.systemOrange).opacity(0.9), lineWidth: 2)
                 }
                 
                 if viewController.isMapMarkerVisible {
@@ -26,6 +33,7 @@ struct MapView: View {
                         Marker(item: market)
                             .tint(Color(.systemOrange))
                             .tag(market)
+                            .mapOverlayLevel(level: .aboveRoads)
                     }
                 }
                 

@@ -140,27 +140,54 @@ class MapViewModel: ObservableObject {
         return MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
     }
     
-    private func buildMarketSearchRequest(using location: CLLocation) -> MKLocalSearch.Request {
-        
-        let request = MKLocalSearch.Request()
-        
-        request.naturalLanguageQuery = "Wochenmarkt"
-        
-        // Whitelisted points of interested; only markets are relevant, rest is excluded
-        request.pointOfInterestFilter = MKPointOfInterestFilter(including: [.foodMarket])
-        
-        // With .required, search results must be in specified region
-        request.regionPriority = .required
-        
-        // Uses user's location to define the center of the search region and the radius to define the width and height of the region
-        // A MKCoordinateRegion is always rectangular, NOT circular
-        request.region = MKCoordinateRegion(
+    private func buildMarketSearchRequests(using location: CLLocation) -> [MKLocalSearch.Request] {
+        let totalRegion = MKCoordinateRegion(
             center: location.coordinate,
             latitudinalMeters: CLLocationDistance(self.currentSearchRadiusInMeters * 2),
             longitudinalMeters: CLLocationDistance(self.currentSearchRadiusInMeters * 2)
         )
-        return request
+        // Half the width of the region in longitudinal degrees
+        let halfLongitudeDelta = totalRegion.span.longitudeDelta / 2
+
+        // Left region: move region center to the left by half the width
+        let leftRegion = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude - halfLongitudeDelta / 2
+            ),
+            span: MKCoordinateSpan(
+                latitudeDelta: totalRegion.span.latitudeDelta,
+                longitudeDelta: halfLongitudeDelta
+            )
+        )
+        
+        // Right region: move region center to the right by half the width
+        let rightRegion = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude + halfLongitudeDelta / 2
+            ),
+            span: MKCoordinateSpan(
+                latitudeDelta: totalRegion.span.latitudeDelta,
+                longitudeDelta: halfLongitudeDelta
+            )
+        )
+
+        let leftRequest = MKLocalSearch.Request()
+        leftRequest.naturalLanguageQuery = "Wochenmarkt"
+        leftRequest.pointOfInterestFilter = MKPointOfInterestFilter(including: [.foodMarket])
+        leftRequest.regionPriority = .required
+        leftRequest.region = leftRegion
+
+        let rightRequest = MKLocalSearch.Request()
+        rightRequest.naturalLanguageQuery = "Wochenmarkt"
+        rightRequest.pointOfInterestFilter = MKPointOfInterestFilter(including: [.foodMarket])
+        rightRequest.regionPriority = .required
+        rightRequest.region = rightRegion
+
+        return [leftRequest, rightRequest]
     }
+
     
     // Uses MainActor, since UI bound properties (marketsFoundInUserRegion, isInternetConnectionBad) must be updated from the main thread. Secondly, it solves data race related issues
     @MainActor
@@ -184,15 +211,27 @@ class MapViewModel: ObservableObject {
             return
         }
         
-        let request = buildMarketSearchRequest(using: location)
+        let requests = buildMarketSearchRequests(using: location)
+        let requestForLeftSide = requests[0]
+        let requestForRightSide = requests[1]
         
         do {
-            // The search is performed asynchronously and can crash
-            let searchResponse: MKLocalSearch.Response = try await MKLocalSearch(request: request).start()
+            let leftSearchTask = Task {
+                    return try await MKLocalSearch(request: requestForLeftSide).start()
+            }
+
+            let rightSearchTask = Task {
+                    return try await MKLocalSearch(request: requestForRightSide).start()
+            }
             
-            let filteredMarkets = filterMapItemsBasedOnRadius(userLocation: location, mapItems: searchResponse.mapItems)
+            let leftResponse = try await leftSearchTask.value
+            let rightResponse = try await rightSearchTask.value
             
-            self.allSearchResults[currentSearchRadiusInMeters] = filteredMarkets
+            let allMapItems = leftResponse.mapItems + rightResponse.mapItems
+            // Filter all items based on the selected radius
+            let filteredMapItems = filterMapItemsBasedOnRadius(userLocation: location, mapItems: allMapItems)
+            
+            self.allSearchResults[currentSearchRadiusInMeters] = filteredMapItems
             self.updateShownMapItems()
             
             withAnimation(.easeInOut){

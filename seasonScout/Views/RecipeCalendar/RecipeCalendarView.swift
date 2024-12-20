@@ -10,7 +10,8 @@ import SwiftUI
 struct RecipeCalendarView: View {
     @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
     @State private var searchText = ""
-    @State private var selectedMonth = Month.allCases[Calendar.current.component(.month, from: Date()) - 1]
+    @State private var selectedMonth = Month.allCases[
+        Calendar.current.component(.month, from: Date()) - 1]
     @State private var excludeNotRegionallyRecipes = true
     @State private var showFilters = false
     @State private var selectedRecipeCategory: RecipeCategory? = nil
@@ -41,32 +42,16 @@ struct RecipeCalendarView: View {
                 if !selectedRecipeIsFavorite {
                     MonthSelectionView(selectedMonth: $selectedMonth)
                 }
-                
-                NavigationLink(destination: RecipeFilterView(
-                    selectedRecipeCategory: $selectedRecipeCategory,
-                    selectedRecipeEffort: $selectedRecipeEffort,
-                    selectedRecipePrice: $selectedRecipePrice,
-                    selectedRecipeIsForGroups: $selectedRecipeIsForGroups,
-                    selectedRecipeIsVegetarian: $selectedRecipeIsVegetarian
-                )) {
-                    HStack {
-                        Text("Filter anzeigen")
-                            .font(.headline)
-                            .foregroundColor(isDarkModeEnabled ? .white : .black)
 
-                        Image(systemName: "chevron.right")
-                            .font(.headline)
-                            .foregroundStyle(Color.orange)
-                    }
-
-                }
-                .padding(.top)
-                .padding(.bottom, 2)
-                
-                RecipeListView(recipes: filteredRecipes, selectedMonth: selectedMonth)
+                RecipeListView(
+                    recipes: filteredRecipes, selectedMonth: selectedMonth)
                 Spacer()
             }
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suche nach Rezepten")
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Suche nach Rezepten"
+            )
             .navigationTitle("Rezepte")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -87,40 +72,47 @@ struct RecipeCalendarView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    if selectedRecipeIsFavorite {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: excludeNotRegionallyRecipes ? "leaf.fill" : "ferry.fill"
-                            )
-                            .foregroundColor(Color(.systemGray))
-                        }
-                    } else {
-                        Button {
-                            excludeNotRegionallyRecipes.toggle()
-                        } label: {
-                            Image(systemName: excludeNotRegionallyRecipes ? "leaf.fill" : "ferry.fill"
-                            )
-                            .contentTransition(.symbolEffect(.replace.offUp))
-                            .foregroundColor(excludeNotRegionallyRecipes ? Color(.systemGreen) : Color(.systemRed))
-                        }
+                    NavigationLink(
+                        destination: RecipeFilterView(
+                            selectedRecipeCategory: $selectedRecipeCategory,
+                            selectedRecipeEffort: $selectedRecipeEffort,
+                            selectedRecipePrice: $selectedRecipePrice,
+                            selectedRecipeIsForGroups:
+                                $selectedRecipeIsForGroups,
+                            selectedRecipeIsVegetarian:
+                                $selectedRecipeIsVegetarian)
+                    ) {
+                        Image(
+                            systemName: showFilters
+                                ? "line.3.horizontal.decrease.circle.fill"
+                                : "line.3.horizontal.decrease.circle"
+                        )
+                        .contentTransition(.symbolEffect(.replace.offUp))
+                        .foregroundColor(Color(.systemOrange))
+                        .shadow(
+                            color: Color(.systemOrange), radius: 10,
+                            x: 0, y: 0)
+
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         selectedRecipeIsFavorite.toggle()
                     } label: {
-                        Image(systemName: selectedRecipeIsFavorite
+                        Image(
+                            systemName: selectedRecipeIsFavorite
                                 ? "heart.fill" : "heart.slash.fill"
                         )
                         .contentTransition(.symbolEffect(.replace.offUp))
-                        .foregroundColor(selectedRecipeIsFavorite ? Color(.systemPink) : Color(.systemPink))
+                        .foregroundColor(
+                            selectedRecipeIsFavorite
+                                ? Color(.systemPink) : Color(.systemPink))
                     }
                 }
             }
         }
     }
-    
+
     // Update the application's appearance
     private func updateAppearance() {
         // Update UIKit interface style for compatibility

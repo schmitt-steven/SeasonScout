@@ -65,7 +65,7 @@ struct MarketDetailSheet: View {
         }
         .onDisappear {
             withAnimation(.easeOut) {
-                mapViewModel.routePolyline = nil
+                mapViewModel.shownRoutePolyline = nil
             }
         }
     }

@@ -27,7 +27,7 @@ extension MarketDetailSheet {
                     selectedRoute = route
                     routes.append(route)
                     
-                    mapViewModel.routePolyline = route.polyline
+                    mapViewModel.shownRoutePolyline = route.polyline
                 }
             }
         }
@@ -40,7 +40,7 @@ extension MarketDetailSheet {
             withAnimation(.easeInOut(duration: 0.5)) {
                 isHighlighted = true
                 selectedRoute = route
-                mapViewModel.routePolyline = route.polyline
+                mapViewModel.shownRoutePolyline = route.polyline
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     withAnimation(.easeInOut(duration: 0.5)){
                         isHighlighted = false
@@ -61,7 +61,7 @@ extension MarketDetailSheet {
                     withAnimation(.easeInOut(duration: 0.5)) {
                         routes.append(route)
                         selectedRoute = route
-                        mapViewModel.routePolyline = route.polyline
+                        mapViewModel.shownRoutePolyline = route.polyline
 
                         isFetchingRoute = false
                         isHighlighted = true

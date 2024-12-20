@@ -9,11 +9,21 @@ import CoreLocation
 import MapKit
 
 
-// A CLLocationManagerDelegate instance is used by the CLLocationManager to report changes in the location authorization status
+// A CLLocationManagerDelegate instance is used by the CLLocationManager to report (1.) location changes and (2.) changes in the location authorization status as well as (3.) location related errors
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     
     var onAuthorizationChange: ((CLAuthorizationStatus) -> Void)?
-    var onLocationError: ((CLError) -> Void)?
+    var onLocationError: ((Error) -> Void)?
+    var onPositionChange: ((CLLocation) -> Void)?
+    
+    // Tells the delegate that new location data is available.
+    // The most recent location update is at the end of the locations array.
+    func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]
+    ) {
+        onPositionChange?(locations.last!)
+    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         let status = manager.authorizationStatus
@@ -21,29 +31,25 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if let clError = error as? CLError {
-            onLocationError?(clError)
-        } else {
-            print("MapView: Unknown error: \(error.localizedDescription)")
-        }
+            onLocationError?(error)
     }
 }
 
 class MapViewModel: ObservableObject {
     
-    let locationManager: CLLocationManager
-    private let locationDelegate: LocationManagerDelegate
-    private var allSearchResults: [Double: [MKMapItem]] = [:]
-    private let minRadius: Double = 5_000.0 // in meters
-    private let maxRadius: Double = 50_000.0
-    private let stepSize: Double = 5_000.0
-    private var searchNotificationTask: Task<Void, Never>? = nil
+    let locationManager: CLLocationManager = CLLocationManager()
     let mapStyleAndIcon: [(MapStyle, Image)] = [
         (MapStyle.standard(elevation: .realistic),Image(systemName: "map")),
         (MapStyle.hybrid(elevation: .realistic), Image(systemName: "globe.europe.africa")),
         (MapStyle.imagery(elevation: .realistic), Image(systemName: "globe.europe.africa.fill"))
     ]
-    
+    private let locationDelegate: LocationManagerDelegate = LocationManagerDelegate()
+    private var allSearchResults: [Double: [MKMapItem]] = [:]
+    private let minRadius: Double = 5_000.0 // in meters
+    private let maxRadius: Double = 50_000.0
+    private let stepSize: Double = 5_000.0
+    private var searchNotificationTask: Task<Void, Never>? = nil
+
     @Published var shownMapItems: [MKMapItem] = []
     @Published var currentAuthorizationStatus: CLAuthorizationStatus
     @Published var mapCameraPosition: MapCameraPosition = .automatic
@@ -58,24 +64,16 @@ class MapViewModel: ObservableObject {
     @Published var currentMapStyle: (MapStyle, Image)
     @Published var selectedMapItem: MKMapItem?
     @Published var isMarketDetailSheetVisible: Bool = false
-    @Published var routePolyline: MKPolyline? 
+    @Published var shownRoutePolyline: MKPolyline? 
     
     init() {
-        self.locationManager = CLLocationManager()
-        self.locationDelegate = LocationManagerDelegate()
         self.currentAuthorizationStatus = locationManager.authorizationStatus
         self.locationManager.delegate = self.locationDelegate
-        self.locationManager.distanceFilter = 100.0
+        self.locationManager.distanceFilter = 200.0  // specifies distance in horizontal meters to be traveled until a location update event is triggered
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         self.currentMapStyle = mapStyleAndIcon.first!
-        
-        self.locationDelegate.onAuthorizationChange = { [weak self] status in
-            DispatchQueue.main.async {
-                self?.handleAuthorizationChange(status: status)
-            }
-        }
-        
+        self.locationDelegate.onAuthorizationChange = handleAuthorizationChange(status:)
+        self.locationDelegate.onPositionChange = handlePositionChange(location:)
         self.locationDelegate.onLocationError = { error in
             print("MapView: Location error: \(error.localizedDescription)")
         }
@@ -99,6 +97,13 @@ class MapViewModel: ObservableObject {
         }
     }
     
+    private func handlePositionChange(location: CLLocation) {
+        self.allSearchResults.removeAll()
+        Task {
+            await searchForMarkets(using: location)
+        }
+    }
+    
     private func handleAuthorizationChange(status: CLAuthorizationStatus) {
         self.currentAuthorizationStatus = status
         switch status {
@@ -115,6 +120,7 @@ class MapViewModel: ObservableObject {
             print("MapView: Location access is denied.")
             locationManager.stopUpdatingLocation()
             withAnimation(.easeInOut){
+                self.shownMapItems.removeAll()
                 self.isLocationSettingsAlertVisible = true
             }
         default:
@@ -126,7 +132,7 @@ class MapViewModel: ObservableObject {
         if let coordinate = coordinate {
             let span = calculateCoordinateSpan(for: self.currentSearchRadiusInMeters)
             let region = MKCoordinateRegion(center: coordinate, span: span)
-            withAnimation(.smooth) {
+            withAnimation(.bouncy(duration: 1)) {
                 self.mapCameraPosition = .region(region)
             }
         }

@@ -37,7 +37,7 @@ struct MapView: View {
                     }
                 }
                 
-                if let polyline = viewController.routePolyline {
+                if let polyline = viewController.shownRoutePolyline {
                     MapPolyline(polyline)
                         .stroke(
                             LinearGradient(
@@ -56,7 +56,7 @@ struct MapView: View {
 
             }
             
-            .contentMargins(.top, 48)
+            .contentMargins(.top, 47)
             
             .mapControls {
                 MapUserLocationButton()
@@ -110,14 +110,21 @@ struct MapView: View {
                 }
             }
             
-            // Only show controls if searching for markets works
-            if(!viewController.isInternetConnectionBad &&
+            MapStyleButton(viewModel: viewController)
+
+            // Only show radius slider if searching for markets works
+            if(!viewController.isInternetConnectionBad  &&
                [CLAuthorizationStatus.authorizedAlways,
                 CLAuthorizationStatus.authorizedWhenInUse].contains(
                     viewController.currentAuthorizationStatus)
             ){
-                MapStyleButton(viewModel: viewController)
                 RadiusSlider(mapViewController: viewController)
+            }
+            
+            // Shows a message AFTER successfully searching for markets with the number of results
+            // for a set amount of time only
+            if (viewController.isSearchResultsNotificationVisible) {
+                SearchResultsNotification(viewController: viewController)
             }
 
             // Shows a message informing the user about network problems including a retry button
@@ -126,12 +133,6 @@ struct MapView: View {
             }
             else if (viewController.isUnexpectedError) {
                 MapViewErrorMessage(mapViewController: viewController, errorType: .unexpectedError)
-            }
-            
-            // Shows a message AFTER successfully searching for markets with the number of results
-            // for a set amount of time only
-            if (viewController.isSearchResultsNotificationVisible) {
-                SearchResultsNotification(viewController: viewController)
             }
             
         }

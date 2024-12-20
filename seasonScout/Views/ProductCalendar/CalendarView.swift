@@ -47,16 +47,15 @@ struct CalendarView: View {
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
-                        .padding(.top)
-                        .padding(.horizontal)
                         .padding(.bottom, 2)
                         
-                        Toggle("Nicht regionale Produkte anzeigen", isOn: $excludeNotRegionally)
+                        Toggle("Nicht regionale Produkte ausblenden", isOn: $excludeNotRegionally)
                             .toggleStyle(.switch)
                             .padding(.top)
-                            .padding(.horizontal)
-                            .padding(.bottom, 2)
                     }
+                    .padding(.top)
+                    .padding(.horizontal)
+                    .padding(.bottom, 2)
                     .transition(.asymmetric(insertion: .scale(scale: 1.0, anchor: .top),
                                             removal: .opacity))
                     .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.5), value: showFilters)

@@ -43,6 +43,44 @@ struct RecipeCalendarView: View {
                     MonthSelectionView(selectedMonth: $selectedMonth)
                 }
 
+                if showFilters {
+                    VStack {
+                        Toggle("Nicht regionale Rezepte ausblenden", isOn: $excludeNotRegionallyRecipes)
+                            .toggleStyle(.switch)
+                            .padding(.bottom, 2)
+                        
+                        NavigationLink(
+                            destination: RecipeFilterView(
+                                selectedRecipeCategory: $selectedRecipeCategory,
+                                selectedRecipeEffort: $selectedRecipeEffort,
+                                selectedRecipePrice: $selectedRecipePrice,
+                                selectedRecipeIsForGroups:
+                                    $selectedRecipeIsForGroups,
+                                selectedRecipeIsVegetarian:
+                                    $selectedRecipeIsVegetarian
+                            )
+                        ) {
+                            HStack {
+                                Text("Weitere Filter anzeigen")
+                                    .font(.headline)
+                                    .foregroundColor(
+                                        isDarkModeEnabled ? .white : .black)
+                                
+                                Image(systemName: "chevron.right")
+                                    .font(.headline)
+                                    .foregroundStyle(Color.orange)
+                            }
+                        }
+                        .padding(.top)
+                    }
+                    .padding(.top)
+                    .padding(.horizontal)
+                    .padding(.bottom, 2)
+                    .transition(.asymmetric(insertion: .scale(scale: 1.0, anchor: .top),
+                                            removal: .opacity))
+                    .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.5), value: showFilters)
+                }
+
                 RecipeListView(
                     recipes: filteredRecipes, selectedMonth: selectedMonth)
                 Spacer()
@@ -72,16 +110,13 @@ struct RecipeCalendarView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink(
-                        destination: RecipeFilterView(
-                            selectedRecipeCategory: $selectedRecipeCategory,
-                            selectedRecipeEffort: $selectedRecipeEffort,
-                            selectedRecipePrice: $selectedRecipePrice,
-                            selectedRecipeIsForGroups:
-                                $selectedRecipeIsForGroups,
-                            selectedRecipeIsVegetarian:
-                                $selectedRecipeIsVegetarian)
-                    ) {
+                    Button {
+                        withAnimation(
+                            .spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.5)
+                        ) {
+                            showFilters.toggle()
+                        }
+                    } label: {
                         Image(
                             systemName: showFilters
                                 ? "line.3.horizontal.decrease.circle.fill"
@@ -92,7 +127,6 @@ struct RecipeCalendarView: View {
                         .shadow(
                             color: Color(.systemOrange), radius: 10,
                             x: 0, y: 0)
-
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {

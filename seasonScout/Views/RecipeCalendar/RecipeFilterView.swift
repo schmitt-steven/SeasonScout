@@ -113,7 +113,7 @@ struct RecipeFilterView: View {
             }
 
         }
-        .navigationTitle("Filter")
+        .navigationTitle("Weitere Filter")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

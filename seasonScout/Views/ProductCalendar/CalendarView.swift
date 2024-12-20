@@ -8,13 +8,6 @@
 import SwiftUI
 
 struct CalendarView: View {
-
-    init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = .systemOrange
-        UISegmentedControl.appearance().setTitleTextAttributes(
-            [.foregroundColor: UIColor.black], for: .selected)
-    }
-
     @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
 
     @State private var searchText = ""
@@ -43,39 +36,29 @@ struct CalendarView: View {
                     MonthSelectionView(selectedMonth: $selectedMonth)
                 }
 
-                Button(action: {
-                    withAnimation {
-                        showFilters.toggle()
-                    }
-                }) {
-                    HStack {
-                        Text(
-                            showFilters
-                                ? "Filter ausblenden" : "Filter anzeigen"
-                        )
-                        .font(.headline)
-                        .foregroundColor(isDarkModeEnabled ? .white : .black)
-                        Image(
-                            systemName: showFilters
-                                ? "chevron.up" : "chevron.down"
-                        )
-                        .font(.headline)
-                    }
-                }
-                .padding(.top)
-                .padding(.bottom, 2)
-
                 if showFilters {
-                    Picker(
-                        "Wähle ein Produkttyp aus",
-                        selection: $selectedProductType
-                    ) {
-                        ForEach(SelectedProductType.allCases, id: \.self) {
-                            Text($0.rawValue)
+                    VStack {
+                        Picker(
+                            "Wähle ein Produkttyp aus",
+                            selection: $selectedProductType
+                        ) {
+                            ForEach(SelectedProductType.allCases, id: \.self) {
+                                Text($0.rawValue)
+                            }
                         }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding(.bottom, 2)
+                        
+                        Toggle("Nicht regionale Produkte ausblenden", isOn: $excludeNotRegionally)
+                            .toggleStyle(.switch)
+                            .padding(.top)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
+                    .padding(.top)
+                    .padding(.horizontal)
+                    .padding(.bottom, 2)
+                    .transition(.asymmetric(insertion: .scale(scale: 1.0, anchor: .top),
+                                            removal: .opacity))
+                    .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.5), value: showFilters)
                 }
 
                 ProductListView(
@@ -99,7 +82,13 @@ struct CalendarView: View {
                         )
                         .contentTransition(.symbolEffect(.replace.offUp))
                         .foregroundColor(
-                            isDarkModeEnabled ? .white : Color(.systemYellow))
+                            isDarkModeEnabled ? .white : Color(.systemYellow)
+                        )
+                        .shadow(
+                            color: excludeNotRegionally
+                                ? Color.white
+                                : Color(.systemYellow), radius: 10,
+                            x: 0, y: 0)
                     }
                     .onChange(of: isDarkModeEnabled) { _, _ in
                         // Trigger the appearance update
@@ -107,29 +96,22 @@ struct CalendarView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    if selectedProductIsFavorite {
-                        Button {
-
-                        } label: {
-                            Image(
-                                systemName: excludeNotRegionally
-                                    ? "leaf.fill" : "ferry.fill"
-                            )
-                            .foregroundColor(Color(.systemGray))
+                    Button {
+                        withAnimation(
+                            .spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.5)
+                        ) {
+                            showFilters.toggle()
                         }
-                    } else {
-                        Button {
-                            excludeNotRegionally.toggle()
-                        } label: {
-                            Image(
-                                systemName: excludeNotRegionally
-                                    ? "leaf.fill" : "ferry.fill"
-                            )
-                            .contentTransition(.symbolEffect(.replace.offUp))
-                            .foregroundColor(
-                                excludeNotRegionally
-                                    ? Color(.systemGreen) : Color(.systemRed))
-                        }
+                    } label: {
+                        Image(
+                            systemName: showFilters
+                            ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle"
+                        )
+                        .contentTransition(.symbolEffect(.replace.offUp))
+                        .foregroundColor(Color(.systemOrange))
+                        .shadow(
+                            color: Color(.systemOrange), radius: 10,
+                            x: 0, y: 0)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -141,9 +123,10 @@ struct CalendarView: View {
                                 ? "heart.fill" : "heart.slash.fill"
                         )
                         .contentTransition(.symbolEffect(.replace.offUp))
-                        .foregroundColor(
-                            selectedProductIsFavorite
-                                ? Color(.systemPink) : Color(.systemPink))
+                        .foregroundColor(Color(.systemPink))
+                        .shadow(
+                            color: Color(.systemPink), radius: 10,
+                            x: 0, y: 0)
                     }
                 }
             }

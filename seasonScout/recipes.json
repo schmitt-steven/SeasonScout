@@ -901,7 +901,7 @@
     },
     {
         "id": 7,
-        "title": "Gemischter Blattsalat mit Fenchel und gerösteten Pinienkernen",
+        "title": "Gemischter Blattsalat",
         "category": "Salate",
         "effort": "gering",
         "price": "gering",
@@ -1111,7 +1111,7 @@
     },
     {
         "id": 8,
-        "title": "Großer Salatteller mit gebratenen Maultaschenscheiben und Gute-Laune-Toast",
+        "title": "Großer Salatteller mit Maultaschen und Toast",
         "category": "Salate",
         "effort": "mittel",
         "price": "mittel",
@@ -2891,7 +2891,7 @@
     },
     {
         "id": 20,
-        "title": "Birnen, Bohnen und ...",
+        "title": "Birnen, Bohnen und Speck",
         "category": "Suppen und Eintöpfe",
         "effort": "mittel",
         "price": "mittel",
@@ -2900,7 +2900,7 @@
         "isVegetarian": false,
         "source": "regional-saisonal.de",
         "imageName": "birnen-bohnen-und.jpg",
-        "description": "... Speck wird der Hamburger ergänzen. Wir haben dieses Traditionsgericht ein wenig abgewandelt und stattdessen Kassler verwendet. Und wir finden: Es schmeckt mindestens genauso gut!",
+        "description": "Wir haben dieses Traditionsgericht ein wenig abgewandelt und stattdessen Kassler verwendet. Und wir finden: Es schmeckt mindestens genauso gut!",
         "instructions": "Die Bohnen waschen, putzen und in etwa 2 cm lange Stücke schneiden. Die Kartoffeln schälen und vierteln. Die Birnen waschen. Den Kassler in etwa 1 cm große Würfel schneiden. Das Bohnenkraut waschen. Alles zusammen in einen Topf geben und mit Brühe begießen. Den Eintopf zum Kochen bringen und in etwa 20 Minuten garen. Mit Petersilie und Pfeffer würzen.",
         "seasonalData": {
             "Januar": "nein",
@@ -9051,7 +9051,7 @@
     },
     {
         "id": 58,
-        "title": "Knödel mit orange-rotem Gemüse und Seleriesauce",
+        "title": "Knödel mit Gemüse und Seleriesauce",
         "category": "Gemüsegerichte",
         "effort": "mittel",
         "price": "gering",
@@ -10671,7 +10671,7 @@
     },
     {
         "id": 66,
-        "title": "Schüttelkartoffeln aus dem Ofen mit Schnittlauch-Joghurt-Dip",
+        "title": "Schüttelkartoffeln mit Schnittlauch-Joghurt-Dip",
         "category": "Gemüsegerichte",
         "effort": "gering",
         "price": "gering",
@@ -19491,7 +19491,7 @@
     },
     {
         "id": 120,
-        "title": "Mit Sauerrahm überbackene Spinat-Pfannkuchen",
+        "title": "Überbackene Spinat-Pfannkuchen",
         "category": "Aufläufe und Ofengerichte",
         "effort": "mittel",
         "price": "mittel",
@@ -25201,7 +25201,7 @@
     },
     {
         "id": 159,
-        "title": "Zwetschgen-Apfel-Kompott mit karamellisierten Walnüssen",
+        "title": "Zwetschgen-Apfel-Kompott mit Walnüssen",
         "category": "Nachspeisen",
         "effort": "gering",
         "price": "gering",

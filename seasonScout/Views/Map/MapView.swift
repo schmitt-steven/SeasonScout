@@ -41,7 +41,7 @@ struct MapView: View {
                     MapPolyline(polyline)
                         .stroke(
                             LinearGradient(
-                                gradient: Gradient(colors: [.orange, .mint , .yellow]),
+                                gradient: Gradient(colors: [.orange, .red , .yellow]),
                                 startPoint: .topLeading,
                                 endPoint: .trailing
                             ),

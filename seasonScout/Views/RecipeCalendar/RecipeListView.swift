@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeListView: View {
     let recipes: [Recipe]
-    let selectedMonth: Month
+    @Binding var selectedMonth: Month
 
     var body: some View {
         ScrollView {
@@ -22,7 +22,7 @@ struct RecipeListView: View {
             } else {
                 LazyVStack(spacing: 10) {
                     ForEach(recipes) { recipe in
-                        RecipeRowView(recipe: recipe, selectedMonth: selectedMonth)
+                        RecipeRowView(recipe: recipe, selectedMonth: $selectedMonth)
                     }
                 }
                 .padding(.top, 10)

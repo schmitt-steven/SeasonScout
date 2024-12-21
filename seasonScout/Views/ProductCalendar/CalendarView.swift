@@ -62,7 +62,7 @@ struct CalendarView: View {
                 }
 
                 ProductListView(
-                    products: filteredProducts, selectedMonth: selectedMonth)
+                    products: filteredProducts, selectedMonth: $selectedMonth)
                 Spacer()
             }
             .searchable(

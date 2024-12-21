@@ -2,7 +2,7 @@ import SwiftUI
 
 struct RecipeRowView: View {
     let recipe: Recipe
-    let selectedMonth: Month
+    @Binding var selectedMonth: Month
 
     var body: some View {
         NavigationLink(destination: RecipeInfoView(recipe: recipe, selectedMonth: selectedMonth)) {
@@ -34,6 +34,19 @@ struct RecipeRowView: View {
                     }
                 }
             }
+            // Detect swiping gesture
+            .gesture(DragGesture(minimumDistance: 30, coordinateSpace: .local).onEnded { value in
+                
+                // Only change month on horizontal swipe, not(!) a vertical one
+                if abs(value.translation.width) > abs(value.translation.height) {
+                    if value.translation.width < 0 {
+                        MonthSwitcherService.changeMonth(selectedMonth: $selectedMonth, direction: .next)
+                    } else {
+                        MonthSwitcherService.changeMonth(selectedMonth: $selectedMonth, direction: .previous)
+                    }
+                }
+                
+            })
         }
         .buttonStyle(PlainButtonStyle()) // Verhindert, dass der Link Standard-Stile anwendet (z.B. Hervorhebung)
     }

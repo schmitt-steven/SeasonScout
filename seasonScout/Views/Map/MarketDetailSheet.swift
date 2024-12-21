@@ -19,6 +19,7 @@ struct MarketDetailSheet: View {
     @State var routes: [RouteData] = []
     @State var isFetchingRoute = false
     @State var isHighlighted = false
+
     
     internal init(mapViewModel: MapViewModel,mapItem: MKMapItem, userCoordinate: CLLocationCoordinate2D) {
         self.mapViewModel = mapViewModel
@@ -97,8 +98,19 @@ extension MarketDetailSheet {
                     .frame(maxWidth: .infinity)
                     .background(
                         (selectedRoute?.transportType == mode.route?.transportType) && mode.route != nil
-                        ? Color(.systemOrange).opacity(0.6) : Color(UIColor.systemBackground).opacity(0.8)
-                        
+                        ? MeshGradient(width: 3, height: 3, points: [
+                            .init(0, 0), .init(0.5, 0), .init(1, 0),
+                            .init(0, 0.5), .init(0.5, 0.5), .init(1, 0.5),
+                            .init(0, 1), .init(0.5, 1), .init(1, 1)
+                        ], colors: [
+                            .yellow, .yellow, .orange,
+                            .orange, Color(.systemOrange), .yellow,
+                            .red, .red, .orange
+                        ]) : MeshGradient(width: 3, height: 3, points: [
+                            .init(0, 0), .init(0.5, 0), .init(1, 0),
+                            .init(0, 0.5), .init(0.5, 0.5), .init(1, 0.5),
+                            .init(0, 1), .init(0.5, 1), .init(1, 1)
+                        ], colors: Array(repeating: Color(UIColor.systemBackground).opacity(0.8), count: 9))
                     )
                     .transition(.opacity)
                     .clipShape(.rect(cornerRadius: 8))

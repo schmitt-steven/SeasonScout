@@ -82,7 +82,7 @@ struct RecipeCalendarView: View {
                 }
 
                 RecipeListView(
-                    recipes: filteredRecipes, selectedMonth: selectedMonth)
+                    recipes: filteredRecipes, selectedMonth: $selectedMonth)
                 Spacer()
             }
             .searchable(

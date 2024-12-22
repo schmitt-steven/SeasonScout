@@ -5,13 +5,6 @@
 //  Created by Henry Harder on 19.11.24.
 //
 
-//
-//  MonthScrollView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 19.11.24.
-//
-
 import SwiftUI
 
 struct MonthView: View {

@@ -29,17 +29,43 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FC4046322CC10D4E0010DB12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FC4046322CC10D4E0010DB12 /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC4046352CC10DD60010DB12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FC63549B2CE3BEF7006BA448 /* crawl_recipes.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = crawl_recipes.py; sourceTree = "<group>"; };
 		FC63549C2CE3BEF7006BA448 /* recipe_links.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = recipe_links.txt; sourceTree = "<group>"; };
 		FC6E3C242CC102BB0024F7AB /* SeasonScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeasonScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FCC917FB2D19E6B70035DC40 /* Exceptions for "ReadmeMedia" folder in "SeasonScout" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DarkModeScreenshot.png,
+				KalenderScreenshot.png,
+				KarteMarktdetailsScreenshot.png,
+				ProduktDetailsScreenshot.png,
+				ProduktDetailsScreenshot2.png,
+				RezeptDetailsScreenshot.png,
+				RezeptDetailsScreenshot2.png,
+				RezepteScreenshot.png,
+				SeasonScoutBanner.png,
+			);
+			target = FC6E3C232CC102BB0024F7AB /* SeasonScout */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FC6E3C262CC102BB0024F7AB /* seasonScout */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = seasonScout;
+			sourceTree = "<group>";
+		};
+		FCC917F72D19E5E60035DC40 /* ReadmeMedia */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FCC917FB2D19E6B70035DC40 /* Exceptions for "ReadmeMedia" folder in "SeasonScout" target */,
+			);
+			path = ReadmeMedia;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +95,7 @@
 		FC6E3C1B2CC102BB0024F7AB = {
 			isa = PBXGroup;
 			children = (
+				FCC917F72D19E5E60035DC40 /* ReadmeMedia */,
 				FC63549D2CE3BEF7006BA448 /* DataCrawler */,
 				FC4046352CC10DD60010DB12 /* .gitignore */,
 				FC4046322CC10D4E0010DB12 /* README.md */,
@@ -103,6 +130,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				FC6E3C262CC102BB0024F7AB /* seasonScout */,
+				FCC917F72D19E5E60035DC40 /* ReadmeMedia */,
 			);
 			name = SeasonScout;
 			packageProductDependencies = (

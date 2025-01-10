@@ -227,11 +227,7 @@ struct JsonParser {
                 print("Success: loaded \(recipes.count) recipes.")
                 return recipes
 
-            } catch {
-                print("Error: While parsing recipe JSON: \(error)")
-                return []
             }
-
             print("Success: loaded \(recipes.count) recipes.")
             return recipes
 

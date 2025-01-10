@@ -66,7 +66,7 @@ struct RecipeHeartView: View {
                 ) {
                     recipe.isFavorite.toggle()
                     recipe.saveFavoriteState(
-                        for: recipe.id, isFavorite: recipe.isFavorite)
+                        isFavorite: recipe.isFavorite)
                 }
 
                 withAnimation(.easeOut) {

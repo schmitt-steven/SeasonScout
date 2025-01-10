@@ -39,6 +39,20 @@ struct ProductImageCard: View {
         .shadow(color: .black, radius: 5)
         .padding(.bottom, 8)
         .ignoresSafeArea(.all)
+        .padding(.top, -10)
+        // Makes the view move behind the scroll view and fade in/out based on the current offset
+        .visualEffect { content, proxy in
+            let offset = proxy.frame(in: .global).minY
+            let height = proxy.size.height
+            let yOffset = max(-offset, -height)
+            let opacity = min(1, 1 - (-offset / 200))
+            let blurRadius = -offset / 100
+
+            return content
+                .offset(y: yOffset)
+                .opacity(opacity)
+                .blur(radius: blurRadius)
+        }
     }
 }
 

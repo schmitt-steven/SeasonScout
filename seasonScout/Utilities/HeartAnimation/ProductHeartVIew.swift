@@ -64,7 +64,7 @@ struct ProductHeartView: View {
                 ) {
                     product.isFavorite.toggle()
                     product.setProductFavorite(
-                        for: product.id, isFavorite: product.isFavorite)
+                        isFavorite: product.isFavorite)
                 }
 
                 withAnimation(.easeOut) {

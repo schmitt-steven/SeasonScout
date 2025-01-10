@@ -89,6 +89,8 @@ struct JsonParser {
 
                 products.append(product)
             }
+            
+            products.shuffle()
 
             print("Success: loaded \(products.count) products.")
             return products
@@ -204,6 +206,8 @@ struct JsonParser {
                         print("Error: Missing or invalid data for recipe \(item["title"] ?? "Unknown Title"). Skipping this recipe.")
                     }
                 }
+                
+                recipes.shuffle()
 
                 print("Success: loaded \(recipes.count) recipes.")
                 return recipes

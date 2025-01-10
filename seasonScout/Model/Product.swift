@@ -46,11 +46,11 @@ class Product: Identifiable, ObservableObject {
         self.imageSource = imageSource
     }
     
-    func setProductFavorite(for id: Int, isFavorite: Bool) {
-        UserDefaults.standard.set(isFavorite, forKey: "product_\(id)_isFavorite")
+    func setProductFavorite(isFavorite: Bool) {
+        UserDefaults.standard.set(isFavorite, forKey: "product_\(self.id)_isFavorite")
     }
 
-    func getProductFavorite(for id: Int) -> Bool {
-        return UserDefaults.standard.bool(forKey: "product_\(id)_isFavorite")
+    func getProductFavorite() -> Bool {
+        return UserDefaults.standard.bool(forKey: "product_\(self.id)_isFavorite")
     }
 }

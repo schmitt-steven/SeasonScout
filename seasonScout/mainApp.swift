@@ -15,7 +15,7 @@ struct ios_projectApp: App {
         Product.products = JsonParser.parseToProducts(fileName: "products")
         Recipe.recipes = JsonParser.parseToRecipes(fileName: "recipes")
         Recipe.recipes.forEach { recipe in
-            recipe.isFavorite = recipe.loadFavoriteState(for: recipe.id)
+            recipe.isFavorite = recipe.loadFavoriteState()
         }
     }
 

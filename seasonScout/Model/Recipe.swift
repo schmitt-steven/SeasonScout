@@ -77,12 +77,12 @@ class Recipe: Identifiable, ObservableObject {
         self.ingredientsByPersons = ingredientsByPersons
     }
     
-    func saveFavoriteState(for recipeID: Int, isFavorite: Bool) {
-        UserDefaults.standard.set(isFavorite, forKey: "recipe_\(recipeID)_isFavorite")
+    func saveFavoriteState(isFavorite: Bool) {
+        UserDefaults.standard.set(isFavorite, forKey: "recipe_\(self.id)_isFavorite")
     }
 
-    func loadFavoriteState(for recipeID: Int) -> Bool {
-        return UserDefaults.standard.bool(forKey: "recipe_\(recipeID)_isFavorite")
+    func loadFavoriteState() -> Bool {
+        return UserDefaults.standard.bool(forKey: "recipe_\(self.id)_isFavorite")
     }
     
     func toString() -> String {

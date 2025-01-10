@@ -103,6 +103,11 @@ struct RecipeCalendarView: View {
                         .contentTransition(.symbolEffect(.replace.offUp))
                         .foregroundColor(
                             isDarkModeEnabled ? .white : Color(.systemYellow))
+                        .shadow(
+                            color: isDarkModeEnabled
+                                ? Color.white
+                                : Color(.systemYellow), radius: 10,
+                            x: 0, y: 0)
                     }
                     .onChange(of: isDarkModeEnabled) { _, _ in
                         // Trigger the appearance update
@@ -141,6 +146,9 @@ struct RecipeCalendarView: View {
                         .foregroundColor(
                             selectedRecipeIsFavorite
                                 ? Color(.systemPink) : Color(.systemPink))
+                        .shadow(
+                            color: Color(.systemPink), radius: 10,
+                            x: 0, y: 0)
                     }
                 }
             }

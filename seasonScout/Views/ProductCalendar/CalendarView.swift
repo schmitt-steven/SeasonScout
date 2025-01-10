@@ -85,7 +85,7 @@ struct CalendarView: View {
                             isDarkModeEnabled ? .white : Color(.systemYellow)
                         )
                         .shadow(
-                            color: excludeNotRegionally
+                            color: isDarkModeEnabled
                                 ? Color.white
                                 : Color(.systemYellow), radius: 10,
                             x: 0, y: 0)

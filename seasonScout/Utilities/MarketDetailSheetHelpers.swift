@@ -10,6 +10,7 @@ import MapKit
 
 extension MarketDetailSheet {
     
+    // Initializes the routes by fetching data asynchronously
     func initializeRoutes() async {
         routes = []
         
@@ -31,10 +32,9 @@ extension MarketDetailSheet {
                 }
             }
         }
-
     }
     
-    
+    // Updates the route information based on the selected travel mode
     func updateRouteInformation(mode: TravelMode) {
         if let route = routes.first(where: { $0.transportType == mode.transportType }) {
             withAnimation(.easeInOut(duration: 0.5)) {
@@ -77,7 +77,7 @@ extension MarketDetailSheet {
         }
     }
     
-    
+    // Highlights the selected route temporarily
     func highlightRoute() {
         withAnimation(.easeInOut(duration: 0.5)) {
             isHighlighted = true
@@ -89,7 +89,7 @@ extension MarketDetailSheet {
         }
     }
 
-    
+    // Formats the distance for display (in meters or kilometers)
     func formatDistance(_ distance: Double) -> String {
         if distance >= 1000 {
             let kilometers = distance / 1000
@@ -99,7 +99,7 @@ extension MarketDetailSheet {
         }
     }
 
-    
+    // Composes the address from the placemark information
     func composeAddress() -> String {
         var components: [String] = []
         
@@ -119,8 +119,8 @@ extension MarketDetailSheet {
         
         return components.joined(separator: ", ")
     }
-    
-    
+
+    // Formats time in minutes to a readable string
     func formatTime(minutes: Double?) -> String {
         guard let minutes = minutes else { return "" }
         if minutes < 60 {
@@ -135,13 +135,13 @@ extension MarketDetailSheet {
             }
         }
     }
-    
-    
+
+    // Returns the domain name of the website for the map item
     var websiteLink: String {
-            return getURLDomainName(from:  mapItem.url!)
+        return getURLDomainName(from:  mapItem.url!)
     }
-    
-    
+
+    // Extracts the domain name from a URL
     func getURLDomainName(from url: URL) -> String {
         let urlString = url.absoluteString
         let regex = try! NSRegularExpression(pattern: "https?://(?:www\\.)?([^/]+)(/.*)?")
@@ -151,20 +151,18 @@ extension MarketDetailSheet {
             .flatMap { Range($0.range(at: 1), in: urlString).map { String(urlString[$0]) } }
         ?? "zur Webseite"
     }
-    
-    
+
+    // Opens the location in Apple Maps
     func openInMaps() {
         mapItem.openInMaps(launchOptions: nil)
     }
-    
-        
+
+    // Opens the location in Apple Maps with directions
     func openInMapsWithDirections() {
-       
         let launchOptions: [String: Any] = [
             MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDefault
         ]
       
         MKMapItem.openMaps(with: [mapItem], launchOptions: launchOptions)
     }
-    
 }

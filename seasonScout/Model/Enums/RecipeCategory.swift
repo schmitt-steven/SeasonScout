@@ -3,7 +3,6 @@
 //  ios-project
 //
 
-
 enum RecipeCategory: String, CaseIterable {
     case appetizers = "Vorspeisen"
     case salads = "Salate"
@@ -19,4 +18,3 @@ enum RecipeCategory: String, CaseIterable {
     case fingerFoodsDipsAndSpreads = "Fingerfood, Dips und Aufstriche"
     case breadAndRolls = "Brot und Brötchen"
 }
-

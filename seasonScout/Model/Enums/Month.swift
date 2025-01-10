@@ -17,4 +17,3 @@ enum Month: String, CaseIterable {
     case nov = "November"
     case dec = "Dezember"
 }
-

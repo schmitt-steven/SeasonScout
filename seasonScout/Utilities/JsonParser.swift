@@ -116,110 +116,108 @@ struct JsonParser {
     
     // Method to parse JSON data into Recipe objects
     static func parseToRecipes(fileName: String) -> [Recipe] {
-        // Get the file path for the JSON file in the main bundle
-        guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
-            print("Error: File \(fileName) not found, returning an empty recipe list.")
-            return []
-        }
-
-        do {
-            // Read the JSON data from the file
-            let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
-            guard let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {
-                print("Error: JSON data is not in a valid format.")
+            guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
+                print("Error: File \(fileName) not found, returning an empty recipe list.")
                 return []
             }
 
-            var recipes = [Recipe]()
+            do {
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
+                guard let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {
+                    print("Error: JSON data is not in a valid format.")
+                    return []
+                }
 
-            // Define the ordered months for sorting
-            let orderedMonths: [Month] = [
-                .jan, .feb, .mar, .apr, .may, .jun, .jul, .aug, .sep, .oct, .nov, .dec
-            ]
+                var recipes = [Recipe]()
 
-            // Parse each recipe from the raw JSON data
-            for item in jsonArray {
-                // Extract and validate the recipe data
-                if let id = item["id"] as? Int,
-                   let title = item["title"] as? String,
-                   let categoryRaw = item["category"] as? String,
-                   let effortRaw = item["effort"] as? String,
-                   let priceRaw = item["price"] as? String,
-                   let isFavorite = item["isFavorite"] as? Bool,
-                   let isForGroups = item["isForGroups"] as? Bool,
-                   let isVegetarian = item["isVegetarian"] as? Bool,
-                   let source = item["source"] as? String,
-                   let imageName = item["imageName"] as? String,
-                   let description = item["description"] as? String,
-                   let instructions = item["instructions"] as? String,
-                   let seasonalDataRaw = item["seasonalData"] as? [String: String],
-                   let ingredientsByPersonsRaw = item["ingredientsByPersons"] as? [String: [String: String]]
-                {
-                    // Convert the category, effort, and price strings to their respective enums
-                    guard let category = RecipeCategory(rawValue: categoryRaw),
-                          let effort = Level(rawValue: effortRaw),
-                          let price = Level(rawValue: priceRaw) else {
-                        print("Error: Invalid category, effort, or price for recipe '\(title)', (ID: \(id)). Skipping this recipe.")
-                        continue
-                    }
+                // Define ordered months for sorting
+                let orderedMonths: [Month] = [
+                    .jan, .feb, .mar, .apr, .may, .jun, .jul, .aug, .sep, .oct, .nov, .dec
+                ]
+                
+                for item in jsonArray {
+                    // Validate and unpack all fields
+                    if let id = item["id"] as? Int,
+                       let title = item["title"] as? String,
+                       let categoryRaw = item["category"] as? String,
+                       let effortRaw = item["effort"] as? String,
+                       let priceRaw = item["price"] as? String,
+                       let isFavorite = item["isFavorite"] as? Bool,
+                       let isForGroups = item["isForGroups"] as? Bool,
+                       let isVegetarian = item["isVegetarian"] as? Bool,
+                       let source = item["source"] as? String,
+                       let imageName = item["imageName"] as? String,
+                       let description = item["description"] as? String,
+                       let instructions = item["instructions"] as? String,
+                       let seasonalDataRaw = item["seasonalData"] as? [String: String],
+                       let ingredientsByPersonsRaw = item["ingredientsByPersons"] as? [String: [String: String]]
+                    {
+                        // Convert String to Enum
+                        guard let category = RecipeCategory(rawValue: categoryRaw),
+                              let effort = Level(rawValue: effortRaw),
+                              let price = Level(rawValue: priceRaw) else {
+                            print("Error: Invalid category, effort, or price for recipe '\(title)', (ID: \(id)). Skipping this recipe.")
+                            continue
+                        }
 
-                    var seasonalData: [RecipeSeasonalMonthData] = []
+                        var seasonalData: [RecipeSeasonalMonthData] = []
 
-                    // Sort the seasonalDataRaw by Month order
-                    let sortedSeasonalDataRaw = seasonalDataRaw.keys.sorted { (firstKey, secondKey) in
-                        guard let firstIndex = orderedMonths.firstIndex(of: Month(rawValue: firstKey) ?? .jan),
-                              let secondIndex = orderedMonths.firstIndex(of: Month(rawValue: secondKey) ?? .jan) else {
+                        // Sort the seasonalDataRaw by Month order
+                        let sortedSeasonalDataRaw = seasonalDataRaw.keys.sorted { (firstKey, secondKey) in
+                            guard let firstIndex = orderedMonths.firstIndex(of: Month(rawValue: firstKey) ?? .jan),
+                                  let secondIndex = orderedMonths.firstIndex(of: Month(rawValue: secondKey) ?? .jan) else {
                                 return false // Fallback if for any reason the month is not found
+                            }
+                            return firstIndex < secondIndex
                         }
-                        return firstIndex < secondIndex
-                    }
 
-                    // Create SeasonalData array
-                    for monthString in sortedSeasonalDataRaw {
-                        if let month = Month(rawValue: monthString) {
-                            let availability = seasonalDataRaw[monthString] ?? ""
-                            seasonalData.append(RecipeSeasonalMonthData(month: month, availability: availability))
-                        } else {
-                            print("Warning: Invalid month \(monthString) in seasonal data for recipe \(title). Skipping.")
+                        // Create SeasonalData array
+                        for monthString in sortedSeasonalDataRaw {
+                            if let month = Month(rawValue: monthString) {
+                                let availability = seasonalDataRaw[monthString] ?? ""
+                                seasonalData.append(RecipeSeasonalMonthData(month: month, availability: availability))
+                            } else {
+                                print("Warning: Invalid month \(monthString) in seasonal data for recipe \(title). Skipping.")
+                            }
                         }
-                    }
 
-                    // Convert ingredientsByPersons to correct format
-                    var ingredientsByPersons: [PersonsIngredients] = []
-                    for (key, ingredients) in ingredientsByPersonsRaw {
-                        if let personCount = Int(key) {
-                            var ingredientList: [Ingredient] = ingredients.map { Ingredient(name: $0.key, amount: $0.value) }
-                            
-                            // Sort the ingredientList alphabetically by ingredient name
-                            ingredientList.sort { $0.name < $1.name }
-                            
-                            ingredientsByPersons.append(PersonsIngredients(personNumber: personCount, ingredients: ingredientList))
-                        } else {
-                            print("Warning: Invalid person count \(key) in ingredients for recipe \(title). Skipping.")
+                        // Convert ingredientsByPersons to correct format
+                        var ingredientsByPersons: [PersonsIngredients] = []
+                        for (key, ingredients) in ingredientsByPersonsRaw {
+                            if let personCount = Int(key) {
+                                var ingredientList: [Ingredient] = ingredients.map { Ingredient(name: $0.key, amount: $0.value) }
+
+                                // Sort the ingredientList alphabetically by ingredient name
+                                ingredientList.sort { $0.name < $1.name }
+
+                                ingredientsByPersons.append(PersonsIngredients(personNumber: personCount, ingredients: ingredientList))
+                            } else {
+                                print("Warning: Invalid person count \(key) in ingredients for recipe \(title). Skipping.")
+                            }
                         }
+
+                        // Create Recipe object
+                        let recipe = Recipe(
+                            id: id,
+                            title: title,
+                            category: category,
+                            effort: effort,
+                            price: price,
+                            isFavorite: isFavorite,
+                            isForGroups: isForGroups,
+                            isVegetarian: isVegetarian,
+                            source: source,
+                            imageName: imageName,
+                            description: description,
+                            instructions: instructions,
+                            seasonalData: seasonalData,
+                            ingredientsByPersons: ingredientsByPersons
+                        )
+
+                        recipes.append(recipe)
+                    } else {
+                        print("Error: Missing or invalid data for recipe \(item["title"] ?? "Unknown Title"). Skipping this recipe.")
                     }
-
-                    // Create Recipe object
-                    let recipe = Recipe(
-                        id: id,
-                        title: title,
-                        category: category,
-                        effort: effort,
-                        price: price,
-                        isFavorite: isFavorite,
-                        isForGroups: isForGroups,
-                        isVegetarian: isVegetarian,
-                        source: source,
-                        imageName: imageName,
-                        description: description,
-                        instructions: instructions,
-                        seasonalData: seasonalData,
-                        ingredientsByPersons: ingredientsByPersons
-                    )
-
-                    recipes.append(recipe)
-                } else {
-                    print("Error: Missing or invalid data for recipe \(item["title"] ?? "Unknown Title"). Skipping this recipe.")
                 }
                 
                 recipes.shuffle()
@@ -227,13 +225,9 @@ struct JsonParser {
                 print("Success: loaded \(recipes.count) recipes.")
                 return recipes
 
+            } catch {
+                print("Error: While parsing recipe JSON: \(error)")
+                return []
             }
-            print("Success: loaded \(recipes.count) recipes.")
-            return recipes
-
-        } catch {
-            print("Error: While parsing recipe JSON: \(error)")
-            return []
         }
-    }
 }

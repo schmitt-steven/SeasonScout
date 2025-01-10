@@ -14,11 +14,19 @@ struct ProductListView: View {
     var body: some View {
         ScrollView {
             if products.isEmpty {
-                // Anzeige einer Nachricht bei leerer Produktliste
-                Text("Keine Produkte verfügbar.")
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                    .padding()
+                VStack(spacing: 6){
+                    Text("Du hast noch keine Produkte zu Deinen Favoriten hinzugefügt!")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Um ein Produkt zu favorisieren, wähle ein Produkt aus und tippe auf das Herz in der oberen rechten Ecke.")
+                        .multilineTextAlignment(.leading)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                }
+                .padding([.horizontal, .top, .bottom], 22)
             } else {
                 LazyVStack(spacing: 10) {
                     ForEach(products) { product in

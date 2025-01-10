@@ -5,106 +5,105 @@
 //  Created by Henry Harder on 16.11.24.
 //
 
-import Foundation
-
 class RecipeFilter {
+    // Method to filter a list of recipes based on multiple criteria
     static func filter(
-        items: [Recipe],
-        searchText: String,
-        selectedRecipeCategory: RecipeCategory?,
-        selectedRecipeEffort: Level?,
-        selectedRecipePrice: Level?,
-        selectedRecipeIsFavorite: Bool,
-        selectedRecipeIsForGroups: Bool,
-        selectedRecipeIsVegetarian: Bool,
-        excludeNotRegionallyRecipes: Bool,
-        selectedMonth: Month
+        items: [Recipe],  // List of recipes to filter
+        searchText: String,  // Search text to filter recipes by title
+        selectedRecipeCategory: RecipeCategory?,  // Selected recipe category (e.g., dessert, main dish)
+        selectedRecipeEffort: Level?,  // Filter recipes by effort level (e.g., easy, medium, hard)
+        selectedRecipePrice: Level?,  // Filter recipes by price level
+        selectedRecipeIsFavorite: Bool,  // Whether to filter by favorite status
+        selectedRecipeIsForGroups: Bool,  // Whether to filter by whether the recipe is for groups
+        selectedRecipeIsVegetarian: Bool,  // Whether to filter by vegetarian recipes
+        excludeNotRegionallyRecipes: Bool,  // Whether to exclude recipes with non-regional ingredients
+        selectedMonth: Month  // Month to filter recipes based on seasonal ingredients
     ) -> [Recipe] {
         
-        var filteredItems = items
+        var filteredItems = items  // Start with the full list of recipes
         
-        // Filter nach Suchtext
+        // Filter by search text if provided
         if !searchText.isEmpty {
             filteredItems = filteredItems.filter { recipe in
                 recipe.title.localizedCaseInsensitiveContains(searchText)
             }
         }
         
-        // Filter nach Kategorie
+        // Filter by selected category, if specified
         if let selectedCategory = selectedRecipeCategory {
             filteredItems = filteredItems.filter { recipe in
                 recipe.category == selectedCategory
             }
         }
                 
-        // Filter nach Aufwand
+        // Filter by effort level, if specified
         if let selectedEffort = selectedRecipeEffort {
             filteredItems = filteredItems.filter { recipe in
                 recipe.effort == selectedEffort
             }
         }
         
-        // Filter nach Kosten
+        // Filter by price level, if specified
         if let selectedPrice = selectedRecipePrice {
             filteredItems = filteredItems.filter { recipe in
                 recipe.price == selectedPrice
             }
         }
         
-        // Filter nach Für Gruppen
+        // Filter by whether the recipe is for groups
         if selectedRecipeIsForGroups {
             filteredItems = filteredItems.filter { recipe in
                 recipe.isForGroups == selectedRecipeIsForGroups
             }
         }
         
-        // Filter nach Vegetarisch
+        // Filter by vegetarian recipes
         if selectedRecipeIsVegetarian {
             filteredItems = filteredItems.filter { recipe in
                 recipe.isVegetarian == selectedRecipeIsVegetarian
             }
         }
         
-        // Filter nach Favoriten
+        // Filter by favorite recipes
         if selectedRecipeIsFavorite {
             filteredItems = filteredItems.filter { recipe in
                 recipe.isFavorite == selectedRecipeIsFavorite
             }
         } else {
-            // Filter nach Monat
+            // Filter by the selected month for seasonal ingredients
             filteredItems = filteredItems.filter { recipe in
-                // Nur Rezepte anzeigen, die im ausgewählten Monat verfügbar sind
+                // Only show recipes available in the selected month
                 return recipe.seasonalData.contains { seasonalData in
                     seasonalData.month == selectedMonth
                 }
             }
         }
         
-        // Filter nach Verfügbarkeit
+        // Filter by regional availability if requested
         if excludeNotRegionallyRecipes && !selectedRecipeIsFavorite {
             filteredItems = filteredItems.filter { recipe in
-                // Überprüfe, ob für das Rezept saisonale Daten für den ausgewählten Monat existieren
+                // Check if seasonal data exists for the selected month
                 let seasonalDataForMonth = recipe.seasonalData.first { seasonal in
                     seasonal.month == selectedMonth
                 }
                 
                 if let seasonalData = seasonalDataForMonth {
-                    return seasonalData.availability == "ja"
+                    return seasonalData.availability == "ja"  // "ja" means regional availability
                 }
                 
-                // Wenn keine saisonalen Daten für den Monat vorhanden sind, anzeigen
-                return false
+                return false  // Exclude if no seasonal data for the month
             }
         } else {
-            // Wenn "excludeNotRegionally" nicht aktiv ist, lasse auch für Rezepte mit Produkten, die "nicht regional verfügbar" und "auf Lager" sind, durch
+            // If excludeNotRegionally is not active, allow recipes with ingredients that are not regionally available
             filteredItems = filteredItems.filter { recipe in
                 let seasonalDataForMonth = recipe.seasonalData.first { seasonal in
                     seasonal.month == selectedMonth
                 }
-                return seasonalDataForMonth != nil
+                return seasonalDataForMonth != nil  // Only include recipes with seasonal data for the month
             }
         }
         
-        return filteredItems
+        return filteredItems  // Return the filtered list of recipes
     }
 }
+

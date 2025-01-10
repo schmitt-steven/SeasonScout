@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+// Represents a single month in the selection view, with gradient animation when selected
 struct MonthView: View {
     let month: Month
     let isSelected: Bool
     let onTap: () -> Void
     @State var gradientOpacity: Double
     
+    // Initializes the MonthView with the provided month, selection status, and tap action
     init(month: Month, isSelected: Bool, onTap: @escaping () -> Void) {
         self.month = month
         self.isSelected = isSelected
@@ -21,7 +23,7 @@ struct MonthView: View {
     }
     
     var body: some View {
-        Text(month.rawValue.prefix(3))
+        Text(month.rawValue.prefix(3)) // Display the first 3 letters of the month name
             .font(.headline)
             .padding(.horizontal, 18)
             .padding(.vertical, 6)
@@ -43,12 +45,14 @@ struct MonthView: View {
             .onTapGesture(perform: onTap)
             .onChange(of: isSelected) {
                 Task {
+                    // Animate the gradient opacity when the selection changes
                     await animateGradientOpacity(to: isSelected ? 1.0 : 0.0, duration: 0.6)
                 }
             }
             .id(month)
     }
         
+    // Animates the opacity of the gradient from the current value to the target value
     private func animateGradientOpacity(to targetOpacity: Double, duration: TimeInterval) async {
         let steps = 60 // Frames per second
         let interval = duration / Double(steps)
@@ -56,13 +60,14 @@ struct MonthView: View {
         
         for _ in 0..<steps {
             gradientOpacity += delta
-            try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))
+            try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000)) // Sleep for the frame duration
         }
         
         gradientOpacity = targetOpacity
     }
 }
 
+// View for selecting a month, with automatic scrolling to the selected month
 struct MonthSelectionView: View {
     @Binding var selectedMonth: Month
 
@@ -76,11 +81,12 @@ struct MonthSelectionView: View {
             .scrollTargetBehavior(.viewAligned)
             .scrollIndicators(.hidden)
             .onAppear {
-                // Automatisches Scrollen zum ausgewählten Monat
+                // Scroll automatically to the selected month when the view appears
                 scrollProxy.scrollTo(selectedMonth, anchor: .center)
             }
             .onChange(of: selectedMonth) {
                 withAnimation(.smooth(duration: 1)) {
+                    // Scroll smoothly to the selected month when it changes
                     scrollProxy.scrollTo(selectedMonth, anchor: .center)
                 }
             }
@@ -88,6 +94,7 @@ struct MonthSelectionView: View {
     }
 }
 
+// Displays a list of all months, with each month wrapped in a MonthView
 struct MonthListView: View {
     @Binding var selectedMonth: Month
 
@@ -99,7 +106,7 @@ struct MonthListView: View {
                     isSelected: month == selectedMonth,
                     onTap: {
                         withAnimation(.smooth(duration: 1)) {
-                            selectedMonth = month
+                            selectedMonth = month // Update the selected month when tapped
                         }
                     }
                 )

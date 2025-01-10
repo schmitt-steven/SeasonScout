@@ -3,7 +3,6 @@
 //  ios-project
 //
 
-
 enum ProductSubtype: String {
     // Vegetable and salad cases
     case fruiting = "Fruchtgemüse"

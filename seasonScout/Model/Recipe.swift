@@ -2,8 +2,10 @@
 //  Recipe.swift
 //  ios-project
 //
+
 import SwiftUI
 
+// Represents an ingredient with a name and amount
 class Ingredient: Identifiable {
     let id = UUID()
     let name: String
@@ -15,6 +17,7 @@ class Ingredient: Identifiable {
     }
 }
 
+// Represents seasonal availability data for a recipe
 class RecipeSeasonalMonthData: Identifiable{
     let id = UUID()
     let month: Month
@@ -27,6 +30,7 @@ class RecipeSeasonalMonthData: Identifiable{
   
 }
 
+// Represents ingredients required for a specific number of persons
 class PersonsIngredients: Identifiable {
     let id = UUID()
     let personNumber: Int
@@ -38,9 +42,9 @@ class PersonsIngredients: Identifiable {
     }
 }
 
+// Represents a recipe with its properties and state
 class Recipe: Identifiable, ObservableObject {
-
-    static var recipes: [Recipe] = []
+    static var recipes: [Recipe] = [] // Stores all recipes
     
     let id: Int
     let title: String
@@ -60,6 +64,7 @@ class Recipe: Identifiable, ObservableObject {
     let seasonalData: [RecipeSeasonalMonthData]
     let ingredientsByPersons: [PersonsIngredients]
     
+    // Initializes a new recipe instance
     internal init(id: Int, title: String, category: RecipeCategory, effort: Level, price: Level, isFavorite: Bool, isForGroups: Bool, isVegetarian: Bool, source: String, imageName: String, description: String, instructions: String, seasonalData: [RecipeSeasonalMonthData], ingredientsByPersons: [PersonsIngredients]){
         self.id = id
         self.title = title
@@ -77,14 +82,17 @@ class Recipe: Identifiable, ObservableObject {
         self.ingredientsByPersons = ingredientsByPersons
     }
     
+    // Saves the favorite status of a recipe
     func saveFavoriteState(for recipeID: Int, isFavorite: Bool) {
         UserDefaults.standard.set(isFavorite, forKey: "recipe_\(recipeID)_isFavorite")
     }
 
+    // Loads the favorite status of a recipe
     func loadFavoriteState(for recipeID: Int) -> Bool {
         return UserDefaults.standard.bool(forKey: "recipe_\(recipeID)_isFavorite")
     }
     
+    // Returns a string representation of the recipe
     func toString() -> String {
         return ("""
             Recipe ID: \(id)

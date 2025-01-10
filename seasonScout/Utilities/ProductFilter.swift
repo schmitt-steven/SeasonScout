@@ -5,96 +5,88 @@
 //  Created by Henry Harder on 14.11.24.
 //
 
-import Foundation
-
 class ProductFilter {
+    // Method to filter a list of products based on multiple criteria
     static func filter(
-        items: [Product],
-        searchText: String,
-        selectedProductType: SelectedProductType,
-        selectedProductIsFavorite: Bool,
-        excludeNotRegionally: Bool,
-        selectedMonth: Month
+        items: [Product],  // List of products to filter
+        searchText: String,  // Search text to filter products by name
+        selectedProductType: SelectedProductType,  // Selected product type (e.g., fruit, vegetable)
+        selectedProductIsFavorite: Bool,  // Whether to filter by favorite status
+        excludeNotRegionally: Bool,  // Whether to exclude non-regionally available products
+        selectedMonth: Month  // The month to filter products by their seasonal availability
     ) -> [Product] {
         
-        var filteredItems = items
+        var filteredItems = items  // Start with the full list of products
         
-        // Filter nach Suchtext
+        // Filter by search text if provided
         if !searchText.isEmpty {
             filteredItems = filteredItems.filter { product in
                 product.name.localizedCaseInsensitiveContains(searchText)
             }
         }
         
-        // Filter für Obst
+        // Filter products by the selected type (e.g., fruit, vegetable, etc.)
         if selectedProductType == .fruit {
             filteredItems = filteredItems.filter { product in
                 product.type == .fruit
             }
         }
-        
-        // Filter für Gemüse
         else if selectedProductType == .vegetable {
             filteredItems = filteredItems.filter { product in
                 product.type == .vegetable
             }
         }
-        
-        // Filter für Salat
         else if selectedProductType == .salad {
             filteredItems = filteredItems.filter { product in
                 product.type == .salad
             }
         }
-        
-        // Filter für Kräuter
         else if selectedProductType == .herb {
             filteredItems = filteredItems.filter { product in
                 product.type == .herb
             }
         }
         
-        // Filter nach Favoriten
+        // Filter products based on whether they are marked as favorites
         if selectedProductIsFavorite {
             filteredItems = filteredItems.filter { product in
                 product.isFavorite == selectedProductIsFavorite
             }
         } else {
-            // Filter nach Monat
+            // Filter products based on seasonal availability for the selected month
             filteredItems = filteredItems.filter { product in
-                // Nur Produkte anzeigen, die im ausgewählten Monat verfügbar sind
+                // Only show products available in the selected month
                 return product.seasonalData.contains { seasonalData in
                     seasonalData.month == selectedMonth
                 }
             }
         }
         
-        // Filter nach Verfügbarkeit (regionale Produkte und Produkte, die auf Lager sind)
+        // Filter based on regional availability (and in-stock status) if requested
         if excludeNotRegionally && !selectedProductIsFavorite {
             filteredItems = filteredItems.filter { product in
-                // Überprüfe, ob für das Produkt saisonale Daten für den ausgewählten Monat existieren
+                // Check if seasonal data exists for the selected month
                 let seasonalDataForMonth = product.seasonalData.first { seasonal in
                     seasonal.month == selectedMonth
                 }
                 
-                // Produkte, die auf Lager sind, auch anzeigen
+                // Only include products that are regionally available or in stock
                 if let seasonalData = seasonalDataForMonth {
                     return seasonalData.availability == .regionally || seasonalData.availability == .inStock
                 }
                 
-                // Wenn keine saisonalen Daten für den Monat vorhanden sind, anzeigen
-                return false
+                return false  // Exclude if no seasonal data for the month
             }
         } else {
-            // Wenn "excludeNotRegionally" nicht aktiv ist, lasse auch Produkte mit "nicht regional verfügbar" und "auf Lager" durch
+            // If excludeNotRegionally is not active, allow products regardless of availability
             filteredItems = filteredItems.filter { product in
                 let seasonalDataForMonth = product.seasonalData.first { seasonal in
                     seasonal.month == selectedMonth
                 }
-                return seasonalDataForMonth != nil
+                return seasonalDataForMonth != nil  // Only include products with seasonal data for the month
             }
         }
         
-        return filteredItems
+        return filteredItems  // Return the filtered list of products
     }
 }

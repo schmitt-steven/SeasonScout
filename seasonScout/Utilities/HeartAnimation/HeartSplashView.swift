@@ -7,19 +7,22 @@
 
 import SwiftUI
 
+// A view that creates a heart-themed splash animation
 struct HeartSplashView: View {
 
     var body: some View {
         ZStack {
+            // Outer layer of circles with pink color and rotation
             ForEach(0..<8) {
                 Circle()
-                    .foregroundStyle(Color(.systemPink))
-                    .frame(width: 3, height: 3)
-                    .offset(x: 24)
-                    .rotationEffect(.degrees(Double($0) * 45))
-                    .hueRotation(.degrees(270))
+                    .foregroundStyle(Color(.systemPink)) // Pink color for circles
+                    .frame(width: 3, height: 3) // Circle size
+                    .offset(x: 24) // Distance from center
+                    .rotationEffect(.degrees(Double($0) * 45)) // Circular arrangement
+                    .hueRotation(.degrees(270)) // Color hue adjustment
             }
 
+            // Inner layer of circles with different size and rotation
             ForEach(0..<8) {
                 Circle()
                     .foregroundStyle(Color(.systemPink))
@@ -27,14 +30,13 @@ struct HeartSplashView: View {
                     .offset(x: 26)
                     .rotationEffect(.degrees(Double($0) * 45))
                     .hueRotation(.degrees(0))
-
             }
-            .rotationEffect(.degrees(12))
+            .rotationEffect(.degrees(12)) // Additional rotation for inner circles
         }
     }
 }
 
 #Preview {
     HeartSplashView()
-        .preferredColorScheme(.dark)
+        .preferredColorScheme(.dark) // Sets the preview to use a dark color scheme
 }

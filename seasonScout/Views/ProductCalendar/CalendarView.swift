@@ -70,7 +70,7 @@ struct CalendarView: View {
 
                 // Display the filtered product list
                 ProductListView(
-                    products: filteredProducts, selectedMonth: $selectedMonth)
+                    products: filteredProducts, selectedMonth: $selectedMonth, searchText: searchText)
                 Spacer()
             }
             // Search bar integrated with the navigation bar

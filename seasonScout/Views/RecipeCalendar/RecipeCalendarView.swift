@@ -94,7 +94,7 @@ struct RecipeCalendarView: View {
 
                 // Display the list of filtered recipes
                 RecipeListView(
-                    recipes: filteredRecipes, selectedMonth: $selectedMonth)
+                    recipes: filteredRecipes, selectedMonth: $selectedMonth, searchText: searchText)
                 Spacer()
             }
             .searchable(
@@ -102,12 +102,12 @@ struct RecipeCalendarView: View {
                 placement: .navigationBarDrawer(displayMode: .always),  // Place search bar in the navigation bar
                 prompt: "Suche nach Rezepten"  // Search placeholder text
             )
-            .navigationTitle("Rezepte")  // Title of the view
+            .navigationTitle("Rezepte")
             .toolbar {
                 // Dark mode toggle button
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        isDarkModeEnabled.toggle()  // Toggle dark mode state
+                        isDarkModeEnabled.toggle()
                     } label: {
                         // Use different system icons based on dark mode state
                         Image(

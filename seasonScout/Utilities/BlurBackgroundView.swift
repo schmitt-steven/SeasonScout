@@ -1,15 +1,8 @@
-//
-//  BlurView.swift
-//  ios-project
-//
-//  Created by Poimandres on 16.11.24.
-//
-
 import SwiftUI
 
 // A SwiftUI wrapper for adding a UIKit-based blur effect
 struct BlurBackgroundView: UIViewRepresentable {
-    var style: UIBlurEffect.Style // The blur style (e.g., light, dark, extra light)
+    var style: UIBlurEffect.Style  // The blur style (e.g., light, dark, extra light)
 
     // Creates and configures the initial `UIVisualEffectView`
     func makeUIView(context: Context) -> UIVisualEffectView {

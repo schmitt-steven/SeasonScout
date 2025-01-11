@@ -1,21 +1,14 @@
-//
-//  AvailabilityFunc.swift
-//  ios-project
-//
-//  Created by Henry Harder on 23.11.24.
-//
-
 import SwiftUI
 
 // Returns a text color based on the availability type
 func textColorForAvailabilityType(_ type: Availability) -> Color {
     switch type {
     case .regionally:
-        return .green // Green indicates regional availability
+        return .green  // Green indicates regional availability
     case .inStock:
-        return .yellow // Yellow indicates the item is in stock
+        return .yellow  // Yellow indicates the item is in stock
     case .notRegionally:
-        return .red // Red indicates not regionally available
+        return .red  // Red indicates not regionally available
     }
 }
 
@@ -28,10 +21,10 @@ func backgroundColorForAvailabilityType(_ type: Availability) -> Color {
 func symbolForAvailabilityType(_ type: Availability) -> String {
     switch type {
     case .regionally:
-        return "leaf.fill" // Leaf symbol for regional availability
+        return "leaf.fill"  // Leaf symbol for regional availability
     case .inStock:
-        return "shippingbox.fill" // Box symbol for items in stock
+        return "shippingbox.fill"  // Box symbol for items in stock
     case .notRegionally:
-        return "ferry.fill" // Ferry symbol for not regionally available
+        return "ferry.fill"  // Ferry symbol for not regionally available
     }
 }

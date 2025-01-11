@@ -1,23 +1,18 @@
-//
-//  CalendarView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 14.11.24.
-//
-
 import SwiftUI
 
+/// A view that displays a calendar interface with filters for products based on type, favorites, and regional availability.
 struct CalendarView: View {
-    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
-
-    @State private var searchText = ""
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool =
+        false  // Store the dark mode preference
+    @State private var searchText = ""  // Search text for product filtering
     @State private var selectedMonth = Month.allCases[
-        Calendar.current.component(.month, from: Date()) - 1]
-    @State private var selectedProductType: SelectedProductType = .all
-    @State private var selectedProductIsFavorite = false
-    @State private var excludeNotRegionally = true
-    @State private var showFilters = false
+        Calendar.current.component(.month, from: Date()) - 1]  // Set the current month as the default selected month
+    @State private var selectedProductType: SelectedProductType = .all  // Default product type filter set to 'all'
+    @State private var selectedProductIsFavorite = false  // Filter for showing only favorite products
+    @State private var excludeNotRegionally = true  // Filter for excluding non-regional products
+    @State private var showFilters = false  // State to toggle showing filters
 
+    /// Filtered products based on the search text, product type, favorite status, and regional availability
     var filteredProducts: [Product] {
         ProductFilter.filter(
             items: Product.products,
@@ -32,12 +27,14 @@ struct CalendarView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                // Month selection view appears if favorites filter is not active
                 if !selectedProductIsFavorite {
                     MonthSelectionView(selectedMonth: $selectedMonth)
                 }
 
                 if showFilters {
                     VStack {
+                        // Picker to choose product type (e.g., fruits, vegetables, etc.)
                         Picker(
                             "Wähle ein Produkttyp aus",
                             selection: $selectedProductType
@@ -48,23 +45,35 @@ struct CalendarView: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .padding(.bottom, 2)
-                        
-                        Toggle("Nicht regionale Produkte ausblenden", isOn: $excludeNotRegionally)
-                            .toggleStyle(.switch)
-                            .padding(.top)
+
+                        // Toggle to show/hide non-regional products
+                        Toggle(
+                            "Nicht regionale Produkte ausblenden",
+                            isOn: $excludeNotRegionally
+                        )
+                        .toggleStyle(.switch)
+                        .padding(.top)
                     }
                     .padding(.top)
                     .padding(.horizontal)
                     .padding(.bottom, 2)
-                    .transition(.asymmetric(insertion: .scale(scale: 1.0, anchor: .top),
-                                            removal: .opacity))
-                    .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.5), value: showFilters)
+                    .transition(
+                        .asymmetric(
+                            insertion: .scale(scale: 1.0, anchor: .top),
+                            removal: .opacity)
+                    )
+                    .animation(
+                        .spring(
+                            response: 0.4, dampingFraction: 0.75,
+                            blendDuration: 0.5), value: showFilters)
                 }
 
+                // Display the filtered product list
                 ProductListView(
                     products: filteredProducts, selectedMonth: $selectedMonth)
                 Spacer()
             }
+            // Search bar integrated with the navigation bar
             .searchable(
                 text: $searchText,
                 placement: .navigationBarDrawer(displayMode: .always),
@@ -72,6 +81,7 @@ struct CalendarView: View {
             )
             .navigationTitle("Kalender")
             .toolbar {
+                // Toolbar with dark mode toggle on the left side
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
                         isDarkModeEnabled.toggle()
@@ -87,33 +97,38 @@ struct CalendarView: View {
                         .shadow(
                             color: isDarkModeEnabled
                                 ? Color.white
-                                : Color(.systemYellow), radius: 10,
+                                : Color(.systemYellow), radius: 5,
                             x: 0, y: 0)
                     }
                     .onChange(of: isDarkModeEnabled) { _, _ in
-                        // Trigger the appearance update
+                        // Trigger the appearance update whenever dark mode changes
                         updateAppearance()
                     }
                 }
+                // Toolbar with filters toggle on the right side
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         withAnimation(
-                            .spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.5)
+                            .spring(
+                                response: 0.5, dampingFraction: 0.7,
+                                blendDuration: 0.5)
                         ) {
                             showFilters.toggle()
                         }
                     } label: {
                         Image(
                             systemName: showFilters
-                            ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle"
+                                ? "line.3.horizontal.decrease.circle.fill"
+                                : "line.3.horizontal.decrease.circle"
                         )
                         .contentTransition(.symbolEffect(.replace.offUp))
                         .foregroundColor(Color(.systemOrange))
                         .shadow(
-                            color: Color(.systemOrange), radius: 10,
+                            color: Color(.systemOrange), radius: 5,
                             x: 0, y: 0)
                     }
                 }
+                // Toolbar with favorites toggle on the right side
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         selectedProductIsFavorite.toggle()
@@ -125,7 +140,7 @@ struct CalendarView: View {
                         .contentTransition(.symbolEffect(.replace.offUp))
                         .foregroundColor(Color(.systemPink))
                         .shadow(
-                            color: Color(.systemPink), radius: 10,
+                            color: Color(.systemPink), radius: 5,
                             x: 0, y: 0)
                     }
                 }

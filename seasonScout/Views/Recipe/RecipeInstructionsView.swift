@@ -1,41 +1,44 @@
-//
-//  RecipeInstructionsView.swift
-//  ios-project
-//
-
 import SwiftUI
 
+/// A view that displays the instructions for a recipe either as plain text or as steps with checkboxes.
 struct RecipeInstructionsView: View {
     let instructions: String
-    
+
+    // Splits the instructions into individual steps based on periods.
     var instructionsAsSteps: [String] {
-        instructions.split(separator: ".").map { String($0).trimmingCharacters(in: .whitespaces) }
+        instructions.split(separator: ".").map {
+            String($0).trimmingCharacters(in: .whitespaces)
+        }
     }
-    
-    @State var checkedSteps: [Bool] = []
-    @State var isInStepsMode = false
-    
+
+    @State var checkedSteps: [Bool] = []  // Tracks which steps are checked
+    @State var isInStepsMode = false  // Tracks if the view is in step-by-step mode or plain text mode
+
     var body: some View {
         VStack(alignment: .leading) {
-            
-            // Umschalter zwischen Fließtext und Schrittfolge
+
+            // Toggle button to switch between step-by-step and plain text modes
             Button(action: {
                 withAnimation(.easeInOut(duration: 0.5)) {
                     isInStepsMode.toggle()
                     if checkedSteps.isEmpty {
-                        checkedSteps = Array(repeating: false, count: instructionsAsSteps.count)
+                        checkedSteps = Array(
+                            repeating: false, count: instructionsAsSteps.count)
                     }
                 }
             }) {
-                Text(isInStepsMode ? "Als Fließtext anzeigen" : "Als Schrittfolge anzeigen")
-                    .font(.headline)
-                    .padding(.bottom, 1)
-                    .foregroundStyle(.orange)
+                Text(
+                    isInStepsMode
+                        ? "Als Fließtext anzeigen" : "Als Schrittfolge anzeigen"
+                )
+                .font(.headline)
+                .padding(.bottom, 1)
+                .foregroundStyle(.orange)
             }
             .padding(.vertical, 5)
-            
+
             if isInStepsMode {
-                // Schritt-für-Schritt-Modus
+                // Step-by-step mode
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(instructionsAsSteps.indices, id: \.self) { index in
                         Button(action: {
@@ -44,15 +47,23 @@ struct RecipeInstructionsView: View {
                             }
                         }) {
                             HStack(alignment: .firstTextBaseline) {
-                                Image(systemName: checkedSteps[index] ? "checkmark.circle" : "circle")
-                                    .transition(.scale)
-                                    .fontWeight(.semibold)
-                                    .foregroundStyle(checkedSteps[index] ? .orange : .primary)
-                                
-                                // Schritt-Text mit Durchstreichung bei Abhaken
+                                // Checkmark icon
+                                Image(
+                                    systemName: checkedSteps[index]
+                                        ? "checkmark.circle" : "circle"
+                                )
+                                .transition(.scale)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(
+                                    checkedSteps[index] ? .orange : .primary)
+
+                                // Instruction text with strikethrough when checked
                                 Text(instructionsAsSteps[index])
                                     .multilineTextAlignment(.leading)
-                                    .foregroundStyle(checkedSteps[index] ? Color.text.opacity(0.2) : Color.text)
+                                    .foregroundStyle(
+                                        checkedSteps[index]
+                                            ? Color.text.opacity(0.2)
+                                            : Color.text)
                             }
                         }
                         if index != instructionsAsSteps.count - 1 {
@@ -62,7 +73,7 @@ struct RecipeInstructionsView: View {
                 }
                 .transition(.blurReplace)
             } else {
-                // Fließtext-Modus
+                // Plain text mode
                 Text(instructions).transition(.blurReplace)
             }
         }
@@ -71,5 +82,8 @@ struct RecipeInstructionsView: View {
 }
 
 #Preview {
-    RecipeInstructionsView(instructions: "Schritt 1: Zutaten abwiegen. Schritt 2: Den Teig kneten. Schritt 3: Den Teig ruhen lassen. Schritt 4: Den Backofen vorheizen. Schritt 5: Den Teig backen.")
+    RecipeInstructionsView(
+        instructions:
+            "Schritt 1: Zutaten abwiegen. Schritt 2: Den Teig kneten. Schritt 3: Den Teig ruhen lassen. Schritt 4: Den Backofen vorheizen. Schritt 5: Den Teig backen."
+    )
 }

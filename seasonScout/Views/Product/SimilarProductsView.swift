@@ -1,24 +1,19 @@
-//
-//  SimilarProductsView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 21.11.24.
-//
-
 import SwiftUI
 
+/// A view that displays a horizontal scroll list of products that share the same subtype as the current product.
+/// The list includes the product name, botanical name, and availability for the selected month.
 struct SimilarProductsView: View {
     let product: Product
     let selectedMonth: Month
-    let productsOfSameSubtype: [Product]
-    
+    let productsOfSameSubtype: [Product]  // A list of products with the same subtype as the current product
+
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
     init(product: Product, selectedMonth: Month) {
         self.product = product
         self.selectedMonth = selectedMonth
         self.productsOfSameSubtype = Product.products.filter { otherProduct in
-            // Prüfen, ob Subtyp gleich und ID unterschiedlich ist
+            // Filter products that share the same subtype, excluding the current product
             otherProduct.subtype == product.subtype
                 && otherProduct.id != product.id
         }
@@ -28,7 +23,7 @@ struct SimilarProductsView: View {
         ScrollView(.horizontal) {
             HStack {
                 if productsOfSameSubtype.isEmpty {
-                    // Anzeige einer Nachricht bei leerer Rezeptliste
+                    // Show a message if no similar products are found
                     GroupBox {
                         Text("Keine Produkte gefunden.")
                             .font(.headline)
@@ -36,40 +31,61 @@ struct SimilarProductsView: View {
                             .padding()
                     }
                 } else {
+                    // Iterate over the filtered products and display each one
                     ForEach(productsOfSameSubtype) { product in
-                        NavigationLink(destination: ProductInfoView(product: product, selectedMonth: selectedMonth)) {
+                        // Navigation link that takes the user to the product's detail page
+                        NavigationLink(
+                            destination: ProductInfoView(
+                                product: product, selectedMonth: selectedMonth)
+                        ) {
                             GroupBox {
                                 VStack {
                                     HStack {
+                                        // Display a placeholder image if the product doesn't have an image
                                         if product.imageName.isEmpty {
                                             RoundedRectangle(cornerRadius: 8)
                                                 .frame(width: 80, height: 80)
                                                 .foregroundStyle(.secondary)
                                         } else {
-                                            Image(uiImage: UIImage(named: product.imageName)!)
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(width: 80, height: 80)
-                                                .clipped()
-                                                .cornerRadius(8)
-                                                .foregroundStyle(.secondary)
+                                            // Display the product image if available
+                                            Image(
+                                                uiImage: UIImage(
+                                                    named: product.imageName)!
+                                            )
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 80, height: 80)
+                                            .clipped()
+                                            .cornerRadius(8)
+                                            .foregroundStyle(.secondary)
                                         }
-                                        
-                                        VStack(alignment: .leading, spacing: 2) {
+
+                                        VStack(alignment: .leading, spacing: 2)
+                                        {
                                             Text(product.name)
                                                 .font(.headline.bold())
-                                            
+
                                             Text(product.botanicalName)
                                                 .font(.footnote)
                                                 .foregroundStyle(.secondary)
                                                 .padding(.bottom, 5)
-                                            
-                                            if let seasonalData = seasonalDataForSelectedMonth() {
-                                                AvailabilityView(availability: seasonalData)
+
+                                            // Availability for the selected month
+                                            if let seasonalData =
+                                                seasonalDataForSelectedMonth()
+                                            {
+                                                AvailabilityView(
+                                                    availability: seasonalData)
                                             } else {
-                                                Text("Nicht verfügbar im \(selectedMonth.rawValue)")
-                                                    .font(.subheadline)
-                                                    .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                                Text(
+                                                    "Nicht verfügbar im \(selectedMonth.rawValue)"
+                                                )
+                                                .font(.subheadline)
+                                                .foregroundColor(
+                                                    Color(
+                                                        UIColor
+                                                            .systemGroupedBackground
+                                                    ))
                                             }
                                         }
                                         Spacer()
@@ -79,12 +95,13 @@ struct SimilarProductsView: View {
                             .containerRelativeFrame(
                                 .horizontal,
                                 count: verticalSizeClass == .regular
-                                ? 1 : 4,
+                                    ? 1 : 4,
                                 spacing: 16
                             )
                             .scrollTransition { content, phase in
-                                return content
-                                    .opacity(phase.value == 0 ? 1 : 0.5)
+                                return
+                                    content
+                                    .opacity(phase.value == 0 ? 1 : 0.5)  // Fade effect for scroll transition
                             }
                         }
                         .buttonStyle(PlainButtonStyle())
@@ -97,8 +114,8 @@ struct SimilarProductsView: View {
         .contentMargins(16, for: .scrollContent)
         .scrollTargetBehavior(.viewAligned)
     }
-    
-    // Funktion zur Prüfung der Verfügbarkeit des Produkts im aktuellen Monat
+
+    // Function to check if the product is available in the selected month
     private func seasonalDataForSelectedMonth() -> SeasonalData? {
         return product.seasonalData.first(where: { $0.month == selectedMonth })
 

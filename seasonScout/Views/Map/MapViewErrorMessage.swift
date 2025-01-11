@@ -1,22 +1,10 @@
-//
-//  BadInternetConnectionMessage.swift
-//  ios-project
-//
-//  Created by Poimandres on 28.11.24.
-//
-
 import SwiftUI
 
-enum MapErrorType{
-    case badInternetConnection
-    case unexpectedError
-}
-
 struct MapViewErrorMessage: View {
+    @ObservedObject var mapViewController: MapViewModel // Observing the MapViewModel for changes
+    let errorType: MapErrorType // Specifies the type of error to display
     
-    @ObservedObject var mapViewController: MapViewModel
-    let errorType: MapErrorType
-    
+    // Error message text based on error type
     var errorMessage: String {
         switch errorType {
         case .badInternetConnection:
@@ -26,6 +14,7 @@ struct MapViewErrorMessage: View {
         }
     }
     
+    // System image symbol for the error type
     var errrorSymbol: String {
         switch errorType {
         case .badInternetConnection:
@@ -38,6 +27,7 @@ struct MapViewErrorMessage: View {
     var body: some View {
         VStack {
             VStack(spacing: 16) {
+                // Error message with icon
                 HStack(spacing: 12) {
                     Image(systemName: errrorSymbol)
                         .font(.title)
@@ -54,6 +44,7 @@ struct MapViewErrorMessage: View {
                 .cornerRadius(12)
                 .frame(maxWidth: .infinity)
                 
+                // Retry button for reattempting market search
                 Button(action: {
                     Task {
                         if let currentLocation = mapViewController.locationManager.location {
@@ -78,7 +69,8 @@ struct MapViewErrorMessage: View {
             .background(.thinMaterial)
             .cornerRadius(16)
             .shadow(radius: 6)
-            Spacer()
+            
+            Spacer() // Push content to the top of the screen
         }
         .padding(10)
     }

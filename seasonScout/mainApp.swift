@@ -1,10 +1,3 @@
-//
-//  ios_projectApp.swift
-//  ios-project
-//
-//
-
-
 import SwiftUI
 
 @main

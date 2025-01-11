@@ -1,20 +1,21 @@
-//
-//  RecipeSeasonalityStatusView.swift
-//  ios-project
-//
-
 import SwiftUI
 
+/// A view that displays the seasonal status of ingredients for a given month.
 struct RecipeSeasonalityStatusView: View {
     let seasonalData: [RecipeSeasonalMonthData]
     let selectedMonth: Month
-    
-    let isSeasonalText = "Derzeit zum Großteil mit regionalen Produkten zubereitbar!"
-    let isPartiallySeasonalText = "Derzeit teilweise mit regionalen Produkten zubereitbar."
-    let isNotSeasonalText = "Derzeit nicht mit regionalen Produkten zubereitbar."
+
+    let isSeasonalText =
+        "Derzeit zum Großteil mit regionalen Produkten zubereitbar!"
+    let isPartiallySeasonalText =
+        "Derzeit teilweise mit regionalen Produkten zubereitbar."
+    let isNotSeasonalText =
+        "Derzeit nicht mit regionalen Produkten zubereitbar."
 
     var body: some View {
-        if let monthStatus = seasonalData.first(where: { $0.month == selectedMonth }) {
+        if let monthStatus = seasonalData.first(where: {
+            $0.month == selectedMonth
+        }) {
             HStack(alignment: .top) {
                 statusIcon(for: monthStatus)
                     .foregroundStyle(statusColor(for: monthStatus))
@@ -23,7 +24,7 @@ struct RecipeSeasonalityStatusView: View {
                         Circle()
                             .fill(statusColor(for: monthStatus).opacity(0.2))
                     )
-                
+
                 Text(statusText(for: monthStatus))
                     .multilineTextAlignment(.leading)
             }
@@ -53,7 +54,7 @@ struct RecipeSeasonalityStatusView: View {
             return .red
         }
     }
-    
+
     func statusText(for status: RecipeSeasonalMonthData) -> String {
         switch status.availability {
         case "ja":

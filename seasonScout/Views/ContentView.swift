@@ -1,14 +1,12 @@
-//
-//  ContentView.swift
-//  ios-project
-//
-
 import SwiftUI
 
+/// The main content view that shows a tab bar for navigation.
 struct ContentView: View {
+    // State variable to toggle the dark mode
     @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
-
+    // State variable to track the selected tab
     @State private var selectedTab = 1
+
     var body: some View {
         TabView(selection: $selectedTab) {
             MapView().tabItem {

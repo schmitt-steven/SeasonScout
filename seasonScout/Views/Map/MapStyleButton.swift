@@ -1,13 +1,6 @@
-//
-//  MapStyleButton.swift
-//  SeasonScout
-//
-//  Created by Poimandres on 12.12.24.
-//
-
 import SwiftUI
 
-
+// Button to toggle between map styles
 struct MapStyleButton: View {
     
     @ObservedObject var viewModel: MapViewModel
@@ -17,9 +10,9 @@ struct MapStyleButton: View {
             HStack(alignment: .top, spacing: 0) {
                 Spacer()
                 Button(action: {
-                    viewModel.changeMapStyle()
+                    viewModel.changeMapStyle() // Change map style
                 }) {
-                    viewModel.currentMapStyle.1
+                    viewModel.currentMapStyle.1 // Display current map style icon
                         .resizable()
                         .scaledToFit()
                         .frame(height: 22)
@@ -38,4 +31,3 @@ struct MapStyleButton: View {
         .padding()
     }
 }
-

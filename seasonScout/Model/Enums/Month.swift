@@ -1,8 +1,3 @@
-//
-//  Month.swift
-//  ios-project
-//
-
 enum Month: String, CaseIterable {
     case jan = "Januar"
     case feb = "Februar"

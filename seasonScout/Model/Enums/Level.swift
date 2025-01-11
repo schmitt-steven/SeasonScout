@@ -1,8 +1,3 @@
-//
-//  Level.swift
-//  ios-project
-//
-
 enum Level: String, CaseIterable {
     case low = "gering"
     case medium = "mittel"

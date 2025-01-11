@@ -1,10 +1,3 @@
-//
-//  MonthScrollView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 19.11.24.
-//
-
 import SwiftUI
 
 // Represents a single month in the selection view, with gradient animation when selected
@@ -13,7 +6,7 @@ struct MonthView: View {
     let isSelected: Bool
     let onTap: () -> Void
     @State var gradientOpacity: Double
-    
+
     // Initializes the MonthView with the provided month, selection status, and tap action
     init(month: Month, isSelected: Bool, onTap: @escaping () -> Void) {
         self.month = month
@@ -21,9 +14,9 @@ struct MonthView: View {
         self.onTap = onTap
         self.gradientOpacity = isSelected ? 1.0 : 0.0
     }
-    
+
     var body: some View {
-        Text(month.rawValue.prefix(3)) // Display the first 3 letters of the month name
+        Text(month.rawValue.prefix(3))  // Display the first 3 letters of the month name
             .font(.headline)
             .padding(.horizontal, 18)
             .padding(.vertical, 6)
@@ -36,9 +29,15 @@ struct MonthView: View {
                         .init(0, 1), .init(0.5, 1), .init(1, 1),
                     ],
                     colors: [
-                        .red.opacity(gradientOpacity), .red.opacity(gradientOpacity), .orange.opacity(gradientOpacity),
-                        .orange.opacity(gradientOpacity), .red.opacity(gradientOpacity), .orange.opacity(gradientOpacity),
-                        .yellow.opacity(gradientOpacity), .orange.opacity(gradientOpacity), .yellow.opacity(gradientOpacity),
+                        .red.opacity(gradientOpacity),
+                        .red.opacity(gradientOpacity),
+                        .orange.opacity(gradientOpacity),
+                        .orange.opacity(gradientOpacity),
+                        .red.opacity(gradientOpacity),
+                        .orange.opacity(gradientOpacity),
+                        .yellow.opacity(gradientOpacity),
+                        .orange.opacity(gradientOpacity),
+                        .yellow.opacity(gradientOpacity),
                     ])
             )
             .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -46,23 +45,26 @@ struct MonthView: View {
             .onChange(of: isSelected) {
                 Task {
                     // Animate the gradient opacity when the selection changes
-                    await animateGradientOpacity(to: isSelected ? 1.0 : 0.0, duration: 0.6)
+                    await animateGradientOpacity(
+                        to: isSelected ? 1.0 : 0.0, duration: 0.6)
                 }
             }
             .id(month)
     }
-        
+
     // Animates the opacity of the gradient from the current value to the target value
-    private func animateGradientOpacity(to targetOpacity: Double, duration: TimeInterval) async {
-        let steps = 60 // Frames per second
+    private func animateGradientOpacity(
+        to targetOpacity: Double, duration: TimeInterval
+    ) async {
+        let steps = 60  // Frames per second
         let interval = duration / Double(steps)
         let delta = (targetOpacity - gradientOpacity) / Double(steps)
-        
+
         for _ in 0..<steps {
             gradientOpacity += delta
-            try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000)) // Sleep for the frame duration
+            try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))  // Sleep for the frame duration
         }
-        
+
         gradientOpacity = targetOpacity
     }
 }
@@ -106,7 +108,7 @@ struct MonthListView: View {
                     isSelected: month == selectedMonth,
                     onTap: {
                         withAnimation(.smooth(duration: 1)) {
-                            selectedMonth = month // Update the selected month when tapped
+                            selectedMonth = month  // Update the selected month when tapped
                         }
                     }
                 )

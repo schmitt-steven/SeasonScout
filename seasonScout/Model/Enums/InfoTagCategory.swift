@@ -1,8 +1,3 @@
-//
-//  InfoTagCategory.swift
-//  ios-project
-//
-
 import Foundation
 
 enum InfoTagType {

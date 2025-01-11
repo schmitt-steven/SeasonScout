@@ -1,19 +1,12 @@
-//
-//  MarketDetailSheetHelpers.swift
-//  SeasonScout
-//
-//  Created by Poimandres on 14.12.24.
-//
-
-import SwiftUI
 import MapKit
+import SwiftUI
 
 extension MarketDetailSheet {
-    
+
     // Initializes the routes by fetching data asynchronously
     func initializeRoutes() async {
         routes = []
-        
+
         isFetchingRoute = true
         Task {
             let routeAndPolyline = await MapService.getRouteAndETA(
@@ -22,27 +15,29 @@ extension MarketDetailSheet {
                 transportType: self.defaultTransportType
             )
             isFetchingRoute = false
-            
+
             if let route = routeAndPolyline {
                 withAnimation {
                     selectedRoute = route
                     routes.append(route)
-                    
+
                     mapViewModel.shownRoutePolyline = route.polyline
                 }
             }
         }
     }
-    
+
     // Updates the route information based on the selected travel mode
     func updateRouteInformation(mode: TravelMode) {
-        if let route = routes.first(where: { $0.transportType == mode.transportType }) {
+        if let route = routes.first(where: {
+            $0.transportType == mode.transportType
+        }) {
             withAnimation(.easeInOut(duration: 0.5)) {
                 isHighlighted = true
                 selectedRoute = route
                 mapViewModel.shownRoutePolyline = route.polyline
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    withAnimation(.easeInOut(duration: 0.5)){
+                    withAnimation(.easeInOut(duration: 0.5)) {
                         isHighlighted = false
                     }
                 }
@@ -56,7 +51,7 @@ extension MarketDetailSheet {
                     mapItem: mapItem,
                     transportType: mode.transportType
                 )
-                
+
                 if let route = route {
                     withAnimation(.easeInOut(duration: 0.5)) {
                         routes.append(route)
@@ -65,9 +60,9 @@ extension MarketDetailSheet {
 
                         isFetchingRoute = false
                         isHighlighted = true
-                        
+
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            withAnimation(.easeInOut(duration: 0.5)){
+                            withAnimation(.easeInOut(duration: 0.5)) {
                                 isHighlighted = false
                             }
                         }
@@ -76,7 +71,7 @@ extension MarketDetailSheet {
             }
         }
     }
-    
+
     // Highlights the selected route temporarily
     func highlightRoute() {
         withAnimation(.easeInOut(duration: 0.5)) {
@@ -102,21 +97,22 @@ extension MarketDetailSheet {
     // Composes the address from the placemark information
     func composeAddress() -> String {
         var components: [String] = []
-        
+
         if var street = mapItem.placemark.thoroughfare {
             if let streetNumber = mapItem.placemark.subThoroughfare {
                 street += " \(streetNumber)"
             }
             components.append(street)
         }
-        
+
         if let postalCode = mapItem.placemark.postalCode,
-           let city = mapItem.placemark.locality {
+            let city = mapItem.placemark.locality
+        {
             components.append("\(postalCode) \(city)")
         } else if let city = mapItem.placemark.locality {
             components.append(city)
         }
-        
+
         return components.joined(separator: ", ")
     }
 
@@ -138,18 +134,24 @@ extension MarketDetailSheet {
 
     // Returns the domain name of the website for the map item
     var websiteLink: String {
-        return getURLDomainName(from:  mapItem.url!)
+        return getURLDomainName(from: mapItem.url!)
     }
 
     // Extracts the domain name from a URL
     func getURLDomainName(from url: URL) -> String {
         let urlString = url.absoluteString
-        let regex = try! NSRegularExpression(pattern: "https?://(?:www\\.)?([^/]+)(/.*)?")
-        let range = NSRange(urlString.startIndex..<urlString.endIndex, in: urlString)
-        
+        let regex = try! NSRegularExpression(
+            pattern: "https?://(?:www\\.)?([^/]+)(/.*)?")
+        let range = NSRange(
+            urlString.startIndex..<urlString.endIndex, in: urlString)
+
         return regex.firstMatch(in: urlString, options: [], range: range)
-            .flatMap { Range($0.range(at: 1), in: urlString).map { String(urlString[$0]) } }
-        ?? "zur Webseite"
+            .flatMap {
+                Range($0.range(at: 1), in: urlString).map {
+                    String(urlString[$0])
+                }
+            }
+            ?? "zur Webseite"
     }
 
     // Opens the location in Apple Maps
@@ -160,9 +162,10 @@ extension MarketDetailSheet {
     // Opens the location in Apple Maps with directions
     func openInMapsWithDirections() {
         let launchOptions: [String: Any] = [
-            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDefault
+            MKLaunchOptionsDirectionsModeKey:
+                MKLaunchOptionsDirectionsModeDefault
         ]
-      
+
         MKMapItem.openMaps(with: [mapItem], launchOptions: launchOptions)
     }
 }

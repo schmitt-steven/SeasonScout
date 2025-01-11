@@ -1,15 +1,12 @@
-//
-//  MachtingRecipesView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 23.11.24.
-//
-
 import SwiftUI
 
+/// A view that displays recipes containing the selected product as an ingredient
+/// and shows availability for the selected month.
 struct MatchingRecipesView: View {
     let product: Product
     let selectedMonth: Month
+
+    // Filtered recipes that contain the selected product as an ingredient
     var filteredRecipes: [Recipe] {
         Recipe.recipes.filter { recipe in
             recipe.ingredientsByPersons.flatMap { $0.ingredients }
@@ -23,12 +20,13 @@ struct MatchingRecipesView: View {
         ScrollView(.horizontal) {
             HStack {
                 if filteredRecipes.isEmpty {
-                    // Anzeige einer Nachricht bei leerer Rezeptliste
+                    // Show message when no recipes match
                     Text("Keine Gerichte verfügbar.")
                         .font(.headline)
                         .foregroundColor(.gray)
                         .padding()
                 } else {
+                    // Loop through the filtered recipes and display them
                     ForEach(filteredRecipes) { recipe in
                         NavigationLink(
                             destination: RecipeInfoView(
@@ -37,6 +35,7 @@ struct MatchingRecipesView: View {
                             GroupBox {
                                 VStack {
                                     HStack {
+                                        // Display recipe image
                                         Image(
                                             uiImage: UIImage(
                                                 named: recipe.imageName)!
@@ -50,13 +49,14 @@ struct MatchingRecipesView: View {
 
                                         VStack(alignment: .leading, spacing: 2)
                                         {
-
+                                            // Display recipe title with truncation if needed
                                             Text(recipe.title)
                                                 .font(.headline.bold())
                                                 .padding(.bottom, 5)
                                                 .lineLimit(2)
                                                 .truncationMode(.tail)
 
+                                            // Display availability for the selected month
                                             if let seasonalData =
                                                 seasonalDataForSelectedMonth(
                                                     recipe: recipe)
@@ -78,11 +78,13 @@ struct MatchingRecipesView: View {
                             .containerRelativeFrame(
                                 .horizontal,
                                 count: verticalSizeClass == .regular
-                                    ? 1 : 4,
+                                    ? 1 : 4,  // Adjust layout based on vertical size class
                                 spacing: 16
                             )
                             .scrollTransition { content, phase in
-                                return content
+                                // Fade effect during scroll transition
+                                return
+                                    content
                                     .opacity(phase.value == 0 ? 1 : 0.5)
                             }
                         }
@@ -92,12 +94,12 @@ struct MatchingRecipesView: View {
             }
             .scrollTargetLayout()
         }
-        .scrollClipDisabled()
-        .contentMargins(16, for: .scrollContent)
-        .scrollTargetBehavior(.viewAligned)
+        .scrollClipDisabled()  // Disable clipping for better scrolling performance
+        .contentMargins(16, for: .scrollContent)  // Add margins around the scroll content
+        .scrollTargetBehavior(.viewAligned)  // Align views during scrolling
     }
 
-    // Funktion zur Prüfung der Verfügbarkeit des Produkts im aktuellen Monat
+    // Function to check the availability of the product for the selected month in the recipe
     private func seasonalDataForSelectedMonth(recipe: Recipe)
         -> RecipeSeasonalMonthData?
     {

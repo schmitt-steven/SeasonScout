@@ -1,10 +1,3 @@
-//
-//  ProductHeartView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 02.12.24.
-//
-
 import SwiftUI
 
 // A view that displays a heart icon with animations to toggle favorite status
@@ -14,7 +7,7 @@ struct ProductHeartView: View {
     @State private var removeSplash = false
     @State private var removeInnerStroke = true
     @State private var closeAnimation = false
-    
+
     @State private var showSplash2 = false
     @State private var removeSplash2 = false
     @State private var removeInnerStroke2 = true
@@ -31,7 +24,7 @@ struct ProductHeartView: View {
                     .scaleEffect(showSplash ? (closeAnimation ? 0 : 1.1) : 0)
                     .opacity(removeSplash ? 0 : 1)
                     .hueRotation(.degrees(removeInnerStroke ? 270 : 0))
-                
+
                 // Second animated circle for additional splash effect
                 Circle()
                     .strokeBorder(lineWidth: removeInnerStroke2 ? 0 : 1)
@@ -89,7 +82,7 @@ struct ProductHeartView: View {
                     closeAnimation2.toggle()
                 }
             }
-            .accessibilityAddTraits(.isButton) // Adds button trait for accessibility
+            .accessibilityAddTraits(.isButton)  // Adds button trait for accessibility
         }
     }
 }
@@ -97,5 +90,5 @@ struct ProductHeartView: View {
 #Preview {
     let product = Product.products[5]
     ProductHeartView(product: product)
-        .preferredColorScheme(.dark) // Sets dark mode for preview
+        .preferredColorScheme(.dark)  // Sets dark mode for preview
 }

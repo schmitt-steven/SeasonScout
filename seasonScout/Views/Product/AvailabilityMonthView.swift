@@ -1,23 +1,18 @@
-//
-//  AvailabilityMonthView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 23.11.24.
-//
-
 import SwiftUI
 
+/// A view that displays the availability information for a product across different months.
 struct AvailabilityMonthView: View {
     let product: Product
     let selectedMonth: Month
 
-//    @Environment(\.verticalSizeClass) var verticalSizeClass
-
     var body: some View {
         ScrollViewReader { scrollProxy in
+            // Horizontal scroll view to navigate through months
             ScrollView(.horizontal) {
                 HStack(spacing: 32) {
+                    // Loop through all months and display their availability
                     ForEach(Month.allCases, id: \.self) { month in
+                        // Get the availability data for the current month
                         let availability = seasonalDataForMonth(month)?
                             .availability
                         GroupBox {
@@ -26,6 +21,7 @@ struct AvailabilityMonthView: View {
                                     .font(.title.bold())
                                     .padding(.bottom, 5)
                                 HStack {
+                                    // Availability icon based on the availability type
                                     HStack {
                                         Image(
                                             systemName:
@@ -45,6 +41,7 @@ struct AvailabilityMonthView: View {
                                                 backgroundColorForAvailabilityType(
                                                     availability!))
                                     )
+                                    // Display availability type (or a default message)
                                     Text(
                                         availability?.rawValue
                                             ?? "Nicht identifizierbar"
@@ -57,21 +54,23 @@ struct AvailabilityMonthView: View {
                         .containerRelativeFrame(
                             .horizontal
                         )
+                        // Animation during scrolling transition
                         .scrollTransition { content, phase in
-                            return content
+                            return
+                                content
                                 .opacity(phase.value == 0 ? 1 : 0.5)
                                 .offset(x: phase.value * -20)
                         }
-                        .id(month)
+                        .id(month)  // Set the scroll target ID to the month for easier navigation
                     }
                 }
                 .scrollTargetLayout()
             }
-            .scrollClipDisabled()
+            .scrollClipDisabled()  // Disable clipping for better scrolling performance
             .contentMargins(.horizontal, 16, for: .scrollContent)
             .scrollTargetBehavior(.viewAligned)
             .onAppear {
-                // Automatisches Scrollen zum ausgewählten Monat
+                // Automatically scroll to the selected month when the view appears
                 scrollProxy.scrollTo(selectedMonth, anchor: .center)
             }
         }

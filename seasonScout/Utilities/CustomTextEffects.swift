@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct GlowEffect: ViewModifier {
@@ -6,7 +5,7 @@ struct GlowEffect: ViewModifier {
     var blurRadius: CGFloat = 1
     var offset: CGSize = CGSize(width: 0.5, height: -0.5)
     var opacity: Double = 0.3
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(
@@ -21,7 +20,7 @@ struct GlowEffect: ViewModifier {
 struct InnerShadowEffect: ViewModifier {
     var color: Color = .gray.opacity(0.2)
     var offset: CGSize = CGSize(width: -1, height: -1)
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(
@@ -33,7 +32,7 @@ struct InnerShadowEffect: ViewModifier {
 }
 
 struct TextShadowEffect: ViewModifier {
-    
+
     func body(content: Content) -> some View {
         content
             .shadow(color: .black.opacity(0.8), radius: 2, x: 1, y: 1)

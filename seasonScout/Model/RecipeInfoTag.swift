@@ -1,10 +1,3 @@
-//
-//  RecipeInfoTag.swift
-//  ios-project
-//
-//  Created by Poimandres on 07.11.24.
-//
-
 import SwiftUI
 
 struct InfoTag: Identifiable {

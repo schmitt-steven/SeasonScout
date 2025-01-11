@@ -1,8 +1,3 @@
-//
-//  RecipeCategory.swift
-//  ios-project
-//
-
 enum RecipeCategory: String, CaseIterable {
     case appetizers = "Vorspeisen"
     case salads = "Salate"

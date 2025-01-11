@@ -1,8 +1,3 @@
-//
-//  DateFormatter.swift
-//  ios-project
-//
-
 import Foundation
 
 // Extension for `DateFormatter` to create a custom month formatter
@@ -10,7 +5,7 @@ extension DateFormatter {
     // A static property for formatting a date to a month name
     static let monthFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM" // Format to display the full month name (e.g., January)
+        formatter.dateFormat = "MMMM"  // Format to display the full month name (e.g., January)
         return formatter
     }()
 }
@@ -24,4 +19,3 @@ extension Date {
         return Month.allCases.first { $0.rawValue == monthString }
     }
 }
-

@@ -3,8 +3,7 @@ import CoreLocation
 import MapKit
 
 struct MapView: View {
-    
-    @StateObject private var viewController = MapViewModel()
+    @StateObject private var viewController = MapViewModel() // Handles map logic and state
     
     var body: some View {
         ZStack {
@@ -13,6 +12,7 @@ struct MapView: View {
                 interactionModes: .all,
                 selection: $viewController.selectedMapItem
             ) {
+                // Show user location with a custom annotation
                 UserAnnotation() {
                     Image(systemName: "person.circle")
                         .symbolEffect(.breathe.plain)
@@ -22,12 +22,14 @@ struct MapView: View {
                 }
                     .mapOverlayLevel(level: .aboveLabels)
                 
+                // Display search radius as a circle around user location
                 if let userLocation = viewController.locationManager.location?.coordinate {
                     MapCircle(center: userLocation, radius: CLLocationDistance(viewController.currentSearchRadiusInMeters))
                         .foregroundStyle(viewController.isSearchRadiusBeingEdited ? Color(.systemOrange).opacity(0.5) : .secondary.opacity(0.1))
                         .stroke(Color(.systemOrange).opacity(0.9), lineWidth: 2)
                 }
                 
+                // Show markers for selected map items
                 if viewController.isMapMarkerVisible {
                     ForEach(viewController.shownMapItems, id: \.identifier) { market in
                         Marker(item: market)
@@ -37,6 +39,7 @@ struct MapView: View {
                     }
                 }
                 
+                // Display a route polyline if available
                 if let polyline = viewController.shownRoutePolyline {
                     MapPolyline(polyline)
                         .stroke(
@@ -66,7 +69,8 @@ struct MapView: View {
             .mapStyle(viewController.currentMapStyle.0)
             
             .accentColor(Color(.systemOrange))
-                        
+            
+            // Request location permissions when the map appears
             .onAppear {
                 viewController.requestAuthorization()
                 if (viewController.currentAuthorizationStatus == .denied) {
@@ -79,6 +83,7 @@ struct MapView: View {
             .onChange(of: viewController.selectedMapItem){
                 viewController.isMarketDetailSheetVisible = true
             }
+            // Alert for disabled location services
             .alert(isPresented: $viewController.isLocationSettingsAlertVisible) {
                     Alert(
                         title: Text("GPS-Dienste sind deaktiviert."),
@@ -110,7 +115,7 @@ struct MapView: View {
                 }
             }
             
-            MapStyleButton(viewModel: viewController)
+            MapStyleButton(viewModel: viewController) // Button to switch map styles
 
             // Only show radius slider if searching for markets works
             if(!viewController.isInternetConnectionBad  &&
@@ -121,7 +126,7 @@ struct MapView: View {
                 RadiusSlider(mapViewController: viewController)
             }
             
-            // Shows a message AFTER successfully searching for markets with the number of results
+            // Shows a message after successfully searching for markets with the number of results
             // for a set amount of time only
             if (viewController.isSearchResultsNotificationVisible) {
                 SearchResultsNotification(viewController: viewController)
@@ -134,11 +139,8 @@ struct MapView: View {
             else if (viewController.isUnexpectedError) {
                 MapViewErrorMessage(mapViewController: viewController, errorType: .unexpectedError)
             }
-            
         }
-
     }
-        
 }
 
 #Preview {

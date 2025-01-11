@@ -1,12 +1,6 @@
-//
-//  RecipeAvailabilityView.swift
-//  ios-project
-//
-//  Created by Henry Harder on 16.11.24.
-//
-
 import SwiftUI
 
+/// A view that displays the availability status of a recipe for the current month.
 struct RecipeAvailabilityView: View {
     let availability: RecipeSeasonalMonthData
 
@@ -39,7 +33,7 @@ struct RecipeAvailabilityView: View {
             return "questionmark.circle.fill"
         }
     }
-    
+
     func textForAvailabilityType(_ type: String) -> String {
         switch type {
         case "ja":
@@ -56,12 +50,17 @@ struct RecipeAvailabilityView: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: symbolForAvailabilityType(availability.availability))
-                    .foregroundColor(textColorForAvailabilityType(availability.availability))
-                
+                Image(
+                    systemName: symbolForAvailabilityType(
+                        availability.availability)
+                )
+                .foregroundColor(
+                    textColorForAvailabilityType(availability.availability))
+
                 Text(textForAvailabilityType(availability.availability))
                     .font(.subheadline)
-                    .foregroundColor(textColorForAvailabilityType(availability.availability))
+                    .foregroundColor(
+                        textColorForAvailabilityType(availability.availability))
             }
             .padding(.top, 6)
             .padding(.bottom, 6)
@@ -69,7 +68,9 @@ struct RecipeAvailabilityView: View {
             .padding(.trailing, 18)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(backgroundColorForAvailabilityType(availability.availability))
+                    .fill(
+                        backgroundColorForAvailabilityType(
+                            availability.availability))
             )
         }
     }

@@ -53,7 +53,7 @@ class Product: Identifiable, ObservableObject {
             isFavorite, forKey: "product_\(self.id)_isFavorite")
     }
 
-    func getProductFavorite() -> Bool {
+    func getFavoriteState() -> Bool {
         return UserDefaults.standard.bool(
             forKey: "product_\(self.id)_isFavorite")
     }

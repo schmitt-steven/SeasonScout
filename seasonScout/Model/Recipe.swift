@@ -88,7 +88,7 @@ class Recipe: Identifiable, ObservableObject {
             isFavorite, forKey: "recipe_\(self.id)_isFavorite")
     }
 
-    func loadFavoriteState() -> Bool {
+    func getFavoriteState() -> Bool {
         return UserDefaults.standard.bool(
             forKey: "recipe_\(self.id)_isFavorite")
     }

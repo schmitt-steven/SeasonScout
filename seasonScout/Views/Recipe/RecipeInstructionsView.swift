@@ -84,6 +84,6 @@ struct RecipeInstructionsView: View {
 #Preview {
     RecipeInstructionsView(
         instructions:
-            "Schritt 1: Zutaten abwiegen. Schritt 2: Den Teig kneten. Schritt 3: Den Teig ruhen lassen. Schritt 4: Den Backofen vorheizen. Schritt 5: Den Teig backen."
+            Recipe.recipes[13].instructions
     )
 }

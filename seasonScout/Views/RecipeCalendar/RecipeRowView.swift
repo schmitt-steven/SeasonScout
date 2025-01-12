@@ -21,7 +21,7 @@ struct RecipeRowView: View {
                             .foregroundStyle(.secondary)
                         
                         VStack(alignment: .leading, spacing: 2) {
-                            // Recipe title with bold font
+                            // Recipe title
                             Text(recipe.title)
                                 .font(.headline.bold())
                                 .padding(.bottom, 5)

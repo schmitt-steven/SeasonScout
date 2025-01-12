@@ -54,7 +54,7 @@
   {
     "id": 1,
     "name": "Artischocken",
-    "botanicalName": "",
+    "botanicalName": "Cynara cardunculus var. scolymus",
     "description": "Große, essbare Blütenknospen mit zartem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -418,7 +418,7 @@
   {
     "id": 8,
     "name": "Chinakohl",
-    "botanicalName": "",
+    "botanicalName": "Brassica rapa subsp. pekinensis",
     "description": "Ein knackiger, milder Kohl.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1042,7 +1042,7 @@
   {
     "id": 20,
     "name": "Mairüben",
-    "botanicalName": "",
+    "botanicalName": "Brassica rapa subsp. rapa",
     "description": "Kleine, weiße Wurzeln mit leicht süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1458,7 +1458,7 @@
   {
     "id": 28,
     "name": "Rettich",
-    "botanicalName": "",
+    "botanicalName": "Raphanus sativus",
     "description": "Ein längliches, scharfes Wurzelgemüse.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1510,7 +1510,7 @@
   {
     "id": 29,
     "name": "Schalotten",
-    "botanicalName": "",
+    "botanicalName": "Allium cepa var. aggregatum",
     "description": "Kleine Zwiebelart mit mildem, süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1562,7 +1562,7 @@
   {
     "id": 30,
     "name": "Schwarzwurzeln",
-    "botanicalName": "",
+    "botanicalName": "Scorzonera hispanica",
     "description": "Lange, dunkle Wurzeln mit nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1718,7 +1718,7 @@
   {
     "id": 33,
     "name": "Spitzkohl",
-    "botanicalName": "",
+    "botanicalName": "Brassica oleracea var. capitata f. alba",
     "description": "Ein zarter, leicht süßlicher Kohl.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1770,7 +1770,7 @@
   {
     "id": 34,
     "name": "Sellerieknollen",
-    "botanicalName": "",
+    "botanicalName": "Apium graveolens var. rapaceum",
     "description": "Knollengemüse mit intensivem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1822,7 +1822,7 @@
   {
     "id": 35,
     "name": "Staudensellerie",
-    "botanicalName": "",
+    "botanicalName": "Apium graveolens var. dulce",
     "description": "Knackige, grüne Stangen mit frischem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -1978,7 +1978,7 @@
   {
     "id": 38,
     "name": "Topinambur",
-    "botanicalName": "",
+    "botanicalName": "Helianthus tuberosus",
     "description": "Kleine Knollen mit nussigem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -2186,7 +2186,7 @@
   {
     "id": 42,
     "name": "Zuckerschoten",
-    "botanicalName": "",
+    "botanicalName": "Pisum sativum var. saccharatum",
     "description": "Knackige, süße Hülsen mit zarten Erbsen im Inneren.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -2602,7 +2602,7 @@
   {
     "id": 50,
     "name": "Esskastanien",
-    "botanicalName": "",
+    "botanicalName": "Castanea sativa",
     "description": "Nuss mit süßlichem, leicht mehligen Inneren, ideal zum Rösten.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -2706,7 +2706,7 @@
   {
     "id": 52,
     "name": "Haselnüsse",
-    "botanicalName": "",
+    "botanicalName": "Corylus avellana",
     "description": "Kleine, runde Nüsse mit nussigem, süßlichem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -3018,7 +3018,7 @@
   {
     "id": 58,
     "name": "Preiselbeeren",
-    "botanicalName": "",
+    "botanicalName": "Vaccinium vitis-idaea",
     "description": "Kleine, rote Beeren mit herber, säuerlicher Note.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -3122,7 +3122,7 @@
   {
     "id": 60,
     "name": "Pfirsiche",
-    "botanicalName": "",
+    "botanicalName": "Prunus persica",
     "description": "Saftige Steinfrüchte mit weicher, samtiger Haut und süßem Geschmack.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -3174,7 +3174,7 @@
   {
     "id": 61,
     "name": "Nektarinen",
-    "botanicalName": "",
+    "botanicalName": "Prunus persica var. nucipersica",
     "description": "Glattschalige Variante des Pfirsichs mit saftigem, süßem Fruchtfleisch.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -3330,7 +3330,7 @@
   {
     "id": 64,
     "name": "Walnüsse",
-    "botanicalName": "",
+    "botanicalName": "Juglans regia",
     "description": "Harte Schale mit mild-nussigem, cremigem Kern.",
     "storageInstructions": "",
     "energyConsumption": "",
@@ -3486,7 +3486,7 @@
   {
     "id": 67,
     "name": "Tafeltrauben",
-    "botanicalName": "",
+    "botanicalName": "Vitis vinifera",
     "description": "Speziell für den Frischverzehr gezüchtete süße Trauben.",
     "storageInstructions": "",
     "energyConsumption": "",

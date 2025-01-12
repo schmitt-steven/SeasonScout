@@ -5,6 +5,7 @@ import SwiftUI
 struct MatchingRecipesView: View {
     let product: Product
     let selectedMonth: Month
+    @Environment(\.colorScheme) var colorScheme // Detect the current color scheme
 
     // Filtered recipes that contain the selected product as an ingredient
     var filteredRecipes: [Recipe] {
@@ -17,6 +18,8 @@ struct MatchingRecipesView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
     var body: some View {
+        let isLightMode = colorScheme == .light
+
         ScrollView(.horizontal) {
             HStack {
                 if filteredRecipes.isEmpty {
@@ -82,10 +85,12 @@ struct MatchingRecipesView: View {
                                 spacing: 16
                             )
                             .scrollTransition { content, phase in
-                                // Fade effect during scroll transition
+                                let brightnessValue = isLightMode ? -0.05 : 0.05
+
                                 return
                                     content
-                                    .opacity(phase.value == 0 ? 1 : 0.5)
+                                    .opacity(phase.value == 0 ? 1 : 0.95)
+                                    .brightness(phase.value == 0 ? 0 : brightnessValue)
                             }
                         }
                         .buttonStyle(PlainButtonStyle())

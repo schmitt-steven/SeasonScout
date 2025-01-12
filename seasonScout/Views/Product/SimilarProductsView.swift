@@ -8,6 +8,7 @@ struct SimilarProductsView: View {
     let productsOfSameSubtype: [Product]  // A list of products with the same subtype as the current product
 
     @Environment(\.verticalSizeClass) var verticalSizeClass
+    @Environment(\.colorScheme) var colorScheme // Detect the current color scheme
 
     init(product: Product, selectedMonth: Month) {
         self.product = product
@@ -20,6 +21,8 @@ struct SimilarProductsView: View {
     }
 
     var body: some View {
+        let isLightMode = colorScheme == .light
+
         ScrollView(.horizontal) {
             HStack {
                 if productsOfSameSubtype.isEmpty {
@@ -98,10 +101,14 @@ struct SimilarProductsView: View {
                                     ? 1 : 4,
                                 spacing: 16
                             )
+                            // Animation during scrolling transition
                             .scrollTransition { content, phase in
+                                let brightnessValue = isLightMode ? -0.05 : 0.05
+
                                 return
                                     content
-                                    .opacity(phase.value == 0 ? 1 : 0.5)  // Fade effect for scroll transition
+                                    .opacity(phase.value == 0 ? 1 : 0.95)
+                                    .brightness(phase.value == 0 ? 0 : brightnessValue)
                             }
                         }
                         .buttonStyle(PlainButtonStyle())

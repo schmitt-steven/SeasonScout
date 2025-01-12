@@ -4,8 +4,10 @@ import SwiftUI
 struct AvailabilityMonthView: View {
     let product: Product
     let selectedMonth: Month
+    @Environment(\.colorScheme) var colorScheme // Detect the current color scheme
 
     var body: some View {
+        let isLightMode = colorScheme == .light
         ScrollViewReader { scrollProxy in
             // Horizontal scroll view to navigate through months
             ScrollView(.horizontal) {
@@ -56,10 +58,13 @@ struct AvailabilityMonthView: View {
                         )
                         // Animation during scrolling transition
                         .scrollTransition { content, phase in
+                            let brightnessValue = isLightMode ? -0.05 : 0.05
+
                             return
                                 content
-                                .opacity(phase.value == 0 ? 1 : 0.5)
+                                .opacity(phase.value == 0 ? 1 : 0.95)
                                 .offset(x: phase.value * -20)
+                                .brightness(phase.value == 0 ? 0 : brightnessValue)
                         }
                         .id(month)  // Set the scroll target ID to the month for easier navigation
                     }

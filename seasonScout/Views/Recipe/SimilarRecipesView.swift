@@ -10,6 +10,7 @@ struct SimilarRecipesView: View {
     let recipesOfSameCategory: [Recipe]
     // The vertical size class of the device (used to adjust layout for different screen sizes).
     @Environment(\.verticalSizeClass) var verticalSizeClass
+    @Environment(\.colorScheme) var colorScheme // Detect the current color scheme
 
     // Custom initializer that filters recipes from the same category as the current recipe.
     init(recipe: Recipe, selectedMonth: Month) {
@@ -23,6 +24,7 @@ struct SimilarRecipesView: View {
     }
 
     var body: some View {
+        let isLightMode = colorScheme == .light
         // Horizontal scroll view to display the list of similar recipes.
         ScrollView(.horizontal) {
             HStack {
@@ -91,12 +93,12 @@ struct SimilarRecipesView: View {
                                 count: verticalSizeClass == .regular ? 1 : 4,
                                 spacing: 16
                             )
-                            // Scroll transition effect when content scrolls.
                             .scrollTransition { content, phase in
-                                return
-                                    content
-                                    .opacity(phase.value == 0 ? 1 : 0.5)
-                            }
+                                        let brightnessValue = isLightMode ? -0.05 : 0.05
+                                        return content
+                                            .opacity(phase.value == 0 ? 1 : 0.95)
+                                            .brightness(phase.value == 0 ? 0 : brightnessValue)
+                                    }
                         }
                         // Remove button style to keep a custom appearance.
                         .buttonStyle(PlainButtonStyle())

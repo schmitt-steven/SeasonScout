@@ -5,6 +5,7 @@ struct RecipeListView: View {
     let recipes: [Recipe]  // Array of recipes to display
     @Binding var selectedMonth: Month  // Binding for the selected month (used to filter recipes)
     let searchText: String
+    let areFavoritesDisplayed: Bool
 
     var body: some View {
         ScrollView {  // This makes the content scrollable
@@ -12,7 +13,7 @@ struct RecipeListView: View {
             if recipes.isEmpty {
                 if !searchText.isEmpty {
                     Text(
-                        "Mit deiner Eingabe konnten keine Rezepte gefunden werden!")
+                        "Mit deiner Eingabe konnten keine Rezepte gefunden werden.")
                     .font(.headline)
                     .foregroundColor(.gray)
                     .padding([.horizontal, .top, .bottom], 22)
@@ -20,19 +21,21 @@ struct RecipeListView: View {
                     // Show a message when there are no recipes
                     VStack(spacing: 6) {
                         Text(
-                            "Du hast noch keine Rezepte zu Deinen Favoriten hinzugefügt!"
+                            "Es wurden keine Rezepte gefunden."
                         )  // Message when no recipes are added
                         .font(.headline)
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Text(
-                            "Um ein Rezept zu favorisieren, wähle ein Rezept aus und tippe auf das Herz in der oberen rechten Ecke."
-                        )  // Instructions for adding a favorite
-                        .multilineTextAlignment(.leading)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        if areFavoritesDisplayed {
+                            Text(
+                                "Falls du ein Rezept zu favorisieren möchtest, wähle ein Rezept aus und tippe auf das Herz in der oberen rechten Ecke."
+                            )  // Instructions for adding a favorite
+                            .multilineTextAlignment(.leading)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     }
                     .padding([.horizontal, .top, .bottom], 20)
                 }

@@ -12,7 +12,7 @@ struct CalendarView: View {
     @State private var excludeNotRegionally = true  // Filter for excluding non-regional products
     @State private var showFilters = false  // State to toggle showing filters
 
-    /// Filtered products based on the search text, product type, favorite status, and regional availability
+    // Filtered products based on the search text, product type, favorite status, and regional availability
     var filteredProducts: [Product] {
         ProductFilter.filter(
             items: Product.products,
@@ -25,15 +25,14 @@ struct CalendarView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                // Month selection view appears if favorites filter is not active
-                if !selectedProductIsFavorite {
-                    MonthSelectionView(selectedMonth: $selectedMonth)
-                }
 
+        NavigationStack {
+            MonthSelectionView(selectedMonth: $selectedMonth)
+                .padding(.bottom, 4)
+            
+            VStack(spacing: 0) {
                 if showFilters {
-                    VStack {
+                    VStack(spacing: 0) {
                         // Picker to choose product type (e.g., fruits, vegetables, etc.)
                         Picker(
                             "Wähle ein Produkttyp aus",
@@ -48,15 +47,18 @@ struct CalendarView: View {
 
                         // Toggle to show/hide non-regional products
                         Toggle(
-                            "Nicht regionale Produkte ausblenden",
                             isOn: $excludeNotRegionally
-                        )
+                        ) {
+                            Text("Nicht regionale Produkte ausblenden")
+                                .opacity(selectedProductIsFavorite ? 0.5 : 1)
+                        }
                         .toggleStyle(.switch)
                         .padding(.top)
+                        .disabled(selectedProductIsFavorite)
                     }
-                    .padding(.top)
+                    .padding(.top, 10)
                     .padding(.horizontal)
-                    .padding(.bottom, 2)
+                    .padding(.bottom, 10)
                     .transition(
                         .asymmetric(
                             insertion: .scale(scale: 1.0, anchor: .top),
@@ -67,11 +69,11 @@ struct CalendarView: View {
                             response: 0.4, dampingFraction: 0.75,
                             blendDuration: 0.5), value: showFilters)
                 }
+                Divider()
 
                 // Display the filtered product list
                 ProductListView(
-                    products: filteredProducts, selectedMonth: $selectedMonth, searchText: searchText)
-                Spacer()
+                    products: filteredProducts, selectedMonth: $selectedMonth, searchText: searchText, areFavoritesDisplayed: selectedProductIsFavorite)
             }
             // Search bar integrated with the navigation bar
             .searchable(

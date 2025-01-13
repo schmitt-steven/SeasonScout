@@ -34,23 +34,26 @@ struct RecipeCalendarView: View {
     }
 
     var body: some View {
+        
         NavigationStack {
-            VStack {
-                // Display MonthSelectionView unless the 'Favorite' filter is enabled
-                if !selectedRecipeIsFavorite {
-                    MonthSelectionView(selectedMonth: $selectedMonth)
-                }
-
+            MonthSelectionView(selectedMonth: $selectedMonth)
+                .padding(.bottom, 4)
+                
+            VStack(spacing: 0) {
                 // Display filter options when 'showFilters' is true
                 if showFilters {
-                    VStack {
+                    VStack(spacing: 0) {
                         // Toggle to exclude non-regional recipes
                         Toggle(
-                            "Nicht regionale Rezepte ausblenden",
                             isOn: $excludeNotRegionallyRecipes
-                        )
+                        ) {
+                            Text("Nicht regionale Rezepte ausblenden")
+                                .opacity(selectedRecipeIsFavorite ? 0.5 : 1)
+                        }
                         .toggleStyle(.switch)
+                        .padding(.top, -6)
                         .padding(.bottom, 2)
+                        .disabled(selectedRecipeIsFavorite)
 
                         // NavigationLink to show more filter options
                         NavigationLink(
@@ -76,7 +79,7 @@ struct RecipeCalendarView: View {
                                     .foregroundStyle(Color.orange)
                             }
                         }
-                        .padding(.top)
+                        .padding(.vertical)
                     }
                     .padding(.top)
                     .padding(.horizontal)
@@ -91,11 +94,11 @@ struct RecipeCalendarView: View {
                             response: 0.4, dampingFraction: 0.75,
                             blendDuration: 0.5), value: showFilters)
                 }
+                Divider()
 
                 // Display the list of filtered recipes
                 RecipeListView(
-                    recipes: filteredRecipes, selectedMonth: $selectedMonth, searchText: searchText)
-                Spacer()
+                    recipes: filteredRecipes, selectedMonth: $selectedMonth, searchText: searchText, areFavoritesDisplayed: selectedRecipeIsFavorite)
             }
             .searchable(
                 text: $searchText,  // Binding to search text for filtering recipes

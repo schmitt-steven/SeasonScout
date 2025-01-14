@@ -10,7 +10,8 @@ class RecipeFilter {
         selectedRecipeIsForGroups: Bool,  // Whether to filter by whether the recipe is for groups
         selectedRecipeIsVegetarian: Bool,  // Whether to filter by vegetarian recipes
         excludeNotRegionallyRecipes: Bool,  // Whether to exclude recipes with non-regional ingredients
-        selectedMonth: Month  // Month to filter recipes based on seasonal ingredients
+        selectedMonth: Month,  // Month to filter recipes based on seasonal ingredients
+        triggerUpdate: Bool
     ) -> [Recipe] {
 
         var filteredItems = items  // Start with the full list of recipes

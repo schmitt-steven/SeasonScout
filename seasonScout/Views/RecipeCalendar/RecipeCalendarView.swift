@@ -10,27 +10,17 @@ struct RecipeCalendarView: View {
         Calendar.current.component(.month, from: Date()) - 1]  // Default to the current month
     @State private var excludeNotRegionallyRecipes = true  // Whether to exclude non-regional recipes
     @State private var showFilters = false  // Controls whether filter options are displayed
+    @State private var recalculateFilteredRecipes = false  // Triggers an update of the filtered recipes
     @State private var selectedRecipeCategory: RecipeCategory? = nil  // Filter by category
     @State private var selectedRecipeEffort: Level? = nil  // Filter by effort level
     @State private var selectedRecipePrice: Level? = nil  // Filter by price level
     @State private var selectedRecipeIsFavorite = false  // Filter by favorite status
     @State private var selectedRecipeIsForGroups = false  // Filter by suitability for groups
     @State private var selectedRecipeIsVegetarian = false  // Filter by vegetarian status
-
+    @State private var recalculateFilteredProducts = false
     // Computed property that filters the recipes based on the selected filters and search text
     var filteredRecipes: [Recipe] {
-        RecipeFilter.filter(
-            items: Recipe.recipes,
-            searchText: searchText,
-            selectedRecipeCategory: selectedRecipeCategory,
-            selectedRecipeEffort: selectedRecipeEffort,
-            selectedRecipePrice: selectedRecipePrice,
-            selectedRecipeIsFavorite: selectedRecipeIsFavorite,
-            selectedRecipeIsForGroups: selectedRecipeIsForGroups,
-            selectedRecipeIsVegetarian: selectedRecipeIsVegetarian,
-            excludeNotRegionallyRecipes: excludeNotRegionallyRecipes,
-            selectedMonth: selectedMonth
-        )
+        calculateFilteredRecipes()
     }
 
     var body: some View {
@@ -99,6 +89,9 @@ struct RecipeCalendarView: View {
                 // Display the list of filtered recipes
                 RecipeListView(
                     recipes: filteredRecipes, selectedMonth: $selectedMonth, searchText: searchText, areFavoritesDisplayed: selectedRecipeIsFavorite)
+            }
+            .onAppear {
+                recalculateFilteredRecipes.toggle()
             }
             .searchable(
                 text: $searchText,  // Binding to search text for filtering recipes
@@ -180,6 +173,23 @@ struct RecipeCalendarView: View {
                 }
             }
         }
+    }
+    
+    // Calculate the shown recipes based on the current filters
+    private func calculateFilteredRecipes() -> [Recipe] {
+        RecipeFilter.filter(
+            items: Recipe.recipes,
+            searchText: searchText,
+            selectedRecipeCategory: selectedRecipeCategory,
+            selectedRecipeEffort: selectedRecipeEffort,
+            selectedRecipePrice: selectedRecipePrice,
+            selectedRecipeIsFavorite: selectedRecipeIsFavorite,
+            selectedRecipeIsForGroups: selectedRecipeIsForGroups,
+            selectedRecipeIsVegetarian: selectedRecipeIsVegetarian,
+            excludeNotRegionallyRecipes: excludeNotRegionallyRecipes,
+            selectedMonth: selectedMonth,
+            triggerUpdate: recalculateFilteredRecipes
+        )
     }
 
     // Update the application's appearance to match the dark/light mode setting

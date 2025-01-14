@@ -6,7 +6,8 @@ class ProductFilter {
         selectedProductType: SelectedProductType,  // Selected product type (e.g., fruit, vegetable)
         selectedProductIsFavorite: Bool,  // Whether to filter by favorite status
         excludeNotRegionally: Bool,  // Whether to exclude non-regionally available products
-        selectedMonth: Month  // The month to filter products by their seasonal availability
+        selectedMonth: Month,  // The month to filter products by their seasonal availability
+        triggerUpdate: Bool  // Used to recalculate the list of filtered products
     ) -> [Product] {
 
         var filteredItems = items  // Start with the full list of products

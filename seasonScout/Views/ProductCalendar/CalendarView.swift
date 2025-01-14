@@ -11,17 +11,10 @@ struct CalendarView: View {
     @State private var selectedProductIsFavorite = false  // Filter for showing only favorite products
     @State private var excludeNotRegionally = true  // Filter for excluding non-regional products
     @State private var showFilters = false  // State to toggle showing filters
-
+    @State private var recalculateFilteredProducts = false
     // Filtered products based on the search text, product type, favorite status, and regional availability
     var filteredProducts: [Product] {
-        ProductFilter.filter(
-            items: Product.products,
-            searchText: searchText,
-            selectedProductType: selectedProductType,
-            selectedProductIsFavorite: selectedProductIsFavorite,
-            excludeNotRegionally: excludeNotRegionally,
-            selectedMonth: selectedMonth
-        )
+        calculateFilteredProducts()
     }
 
     var body: some View {
@@ -74,6 +67,9 @@ struct CalendarView: View {
                 // Display the filtered product list
                 ProductListView(
                     products: filteredProducts, selectedMonth: $selectedMonth, searchText: searchText, areFavoritesDisplayed: selectedProductIsFavorite)
+            }
+            .onAppear {
+                recalculateFilteredProducts.toggle()
             }
             // Search bar integrated with the navigation bar
             .searchable(
@@ -148,6 +144,19 @@ struct CalendarView: View {
                 }
             }
         }
+    }
+    
+    // Filter all products based on the current settings/filters
+    private func calculateFilteredProducts() -> [Product] {
+        return ProductFilter.filter(
+            items: Product.products,
+            searchText: searchText,
+            selectedProductType: selectedProductType,
+            selectedProductIsFavorite: selectedProductIsFavorite,
+            excludeNotRegionally: excludeNotRegionally,
+            selectedMonth: selectedMonth,
+            triggerUpdate: recalculateFilteredProducts
+        )
     }
 
     // Update the application's appearance

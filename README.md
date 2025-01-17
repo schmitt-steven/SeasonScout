@@ -54,12 +54,6 @@ Vergiss schrumpelige Avocados, die tausende Kilometer gereist sind, oder Tomaten
 und viele mehr...
 
 ---
-### Links
-[Figma (Design-Prototypen)](https://www.figma.com/design/am9YAAggMv24vGT9Wwwc6E/iOS-Saisonkalender-App?node-id=0-1&node-type=canvas&t=qKTQm06YBO6xY2tB-0)\
-[Projekt Backlog](https://github.com/users/schmitt-steven/projects/1)\
-[Google Drive (Präsentationen)](https://drive.google.com/drive/folders/1K70k8rNntl8iYn7EPlYh6EJJNus_9eUT?usp=drive_link)
-
----
 ### Über dieses Projekt
 
 Diese App ist im Rahmen des Kurses *iOS App Development mit SwiftUI* an der Hochschule Mannheim im Wintersemester 2024/25 entstanden.
@@ -69,17 +63,3 @@ Quoc Duy Nicklas Hoang,\
 Henry Harder und\
 Steven Schmitt
 
-
-| **Kriterium**                               | **Kommentar**                                                                                       | **Bewertung** |
-|---------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------|
-| **App Design und Umsetzung**                |                                                                                                     |               |
-| **Architektur und Coding**                  | Ist der Code sauber und nachvollziehbar umgesetzt, ggf. MVVM, Kommentare, etc.                       | 10            |
-| **Funktionalität und Komplexität**          | Welche Funktionen bietet die App, welche Frameworks und Schnittstellen wurden verwendet, wie aufwändig war der Implementierungsaufwand | 10            |
-| **Design/Usability**                        | Oberfläche, Benutzbarkeit                                                                            | 10            |
-| **Idee/Originalität**                       | Steckt eine eigene Idee hinter der App, wie sinnvoll ist die App, etc.                               | 10            |
-| **Lauffähigkeit**                           | Fehlerfälle, Abstürze, läuft auf realer Hardware (iPhone), etc.                                      | 10            |
-| **Dokumentation**                           | Umsetzung der Dokumentation                                                                         | 10            |
-| **Präsentation**                            |                                                                                                     |               |
-| **Jour Fixes**                              | Teilnahme und Präsentation                                                                          | 5             |
-| **Abschlusspräsentation (iExpo)**           | Präsentation, Motivation                                                                             | 10            |
-| **Gesamtpunktzahl**                         |                                                                                                     | **75**        |

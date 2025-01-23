@@ -1,4 +1,4 @@
-![alt text](SeasonScoutBanner-1.png)
+![Banner](SeasonScoutBanner-1.png)
 
 <p align="center">
   <img src="https://img.shields.io/badge/SeasonScout-v1.0.0-red" alt="App Version" style="margin-right: 5px;">
@@ -10,6 +10,14 @@ Mit *SeasonScout* findest Du immer genau das Obst und Gemüse, das gerade in Deu
 
 Vergiss schrumpelige Avocados, die tausende Kilometer gereist sind, oder Tomaten, die mehr Energie als ein Raumschiff benötigen, um in beheizten Gewächshäusern zu wachsen. *SeasonScout* hilft Dir, Deinen CO₂-Fußabdruck zu reduzieren, die lokale Landwirtschaft zu unterstützen und gleichzeitig köstliche Gerichte aus den frischesten Zutaten zu zaubern.
 <br>
+
+---
+
+### Poster
+
+<p align="center">
+<img src="ReadmeMedia/SeasonScoutPoster.png" alt="Poster">
+</p>
 
 ---
 
